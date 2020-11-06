@@ -11,16 +11,13 @@ target 'Pulse' do
   pod 'IQKeyboardManagerSwift'
   pod 'SimpleTwoWayBinding'
   pod 'CDAlertView'
-  pod 'FBSDKCoreKit/Swift'
-  pod 'FBSDKLoginKit/Swift'
-  pod 'FBSDKShareKit/Swift'
-  pod 'Alamofire-SwiftyJSON'
   pod 'NVActivityIndicatorView'
   pod 'SlideMenuControllerSwift'
   pod 'RSSelectionMenu'
+  pod 'SwiftEntryKit'
+
+  pod 'Alamofire-SwiftyJSON'
   pod 'ActionSheetPicker-3.0', '~> 2.3.0'
-  pod 'Cosmos', '~> 20.0'
-  pod  'GoogleMaps' 
   pod 'SwiftEntryKit'
   # Pods for Pulse
 
