@@ -52,23 +52,11 @@
 		63C109752555EF0B0097EDC3 /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				63C109B42555F6EA0097EDC3 /* Source */,
 				63C109A82555F48E0097EDC3 /* Supporting Files */,
 				63C1098C2555F43D0097EDC3 /* Resources */,
-				63C1098B2555F4370097EDC3 /* Source */,
 			);
 			path = Pulse;
-			sourceTree = "<group>";
-		};
-		63C1098B2555F4370097EDC3 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				63C109AE2555F5490097EDC3 /* Common */,
-				63C109AD2555F5410097EDC3 /* Modules */,
-				63C109AC2555F5310097EDC3 /* Helper */,
-				63C109AB2555F52C0097EDC3 /* Repository */,
-				63C109AA2555F4D20097EDC3 /* Model */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		63C1098C2555F43D0097EDC3 /* Resources */ = {
@@ -90,39 +78,51 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63C109AA2555F4D20097EDC3 /* Model */ = {
+		63C109B42555F6EA0097EDC3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				63C109B92555F7100097EDC3 /* Repository */,
+				63C109B82555F70C0097EDC3 /* Model */,
+				63C109B72555F7060097EDC3 /* Common */,
+				63C109B62555F6F70097EDC3 /* Helper */,
+				63C109B52555F6EF0097EDC3 /* Modules */,
 			);
-			path = Model;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		63C109AB2555F52C0097EDC3 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		63C109AC2555F5310097EDC3 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		63C109AD2555F5410097EDC3 /* Modules */ = {
+		63C109B52555F6EF0097EDC3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		63C109AE2555F5490097EDC3 /* Common */ = {
+		63C109B62555F6F70097EDC3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		63C109B72555F7060097EDC3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		63C109B82555F70C0097EDC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63C109B92555F7100097EDC3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
