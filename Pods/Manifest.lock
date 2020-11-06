@@ -1,0 +1,108 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.3.1)
+  - Alamofire (4.9.1)
+  - Alamofire-SwiftyJSON (3.0.0):
+    - Alamofire (~> 4.5)
+    - SwiftyJSON (~> 4.0.0)
+  - CDAlertView (0.10.0)
+  - Cosmos (20.0.1)
+  - FBSDKCoreKit (6.5.2):
+    - FBSDKCoreKit/Basics (= 6.5.2)
+    - FBSDKCoreKit/Core (= 6.5.2)
+  - FBSDKCoreKit/Basics (6.5.2)
+  - FBSDKCoreKit/Core (6.5.2):
+    - FBSDKCoreKit/Basics
+  - FBSDKCoreKit/Swift (6.5.2):
+    - FBSDKCoreKit/Core
+  - FBSDKLoginKit/Login (6.5.2):
+    - FBSDKCoreKit (~> 6.5.2)
+  - FBSDKLoginKit/Swift (6.5.2):
+    - FBSDKCoreKit/Swift (~> 6.5.2)
+    - FBSDKLoginKit/Login
+  - FBSDKShareKit/Share (6.5.2):
+    - FBSDKCoreKit (~> 6.5.2)
+  - FBSDKShareKit/Swift (6.5.2):
+    - FBSDKCoreKit/Swift (~> 6.5.2)
+    - FBSDKShareKit/Share
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
+    - GoogleMaps/Base
+  - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - NVActivityIndicatorView (5.0.0):
+    - NVActivityIndicatorView/Base (= 5.0.0)
+  - NVActivityIndicatorView/Base (5.0.0)
+  - QuickLayout (3.0.0)
+  - RSSelectionMenu (7.1.0)
+  - SimpleTwoWayBinding (0.0.2)
+  - SlideMenuControllerSwift (4.0.0)
+  - SwiftEntryKit (1.2.3):
+    - QuickLayout (= 3.0.0)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0 (~> 2.3.0)
+  - Alamofire
+  - Alamofire-SwiftyJSON
+  - CDAlertView
+  - Cosmos (~> 20.0)
+  - FBSDKCoreKit/Swift
+  - FBSDKLoginKit/Swift
+  - FBSDKShareKit/Swift
+  - GoogleMaps
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - NVActivityIndicatorView
+  - RSSelectionMenu
+  - SimpleTwoWayBinding
+  - SlideMenuControllerSwift
+  - SwiftEntryKit
+
+SPEC REPOS:
+  trunk:
+    - ActionSheetPicker-3.0
+    - Alamofire
+    - Alamofire-SwiftyJSON
+    - CDAlertView
+    - Cosmos
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
+    - GoogleMaps
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - NVActivityIndicatorView
+    - QuickLayout
+    - RSSelectionMenu
+    - SimpleTwoWayBinding
+    - SlideMenuControllerSwift
+    - SwiftEntryKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: 2f5e3fde6b3205a7318f9338e4ec0f373ce7e75c
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  CDAlertView: ee6a87c90c4283c8d316d55633db1a6981f1cc51
+  Cosmos: b47fddf2102bb48580cd3025d9ce0a5c658a65da
+  FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
+  FBSDKLoginKit: caa165495afa29a12324cb2307fe6e5b33783142
+  FBSDKShareKit: d0538e2385480d8b2901468c80abcf22aeaf2abd
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  NVActivityIndicatorView: f109ed069924ac1b4adbc1ae9cfaeac0be1d6c2c
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  RSSelectionMenu: df7e43e453c10a48db4b1a03fd1b0d3918d10039
+  SimpleTwoWayBinding: 728d751c25d9909ddf2ee76711ab4a8a71e00c69
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+  SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: f7db37b38f1f1d7d5eba4ccb11e0905daf8eb38f
+
+COCOAPODS: 1.10.0
