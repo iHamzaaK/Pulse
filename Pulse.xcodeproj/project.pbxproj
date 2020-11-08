@@ -40,6 +40,8 @@
 		6372E6B62558016300A03E01 /* TopStoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6372E6B42558016300A03E01 /* TopStoriesTableViewCell.xib */; };
 		6372E6B92558018100A03E01 /* TopStoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6372E6B82558018100A03E01 /* TopStoriesViewModel.swift */; };
 		6372E6BC2558018B00A03E01 /* TopStoriesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6372E6BB2558018B00A03E01 /* TopStoriesCellViewModel.swift */; };
+		6372E6D1255804F600A03E01 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6372E6D0255804F600A03E01 /* UITextView+Extension.swift */; };
+		6372E6D42558121E00A03E01 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6372E6D32558121E00A03E01 /* BaseUIView.swift */; };
 		639F037F2556D44600772893 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F037E2556D44600772893 /* LoginViewController.swift */; };
 		639F03822556D45600772893 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F03812556D45600772893 /* LoginViewModel.swift */; };
 		639F03852556D46000772893 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F03842556D46000772893 /* LoginBuilder.swift */; };
@@ -107,6 +109,8 @@
 		6372E6B42558016300A03E01 /* TopStoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopStoriesTableViewCell.xib; sourceTree = "<group>"; };
 		6372E6B82558018100A03E01 /* TopStoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModel.swift; sourceTree = "<group>"; };
 		6372E6BB2558018B00A03E01 /* TopStoriesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesCellViewModel.swift; sourceTree = "<group>"; };
+		6372E6D0255804F600A03E01 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		6372E6D32558121E00A03E01 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		639F037E2556D44600772893 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		639F03812556D45600772893 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		639F03842556D46000772893 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				63629B0525561049003836A2 /* BaseUITextfield.swift */,
 				63629AB125560B41003836A2 /* BaseNavigationViewController.swift */,
 				63629AFF25560FF5003836A2 /* BaseViewController.swift */,
+				6372E6D32558121E00A03E01 /* BaseUIView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				63C109D42555FF830097EDC3 /* ToolbarPickerView.swift */,
 				63C109CA2555FF830097EDC3 /* UIDeviceExtension.swift */,
 				63C109D22555FF830097EDC3 /* Utilities.swift */,
+				6372E6D0255804F600A03E01 /* UITextView+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -737,9 +743,11 @@
 				63629B26255611EE003836A2 /* RightMenuViewController.swift in Sources */,
 				639F03942556D72400772893 /* ForgetPasswordViewModel.swift in Sources */,
 				63629AFC25560FAE003836A2 /* SplashViewModel.swift in Sources */,
+				6372E6D1255804F600A03E01 /* UITextView+Extension.swift in Sources */,
 				63629B0925561049003836A2 /* BaseParallaxHeaderView.swift in Sources */,
 				639F03822556D45600772893 /* LoginViewModel.swift in Sources */,
 				63C109792555EF0B0097EDC3 /* SceneDelegate.swift in Sources */,
+				6372E6D42558121E00A03E01 /* BaseUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

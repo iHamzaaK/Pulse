@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1099" y="-63"/>
         </scene>
-        <!--View Controller-->
+        <!--Top Stories View Controller-->
         <scene sceneID="MZp-c6-eJ7">
             <objects>
-                <viewController id="6kH-yP-xzj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopStoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6kH-yP-xzj" customClass="TopStoriesViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZG6-cp-fap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Yah-ZV-7PI" firstAttribute="top" secondItem="aIk-Yi-m0U" secondAttribute="top" constant="20" id="JHn-Yi-HA4"/>
                                     <constraint firstAttribute="bottom" secondItem="Yah-ZV-7PI" secondAttribute="bottom" constant="20" id="QdF-1j-Zft"/>
@@ -128,7 +128,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5C-5h-oXe">
                                 <rect key="frame" x="0.0" y="101" width="414" height="62.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-dU-xCp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNS-dU-xCp" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="10" width="151" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="UMK-ki-KY0"/>
@@ -137,13 +137,13 @@
                                         <color key="textColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Quote of the day is very important for us!”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZz-Rs-epi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Quote of the day is very important for us!”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZz-Rs-epi" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="33" width="374" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Oct/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1d-9k-UWT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Oct/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1d-9k-UWT" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="320" y="10" width="75" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="G9W-oG-u4w"/>
@@ -153,7 +153,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pNS-dU-xCp" firstAttribute="leading" secondItem="p5C-5h-oXe" secondAttribute="leading" constant="20" id="8dp-s5-Gz1"/>
                                     <constraint firstAttribute="trailing" secondItem="IZz-Rs-epi" secondAttribute="trailing" constant="20" id="8jb-ug-SI2"/>
@@ -165,13 +165,17 @@
                                     <constraint firstAttribute="bottom" secondItem="IZz-Rs-epi" secondAttribute="bottom" constant="11.6" id="wxe-kF-87C"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-Hd-uas">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-Hd-uas">
                                 <rect key="frame" x="0.0" y="164.5" width="414" height="649.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6kH-yP-xzj" id="5UE-X7-h3e"/>
+                                    <outlet property="delegate" destination="6kH-yP-xzj" id="Sal-D1-rua"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vug-W7-u5R"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="LaI-Hd-uas" firstAttribute="top" secondItem="p5C-5h-oXe" secondAttribute="bottom" constant="1" id="61q-2o-epB"/>
                             <constraint firstItem="LaI-Hd-uas" firstAttribute="width" secondItem="ZG6-cp-fap" secondAttribute="width" id="8Oe-rq-YHP"/>
@@ -186,6 +190,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c8j-yh-uZ8"/>
+                    <connections>
+                        <outlet property="lblQoute" destination="IZz-Rs-epi" id="yXH-Jy-bHV"/>
+                        <outlet property="lblQouteDate" destination="U1d-9k-UWT" id="YT8-i8-9lp"/>
+                        <outlet property="tblView" destination="LaI-Hd-uas" id="sf2-wf-0Ua"/>
+                        <outlet property="viewQuote" destination="p5C-5h-oXe" id="qiF-mZ-xGa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNg-VC-Kkm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
