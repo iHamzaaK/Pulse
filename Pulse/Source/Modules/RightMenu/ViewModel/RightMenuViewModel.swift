@@ -23,16 +23,14 @@ enum RightMenuCell : Int{
 class RightMenuViewModel{
     private var navBarType : navigationBarTypes!
     private var tblCells = [RightMenuCellModel]()
-    var cellHeight : CGFloat = DesignUtility.convertToRatio(50.0, sizedForIPad: false, sizedForNavi: false)
+    var cellHeight : CGFloat = DesignUtility.convertToRatio(40, sizedForIPad: false, sizedForNavi: false)
     init(navigationType navBar : navigationBarTypes){
         self.navBarType = navBar
         tblCells = [
-            RightMenuCellModel(value: "Find Restaurants", image: ""),
-            RightMenuCellModel(value: "About 'Company Name'", image: ""),
-            RightMenuCellModel(value: "Favorites", image: ""),
+            RightMenuCellModel(value: "Home", image: ""),
+            RightMenuCellModel(value: "Bookmarks", image: ""),
             RightMenuCellModel(value: "Settings", image: ""),
-            RightMenuCellModel(value: "Terms and conditions", image: ""),
-            RightMenuCellModel(value: "Log out", image: ""),
+            RightMenuCellModel(value: "Privacy Policy", image: ""),
         ]
     }
     func getNavigationBar()-> navigationBarTypes{

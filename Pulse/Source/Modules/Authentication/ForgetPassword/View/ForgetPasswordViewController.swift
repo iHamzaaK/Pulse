@@ -6,25 +6,36 @@
 //
 
 import UIKit
-
+import TextFieldEffects
 class ForgetPasswordViewController: BaseViewController {
+    
     var viewModel : ForgetPasswordViewModel!
-
+    @IBOutlet weak var txtEmail: HoshiTextField!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var btnBackToLogin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarType = self.viewModel.getNavigationBar()
+        setupViews()
+    }
+
+}
+extension ForgetPasswordViewController{
+    @objc private func didTapOnNext(){
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func didTapOnBack(){
+        AppRouter.pop()
     }
-    */
+    private func setupViews(){
+        navBarType = self.viewModel.getNavigationBar()
+        btnNext.addTarget(self, action: #selector(self.didTapOnNext), for: .touchUpInside)
+        btnBackToLogin.addTarget(self, action: #selector(self.didTapOnBack), for: .touchUpInside)
 
+    }
+}
+extension ForgetPasswordViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }

@@ -10,7 +10,7 @@ class SplashBuilder
     static func build()-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.splash.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.splash.rawValue) as! SplashViewController
-        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
+        let navBarType = navigationBarTypes.clearNavBar
 
         let viewModel = SplashViewModel(navigationType: navBarType)
         vc.viewModel = viewModel

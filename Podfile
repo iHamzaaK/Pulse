@@ -13,6 +13,7 @@ target 'Pulse' do
   pod 'CDAlertView'
   pod 'NVActivityIndicatorView'
   pod 'SlideMenuControllerSwift'
+  pod 'ReadMoreTextView'
   pod 'RSSelectionMenu'
   pod 'SwiftEntryKit'
   pod 'TextFieldEffects'

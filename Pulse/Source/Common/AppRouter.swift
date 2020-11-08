@@ -20,8 +20,10 @@ class AppRouter{
         }
     }
     static func createRoute(window : UIWindow) {
+        SlideMenuOptions.opacityViewBackgroundColor = .white
         self.window = window
-      let vc : UIViewController! =  SplashBuilder.build()
+        self.window!.backgroundColor = UIColor.white
+      let vc : UIViewController! =  DashboardBuilder.build()
 ////      let vc : UIViewController! =  RestaurantDetailBaseBuilder.build(navBarType: .clearNavBar, restaurantId: 1)
 //
 //
@@ -45,6 +47,11 @@ class AppRouter{
         else{
             slideMenu.openRight()
         }
+    }
+    static func pop(){
+        slideMenu.closeRight()
+        self.navController.popViewController(animated: true);
+        
     }
     static func logout(){
         slideMenu.closeRight()

@@ -6,28 +6,53 @@
 //
 
 import UIKit
-
+import TextFieldEffects
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var btnForgetPassword: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var txtPassword: HoshiTextField!
+    @IBOutlet weak var txtEmail: HoshiTextField!
+    @IBOutlet weak var lblEmailError: UILabel!{
+        didSet{
+            lblEmailError.text = ""
+        }
+    }
+    @IBOutlet weak var lblPasswordError: UILabel!{
+        didSet{
+            lblPasswordError.text = ""
+        }
+    }
     var viewModel : LoginViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (_) in
-            let vc = ForgetPasswordBuilder.build()
-            AppRouter.goToSpecificController(vc: vc)
-        }
         // Do any additional setup after loading the view.
+        setupViews()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-    */
+}
+extension LoginViewController{
+    private func setupViews(){
+        btnForgetPassword.addTarget(self, action: #selector(self.didTapOnForget), for: .touchUpInside)
+        btnNext.addTarget(self, action: #selector(self.didTapOnNext), for: .touchUpInside)
 
+    }
+    @objc private func didTapOnForget(){
+        let vc = ForgetPasswordBuilder.build()
+        AppRouter.goToSpecificController(vc: vc)
+    }
+    @objc private func didTapOnNext(){
+        let vc = ConfirmPasswordBuilder.build()
+        AppRouter.goToSpecificController(vc: vc)
+
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }

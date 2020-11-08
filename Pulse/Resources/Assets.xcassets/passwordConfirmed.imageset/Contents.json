@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "back-icon@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "back-icon@2x.png",
+      "filename" : "passwordConfirmed@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "back-icon@3x.png",
+      "filename" : "passwordConfirmed@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

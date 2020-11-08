@@ -48,6 +48,9 @@
                                         <real key="value" value="1.1000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="n2n-zD-hsS" id="HwZ-YI-oim"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0aZ-35-QYo">
                                 <rect key="frame" x="20" y="556" width="339" height="20"/>
@@ -83,6 +86,9 @@
                                         <real key="value" value="1.1000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="n2n-zD-hsS" id="BiZ-CH-z2F"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sac-cZ-vRB">
                                 <rect key="frame" x="20" y="636" width="343" height="20"/>
@@ -141,6 +147,14 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="btnForgetPassword" destination="4KK-FO-0F0" id="WVt-mc-8jQ"/>
+                        <outlet property="btnNext" destination="6uD-Wb-R5a" id="yIQ-oX-9h7"/>
+                        <outlet property="lblEmailError" destination="3lM-eR-OsI" id="zao-k3-JbN"/>
+                        <outlet property="lblPasswordError" destination="dhx-BS-hjt" id="lzW-y1-B15"/>
+                        <outlet property="txtEmail" destination="YPq-xk-CwO" id="mjf-uR-cNB"/>
+                        <outlet property="txtPassword" destination="7Eo-e9-oUh" id="e3m-8Q-77x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nU-CL-Nyc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,20 +169,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgetLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hCK-St-RoD">
-                                <rect key="frame" x="82.666666666666686" y="71" width="210" height="189"/>
+                                <rect key="frame" x="82.666666666666686" y="182" width="210" height="189"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="FwC-vO-zlQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="width" constant="210" id="av3-L8-2q6" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6c-Ca-8Ac">
-                                <rect key="frame" x="20" y="350" width="257.66666666666669" height="39.666666666666686"/>
+                                <rect key="frame" x="20" y="444" width="257.66666666666669" height="39.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-Q0-dRE" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="409" width="339" height="54"/>
+                                <rect key="frame" x="20" y="503" width="339" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="TaV-Yq-CHC" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -186,26 +200,29 @@
                                         <real key="value" value="1.1000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="wbO-ku-i8l" id="sKo-r3-hiv"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C5-SH-ncg">
-                                <rect key="frame" x="20" y="488" width="339" height="46"/>
+                                <rect key="frame" x="20" y="582" width="339" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="gRT-Av-dao" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="VERIFY EMAIL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I remember my password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8e-ea-Ca3">
-                                <rect key="frame" x="20" y="630" width="191" height="20"/>
+                                <rect key="frame" x="20" y="724" width="191" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16.299999237060547"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfu-iN-U5z">
-                                <rect key="frame" x="20" y="658" width="138" height="34"/>
+                                <rect key="frame" x="20" y="752" width="138" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="BACK TO LOGIN">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -219,10 +236,10 @@
                             <constraint firstItem="7C5-SH-ncg" firstAttribute="top" secondItem="Dlx-Q0-dRE" secondAttribute="bottom" constant="25" id="5lc-lN-NFy" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Dfu-iN-U5z" firstAttribute="leading" secondItem="X8e-ea-Ca3" secondAttribute="leading" id="6Dm-qZ-yTy" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="X8e-ea-Ca3" firstAttribute="top" secondItem="7C5-SH-ncg" secondAttribute="bottom" constant="96" id="7E4-dM-TeP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="g6c-Ca-8Ac" firstAttribute="top" secondItem="hCK-St-RoD" secondAttribute="bottom" constant="90" id="B0D-Cx-Xb8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="g6c-Ca-8Ac" firstAttribute="top" secondItem="hCK-St-RoD" secondAttribute="bottom" constant="73" id="B0D-Cx-Xb8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="7C5-SH-ncg" firstAttribute="leading" secondItem="Dlx-Q0-dRE" secondAttribute="leading" id="LmL-YN-2Za" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Dfu-iN-U5z" firstAttribute="top" secondItem="X8e-ea-Ca3" secondAttribute="bottom" constant="8" symbolic="YES" id="Rik-9r-3fW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="hCK-St-RoD" firstAttribute="top" secondItem="eJj-jo-wNQ" secondAttribute="top" constant="71" identifier="topConstraintHeader" id="VVx-ql-71Y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="hCK-St-RoD" firstAttribute="top" secondItem="eJj-jo-wNQ" secondAttribute="top" constant="182" identifier="topConstraintHeader" id="VVx-ql-71Y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Dlx-Q0-dRE" firstAttribute="leading" secondItem="eJj-jo-wNQ" secondAttribute="leading" constant="20" symbolic="YES" id="fdi-4W-PNb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="X8e-ea-Ca3" firstAttribute="leading" secondItem="7C5-SH-ncg" secondAttribute="leading" id="ks7-jS-S66" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="7C5-SH-ncg" firstAttribute="trailing" secondItem="Dlx-Q0-dRE" secondAttribute="trailing" id="mr4-Tv-pFh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -232,15 +249,202 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="btnBackToLogin" destination="Dfu-iN-U5z" id="tLP-Cv-6DJ"/>
+                        <outlet property="btnNext" destination="7C5-SH-ncg" id="nrz-QU-GLq"/>
+                        <outlet property="txtEmail" destination="Dlx-Q0-dRE" id="4xb-dX-vFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmB-7v-znY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664.79999999999995" y="102.70935960591133"/>
         </scene>
+        <!--Confirm Password View Controller-->
+        <scene sceneID="NDe-YT-Rk5">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5CW-W7-l5Y" customClass="ConfirmPasswordViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iIs-Sx-nlK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgetLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gkv-Dc-oTJ">
+                                <rect key="frame" x="82.666666666666686" y="182" width="210" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="H1O-MS-HBx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" constant="210" id="jqp-QH-mgq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZo-KO-4G6">
+                                <rect key="frame" x="20" y="444" width="281.66666666666669" height="39.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set a new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsj-eA-BMt" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="512.66666666666663" width="339" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="cyt-QX-WKS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="5CW-W7-l5Y" id="CU9-CM-VsD"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-Sq-lhB">
+                                <rect key="frame" x="20" y="648.66666666666663" width="339" height="46"/>
+                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="XNS-ca-Vqn" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SET PASSWORD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I remember my password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpV-KF-tCm">
+                                <rect key="frame" x="20" y="726.66666666666663" width="191" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16.299999237060547"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Lr-XT-mHn">
+                                <rect key="frame" x="20" y="754.66666666666663" width="138" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="BACK TO LOGIN">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-type your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-DP-3sZ" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="580.66666666666663" width="339" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="BXd-Om-Vd4" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" systemColor="systemGrayColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="5CW-W7-l5Y" id="6th-z0-sPz"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" id="MAw-cw-syl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordConfirmed" translatesAutoresizingMaskIntoConstraints="NO" id="zk5-gz-ezX">
+                                        <rect key="frame" x="157.66666666666666" y="288" width="60" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Ue3-9b-eHi"/>
+                                            <constraint firstAttribute="height" constant="42" id="icq-Wt-2jC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o9-CS-fMT">
+                                        <rect key="frame" x="120.66666666666667" y="355" width="133.66666666666663" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-No-gQo">
+                                        <rect key="frame" x="91.666666666666686" y="384.66666666666669" width="192" height="43"/>
+                                        <string key="text">You have successfully
+changed your password</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYq-Hy-UfK">
+                                        <rect key="frame" x="77.666666666666686" y="457.66666666666669" width="220" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="LVe-QZ-Vx8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="width" constant="220" id="T7n-Zt-BKu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="GO TO LOGIN">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="bFk-kv-c6G"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zk5-gz-ezX" firstAttribute="top" secondItem="MAw-cw-syl" secondAttribute="top" constant="288" id="9qO-eG-JEY"/>
+                                    <constraint firstItem="Daf-No-gQo" firstAttribute="top" secondItem="7o9-CS-fMT" secondAttribute="bottom" constant="8" symbolic="YES" id="Lc5-Fl-klE"/>
+                                    <constraint firstItem="hYq-Hy-UfK" firstAttribute="centerX" secondItem="Daf-No-gQo" secondAttribute="centerX" id="Qpr-CJ-l7u"/>
+                                    <constraint firstItem="hYq-Hy-UfK" firstAttribute="top" secondItem="Daf-No-gQo" secondAttribute="bottom" constant="30" id="WHn-2P-JCr"/>
+                                    <constraint firstItem="Daf-No-gQo" firstAttribute="centerX" secondItem="7o9-CS-fMT" secondAttribute="centerX" id="fjf-MW-nuG"/>
+                                    <constraint firstItem="7o9-CS-fMT" firstAttribute="top" secondItem="zk5-gz-ezX" secondAttribute="bottom" constant="25" id="pda-GP-6nB"/>
+                                    <constraint firstItem="zk5-gz-ezX" firstAttribute="centerX" secondItem="MAw-cw-syl" secondAttribute="centerX" id="t6L-fF-hJy"/>
+                                    <constraint firstItem="7o9-CS-fMT" firstAttribute="centerX" secondItem="zk5-gz-ezX" secondAttribute="centerX" id="uhL-yV-U8l"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P9k-AT-BPZ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Lr-XT-mHn" firstAttribute="leading" secondItem="BpV-KF-tCm" secondAttribute="leading" id="2Zh-8Z-5ev" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="BpV-KF-tCm" firstAttribute="leading" secondItem="GoO-Sq-lhB" secondAttribute="leading" id="6Fe-Rh-TW0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="nsj-eA-BMt" firstAttribute="top" secondItem="PZo-KO-4G6" secondAttribute="bottom" constant="29" id="7dA-SR-yiW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="GoO-Sq-lhB" firstAttribute="leading" secondItem="nsj-eA-BMt" secondAttribute="leading" id="8J7-T3-UsG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="nsj-eA-BMt" firstAttribute="leading" secondItem="iIs-Sx-nlK" secondAttribute="leading" constant="20" symbolic="YES" id="8NX-iz-JeR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="GoO-Sq-lhB" firstAttribute="top" secondItem="DIZ-DP-3sZ" secondAttribute="bottom" constant="30" id="AC1-q7-mQP"/>
+                            <constraint firstItem="BpV-KF-tCm" firstAttribute="top" secondItem="GoO-Sq-lhB" secondAttribute="bottom" constant="32" id="AXo-Z3-0dM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="DIZ-DP-3sZ" firstAttribute="height" secondItem="nsj-eA-BMt" secondAttribute="height" id="Iqu-5z-AJN"/>
+                            <constraint firstItem="DIZ-DP-3sZ" firstAttribute="leading" secondItem="nsj-eA-BMt" secondAttribute="leading" id="Lip-W7-E8Z"/>
+                            <constraint firstItem="PZo-KO-4G6" firstAttribute="leading" secondItem="iIs-Sx-nlK" secondAttribute="leading" constant="20" id="M7L-OQ-KM9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="DIZ-DP-3sZ" firstAttribute="trailing" secondItem="nsj-eA-BMt" secondAttribute="trailing" id="Od1-F1-Yto"/>
+                            <constraint firstItem="DIZ-DP-3sZ" firstAttribute="top" secondItem="nsj-eA-BMt" secondAttribute="bottom" constant="30" id="PYA-UC-sY9"/>
+                            <constraint firstItem="gkv-Dc-oTJ" firstAttribute="centerX" secondItem="P9k-AT-BPZ" secondAttribute="centerX" id="SKO-XT-ZtB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="5Lr-XT-mHn" firstAttribute="top" secondItem="BpV-KF-tCm" secondAttribute="bottom" constant="8" symbolic="YES" id="Tol-3v-PQM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="gkv-Dc-oTJ" firstAttribute="top" secondItem="iIs-Sx-nlK" secondAttribute="top" constant="182" identifier="topConstraintHeader" id="d8i-Ld-KRt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="nsj-eA-BMt" secondAttribute="trailing" constant="16" id="iQd-be-z8R" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="PZo-KO-4G6" firstAttribute="top" secondItem="gkv-Dc-oTJ" secondAttribute="bottom" constant="73" id="reP-HM-MfM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="GoO-Sq-lhB" firstAttribute="trailing" secondItem="nsj-eA-BMt" secondAttribute="trailing" id="zGx-1r-V4d" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnConfirmPass" destination="GoO-Sq-lhB" id="vPf-7U-9K7"/>
+                        <outlet property="btnGoBack" destination="5Lr-XT-mHn" id="1WQ-92-tVP"/>
+                        <outlet property="btnGoToLogin" destination="hYq-Hy-UfK" id="k5l-bE-4mK"/>
+                        <outlet property="txtConfirrmPass" destination="DIZ-DP-3sZ" id="KSJ-bX-EEE"/>
+                        <outlet property="txtSetNewPass" destination="nsj-eA-BMt" id="P0t-xK-tSH"/>
+                        <outlet property="viewSuccess" destination="MAw-cw-syl" id="DhZ-8v-Bf8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryf-YI-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317.5999999999999" y="102.70935960591133"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="7Eo-e9-oUh">
             <size key="intrinsicContentSize" width="62.333333333333336" height="17"/>
+        </designable>
+        <designable name="DIZ-DP-3sZ">
+            <size key="intrinsicContentSize" width="180" height="18.666666666666668"/>
         </designable>
         <designable name="Dlx-Q0-dRE">
             <size key="intrinsicContentSize" width="34.666666666666664" height="18.666666666666668"/>
@@ -248,13 +452,20 @@
         <designable name="YPq-xk-CwO">
             <size key="intrinsicContentSize" width="34.666666666666664" height="18.666666666666668"/>
         </designable>
+        <designable name="nsj-eA-BMt">
+            <size key="intrinsicContentSize" width="129" height="18.666666666666668"/>
+        </designable>
     </designables>
     <resources>
         <image name="forgetLogo" width="631.66668701171875" height="567.66668701171875"/>
         <image name="loginLogo" width="314" height="264"/>
+        <image name="passwordConfirmed" width="72.333335876464844" height="53.333332061767578"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

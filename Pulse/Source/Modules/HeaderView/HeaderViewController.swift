@@ -101,7 +101,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
             }
             else{
                 if(self._headerView.rightButtonImage != ""){
-                    if self._headerView.rightButtonImage == "menu" {
+                    if self._headerView.rightButtonImage == "menuIcon" {
                         AppRouter.showHideRightMenu()
                     }
                     else{
