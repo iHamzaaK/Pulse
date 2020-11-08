@@ -9,7 +9,7 @@
 import UIKit
 
 enum Storyboards : String{
-    case login = "Login"
+    case auth = "Authentication"
     case signup = "Signup"
     case dashboard = "Dashboard"
     case forgetPassword = "ForgetPassword"

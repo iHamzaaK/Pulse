@@ -104,6 +104,8 @@ extension BaseViewController {
     private func setupBackButtonWithRightOptionsButton(){
         self.createLeftBarButton()
         self.createRightBarButton()
+        _headerView.bgImageContainer?.isHidden = false
+
         
     }
     private func setupBackButtonWithTitle(){
@@ -112,11 +114,11 @@ extension BaseViewController {
     }
     
     private func createLeftBarButton(){
-        _headerView.leftButtonImage = "back"
+        _headerView.leftButtonImage = "backIcon"
  
     }
     private func createRightBarButton(){
-        _headerView.rightButtonImage = "menu"
+        _headerView.rightButtonImage = "menuIcon"
     }
     private func createTitleImage(){
     }

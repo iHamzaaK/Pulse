@@ -19,6 +19,7 @@ PODS:
   - SwiftEntryKit (1.2.3):
     - QuickLayout (= 3.0.0)
   - SwiftyJSON (4.0.0)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.3.0)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - SimpleTwoWayBinding
   - SlideMenuControllerSwift
   - SwiftEntryKit
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
@@ -48,6 +50,7 @@ SPEC REPOS:
     - SlideMenuControllerSwift
     - SwiftEntryKit
     - SwiftyJSON
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 2f5e3fde6b3205a7318f9338e4ec0f373ce7e75c
@@ -63,7 +66,8 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: eba928eaa6f859a032acc4358c9d0f9d79159672
+PODFILE CHECKSUM: 8efae12da3a7ee04a08b29acbbab8a8de9f80cc1
 
 COCOAPODS: 1.10.0

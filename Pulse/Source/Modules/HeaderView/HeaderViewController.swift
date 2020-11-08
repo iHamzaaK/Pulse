@@ -131,7 +131,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
         checkBackFunction(headerView: headerView, openLeftOrRight: .right)
     }
     func configureHeaderViewConstraints(){
-        if (Device.IS_IPHONE_XS_MAX || Device.IS_IPHONE_X){
+        if ( Device.IS_IPHONE_X){
             _headerView.bottomConstraintHeading?.constant = 25  
             _headerView.bottomConstraintTextField?.constant = 15
 

@@ -15,7 +15,7 @@ target 'Pulse' do
   pod 'SlideMenuControllerSwift'
   pod 'RSSelectionMenu'
   pod 'SwiftEntryKit'
-
+  pod 'TextFieldEffects'
   pod 'Alamofire-SwiftyJSON'
   pod 'ActionSheetPicker-3.0', '~> 2.3.0'
   pod 'SwiftEntryKit'

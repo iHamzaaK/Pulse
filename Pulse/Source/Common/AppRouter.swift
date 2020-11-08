@@ -39,41 +39,41 @@ class AppRouter{
     }
     
     static func showHideRightMenu(){
-//        if slideMenu.isRightOpen(){
-//            slideMenu.closeRight()
-//        }
-//        else{
-//            slideMenu.openRight()
-//        }
+        if slideMenu.isRightOpen(){
+            slideMenu.closeRight()
+        }
+        else{
+            slideMenu.openRight()
+        }
     }
     static func logout(){
-//        slideMenu.closeRight()
-//        let loginVC = LoginBuilder.build()
-//        self.navController.viewControllers = [loginVC]
+        slideMenu.closeRight()
+        let loginVC = LoginBuilder.build()
+        self.navController.viewControllers = [loginVC]
 //        ArchiveUtil.deleteSession()
         
     }
     static func goToLogin(){
-//        if slideMenu.isRightOpen(){
-//            slideMenu.closeRight()
-//        }
-//        let loginVC = LoginBuilder.build()
-//        self.navController.viewControllers = [loginVC]
+        if slideMenu.isRightOpen(){
+            slideMenu.closeRight()
+        }
+        let loginVC = LoginBuilder.build()
+        self.navController.viewControllers = [loginVC]
     }
     static func goToSpecificController(vc : UIViewController){
-//        if slideMenu.isRightOpen(){
-//            slideMenu.closeRight()
-//        }
-//        let stackVCs = self.navController.viewControllers
-//
-//        if self.navController.visibleViewController?.restorationIdentifier != vc.restorationIdentifier{
-//            if stackVCs.contains(vc){
-//                self.navController.popToViewController(vc, animated: true)
-//            }
-//            else{
-//            self.navController.pushViewController(vc, animated: true)
-//            }
-//        }
+        if slideMenu.isRightOpen(){
+            slideMenu.closeRight()
+        }
+        let stackVCs = self.navController.viewControllers
+
+        if self.navController.visibleViewController?.restorationIdentifier != vc.restorationIdentifier{
+            if stackVCs.contains(vc){
+                self.navController.popToViewController(vc, animated: true)
+            }
+            else{
+            self.navController.pushViewController(vc, animated: true)
+            }
+        }
         
     }
 //    static func checkSignupStepsAndReroute()->UIViewController?{

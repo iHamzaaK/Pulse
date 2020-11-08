@@ -21,10 +21,14 @@ struct Device {
     
     static let IS_IPHONE_4_OR_LESS = IS_IPHONE && SCREEN_MAX_LENGTH  < 568
     static let IS_IPHONE_5         = IS_IPHONE && SCREEN_MAX_LENGTH == 568
-    static let IS_IPHONE_6         = IS_IPHONE && SCREEN_MAX_LENGTH == 667
+    static let IS_IPHONE_6         = IS_IPHONE && SCREEN_MAX_LENGTH == 667 // 8, SE
     static let IS_IPHONE_6P        = IS_IPHONE && SCREEN_MAX_LENGTH == 736
-     static let IS_IPHONE_X            = IS_IPHONE && SCREEN_MAX_LENGTH == 812 // X, XS, 11 Pro
-     static let IS_IPHONE_XS_MAX         = IS_IPHONE && SCREEN_MAX_LENGTH == 896 // XR, XS Max, 11, 11 Pro Max
+     static let IS_IPHONE_X            = IS_IPHONE && SCREEN_MAX_LENGTH == 812 // X, XS, 12 Mini
+    static let IS_IPHONE_12_MAX         = IS_IPHONE && SCREEN_MAX_LENGTH == 926 // XR, XS Max, 11, 11 Pro Max
+    static let IS_IPHONE_12_PRO         = IS_IPHONE && SCREEN_MAX_LENGTH == 844 // 12 and Pro
+
+
 }
+
 
 

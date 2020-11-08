@@ -105,7 +105,7 @@ class Utilities{
         else if(Device.IS_IPHONE_6P){
             return 70
         }
-        else if (Device.IS_IPHONE_XS_MAX){
+        else if (Device.IS_IPHONE_12_MAX){
             return 90
         }
         else if (Device.IS_IPHONE_X){

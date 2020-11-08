@@ -21,6 +21,10 @@ class SplashViewController: BaseViewController
         navigate()
     }
     func navigate(){
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (_) in
+            let vc = LoginBuilder.build()
+            AppRouter.goToSpecificController(vc: vc)
+        }
 //        self.viewModel.checkUserState { (vc) in
 //            AppRouter.createInitialRoute(vc: vc)
 //        }
