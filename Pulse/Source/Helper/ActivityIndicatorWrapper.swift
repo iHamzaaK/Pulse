@@ -69,7 +69,7 @@ class ActivityIndicator{
    }
    
    //hide spinner
-   public func hideSpinner() {
+    public func hideSpinner() {
       if let window: UIWindow = returnTopWindow(){
 //      MBProgressHUD.hide(for: window, animated: true)//hideAllHUDs(for: window!, animated: true)
 
@@ -83,7 +83,7 @@ class ActivityIndicator{
    }
    
    //return top window
-   func returnTopWindow() -> UIWindow {
+   func returnTopWindow() -> UIWindow? {
       
       let windows: [UIWindow] = UIApplication.shared.windows
       
@@ -92,7 +92,7 @@ class ActivityIndicator{
             return topWindow
          }
       }
-      return UIApplication.shared.windows.first { $0.isKeyWindow }!
+      return UIApplication.shared.windows.first { $0.isKeyWindow }
       
       
    }

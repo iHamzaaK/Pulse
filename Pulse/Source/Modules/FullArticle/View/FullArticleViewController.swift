@@ -19,14 +19,16 @@ class FullArticleViewController: BaseViewController {
     @IBOutlet weak var btnBookmark: BaseUIButton!
     @IBOutlet weak var btnSendComment: UIButton!
     @IBOutlet weak var txtViewArticle: UITextView!
-    @IBOutlet weak var imgViewComment: UIImageView!
-    @IBOutlet weak var widhtConstraintCommentImageView: NSLayoutConstraint!
-    @IBOutlet weak var btnCloseImage: BaseUIButton!
+    @IBOutlet weak var tblViewComments : UITableView!{
+        didSet{
+            tblViewComments.delegate = self
+            tblViewComments.dataSource = self
+            Utilities.registerNib(nibName: "CommentsTableViewCell", identifier: "CommentsTableViewCell", tblView: tblViewComments)
+            Utilities.registerNib(nibName: "SeeAllCommentsTableViewCell", identifier: "SeeAllCommentsTableViewCell", tblView: tblViewComments)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        widhtConstraintCommentImageView.constant = 0
-        imgViewComment.isHidden = true
-        btnCloseImage.isHidden = true
         setupViews()
         // Do any additional setup after loading the view.
     }
@@ -35,5 +37,26 @@ class FullArticleViewController: BaseViewController {
 extension FullArticleViewController{
     private func setupViews(){
         navBarType = self.viewModel.getNavigationBar()
+    }
+}
+
+extension FullArticleViewController : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row != 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsTableViewCell") as! CommentsTableViewCell
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SeeAllCommentsTableViewCell") as! CommentsTableViewCell
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
+            AppRouter.goToSpecificController(vc: CommmentsViewBuilder.build())
+        }
     }
 }

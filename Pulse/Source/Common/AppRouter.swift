@@ -23,7 +23,7 @@ class AppRouter{
         SlideMenuOptions.opacityViewBackgroundColor = .white
         self.window = window
         self.window!.backgroundColor = UIColor.white
-        let vc : UIViewController! =  DashboardBuilder.build()
+        let vc : UIViewController! =  FullArticleBuilder.build()
         self.navController.navigationBar.isHidden = true
         self.navController.viewControllers = [vc]
         let rightVC = RightMenuBuilder.build()

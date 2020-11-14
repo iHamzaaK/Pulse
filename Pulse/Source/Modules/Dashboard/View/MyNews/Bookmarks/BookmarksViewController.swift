@@ -12,10 +12,31 @@ class BookmarksViewController: UIViewController,IndicatorInfoProvider {
         return IndicatorInfo(title: viewModel.headerTitle)
     }
     
-    @IBOutlet weak var btnAddTopic: UIButton!
+    @IBOutlet weak var btnAddTopic: UIButton!{
+        didSet{
+//            btnAddTopic.addTarget(self, action: #selector(self.didTapOnAdd), for: .touchUpInside)
+        }
+    }
     @IBOutlet weak var lblEmptyViewText: UILabel!
     @IBOutlet weak var emptyView: UIView!
-    let dataSize = 0
+    var dataSize = 0 {
+        didSet{
+            if dataSize > 0{
+                emptyView.isHidden = true
+                tblView.isHidden = false
+                self.view.sendSubviewToBack(emptyView)
+//                self.view.bringSubviewToFront(tblView)
+                tblView.reloadData()
+            }
+            else{
+                emptyView.isHidden = false
+                tblView.isHidden = true
+                self.view.sendSubviewToBack(tblView)
+//                self.view.bringSubviewToFront(tblView)
+                
+            }
+        }
+    }
     var viewModel : BookmarkViewModel!
     @IBOutlet weak var tblView : UITableView!{
         didSet{
@@ -28,11 +49,13 @@ class BookmarksViewController: UIViewController,IndicatorInfoProvider {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        showEmptyView()
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func didTapOnAddTopics(_ sender: Any) {
+        dataSize = 10
+    }
+    
 
 }
 extension BookmarksViewController: UITableViewDelegate, UITableViewDataSource{
@@ -40,7 +63,7 @@ extension BookmarksViewController: UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataSize
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopStoriesTableViewCell", for: indexPath) as! TopStoriesTableViewCell
@@ -54,15 +77,9 @@ extension BookmarksViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 extension BookmarksViewController {
-    func showEmptyView(){
-        if dataSize > 0{
-            emptyView.isHidden = true
-            self.view.sendSubviewToBack(emptyView)
-        }
-        else{
-            emptyView.isHidden = false
-            self.view.sendSubviewToBack(tblView)
-        }
+
+    @objc private func didTapOnAdd(){
+        dataSize = 1
     }
 }
 

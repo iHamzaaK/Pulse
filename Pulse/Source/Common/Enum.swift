@@ -19,13 +19,17 @@ enum Storyboards : String{
     case fullArticle = "FullArticle"
     case splash = "Splash"
     case aboutus = "AboutUs"
-
-
+    case comments = "Comments"
+    case videos = "Videos"
+    case quotes = "Quotes"
 
 
 }
 
 enum ViewControllersIdentifier: String{
+    case videos = "VideosViewController"
+    case quotes = "QuotesViewController"
+    case comments = "CommentsViewController"
     case interest = "InterestViewController"
     case bookmark = "BookmarksViewController"
     case categories = "CategoriesViewController"
