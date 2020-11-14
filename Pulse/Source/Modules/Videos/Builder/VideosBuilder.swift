@@ -12,7 +12,7 @@ class VideosBuilder
         let sb = Utilities.getStoryboard(identifier: Storyboards.videos.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.videos.rawValue) as! VideosViewController
         let navBarType = navigationBarTypes.clearNavBar
-        let viewModel = SplashViewModel(navigationType: navBarType)
+        let viewModel = VideosViewModel(navigationType: navBarType)
         vc.viewModel = viewModel
         return vc
     }

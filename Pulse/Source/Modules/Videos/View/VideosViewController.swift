@@ -9,7 +9,7 @@ import UIKit
 
 class VideosViewController: BaseViewController {
     @IBOutlet weak var tblView: UITableView!
-    var viewModel :VideosiewModel!
+    var viewModel :VideosViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
