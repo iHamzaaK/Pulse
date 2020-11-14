@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UITabBarController {
+class DashboardViewController: BaseTabBarViewController {
 
     var viewModel: DashboardViewModel!
     override func viewDidLoad() {
@@ -20,6 +20,7 @@ class DashboardViewController: UITabBarController {
         tabBarView.frame = CGRect(x: 0, y: 0, width: Device.SCREEN_WIDTH, height: 100)
         self.tabBar.addSubview(tabBarView)
         self.tabBar.sendSubviewToBack(tabBarView)
+        navBarType = self.viewModel.getNavigationBar()
         // Do any additional setup after loading the view.
     }
     

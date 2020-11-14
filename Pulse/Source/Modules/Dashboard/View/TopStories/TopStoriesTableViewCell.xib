@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,31 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopStoriesTableViewCell" rowHeight="440" id="KGk-i7-Jjw" customClass="TopStoriesTableViewCell" customModule="Pulse" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="489"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopStoriesTableViewCell" rowHeight="460" id="KGk-i7-Jjw" customClass="TopStoriesTableViewCell" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="489"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuJ-ME-TLa" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
-                        <rect key="frame" x="16.5" y="16.5" width="342" height="456"/>
+                        <rect key="frame" x="16.5" y="16.5" width="342" height="476"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPZ-Fo-ROe">
                                 <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="jWl-ij-9EK"/>
+                                    <constraint firstAttribute="height" constant="200" id="jWl-ij-9EK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWd-dA-hj4" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="10" y="210" width="236" height="20.5"/>
+                                <rect key="frame" x="10" y="210" width="322" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Ug-Ed8">
-                                <rect key="frame" x="10" y="239" width="179.5" height="20"/>
+                                <rect key="frame" x="10" y="242.5" width="179.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-Xd-zXV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="20"/>
@@ -48,7 +47,7 @@
                                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="2" id="2wR-RB-Z7u"/>
-                                            <constraint firstAttribute="height" constant="20" id="vZU-BN-qGJ"/>
+                                            <constraint firstAttribute="height" constant="20" id="vZU-BN-qGJ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business/Trade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfh-Qs-ITn" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
@@ -58,34 +57,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gdr-YL-ghA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Roz-2m-C0y" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
-                                <rect key="frame" x="10" y="267" width="322" height="85"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="tintColor" name="AccentColor"/>
-                                <string key="text">Al contrario di quanto si pensi, Lorem
-Ipsum non è semplicemente sequen und
-quando un anonimo tipografo.Al contrario di quanto si pensi, Lorem
-Ipsum non è semplicemente sequen und
-quando un anonimo tipografo.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldTrim" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumNumberOfLines">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="readLessText" value=".. less"/>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vml-ao-UOs">
-                                <rect key="frame" x="10" y="363" width="322" height="33"/>
+                                <rect key="frame" x="10" y="301" width="322" height="33"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-dq-nAQ" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="33"/>
-                                        <state key="normal" backgroundImage="icon-like"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="87.5" height="22"/>
+                                        <state key="normal" image="icon-like"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sn-As-lYs" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="117.5" y="0.0" width="87" height="33"/>
@@ -97,69 +78,96 @@ quando un anonimo tipografo.</string>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="s46-4Z-4p8"/>
+                                    <constraint firstAttribute="height" constant="33" id="s46-4Z-4p8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-Ot-D2X" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="7" y="406" width="328" height="33"/>
+                                <rect key="frame" x="7" y="344" width="328" height="42"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pG-eD-vAg">
-                                        <rect key="frame" x="6.5" y="10" width="15" height="13.5"/>
+                                        <rect key="frame" x="6.5" y="8.5" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="13.5" id="1MU-Bz-Si0"/>
-                                            <constraint firstAttribute="width" constant="14.800000000000001" id="b0C-2Q-p0x"/>
+                                            <constraint firstAttribute="height" constant="25" id="1MU-Bz-Si0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="width" secondItem="0pG-eD-vAg" secondAttribute="height" multiplier="1:1" id="daL-DD-Iai"/>
                                         </constraints>
                                         <state key="normal" image="Icon"/>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ3-2S-6Cs" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="10" width="244" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twf-Hw-cbg">
-                                        <rect key="frame" x="295.5" y="3.5" width="26" height="26"/>
+                                        <rect key="frame" x="295.5" y="8" width="26" height="26"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="26" id="FAX-am-DeV"/>
+                                            <constraint firstAttribute="width" constant="26" id="FAX-am-DeV" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                             <constraint firstAttribute="width" secondItem="twf-Hw-cbg" secondAttribute="height" multiplier="1:1" id="qhS-85-dSX"/>
                                         </constraints>
                                         <state key="normal" image="send-button"/>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ3-2S-6Cs" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="31.5" y="7.5" width="254" height="18.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="twf-Hw-cbg" secondAttribute="trailing" constant="6.6600000000000001" id="7sS-4Z-Cli"/>
-                                    <constraint firstAttribute="height" constant="33" id="EOT-Vt-uG5"/>
-                                    <constraint firstItem="0pG-eD-vAg" firstAttribute="centerY" secondItem="NDa-Ot-D2X" secondAttribute="centerY" id="HYV-5h-0vN"/>
-                                    <constraint firstItem="twf-Hw-cbg" firstAttribute="centerY" secondItem="NDa-Ot-D2X" secondAttribute="centerY" id="Tm5-iQ-gwi"/>
-                                    <constraint firstItem="0pG-eD-vAg" firstAttribute="leading" secondItem="NDa-Ot-D2X" secondAttribute="leading" constant="6.6600000000000001" id="ZqS-Fi-u2Z"/>
-                                    <constraint firstItem="xZ3-2S-6Cs" firstAttribute="centerY" secondItem="0pG-eD-vAg" secondAttribute="centerY" id="bXp-qn-4xB"/>
-                                    <constraint firstItem="twf-Hw-cbg" firstAttribute="leading" secondItem="xZ3-2S-6Cs" secondAttribute="trailing" constant="10" id="tGp-Ou-tcf"/>
-                                    <constraint firstItem="xZ3-2S-6Cs" firstAttribute="leading" secondItem="0pG-eD-vAg" secondAttribute="trailing" constant="10" id="wkJ-sk-iV0"/>
+                                    <constraint firstItem="twf-Hw-cbg" firstAttribute="centerY" secondItem="xZ3-2S-6Cs" secondAttribute="centerY" id="4it-AV-CId" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="twf-Hw-cbg" secondAttribute="trailing" constant="6.6600000000000001" id="7sS-4Z-Cli" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="xZ3-2S-6Cs" firstAttribute="top" secondItem="NDa-Ot-D2X" secondAttribute="top" constant="10" id="HYO-Hy-YxO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="42" id="Zcn-xe-PeS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="0pG-eD-vAg" firstAttribute="leading" secondItem="NDa-Ot-D2X" secondAttribute="leading" constant="6.6600000000000001" id="ZqS-Fi-u2Z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="xZ3-2S-6Cs" firstAttribute="centerY" secondItem="0pG-eD-vAg" secondAttribute="centerY" id="bXp-qn-4xB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="xZ3-2S-6Cs" secondAttribute="bottom" constant="10" id="ruT-ZX-ez8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="twf-Hw-cbg" firstAttribute="leading" secondItem="xZ3-2S-6Cs" secondAttribute="trailing" constant="10" id="tGp-Ou-tcf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="xZ3-2S-6Cs" firstAttribute="leading" secondItem="0pG-eD-vAg" secondAttribute="trailing" constant="10" id="wkJ-sk-iV0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k4a-GZ-2Zv">
+                                <rect key="frame" x="41" y="393.5" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="lx9-BF-3W7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" secondItem="k4a-GZ-2Zv" secondAttribute="height" multiplier="1:1" id="sPW-Yl-hTc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDT-wZ-KNs" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="96" y="393.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="MBC-hP-wRF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" secondItem="gDT-wZ-KNs" secondAttribute="height" multiplier="1:1" id="kny-54-R0P"/>
+                                </constraints>
+                                <state key="normal" image="cross-icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-zC-Q4D">
+                                <rect key="frame" x="10" y="270.5" width="322" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Vml-ao-UOs" firstAttribute="trailing" secondItem="Roz-2m-C0y" secondAttribute="trailing" id="1XR-yD-TZq"/>
-                            <constraint firstAttribute="trailing" secondItem="bPZ-Fo-ROe" secondAttribute="trailing" id="7lw-Uh-yku"/>
-                            <constraint firstItem="Vml-ao-UOs" firstAttribute="leading" secondItem="Roz-2m-C0y" secondAttribute="leading" id="Dka-Jw-nno"/>
-                            <constraint firstItem="sWd-dA-hj4" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="10" id="F0r-yV-wzj"/>
-                            <constraint firstAttribute="trailing" secondItem="NDa-Ot-D2X" secondAttribute="trailing" constant="6.6600000000000001" id="Fgn-Wj-e6K"/>
-                            <constraint firstItem="NDa-Ot-D2X" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="6.6600000000000001" id="Gmu-DJ-do9"/>
-                            <constraint firstItem="Vml-ao-UOs" firstAttribute="top" secondItem="Roz-2m-C0y" secondAttribute="bottom" constant="11" id="Lyq-Qo-WUF"/>
-                            <constraint firstItem="NDa-Ot-D2X" firstAttribute="top" secondItem="Vml-ao-UOs" secondAttribute="bottom" constant="10" id="NN1-1H-vUe"/>
-                            <constraint firstItem="sWd-dA-hj4" firstAttribute="top" secondItem="bPZ-Fo-ROe" secondAttribute="bottom" constant="10" id="P8B-at-o1c"/>
-                            <constraint firstItem="bPZ-Fo-ROe" firstAttribute="top" secondItem="QuJ-ME-TLa" secondAttribute="top" id="Ym0-hI-bHs"/>
-                            <constraint firstAttribute="bottom" secondItem="NDa-Ot-D2X" secondAttribute="bottom" constant="16.66" id="lkJ-gR-8Aa"/>
-                            <constraint firstItem="lde-Ug-Ed8" firstAttribute="leading" secondItem="sWd-dA-hj4" secondAttribute="leading" id="sbh-1y-dBt"/>
-                            <constraint firstItem="Roz-2m-C0y" firstAttribute="top" secondItem="lde-Ug-Ed8" secondAttribute="bottom" constant="8" symbolic="YES" id="sya-jD-jhu"/>
-                            <constraint firstAttribute="trailing" secondItem="Roz-2m-C0y" secondAttribute="trailing" constant="10" id="tIP-qi-wC4"/>
-                            <constraint firstItem="bPZ-Fo-ROe" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" id="vrT-MR-3zq"/>
-                            <constraint firstItem="Roz-2m-C0y" firstAttribute="leading" secondItem="lde-Ug-Ed8" secondAttribute="leading" id="xNi-zT-QC1"/>
-                            <constraint firstItem="lde-Ug-Ed8" firstAttribute="top" secondItem="sWd-dA-hj4" secondAttribute="bottom" constant="8.5" id="z8N-YK-XMm"/>
+                            <constraint firstAttribute="trailing" secondItem="bPZ-Fo-ROe" secondAttribute="trailing" id="7lw-Uh-yku" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Vml-ao-UOs" firstAttribute="trailing" secondItem="TxI-zC-Q4D" secondAttribute="trailing" id="Bqb-DG-kyY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="sWd-dA-hj4" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="10" id="F0r-yV-wzj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="NDa-Ot-D2X" secondAttribute="trailing" constant="6.6600000000000001" id="Fgn-Wj-e6K" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="k4a-GZ-2Zv" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="41" id="G2c-58-HhO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="sWd-dA-hj4" secondAttribute="trailing" constant="10" id="GDe-B8-to7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="NDa-Ot-D2X" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="6.6600000000000001" id="Gmu-DJ-do9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="NDa-Ot-D2X" firstAttribute="top" secondItem="Vml-ao-UOs" secondAttribute="bottom" constant="10" id="NN1-1H-vUe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="sWd-dA-hj4" firstAttribute="top" secondItem="bPZ-Fo-ROe" secondAttribute="bottom" constant="10" id="P8B-at-o1c" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="TxI-zC-Q4D" firstAttribute="top" secondItem="lde-Ug-Ed8" secondAttribute="bottom" constant="8" symbolic="YES" id="PLM-wV-q9O" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="k4a-GZ-2Zv" secondAttribute="bottom" constant="7.5" id="Smj-wD-M4x" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="gDT-wZ-KNs" firstAttribute="trailing" secondItem="k4a-GZ-2Zv" secondAttribute="trailing" id="VfV-fx-CE8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="bPZ-Fo-ROe" firstAttribute="top" secondItem="QuJ-ME-TLa" secondAttribute="top" id="Ym0-hI-bHs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="k4a-GZ-2Zv" firstAttribute="top" secondItem="NDa-Ot-D2X" secondAttribute="bottom" constant="7.5" id="ZkT-9Q-sZI" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Vml-ao-UOs" firstAttribute="top" secondItem="TxI-zC-Q4D" secondAttribute="bottom" constant="10" id="dXL-n2-Z9m" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="TxI-zC-Q4D" firstAttribute="leading" secondItem="lde-Ug-Ed8" secondAttribute="leading" id="o1d-57-dGu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="TxI-zC-Q4D" secondAttribute="trailing" constant="10" id="qbz-eu-1am" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Vml-ao-UOs" firstAttribute="leading" secondItem="TxI-zC-Q4D" secondAttribute="leading" id="qcv-wC-sgj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="lde-Ug-Ed8" firstAttribute="leading" secondItem="sWd-dA-hj4" secondAttribute="leading" id="sbh-1y-dBt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="bPZ-Fo-ROe" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" id="vrT-MR-3zq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="lde-Ug-Ed8" firstAttribute="top" secondItem="sWd-dA-hj4" secondAttribute="bottom" constant="8.5" id="z8N-YK-XMm" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="gDT-wZ-KNs" firstAttribute="top" secondItem="k4a-GZ-2Zv" secondAttribute="top" id="zIm-tt-yWX" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -184,40 +192,32 @@ quando un anonimo tipografo.</string>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bottomConstraintCommentImage" destination="Smj-wD-M4x" id="guq-PJ-vtm"/>
                 <outlet property="btnAddPhoto" destination="0pG-eD-vAg" id="OFN-Sc-tut"/>
                 <outlet property="btnBookmark" destination="mBQ-y5-H8J" id="a4q-rF-M5K"/>
+                <outlet property="btnDeleteCommentImage" destination="gDT-wZ-KNs" id="IG4-H1-v3e"/>
                 <outlet property="btnLike" destination="uw3-dq-nAQ" id="KD3-Hd-8E2"/>
                 <outlet property="btnSendComment" destination="twf-Hw-cbg" id="rCe-Fr-F30"/>
                 <outlet property="btnShare" destination="3sn-As-lYs" id="SDb-1R-p1N"/>
+                <outlet property="commentImage" destination="k4a-GZ-2Zv" id="JMo-rj-TjV"/>
+                <outlet property="commentView" destination="NDa-Ot-D2X" id="rtU-XZ-ert"/>
+                <outlet property="heightConstraintCommentImage" destination="lx9-BF-3W7" id="dCT-qX-4hz"/>
+                <outlet property="heightConstraintCommentView" destination="Zcn-xe-PeS" id="6hg-Mx-haA"/>
                 <outlet property="lblDate" destination="FKK-Xd-zXV" id="kZR-Rg-iIH"/>
                 <outlet property="lblNewsType" destination="Xfh-Qs-ITn" id="Caw-14-a0s"/>
                 <outlet property="lblTitle" destination="sWd-dA-hj4" id="CgB-YS-Gkc"/>
                 <outlet property="txtComment" destination="xZ3-2S-6Cs" id="4ab-mV-ver"/>
-                <outlet property="txtViewDetail" destination="Roz-2m-C0y" id="Te2-rt-WZp"/>
             </connections>
-            <point key="canvasLocation" x="-50.000000000000007" y="-39.174107142857139"/>
+            <point key="canvasLocation" x="-50.000000000000007" y="-1.0044642857142856"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="Roz-2m-C0y">
-            <size key="intrinsicContentSize" width="-1" height="67"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Icon" width="11.5" height="10.5"/>
+        <image name="cross-icon" width="16" height="16"/>
         <image name="icon-bookmark" width="171" height="55"/>
-        <image name="icon-like" width="170.5" height="55"/>
+        <image name="icon-like" width="11" height="11"/>
         <image name="icon-share" width="171" height="55"/>
         <image name="send-button" width="20.5" height="20.5"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

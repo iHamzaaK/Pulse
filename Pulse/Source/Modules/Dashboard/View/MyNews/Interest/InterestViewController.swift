@@ -1,35 +1,36 @@
 //
-//  TopStoriesViewController.swift
+//  InterestViewController.swift
 //  Pulse
 //
-//  Created by Hamza Khan on 08/11/2020.
+//  Created by Hamza Khan on 11/11/2020.
 //
 
 import UIKit
-import ReadMoreTextView
-class TopStoriesViewController: UIViewController {
-    
-    @IBOutlet weak var viewQuote: UIView!
-    @IBOutlet weak var lblQoute: BaseUILabel!
-    @IBOutlet weak var lblQouteDate: BaseUILabel!
-    var expandedCells = Set<Int>()
-    @IBOutlet weak var tblView: UITableView!{
+
+class InterestViewController: UIViewController,IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: viewModel.headerTitle)
+    }
+    var viewModel : InterestViewModel!
+    @IBOutlet weak var tblView : UITableView!{
         didSet{
-//            tblView.delegate = self
-//            tblView.dataSource = self
+            tblView.delegate = self
+            tblView.dataSource = self
+            tblView.estimatedRowHeight = 100
+            tblView.rowHeight = UITableView.automaticDimension
             Utilities.registerNib(nibName: "TopStoriesTableViewCell", identifier: "TopStoriesTableViewCell", tblView: tblView)
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-//        self.tblView.reloadData()
-    }
-}
 
-extension TopStoriesViewController: UITableViewDelegate, UITableViewDataSource{
+        // Do any additional setup after loading the view.
+    }
+    
+
+
+}
+extension InterestViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -38,11 +39,10 @@ extension TopStoriesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopStoriesTableViewCell", for: indexPath) as! TopStoriesTableViewCell
-        cell.configCell()
+        cell.configCellForInterest()
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        

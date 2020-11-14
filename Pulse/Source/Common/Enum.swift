@@ -16,44 +16,28 @@ enum Storyboards : String{
     case confirmPassword = "ConfirmPassword"
     case rightMenu = "RightMenu"
     case settings = "Settings"
-    case restaurantFinder = "RestaurantFinder"
-    case addressMap = "AddressMap"
-    case favorites = "FavoriteListing"
-    case restaurantDetail = "RestaurantDetails"
-    case map = "Map"
+    case fullArticle = "FullArticle"
     case splash = "Splash"
     case aboutus = "AboutUs"
+
 
 
 
 }
 
 enum ViewControllersIdentifier: String{
+    case interest = "InterestViewController"
+    case bookmark = "BookmarksViewController"
+    case categories = "CategoriesViewController"
+    case fullArticle = "FullArticleViewController"
     case aboutus = "AboutUsViewController"
     case splash = "SplashViewController"
     case login = "LoginViewController"
-    case signupBase = "SignupBaseViewController"
-    case signupPrivate = "SignUpPrivateViewController"
-    case signupCompanyBase = "SignupCompanyBaseViewController"
-    case signupCompanyStepOne = "SignupCompanyStepOneViewController"
-    case signupCompanyStepTwo = "SignupCompanyStepTwoViewController"
-    case signupCompanyStepThree = "SignupCompanyStepThreeViewController"
     case dashboard = "DashboardViewController"
     case forgetPassword = "ForgetPasswordViewController"
     case confirmPassword = "ConfirmPasswordViewController"
     case rightMenu = "RightMenuViewController"
     case settings = "SettingsViewController"
-    case restaurantFinder = "RestaurantFinderViewController"
-    case restaurantDetails = "RestaurantDetailBaseViewController"
-    case map = "MapViewController"
-    case addressMap = "AddressMapViewController"
-    case favorites = "FavoriteListingViewController"
-    case fotos = "FotosViewController"
-    case tips = "TipsViewController"
-    case info = "InfoViewController"
-    case highlights = "HighlightsViewController"
-    case imageViewer = "ImageViewerViewController"
-    case popUp = "PopUpViewController"
 }
 enum LocalizeFiles : String{
     case button = "Button"

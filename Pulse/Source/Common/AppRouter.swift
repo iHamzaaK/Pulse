@@ -23,17 +23,14 @@ class AppRouter{
         SlideMenuOptions.opacityViewBackgroundColor = .white
         self.window = window
         self.window!.backgroundColor = UIColor.white
-      let vc : UIViewController! =  DashboardBuilder.build()
-////      let vc : UIViewController! =  RestaurantDetailBaseBuilder.build(navBarType: .clearNavBar, restaurantId: 1)
-//
-//
-            self.navController.navigationBar.isHidden = true
-            self.navController.viewControllers = [vc]
-            let rightVC = RightMenuBuilder.build()
-            slideMenu = SlideMenuController(mainViewController: self.navController, rightMenuViewController: rightVC)
-            self.window?.rootViewController = slideMenu
-            self.window?.makeKeyAndVisible()
-//
+        let vc : UIViewController! =  DashboardBuilder.build()
+        self.navController.navigationBar.isHidden = true
+        self.navController.viewControllers = [vc]
+        let rightVC = RightMenuBuilder.build()
+        slideMenu = SlideMenuController(mainViewController: self.navController, rightMenuViewController: rightVC)
+        self.window?.rootViewController = slideMenu
+        self.window?.makeKeyAndVisible()
+        //
         
     }
     static func createInitialRoute(vc: UIViewController){
@@ -57,7 +54,7 @@ class AppRouter{
         slideMenu.closeRight()
         let loginVC = LoginBuilder.build()
         self.navController.viewControllers = [loginVC]
-//        ArchiveUtil.deleteSession()
+        //        ArchiveUtil.deleteSession()
         
     }
     static func goToLogin(){
@@ -72,44 +69,44 @@ class AppRouter{
             slideMenu.closeRight()
         }
         let stackVCs = self.navController.viewControllers
-
+        
         if self.navController.visibleViewController?.restorationIdentifier != vc.restorationIdentifier{
             if stackVCs.contains(vc){
                 self.navController.popToViewController(vc, animated: true)
             }
             else{
-            self.navController.pushViewController(vc, animated: true)
+                self.navController.pushViewController(vc, animated: true)
             }
         }
         
     }
-//    static func checkSignupStepsAndReroute()->UIViewController?{
-//        let step = ArchiveUtil.checkSignupStep()
-//        let signupStep = SignUpSteps(rawValue: step)
-//        var vc : UIViewController!
-//        switch signupStep {
-//        case .step1:
-//             vc = SignUpBuilder.buildCompanyStepOne()
-//            return vc
-//        case .step2:
-//            vc = SignUpBuilder.buildCompanyStepTwo()
-//            return vc
-//
-//        case .step3:
-//            vc = SignUpBuilder.buildCompanyStepThree()
-//            return vc
-//        default:
-//            return nil
-//        }
-//    }
-//    static func goToUserDashboard(dashboardData : DashboardRepo){
-//        let dashboardVC = DashboardBuilder.build(dashboardRepo: dashboardData)
-//        self.navController.viewControllers = [dashboardVC]
-//    }
-//    static func goToRestaurantDetail(restaurantId : Int){
-//        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
-//        let vc: UIViewController = RestaurantDetailBaseBuilder.build(navBarType: navBarType, restaurantId: restaurantId)
-//        self.navController.viewControllers = [vc]
-//    }
+    //    static func checkSignupStepsAndReroute()->UIViewController?{
+    //        let step = ArchiveUtil.checkSignupStep()
+    //        let signupStep = SignUpSteps(rawValue: step)
+    //        var vc : UIViewController!
+    //        switch signupStep {
+    //        case .step1:
+    //             vc = SignUpBuilder.buildCompanyStepOne()
+    //            return vc
+    //        case .step2:
+    //            vc = SignUpBuilder.buildCompanyStepTwo()
+    //            return vc
+    //
+    //        case .step3:
+    //            vc = SignUpBuilder.buildCompanyStepThree()
+    //            return vc
+    //        default:
+    //            return nil
+    //        }
+    //    }
+    //    static func goToUserDashboard(dashboardData : DashboardRepo){
+    //        let dashboardVC = DashboardBuilder.build(dashboardRepo: dashboardData)
+    //        self.navController.viewControllers = [dashboardVC]
+    //    }
+    //    static func goToRestaurantDetail(restaurantId : Int){
+    //        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
+    //        let vc: UIViewController = RestaurantDetailBaseBuilder.build(navBarType: navBarType, restaurantId: restaurantId)
+    //        self.navController.viewControllers = [vc]
+    //    }
 }
 
