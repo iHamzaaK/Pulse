@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuotesTableViewCell" rowHeight="216" id="KGk-i7-Jjw" customClass="QuotesTableViewCell" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="low-opacity-qoutes-icon-masked" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-8y-Q67">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="225"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHe-C2-Dv4" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                        <rect key="frame" x="13" y="12" width="309" height="175"/>
+                        <string key="text">Zadipiscing elit, sed do eiusmod
+tempor incididunt ut labor.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="-  by John Slamvich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-pe-CZk" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                        <rect key="frame" x="13" y="193" width="119" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/06/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-wC-UbV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                        <rect key="frame" x="249.5" y="193" width="72.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XYa-wC-UbV" firstAttribute="centerY" secondItem="cqL-pe-CZk" secondAttribute="centerY" id="0ue-eG-AND"/>
+                    <constraint firstAttribute="trailing" secondItem="VHe-C2-Dv4" secondAttribute="trailing" constant="13" id="4kW-1y-pfH"/>
+                    <constraint firstItem="VHe-C2-Dv4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="5lV-cy-eCd"/>
+                    <constraint firstAttribute="bottom" secondItem="cqL-pe-CZk" secondAttribute="bottom" constant="16" id="M7y-Q0-jGq"/>
+                    <constraint firstAttribute="trailing" secondItem="Pge-8y-Q67" secondAttribute="trailing" id="ORC-vr-vAe"/>
+                    <constraint firstItem="Pge-8y-Q67" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hu4-H7-rrD"/>
+                    <constraint firstItem="VHe-C2-Dv4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="jCb-Bs-35c"/>
+                    <constraint firstItem="cqL-pe-CZk" firstAttribute="leading" secondItem="VHe-C2-Dv4" secondAttribute="leading" id="lqw-4J-3Mb"/>
+                    <constraint firstItem="Pge-8y-Q67" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nVV-rY-xES"/>
+                    <constraint firstAttribute="bottom" secondItem="Pge-8y-Q67" secondAttribute="bottom" id="oZR-u7-IOZ"/>
+                    <constraint firstAttribute="trailing" secondItem="XYa-wC-UbV" secondAttribute="trailing" constant="13" id="rPY-FU-Ddu"/>
+                    <constraint firstItem="cqL-pe-CZk" firstAttribute="top" secondItem="VHe-C2-Dv4" secondAttribute="bottom" constant="6" id="x99-xr-dbQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblAuthor" destination="cqL-pe-CZk" id="fYn-T3-DxB"/>
+                <outlet property="lblDate" destination="XYa-wC-UbV" id="BsE-pw-u0L"/>
+                <outlet property="lblQuotes" destination="VHe-C2-Dv4" id="hc4-yp-Lfm"/>
+            </connections>
+            <point key="canvasLocation" x="155.79710144927537" y="73.325892857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="low-opacity-qoutes-icon-masked" width="1005" height="246"/>
+    </resources>
+</document>

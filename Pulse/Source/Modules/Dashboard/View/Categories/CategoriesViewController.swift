@@ -52,6 +52,14 @@ extension CategoriesViewController : UICollectionViewDelegate, UICollectionViewD
             }
                 return CGSize(width: width, height: height)
         }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 8{
+            AppRouter.goToSpecificController(vc: QuotesBuilder.build())
+        }
+        else if indexPath.row == 9{
+            AppRouter.goToSpecificController(vc: VideosBuilder.build())
+        }
+    }
     
     //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     //        return 5.0

@@ -11,7 +11,7 @@ class CommmentsViewBuilder
     static func build()-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.comments.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.comments.rawValue) as! CommentsViewController
-        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
+        let navBarType = navigationBarTypes.clearNavBar
 
         let viewModel = CommentsViewModel(navigationType: navBarType)
         vc.viewModel = viewModel

@@ -30,6 +30,9 @@
                             <constraint firstItem="dB2-5D-KQx" firstAttribute="bottom" secondItem="4hP-Df-ZtO" secondAttribute="bottom" id="nRA-tl-PPS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblView" destination="4hP-Df-ZtO" id="HQ9-ej-P5y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peN-qj-u8p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

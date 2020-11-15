@@ -9,6 +9,13 @@ import UIKit
 
 class CommentsViewController: BaseViewController {
     var viewModel : CommentsViewModel!
+    @IBOutlet weak var lblTitle : BaseUILabel!
+    @IBOutlet weak var btnViewPostButton : BaseUIButton!{
+        didSet{
+            btnViewPostButton.addTarget(self, action: #selector(self.didTapOnViewPost), for: .touchUpInside)
+        }
+    }
+    
     @IBOutlet weak var tblView : UITableView!{
         didSet{
             tblView.delegate = self
@@ -36,5 +43,10 @@ extension CommentsViewController : UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+extension CommentsViewController {
+    @objc private func didTapOnViewPost(){
+        AppRouter.pop()
     }
 }
