@@ -13,12 +13,11 @@ struct RightMenuCellModel{
     var image : String
 }
 enum RightMenuCell : Int{
-    case findRestaurants
-    case aboutus
-    case favorites
+    case write
+    case home
+    case bookmarks
     case settings
-    case d
-    case logout
+    case privacyPolicy
 }
 class RightMenuViewModel{
     private var navBarType : navigationBarTypes!
@@ -27,6 +26,7 @@ class RightMenuViewModel{
     init(navigationType navBar : navigationBarTypes){
         self.navBarType = navBar
         tblCells = [
+            RightMenuCellModel(value: "Write a news/story   ", image: ""),
             RightMenuCellModel(value: "Home", image: ""),
             RightMenuCellModel(value: "Bookmarks", image: ""),
             RightMenuCellModel(value: "Settings", image: ""),
@@ -39,34 +39,28 @@ class RightMenuViewModel{
     func getTableCells()-> [RightMenuCellModel]{
         return tblCells
     }
+    func isEditor()->Bool{
+        return false
+    }
     func didSelectTableCell(row: Int){
         guard let rightCell = RightMenuCell(rawValue: row) else { return }
         switch rightCell {
-        case .findRestaurants:
-//            let category = ArchiveUtil.loadCategories()
-//            guard let categoryFirst = category.first else { return }
-//            guard let id = categoryFirst.id else { return }
-//            let userLocation = ArchiveUtil.getUserLocation()
-//            guard let user = ArchiveUtil.loadUser() else { return }
-//            let adDistance = user.no_of_ads_listing
-//            let vc = RestaurantFinderBuilder.build(categoryId: id, userLat: userLocation.0, userLong: userLocation.1, no_of_ads_listing: adDistance)
-//            AppRouter.goToSpecificController(vc: vc)
-//            let vc = RestaurantFinderBuilder.build()
-//            AppRouter.goToSpecificController(vc: vc)
+        case .write:
+            NotificationCenter.default.post(name: Notification.Name("createPost"), object: nil)
+            AppRouter.showHideRightMenu()
             break
-       
-        case .logout:
-            AppRouter.logout()
+        case .home:
+            AppRouter.goToHomeFromRightMenu()
             break
-        
-        case .aboutus:
-            break
-        case .favorites:
+        case .bookmarks:
             break
         case .settings:
+            AppRouter.goToSpecificController(vc: SettingsBuilder.build())
+
             break
-        case .d:
+        case .privacyPolicy:
             break
+            
         }
     }
     

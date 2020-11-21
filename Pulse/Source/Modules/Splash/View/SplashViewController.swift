@@ -15,7 +15,6 @@ class SplashViewController: BaseViewController
     {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
-        self.view.backgroundColor = .orange
     }
     override func viewDidAppear(_ animated: Bool) {
         navigate()

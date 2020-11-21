@@ -16,48 +16,53 @@ class RightMenuViewController: BaseViewController {
         }
     }
     @IBOutlet weak var btnClose : BaseUIButton!
-    @IBOutlet weak var btnEditProfile : BaseUIButton!
-    
+    @IBOutlet weak var btnEditProfile : BaseUIButton!{
+        didSet{
+            btnEditProfile.addTarget(self, action: #selector(self.didTapOnEditProfile), for: .touchUpInside)
+        }
+    }
+    @IBOutlet weak var btnLogout : BaseUIButton!{
+        didSet{
+            btnLogout.addTarget(self, action: #selector(self.didTapOnLogout), for: .touchUpInside)
+        }
+    }
+    @IBOutlet weak var btnTerms : BaseUIButton!{
+        didSet{
+            btnTerms.addTarget(self, action: #selector(self.didTapOnTerms), for: .touchUpInside)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //        self.view.backgroundColor = Utilities.hexStringToUIColor(hex: "F0F0F0")
         setupView()
     }
     
 }
 extension RightMenuViewController{
     private func setupView(){
-        addBlur()
+        Utilities.addBlur(view: self.view, blurEffect: .systemUltraThinMaterialLight)
         navBarType = self.viewModel.getNavigationBar()
         btnClose.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)
         btnEditProfile.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)      
     }
-    private func addBlur(){
-        self.view.backgroundColor = UIColor.clear
-        
-        //                 Create a blur effect
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterialLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        
-        // Fill the view
-        blurEffectView.frame = view.bounds
-        
-        // Ensure the blur conforms to resizing (not used in a fixed menu UI)
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        // Add the view to the view controller stack
-        view.addSubview(blurEffectView)
-        
-        //                 Ensure the blur view is in the back
-        self.view.sendSubviewToBack(blurEffectView)
-    }
+    
+}
+extension RightMenuViewController{
     @objc func didTapOnClose(){
         AppRouter.showHideRightMenu()
     }
-    @objc func updateLanguage(){
-        self.tblView.reloadData()
+    @objc func didTapOnEditProfile(){
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in
+            AppRouter.goToSpecificController(vc: MyProfileBuilder.build())
+
+        }
+        slideMenu.closeRight()
+
+    }
+    @objc func didTapOnLogout(){
+        AppRouter.logout()
+    }
+    @objc func didTapOnTerms(){
+        AppRouter.goToSpecificController(vc: FullArticleBuilder.build())
     }
 }
 extension RightMenuViewController: UITableViewDelegate, UITableViewDataSource{

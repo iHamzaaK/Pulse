@@ -108,6 +108,9 @@ class TopStoriesTableViewCell: UITableViewCell {
         hideCommentView = true
 
     }
+    func configCellForVideos(){
+        hideCommentView = true
+    }
     @objc private func didTapOnBtnLike(){
         delegate.didTapOnBtnLike()
     }

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,18 +15,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-Df-ZtO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-uF-hA7">
+                                <rect key="frame" x="0.0" y="34" width="414" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qoutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-Au-U4n">
+                                        <rect key="frame" x="20" y="20" width="74.5" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GzS-Au-U4n" firstAttribute="centerY" secondItem="DyF-uF-hA7" secondAttribute="centerY" id="KzV-xp-vEP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="GzS-Au-U4n" firstAttribute="top" secondItem="DyF-uF-hA7" secondAttribute="top" constant="20" id="QKg-iU-ZO2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="68" id="wYR-ef-Zcd"/>
+                                    <constraint firstItem="GzS-Au-U4n" firstAttribute="leading" secondItem="DyF-uF-hA7" secondAttribute="leading" constant="20" id="xEE-HV-34Z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="GzS-Au-U4n" secondAttribute="bottom" constant="20" id="xvO-83-AiT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-Df-ZtO">
+                                <rect key="frame" x="0.0" y="102" width="414" height="794"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dB2-5D-KQx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4hP-Df-ZtO" firstAttribute="leading" secondItem="dB2-5D-KQx" secondAttribute="leading" id="0kr-hK-f1I" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="4hP-Df-ZtO" firstAttribute="top" secondItem="okl-vA-pUO" secondAttribute="top" identifier="topConstraintHeader" id="HRm-dZ-BYZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="dB2-5D-KQx" firstAttribute="trailing" secondItem="4hP-Df-ZtO" secondAttribute="trailing" id="Ob3-Ye-y1j" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="dB2-5D-KQx" firstAttribute="bottom" secondItem="4hP-Df-ZtO" secondAttribute="bottom" id="nRA-tl-PPS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="4hP-Df-ZtO" firstAttribute="leading" secondItem="DyF-uF-hA7" secondAttribute="leading" id="0kr-hK-f1I" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="DyF-uF-hA7" firstAttribute="trailing" secondItem="4hP-Df-ZtO" secondAttribute="trailing" id="Ob3-Ye-y1j" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="4hP-Df-ZtO" firstAttribute="top" secondItem="DyF-uF-hA7" secondAttribute="bottom" id="XdL-GD-mpV" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="DyF-uF-hA7" secondAttribute="trailing" id="fwm-wX-0yF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="4hP-Df-ZtO" secondAttribute="bottom" id="nRA-tl-PPS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="DyF-uF-hA7" firstAttribute="leading" secondItem="okl-vA-pUO" secondAttribute="leading" id="wll-A0-LAT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="DyF-uF-hA7" firstAttribute="top" secondItem="okl-vA-pUO" secondAttribute="top" constant="34" identifier="topConstraintHeader" id="yht-Vc-nKI" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
                     <connections>
@@ -36,12 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peN-qj-u8p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="61"/>
+            <point key="canvasLocation" x="137.68115942028987" y="60.9375"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

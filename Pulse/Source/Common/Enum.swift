@@ -10,7 +10,7 @@ import UIKit
 
 enum Storyboards : String{
     case auth = "Authentication"
-    case signup = "Signup"
+    case myProfile = "MyProfile"
     case dashboard = "Dashboard"
     case forgetPassword = "ForgetPassword"
     case confirmPassword = "ConfirmPassword"
@@ -22,11 +22,12 @@ enum Storyboards : String{
     case comments = "Comments"
     case videos = "Videos"
     case quotes = "Quotes"
-
+    case createPost = "CreatePost"
 
 }
 
 enum ViewControllersIdentifier: String{
+    case createPost = "CreatePostViewController"
     case videos = "VideosViewController"
     case quotes = "QuotesViewController"
     case comments = "CommentsViewController"
@@ -42,6 +43,9 @@ enum ViewControllersIdentifier: String{
     case confirmPassword = "ConfirmPasswordViewController"
     case rightMenu = "RightMenuViewController"
     case settings = "SettingsViewController"
+    case myProfile = "MyProfileViewController"
+
+    
 }
 enum LocalizeFiles : String{
     case button = "Button"

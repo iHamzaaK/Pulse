@@ -10,7 +10,7 @@ import UIKit
 class QuotesViewController: BaseViewController {
     var viewModel : QuotesViewModel!
     @IBOutlet weak var tblView: UITableView!{
-        didSet{
+        didSet{ 
             tblView.delegate = self
             tblView.dataSource = self
             tblView.estimatedRowHeight = 50
@@ -21,6 +21,11 @@ class QuotesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
+       
+        self.view.backgroundColor =  Utilities.hexStringToUIColor(hex: "E5E5FF")
+        self.tblView.backgroundColor =  Utilities.hexStringToUIColor(hex: "E5E5FF")
+        self.tblView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0);
+
 
         // Do any additional setup after loading the view.
     }

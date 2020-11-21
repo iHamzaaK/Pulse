@@ -21,10 +21,15 @@ class DashboardViewController: BaseTabBarViewController {
         self.tabBar.addSubview(tabBarView)
         self.tabBar.sendSubviewToBack(tabBarView)
         navBarType = self.viewModel.getNavigationBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openCreatePost), name: Notification.Name("createPost"), object: nil)
         // Do any additional setup after loading the view.
     }
     
-
+    @objc func openCreatePost(){
+        self.present(CreatePostBuilder.build(), animated: true) {
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

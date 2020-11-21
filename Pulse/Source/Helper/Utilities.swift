@@ -118,6 +118,25 @@ class Utilities{
             return 75
         }
     }
+    static func addBlur(view: UIView, blurEffect: UIBlurEffect.Style){
+        view.backgroundColor = UIColor.clear
+        
+        //                 Create a blur effect
+        let blurEffect = UIBlurEffect(style: blurEffect)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        // Fill the view
+        blurEffectView.frame = view.bounds
+        
+        // Ensure the blur conforms to resizing (not used in a fixed menu UI)
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Add the view to the view controller stack
+        view.addSubview(blurEffectView)
+        
+        //                 Ensure the blur view is in the back
+        view.sendSubviewToBack(blurEffectView)
+    }
 }
 import Kingfisher
 struct ImageProgressIndicator: Indicator {

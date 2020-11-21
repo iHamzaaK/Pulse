@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Post View Controller-->
+        <scene sceneID="nlS-yO-Lhm">
+            <objects>
+                <viewController storyboardIdentifier="CreatePostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Byp-rF-0ei" customClass="CreatePostViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REX-Br-OmD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb4-qA-tOH" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="363" y="60" width="31" height="30"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="0.40014304577464788" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4l3-sk-2WN" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="60" width="16" height="22"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="cross-icon"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="H7A-aI-E3X" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="98" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="JJJ-ga-HQe"/>
+                                    <constraint firstAttribute="width" secondItem="H7A-aI-E3X" secondAttribute="height" multiplier="1:1" id="akC-Qv-bt7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rizwan Saleh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2a-lC-lr0" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="61" y="98" width="85.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-EP-QPF" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="61" y="116" width="100" height="14"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="6iI-n9-Sue"/>
+                                    <constraint firstAttribute="width" constant="100" id="RVs-Am-0ey" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <state key="normal" title="Sharing to: in the app">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8ln-hS-ZuL" customClass="BaseUITextView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="142" width="374" height="644"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="What’s in your mind?"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwt-u4-HcK" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="16" y="811" width="382" height="43"/>
+                                <color key="backgroundColor" red="0.5607843137254902" green="0.35686274509803922" blue="1" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="naA-em-C1V" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <state key="normal" title="Add Photos/Videos" image="cross.case" catalog="system">
+                                    <color key="titleColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V45-ht-dMk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4l3-sk-2WN" firstAttribute="top" secondItem="V45-ht-dMk" secondAttribute="top" constant="16" id="1ed-EU-ViH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Cb4-qA-tOH" firstAttribute="top" secondItem="V45-ht-dMk" secondAttribute="top" constant="16" id="2gB-33-fPR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="oQe-EP-QPF" firstAttribute="leading" secondItem="H7A-aI-E3X" secondAttribute="trailing" constant="8" symbolic="YES" id="53b-aN-das" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="V45-ht-dMk" firstAttribute="bottom" secondItem="vwt-u4-HcK" secondAttribute="bottom" constant="8" id="CwQ-rF-kZb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="V45-ht-dMk" firstAttribute="trailing" secondItem="Cb4-qA-tOH" secondAttribute="trailing" constant="20" id="DYb-cX-bc5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="8ln-hS-ZuL" firstAttribute="leading" secondItem="H7A-aI-E3X" secondAttribute="leading" id="GRs-3a-0eh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="j2a-lC-lr0" firstAttribute="top" secondItem="H7A-aI-E3X" secondAttribute="top" id="H4Y-1P-xty" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="H7A-aI-E3X" firstAttribute="top" secondItem="4l3-sk-2WN" secondAttribute="bottom" constant="16" id="JbE-6c-Sj1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="V45-ht-dMk" firstAttribute="trailing" secondItem="vwt-u4-HcK" secondAttribute="trailing" constant="16" id="Mik-06-oU9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="j2a-lC-lr0" firstAttribute="leading" secondItem="H7A-aI-E3X" secondAttribute="trailing" constant="8" symbolic="YES" id="VJG-vi-eKz" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="vwt-u4-HcK" firstAttribute="top" secondItem="8ln-hS-ZuL" secondAttribute="bottom" constant="25" id="Wo4-d1-bq7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="4l3-sk-2WN" firstAttribute="leading" secondItem="V45-ht-dMk" secondAttribute="leading" constant="20" id="XVI-e4-yjj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="vwt-u4-HcK" firstAttribute="leading" secondItem="V45-ht-dMk" secondAttribute="leading" constant="16" id="gj8-Hd-tBl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="H7A-aI-E3X" firstAttribute="leading" secondItem="V45-ht-dMk" secondAttribute="leading" constant="20" id="l6b-uW-j8m" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="8ln-hS-ZuL" firstAttribute="top" secondItem="H7A-aI-E3X" secondAttribute="bottom" constant="11" id="q3f-kt-YOv" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="V45-ht-dMk" firstAttribute="trailing" secondItem="8ln-hS-ZuL" secondAttribute="trailing" constant="20" id="sLX-ne-zps" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="oQe-EP-QPF" firstAttribute="top" secondItem="j2a-lC-lr0" secondAttribute="bottom" constant="1" id="xuv-37-Z2c" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAddPhoto" destination="vwt-u4-HcK" id="tqX-xO-6hg"/>
+                        <outlet property="btnClose" destination="4l3-sk-2WN" id="dTs-hJ-zlD"/>
+                        <outlet property="btnPost" destination="Cb4-qA-tOH" id="1iQ-Cx-csx"/>
+                        <outlet property="imgDisplay" destination="H7A-aI-E3X" id="xFY-F8-4Wv"/>
+                        <outlet property="lblUserName" destination="j2a-lC-lr0" id="ejt-2q-PMN"/>
+                        <outlet property="txtPost" destination="8ln-hS-ZuL" id="fDD-RG-GOo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SM-FA-zZd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71.014492753623188" y="111.83035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cross-icon" width="16" height="16"/>
+        <image name="cross.case" catalog="system" width="128" height="98"/>
+        <image name="userImage" width="145" height="145"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

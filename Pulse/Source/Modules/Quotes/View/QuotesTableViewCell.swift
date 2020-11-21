@@ -12,9 +12,10 @@ class QuotesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblQuotes : BaseUILabel!
     @IBOutlet weak var lblAuthor : BaseUILabel!
     @IBOutlet weak var lblDate : BaseUILabel!
-
+//    @IBOutlet weak var containerView : BaseUIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.backgroundColor =  Utilities.hexStringToUIColor(hex: "E5E5FF")
         // Initialization code
     }
 

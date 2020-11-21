@@ -53,7 +53,7 @@ class AppRouter{
     static func logout(){
         slideMenu.closeRight()
         let loginVC = LoginBuilder.build()
-        self.navController.viewControllers = [loginVC]
+        self.createInitialRoute(vc: LoginBuilder.build())
         //        ArchiveUtil.deleteSession()
         
     }
@@ -64,10 +64,14 @@ class AppRouter{
         let loginVC = LoginBuilder.build()
         self.navController.viewControllers = [loginVC]
     }
+    static func goToHomeFromRightMenu(){
+        slideMenu.closeRight()
+        self.navController.popToRootViewController(animated: true)
+        
+    }
     static func goToSpecificController(vc : UIViewController){
-        if slideMenu.isRightOpen(){
-            slideMenu.closeRight()
-        }
+        slideMenu.closeRight()
+        
         let stackVCs = self.navController.viewControllers
         
         if self.navController.visibleViewController?.restorationIdentifier != vc.restorationIdentifier{
@@ -80,6 +84,7 @@ class AppRouter{
         }
         
     }
+    
     //    static func checkSignupStepsAndReroute()->UIViewController?{
     //        let step = ArchiveUtil.checkSignupStep()
     //        let signupStep = SignUpSteps(rawValue: step)
