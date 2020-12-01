@@ -14,6 +14,12 @@ class BaseUITextfield : UITextField{
             roundRectTextfieldShape()
         }
     }
+    @IBInspectable
+       var cornerRadius: CGFloat = 0.0 {
+            didSet{
+                self.layer.cornerRadius = cornerRadius
+            }
+        }
     @IBInspectable var leftImage: UIImage? {
         didSet {
             updateView()
@@ -37,6 +43,7 @@ class BaseUITextfield : UITextField{
         if let placeHolderText = self.placeholder{
             self.placeholder = placeHolderText
         }
+        
     }
     
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -49,7 +56,7 @@ class BaseUITextfield : UITextField{
         
         if let image = leftImage ,  leftImage != nil{
             leftViewMode = UITextField.ViewMode.always
-            let imageView = UIImageView(frame: CGRect(x: 6, y: 10, width: 20, height: 20))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 10, width: 20, height: 20))
             imageView.contentMode = .center
             imageView.image = image
             imageView.tintColor = color
@@ -75,9 +82,9 @@ class BaseUITextfield : UITextField{
             rightView = view
         } else {
             rightViewMode = UITextField.ViewMode.always
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 40))
-            view.backgroundColor = .clear
-            rightView = view
+//            let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 40))
+//            view.backgroundColor = .clear
+//            rightView = view
         }
         
         attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: color])

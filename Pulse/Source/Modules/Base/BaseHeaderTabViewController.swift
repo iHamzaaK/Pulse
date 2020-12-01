@@ -124,7 +124,10 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
 
     }
     
-    
+    func headerViewRightSecondaryBtnDidClick(headerView: HeaderView) {
+        
+        
+    }
     func headerViewRightBtnDidClick(headerView: HeaderView) {
         //print("rightButtonClicked")
         checkBackFunction(headerView: headerView, openLeftOrRight: .right)

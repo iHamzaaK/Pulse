@@ -11,8 +11,9 @@ class LoginBuilder{
         let sb = Utilities.getStoryboard(identifier: Storyboards.auth.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.login.rawValue) as! LoginViewController
         let navBarType = navigationBarTypes.clearNavBar
+        let loginRepo = LoginRepositoryImplementation()
 
-        let viewModel = LoginViewModel(navigationType: navBarType)
+        let viewModel = LoginViewModel(navigationType: navBarType, repository: loginRepo)
         vc.viewModel = viewModel
         return vc
     }

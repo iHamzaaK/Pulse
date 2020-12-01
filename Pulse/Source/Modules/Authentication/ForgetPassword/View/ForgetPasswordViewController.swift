@@ -33,6 +33,28 @@ extension ForgetPasswordViewController{
         btnBackToLogin.addTarget(self, action: #selector(self.didTapOnBack), for: .touchUpInside)
 
     }
+    
+    private func setupBinding(){
+        txtEmail.bind(with: self.viewModel.email)
+    }
+    
+    @objc private func didTapOnForgetBtn(sender : BaseUIButton){
+      self.viewModel.resetPassword { (success, serverMsg) in
+         if success{
+        
+            Alert.showAlertWithAutoHide(title: "", message: "A reset link and reset code has been sent to your email address. Follow those steps and reset your password", autoHidetimer: 4, type: .success)
+            self.goToChangePassword()
+         }
+         else{
+            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2, type: .error)
+
+         }
+      }
+    }
+    private func goToChangePassword(){
+        let changePassword = ConfirmPasswordBuilder.build(email: self.viewModel.email.value ?? "")
+        self.navigationController?.pushViewController(changePassword, animated: true)
+    }
 }
 extension ForgetPasswordViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

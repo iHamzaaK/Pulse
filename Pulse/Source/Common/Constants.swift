@@ -33,7 +33,7 @@ let advertiserCellNibName = "AdvertiserTableViewCell"
 let advertiserCellIdentifier = "AdvertiserTableViewCell"
 
 let facebookAppId = "424434681595227"
-let baseURL = "http://212.18.235.81/~halalapp/api/"
+let baseURL = "http://pulse.objectsynergy.com/"
 let googleMapApi = "AIzaSyDBEF_6qFXE0QaPeL5Si-ecKXj2JWjyzC4"
 let deviceName = "ios"
 let deviceUDID = UIDevice.current.identifierForVendor!.uuidString

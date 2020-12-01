@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "like-icon-1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,7 +11,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "like-icon-2.png",
+      "filename" : "like-icon-3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

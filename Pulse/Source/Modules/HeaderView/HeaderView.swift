@@ -12,9 +12,11 @@ import UIKit
 @objc protocol HeaderViewDelegate : class {
     @objc optional func headerViewLeftBtnDidClick(headerView : HeaderView) -> Void
     @objc optional func headerViewRightBtnDidClick(headerView : HeaderView) -> Void
+    @objc optional func headerViewRightSecondaryBtnDidClick(headerView : HeaderView) -> Void
+
     @objc optional func headedrViewSearchTextChanged(str: String)->Void
 }
-public class HeaderView: UIView {
+public class HeaderView: UIView, UITextFieldDelegate {
     weak var delegate: HeaderViewDelegate?
     @IBOutlet weak var leadingConstraintLeftBtn : NSLayoutConstraint?
     @IBOutlet weak var trailingConstraintRightBtn : NSLayoutConstraint?
@@ -25,9 +27,13 @@ public class HeaderView: UIView {
     @IBOutlet weak var imgHeading: UIImageView?
     @IBOutlet weak var btnLeft: UIButton?
     @IBOutlet weak var btnRight: UIButton?
+    @IBOutlet weak var btnRightSecondary: UIButton?
     @IBOutlet weak var searchTextField: BaseUITextfield?{
         didSet{
             searchTextField?.addTarget(self, action: #selector(self.textfieldValueChanged(sender:)), for: .editingChanged)
+            searchTextField?.delegate = self
+            searchTextField?.placeholder = "Search News"
+
         }
     }
 
@@ -52,6 +58,7 @@ public class HeaderView: UIView {
         }
     }
     private var _rightButtonImage : String? = nil
+    private var _rightSecondaryButtonImage : String? = nil
     var rightButtonImage : String? {
                didSet {
                 if (rightButtonImage != nil && (rightButtonImage  == _rightButtonImage))
@@ -69,6 +76,26 @@ public class HeaderView: UIView {
                 }
                 else{
                     self.btnRight?.isHidden = true
+                }
+        }
+    }
+    var rightSecondaryButtonImage : String? {
+               didSet {
+                if (rightSecondaryButtonImage != nil && (rightSecondaryButtonImage  == _rightSecondaryButtonImage))
+                {
+                    return
+                }
+                _rightSecondaryButtonImage = rightSecondaryButtonImage
+                if (_rightSecondaryButtonImage != "")
+                {
+                    self.btnRightSecondary?.isHidden = false
+                    let image = UIImage(named: _rightSecondaryButtonImage!)
+                    
+                    self.btnRightSecondary?.setImage(image, for: .normal)
+                    self.btnRightSecondary?.imageView?.contentMode = .center
+                }
+                else{
+                    self.btnRightSecondary?.isHidden = true
                 }
         }
     }
@@ -128,6 +155,9 @@ public class HeaderView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
     @objc func textfieldValueChanged(sender: BaseUITextfield){
 //        //print(sender.text)
         let value = sender.text ?? ""
@@ -136,7 +166,9 @@ public class HeaderView: UIView {
     @IBAction func leftbuttonClicked(sender: UIButton!) -> Void {
          delegate?.headerViewLeftBtnDidClick?(headerView: self)
     }
-    
+    @IBAction func rightSeconaryButtonClicked(sender: UIButton!) -> Void {
+          delegate?.headerViewRightSecondaryBtnDidClick?(headerView: self)
+    }
     @IBAction func rightbuttonClicked(sender: UIButton!) -> Void {
           delegate?.headerViewRightBtnDidClick?(headerView: self)
     }

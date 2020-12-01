@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +16,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                     <subviews>
                         <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="veW-yp-CNx" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="88" y="38" width="424" height="30"/>
+                            <rect key="frame" x="80" y="32" width="440" height="30"/>
                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="5p1-9I-hmK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -24,10 +24,13 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="NO"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="magnifyingglass" catalog="system"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                     <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -45,8 +48,8 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-KX-vos">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="76"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="76"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="4ic-Wo-weg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 <constraint firstAttribute="width" constant="80" id="9aF-aC-qvo" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -71,9 +74,9 @@
                                 <action selector="leftbuttonClickedWithSender:" destination="AxV-qR-tBn" eventType="touchUpInside" id="pk9-4K-ezr"/>
                             </connections>
                         </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3H-Pa-nht">
-                            <rect key="frame" x="520" y="0.0" width="80" height="76"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3H-Pa-nht">
+                            <rect key="frame" x="528" y="0.0" width="72" height="76"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cCx-o1-roN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 <constraint firstAttribute="width" constant="80" id="jWe-wm-wWa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -99,7 +102,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" placeholderIntrinsicWidth="420" placeholderIntrinsicHeight="22.5" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="MRk-ZW-28g">
-                            <rect key="frame" x="90" y="38.5" width="420" height="22.5"/>
+                            <rect key="frame" x="82" y="38.5" width="436" height="22.5"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,24 +114,55 @@
                                 <constraint firstAttribute="height" constant="1" id="utz-x4-6d6"/>
                             </constraints>
                         </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="right" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-xB-w8X">
+                            <rect key="frame" x="456" y="0.0" width="72" height="76"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="CeI-wQ-NVa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="height" constant="50" id="Tom-ch-pn4" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="width" constant="80" id="xSA-gF-Yhi" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="width" constant="80" id="yow-Cb-94f" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="magnifyingglass" catalog="system">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="CeI-wQ-NVa"/>
+                                    <exclude reference="Tom-ch-pn4"/>
+                                    <exclude reference="xSA-gF-Yhi"/>
+                                    <exclude reference="yow-Cb-94f"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="rightSeconaryButtonClickedWithSender:" destination="AxV-qR-tBn" eventType="touchUpInside" id="kmx-yM-Hgd"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="MRk-ZW-28g" firstAttribute="leading" secondItem="W2f-KX-vos" secondAttribute="trailing" constant="10" id="12g-nw-4Zh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="a3H-Pa-nht" firstAttribute="height" secondItem="W2f-KX-vos" secondAttribute="height" id="3jq-Gf-JNX"/>
-                        <constraint firstItem="W2f-KX-vos" firstAttribute="width" secondItem="nMe-Nk-okW" secondAttribute="width" multiplier="0.1334" id="5DS-p1-ilp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstItem="W2f-KX-vos" firstAttribute="width" secondItem="nMe-Nk-okW" secondAttribute="width" multiplier="0.12" id="5DS-p1-ilp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstAttribute="bottom" secondItem="MRk-ZW-28g" secondAttribute="bottom" constant="15" id="6nV-J5-3tN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="MRk-ZW-28g" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="10" id="976-Yy-EY3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="veW-yp-CNx" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="EfJ-BV-S5U"/>
-                        <constraint firstAttribute="bottom" secondItem="veW-yp-CNx" secondAttribute="bottom" constant="8" id="HnN-yN-w0y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstAttribute="bottom" secondItem="veW-yp-CNx" secondAttribute="bottom" constant="14" id="HnN-yN-w0y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="W2f-KX-vos" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" id="Kes-IG-0xA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstAttribute="trailing" secondItem="0Zg-ZD-PnV" secondAttribute="trailing" id="Nb7-hq-LNq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                        <constraint firstItem="MRk-ZW-28g" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="PbB-UX-nOv" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="bzv-xB-w8X" secondAttribute="trailing" id="PwO-Rb-3vY"/>
+                        <constraint firstItem="bzv-xB-w8X" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="Qjy-BC-PJQ"/>
                         <constraint firstAttribute="bottom" secondItem="a3H-Pa-nht" secondAttribute="bottom" id="TIa-PG-mv9"/>
+                        <constraint firstItem="bzv-xB-w8X" firstAttribute="width" secondItem="a3H-Pa-nht" secondAttribute="width" id="U4I-Lz-0eO"/>
                         <constraint firstItem="a3H-Pa-nht" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="Uup-IK-zKJ"/>
+                        <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="MRk-ZW-28g" secondAttribute="trailing" constant="10" id="Uvz-dR-MYw"/>
                         <constraint firstAttribute="bottom" secondItem="YVZ-P3-FH7" secondAttribute="bottom" constant="8" id="VZ9-pF-NiU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="YVZ-P3-FH7" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="dlz-tJ-oOX"/>
-                        <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="veW-yp-CNx" secondAttribute="trailing" constant="8" id="eH8-tF-ffz"/>
+                        <constraint firstItem="bzv-xB-w8X" firstAttribute="height" secondItem="a3H-Pa-nht" secondAttribute="height" id="ehI-AY-QKK"/>
+                        <constraint firstAttribute="bottom" secondItem="bzv-xB-w8X" secondAttribute="bottom" id="fgt-kl-tdV"/>
                         <constraint firstItem="W2f-KX-vos" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="nH1-K2-j30" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="veW-yp-CNx" firstAttribute="leading" secondItem="W2f-KX-vos" secondAttribute="trailing" constant="8" id="o2k-Kz-0ie"/>
                         <constraint firstItem="0Zg-ZD-PnV" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" id="qMl-OR-nQe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -159,6 +193,7 @@
                 <outlet property="bottomConstraintTextField" destination="HnN-yN-w0y" id="pHp-eX-IC0"/>
                 <outlet property="btnLeft" destination="W2f-KX-vos" id="wLz-yI-X2h"/>
                 <outlet property="btnRight" destination="a3H-Pa-nht" id="EkO-N5-G8Z"/>
+                <outlet property="btnRightSecondary" destination="bzv-xB-w8X" id="ubO-IL-iyi"/>
                 <outlet property="lblHeading" destination="MRk-ZW-28g" id="TTq-Iv-4CW"/>
                 <outlet property="leadingConstraintLeftBtn" destination="Kes-IG-0xA" id="uB0-6d-IPG"/>
                 <outlet property="searchTextField" destination="veW-yp-CNx" id="6eH-ZL-VIB"/>
@@ -169,9 +204,9 @@
         </view>
     </objects>
     <resources>
-        <image name="backIcon" width="16.5" height="12.5"/>
+        <image name="backIcon" width="16" height="12"/>
         <image name="headerLogo" width="136" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="menuIcon" width="54" height="54"/>
+        <image name="menuIcon" width="13.5" height="13.5"/>
     </resources>
 </document>

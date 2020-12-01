@@ -7,12 +7,15 @@
 
 import UIKit
 class ConfirmPasswordBuilder{
-    static func build()-> UIViewController{
+   
+    static func build(email : String)-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.auth.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.confirmPassword.rawValue) as! ConfirmPasswordViewController
-        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
-        let viewModel = ConfirmPasswordViewModel(navigationType: navBarType)
-        vc.viewModel = viewModel
+        let navBarType = navigationBarTypes.backButtonWithRightMenuButton
+        let repository = ConfirmPasswordRepositoryImplementation()
+        let confirmPasswordViewModel = ConfirmPasswordViewModel(navigationType: navBarType, injectRepo: repository, email: email)
+        vc.viewModel = confirmPasswordViewModel
+        
         return vc
     }
 }

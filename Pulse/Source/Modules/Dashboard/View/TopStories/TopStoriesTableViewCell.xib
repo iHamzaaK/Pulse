@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,12 +69,12 @@
                                         <state key="normal" image="icon-like"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sn-As-lYs" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="117.5" y="0.0" width="87" height="33"/>
-                                        <state key="normal" backgroundImage="icon-share"/>
+                                        <rect key="frame" x="117.5" y="5.5" width="87" height="22"/>
+                                        <state key="normal" image="icon-share"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-y5-H8J" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="234.5" y="0.0" width="87.5" height="33"/>
-                                        <state key="normal" backgroundImage="icon-bookmark"/>
+                                        <rect key="frame" x="234.5" y="5.5" width="87.5" height="22"/>
+                                        <state key="normal" image="icon-bookmark"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -90,7 +90,7 @@
                                             <constraint firstAttribute="height" constant="25" id="1MU-Bz-Si0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                             <constraint firstAttribute="width" secondItem="0pG-eD-vAg" secondAttribute="height" multiplier="1:1" id="daL-DD-Iai"/>
                                         </constraints>
-                                        <state key="normal" image="Icon"/>
+                                        <state key="normal" image="edit-icon"/>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ3-2S-6Cs" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="41.5" y="10" width="244" height="22"/>
@@ -182,7 +182,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" red="0.90605407950000005" green="0.92535239459999996" blue="0.93333524469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="QuJ-ME-TLa" secondAttribute="bottom" constant="16.66" id="CQq-fy-wAz"/>
                     <constraint firstItem="QuJ-ME-TLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16.66" id="SAt-j9-nfp"/>
@@ -212,12 +212,12 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Icon" width="11.5" height="10.5"/>
         <image name="cross-icon" width="16" height="16"/>
-        <image name="icon-bookmark" width="171" height="55"/>
+        <image name="edit-icon" width="14" height="14"/>
+        <image name="icon-bookmark" width="11" height="11"/>
         <image name="icon-like" width="11" height="11"/>
-        <image name="icon-share" width="171" height="55"/>
-        <image name="send-button" width="20.5" height="20.5"/>
+        <image name="icon-share" width="11" height="11"/>
+        <image name="send-button" width="20" height="20"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

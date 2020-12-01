@@ -24,7 +24,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
         let nib = UINib(nibName: "HeaderView", bundle: bundle)
         //        let nibF = UINib(nibName: "Footer", bundle: bundle)
         
-        _headerView = nib.instantiate(withOwner: self, options: nil)[0] as! HeaderView
+        _headerView = nib.instantiate(withOwner: self, options: nil)[0] as? HeaderView
         
         _headerView.isOpaque = false
         //        _footerView = nibF.instantiate(withOwner: self, options: nil)[0] as! FooterView

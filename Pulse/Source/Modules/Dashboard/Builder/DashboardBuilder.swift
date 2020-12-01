@@ -11,7 +11,7 @@ class DashboardBuilder{
     static func build()-> UIViewController{
           let sb = Utilities.getStoryboard(identifier: Storyboards.dashboard.rawValue)
           let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.dashboard.rawValue) as! DashboardViewController
-          let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
+          let navBarType = navigationBarTypes.leftRightButtonsWithLogo
           let viewModel = DashboardViewModel(navigationType: navBarType)
           vc.viewModel = viewModel
           
@@ -33,5 +33,9 @@ class DashboardBuilder{
           
           return vc
       }
+    
+    
+    
+    
 }
 

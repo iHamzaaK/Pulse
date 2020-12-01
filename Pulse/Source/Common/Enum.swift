@@ -23,10 +23,12 @@ enum Storyboards : String{
     case videos = "Videos"
     case quotes = "Quotes"
     case createPost = "CreatePost"
+    case search = "Search"
 
 }
 
 enum ViewControllersIdentifier: String{
+    case search = "SearchViewController"
     case createPost = "CreatePostViewController"
     case videos = "VideosViewController"
     case quotes = "QuotesViewController"
@@ -89,7 +91,7 @@ enum KeyboardTypes{
     case phonePad
 }
 enum StatusCode : Int{
-    case success = 1000
+    case success = 200
     case authExpired = 1001
     case error = 1002
 }
@@ -107,8 +109,8 @@ enum ErrorDescription : String {
 }
 
 enum userTypes : String{
-    case customer = "Customer"
-    case restaurant = "Restaurant"
+    case author = "Author"
+    case viewer = "Viewer"
 }
 enum userStatus : String{
     case active = "Active"

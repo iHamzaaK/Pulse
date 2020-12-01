@@ -23,7 +23,7 @@ class AppRouter{
         SlideMenuOptions.opacityViewBackgroundColor = .white
         self.window = window
         self.window!.backgroundColor = UIColor.white
-        let vc : UIViewController! =  DashboardBuilder.build()
+        let vc : UIViewController! =  SplashBuilder.build()
         self.navController.navigationBar.isHidden = true
         self.navController.viewControllers = [vc]
         let rightVC = RightMenuBuilder.build()
@@ -52,7 +52,6 @@ class AppRouter{
     }
     static func logout(){
         slideMenu.closeRight()
-        let loginVC = LoginBuilder.build()
         self.createInitialRoute(vc: LoginBuilder.build())
         //        ArchiveUtil.deleteSession()
         

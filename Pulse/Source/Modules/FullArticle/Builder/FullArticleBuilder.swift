@@ -11,7 +11,7 @@ class FullArticleBuilder
     static func build()-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.fullArticle.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.fullArticle.rawValue) as! FullArticleViewController
-        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
+        let navBarType = navigationBarTypes.backButtonWithRightMenuButton
 
         let viewModel = FullArticleViewModel(navigationType: navBarType)
         vc.viewModel = viewModel

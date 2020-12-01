@@ -11,22 +11,9 @@ import SlideMenuControllerSwift
 
 class BaseTabBarViewController: BaseHeaderTabViewController{
     
-    private var hideLeftButton : Bool = false
-    private var hideRightButton : Bool = false
-    private var hideTitleImage : Bool = false
-    private var hideTitleLabel : Bool = false
-    private var hideTitleSearch : Bool = false
     var navBar = UINavigationBar()
     private var navColor : UIColor = UIColor.clear
-    private lazy var leftBarButton : BaseUIButton = BaseUIButton()
-    private lazy var rightBarButton : BaseUIButton = BaseUIButton()
-    private lazy var lblTitle : UILabel = UILabel()
-    private lazy var searchBarTitle : BaseUITextfield = BaseUITextfield()
-    private lazy var profileButton : BaseUIButton = BaseUIButton()
-    lazy var logoImageView : BaseUIImageView = BaseUIImageView()
     weak var navDelegate : navigationBarButtonProtocols?
-    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-    private var strTitleText = ""
     var navBarType : navigationBarTypes = .backButtonWithTitle{
         didSet{
             setupNavBar()
@@ -39,6 +26,13 @@ class BaseTabBarViewController: BaseHeaderTabViewController{
     }
     override func viewWillAppear(_ animated: Bool) {
         
+    }
+    override func headerViewRightSecondaryBtnDidClick(headerView: HeaderView) {
+        let vc = SearchBuilder.build()
+        vc.modalPresentationStyle = .overCurrentContext
+//        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: false    ) {
+        }
     }
 }
 extension BaseTabBarViewController{
@@ -60,11 +54,14 @@ extension BaseTabBarViewController {
         case .profileWithMenu:
             self.setupProfleWithMenu()
             break
-        case .backButtonWithRightOptionsButton:
+        case .backButtonWithRightMenuButton:
             self.setupBackButtonWithRightOptionsButton()
             break
         case .backButtonWithTitle:
              self.setupBackButtonWithTitle()
+            break
+        case .leftRightButtonsWithLogo:
+            setupleftRightButtonsWithLogo()
             break
         }
     }
@@ -80,7 +77,7 @@ extension BaseTabBarViewController {
     }
     private func setupSearchNavBar(){
         self.createSearchTextField()
-
+        _headerView.leftButtonImage = "cross-icon"
     }
     private func setupProfleWithMenu(){
         self.createRightBarButton()
@@ -98,7 +95,6 @@ extension BaseTabBarViewController {
     }
     private func setupBackButtonWithTitle(){
         self.createLeftBarButton()
-        self.createTitleLabel()
     }
     
     private func createLeftBarButton(){
@@ -108,22 +104,22 @@ extension BaseTabBarViewController {
     private func createRightBarButton(){
         _headerView.rightButtonImage = "menuIcon"
     }
-    private func createTitleImage(){
+    private func setupleftRightButtonsWithLogo(){
+        _headerView.rightSecondaryButtonImage = "seach-1x"
+        createRightBarButton()
+        _headerView.leftButtonImage = "write-a-story-icon-1x"
+        _headerView.bgImageContainer?.isHidden = false
     }
-    private func createTitleLabel(){
-    }
+   
     private func createSearchTextField(){
-        _headerView.searchTextField?.isHidden = false
+        _headerView.searchTextField?.isHidden = true
         _headerView.bgImageContainer?.isHidden = true
-        _headerView.btnRight?.isHidden = false
-        _headerView.rightButtonImage = "menu"
-        _headerView.btnLeft?.isHidden = false
-        _headerView.leftButtonImage = "back"
+//        _headerView.btnLeft?.isHidden = false
     }
     @objc func didEditText(textField : BaseUITextfield){
     }
-    @objc func imageTapped(sender: BaseUIButton){
-    }
+    
+    
     
 }
 
