@@ -11,7 +11,7 @@ import Alamofire_SwiftyJSON
 class LoginRepositoryImplementation: LoginRepository{
     
     
-    private let loginUrl = "wp-json/jwt-auth/v1/token"
+    private let loginUrl = "jwt-auth/v1/token"
     private var isSuccess = false
     private var serverMsg = ""
     

@@ -51,7 +51,7 @@ extension LoginViewController{
     private func setupBinding(){
         txtEmail.bind(with: self.viewModel.email)
         txtPassword.bind(with: self.viewModel.password)
-        self.viewModel.email.value = "afgecom"
+        self.viewModel.email.value = "hamzakhancs15@gmail.com"
         self.viewModel.password.value = "Object12#"
     }
     @objc private func didTapOnLogin(sender : BaseUIButton){

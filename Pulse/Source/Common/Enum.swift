@@ -28,6 +28,7 @@ enum Storyboards : String{
 }
 
 enum ViewControllersIdentifier: String{
+    case otp = "OTPViewController"
     case search = "SearchViewController"
     case createPost = "CreatePostViewController"
     case videos = "VideosViewController"

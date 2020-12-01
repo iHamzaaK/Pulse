@@ -9,7 +9,7 @@ import Foundation
 class ConfirmPasswordRepositoryImplementation : ConfirmPasswordRepository{
     
     
-    private let url = "forgot/password/change"
+    private let url = "wp/v2/sahifa/change-password"
     private var isSuccess = false
     private var serverMsg = ""
     func changeOldPassword(resetCode : String, email : String,password: String, completionHandler: @escaping (Bool, String) -> Void) {
@@ -17,15 +17,16 @@ class ConfirmPasswordRepositoryImplementation : ConfirmPasswordRepository{
             ActivityIndicator.shared.showSpinner(nil,title: nil)
         }
         let params = [
-            "code": resetCode,
+            "otp": resetCode,
             "email": email,
-            "newPassword": password
+            "password": password
         ]
         let headers = [
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         ]
         BaseRepository.instance.requestService(url: url, method: .post, params: params, header: headers) { (success, serverMsg, data) in
+            print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

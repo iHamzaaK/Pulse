@@ -10,7 +10,7 @@ import Foundation
 struct LoginRepo : Decodable {
 
     let code : String?
-    let data : LoginData?
+    var data : LoginData?
     let message : String?
     let statusCode : Int?
     let success : Bool?
@@ -26,12 +26,18 @@ struct LoginRepo : Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         code = try values.decodeIfPresent(String.self, forKey: .code)
-//        data = try LoginData(from: decoder)
-        data = try values.decodeIfPresent(LoginData.self, forKey: .data)  //?? LoginData()
-
         message = try values.decodeIfPresent(String.self, forKey: .message)
-        statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode)
+        statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode)  ??  Int()
         success = try values.decodeIfPresent(Bool.self, forKey: .success)
+        do{
+            data = try values.decodeIfPresent(LoginData.self, forKey: .data)
+        }
+        catch{
+//            let tempData = try values.decodeIfPresent(LoginData.self, forKey: .data)
+
+            data = nil
+        }
+
     }
 
 
@@ -61,13 +67,13 @@ struct LoginData: Decodable {
         }
         init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
-            displayName = try values.decodeIfPresent(String.self, forKey: .displayName)
-            email = try values.decodeIfPresent(String.self, forKey: .email)
-            firstName = try values.decodeIfPresent(String.self, forKey: .firstName)
-            id = try values.decodeIfPresent(Int.self, forKey: .id)
-            lastName = try values.decodeIfPresent(String.self, forKey: .lastName)
-            nicename = try values.decodeIfPresent(String.self, forKey: .nicename)
-            token = try values.decodeIfPresent(String.self, forKey: .token)
+            displayName = try values.decodeIfPresent(String.self, forKey: .displayName) ?? String()
+            email = try values.decodeIfPresent(String.self, forKey: .email) ?? String()
+            firstName = try values.decodeIfPresent(String.self, forKey: .firstName) ?? String()
+            id = try values.decodeIfPresent(Int.self, forKey: .id) ?? Int()
+            lastName = try values.decodeIfPresent(String.self, forKey: .lastName) ?? String()
+            nicename = try values.decodeIfPresent(String.self, forKey: .nicename) ?? String()
+            token = try values.decodeIfPresent(String.self, forKey: .token) ?? String()
         }
 
 

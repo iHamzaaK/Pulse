@@ -12,6 +12,7 @@ PODS:
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - OTPFieldView (1.0.1)
   - QuickLayout (3.0.0)
   - ReadMoreTextView (3.0.1)
   - RSSelectionMenu (7.1.0)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - NVActivityIndicatorView
+  - OTPFieldView
   - ReadMoreTextView
   - RSSelectionMenu
   - SimpleTwoWayBinding
@@ -46,6 +48,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - NVActivityIndicatorView
+    - OTPFieldView
     - QuickLayout
     - ReadMoreTextView
     - RSSelectionMenu
@@ -63,6 +66,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   RSSelectionMenu: df7e43e453c10a48db4b1a03fd1b0d3918d10039
@@ -72,6 +76,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 559eeb36491f76dc3997c45ec739196d01e9310f
+PODFILE CHECKSUM: de23da84993c5cdf7a8bc1aba1b556ae67c93dcd
 
 COCOAPODS: 1.10.0

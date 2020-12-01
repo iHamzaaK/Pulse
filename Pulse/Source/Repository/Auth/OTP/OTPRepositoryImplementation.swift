@@ -10,7 +10,7 @@ import Alamofire
 class OTPRepositoryImplementation : OTPRepository{
     
     
-    private let url = "account/forgot"
+    private let url = "wp/v2/sahifa/forgot_password_verify_otp"
     private var isSuccess = false
     private var serverMsg = ""
     
@@ -20,7 +20,8 @@ class OTPRepositoryImplementation : OTPRepository{
          ActivityIndicator.shared.showSpinner(nil, title: nil)
         }
         let params = [
-            "email": email
+            "email": email,
+            "otp": otp
         ]
         let headers = [
             "Accept": "application/json",

@@ -53,7 +53,7 @@ class AppRouter{
     static func logout(){
         slideMenu.closeRight()
         self.createInitialRoute(vc: LoginBuilder.build())
-        //        ArchiveUtil.deleteSession()
+        ArchiveUtil.deleteSession()
         
     }
     static func goToLogin(){
@@ -84,33 +84,11 @@ class AppRouter{
         
     }
     
-    //    static func checkSignupStepsAndReroute()->UIViewController?{
-    //        let step = ArchiveUtil.checkSignupStep()
-    //        let signupStep = SignUpSteps(rawValue: step)
-    //        var vc : UIViewController!
-    //        switch signupStep {
-    //        case .step1:
-    //             vc = SignUpBuilder.buildCompanyStepOne()
-    //            return vc
-    //        case .step2:
-    //            vc = SignUpBuilder.buildCompanyStepTwo()
-    //            return vc
-    //
-    //        case .step3:
-    //            vc = SignUpBuilder.buildCompanyStepThree()
-    //            return vc
-    //        default:
-    //            return nil
-    //        }
-    //    }
+    
     //    static func goToUserDashboard(dashboardData : DashboardRepo){
     //        let dashboardVC = DashboardBuilder.build(dashboardRepo: dashboardData)
     //        self.navController.viewControllers = [dashboardVC]
     //    }
-    //    static func goToRestaurantDetail(restaurantId : Int){
-    //        let navBarType = navigationBarTypes.backButtonWithRightOptionsButton
-    //        let vc: UIViewController = RestaurantDetailBaseBuilder.build(navBarType: navBarType, restaurantId: restaurantId)
-    //        self.navController.viewControllers = [vc]
-    //    }
+   
 }
 

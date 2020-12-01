@@ -17,32 +17,32 @@ class ForgetPasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupBinding()
     }
 
 }
 extension ForgetPasswordViewController{
-    @objc private func didTapOnNext(){
-        
-    }
+   
     @objc private func didTapOnBack(){
         AppRouter.pop()
     }
     private func setupViews(){
         navBarType = self.viewModel.getNavigationBar()
-        btnNext.addTarget(self, action: #selector(self.didTapOnNext), for: .touchUpInside)
+        btnNext.addTarget(self, action: #selector(self.didTapOnForgetBtn(sender:)), for: .touchUpInside)
         btnBackToLogin.addTarget(self, action: #selector(self.didTapOnBack), for: .touchUpInside)
 
     }
     
     private func setupBinding(){
         txtEmail.bind(with: self.viewModel.email)
+        txtEmail.text = "hamzakhancs15@gmail.com"
     }
     
     @objc private func didTapOnForgetBtn(sender : BaseUIButton){
       self.viewModel.resetPassword { (success, serverMsg) in
          if success{
         
-            Alert.showAlertWithAutoHide(title: "", message: "A reset link and reset code has been sent to your email address. Follow those steps and reset your password", autoHidetimer: 4, type: .success)
+            Alert.showAlertWithAutoHide(title: "", message: "An OTP has been sent. Kindly check your email.", autoHidetimer: 4, type: .success)
             self.goToChangePassword()
          }
          else{
@@ -52,7 +52,7 @@ extension ForgetPasswordViewController{
       }
     }
     private func goToChangePassword(){
-        let changePassword = ConfirmPasswordBuilder.build(email: self.viewModel.email.value ?? "")
+        let changePassword = OTPBuilder.build(email: self.viewModel.email.value ?? "")
         self.navigationController?.pushViewController(changePassword, animated: true)
     }
 }

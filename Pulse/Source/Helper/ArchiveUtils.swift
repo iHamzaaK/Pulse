@@ -31,7 +31,6 @@ class ArchiveUtil {
     }
     static func deleteSession(){
         UserDefaults.standard.removeObject(forKey: userDataKey)
-        UserDefaults.standard.removeObject(forKey: restaurantDataKey)
         UserDefaults.standard.removeObject(forKey: userTypeKey)
     }
     static func saveSession(session: String){

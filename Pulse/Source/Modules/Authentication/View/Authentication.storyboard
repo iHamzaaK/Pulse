@@ -438,6 +438,121 @@ changed your password</string>
             </objects>
             <point key="canvasLocation" x="1317.5999999999999" y="102.70935960591133"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="MgR-Ze-rKa">
+            <objects>
+                <viewController storyboardIdentifier="OTPViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nBX-Ld-Zq9" customClass="OTPViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ofe-FK-nLL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTP" translatesAutoresizingMaskIntoConstraints="NO" id="jBq-Fh-atF">
+                                <rect key="frame" x="82.666666666666686" y="182" width="210" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="YJD-wI-yqb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="189" id="xkQ-Wj-A9c" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW5-1q-sld" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="405" width="335" height="33.666666666666686"/>
+                                <string key="text">We have sent you OTP code on your email to
+verify your account</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWD-6w-zad" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="595.66666666666663" width="335" height="46"/>
+                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="DpJ-qj-nvT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapOnSend:" destination="nBX-Ld-Zq9" eventType="touchUpInside" id="aSx-2i-EZ1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-ho-7o1" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="456.66666666666669" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbN-gX-HBB" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="187.66666666666666" y="496.66666666666669" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.46666666666666667" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23w-6E-Mdc">
+                                <rect key="frame" x="253.33333333333337" y="658.66666666666663" width="52" height="30"/>
+                                <state key="normal" title="Resend"/>
+                                <connections>
+                                    <action selector="resendOtpButn:" destination="nBX-Ld-Zq9" eventType="touchUpInside" id="akJ-Wf-9kh"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-vQ-9cO" customClass="OTPFieldView" customModule="OTPFieldView">
+                                <rect key="frame" x="20" y="519.66666666666663" width="335" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2be-Ye-VK1"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t recieve OTP yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMc-Mq-TAr">
+                                <rect key="frame" x="88.333333333333329" y="664.66666666666663" width="160.66666666666669" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L3Q-bf-2Nb"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GDP-ho-7o1" firstAttribute="leading" secondItem="xW5-1q-sld" secondAttribute="leading" id="0Ry-LG-mE5"/>
+                            <constraint firstItem="xW5-1q-sld" firstAttribute="leading" secondItem="ofe-FK-nLL" secondAttribute="leading" constant="20" id="7IJ-PR-jUB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="6A7-vQ-9cO" secondAttribute="trailing" constant="20" symbolic="YES" id="7Oq-s7-4kE"/>
+                            <constraint firstItem="ZWD-6w-zad" firstAttribute="trailing" secondItem="6A7-vQ-9cO" secondAttribute="trailing" id="A2Y-Eo-Bsn"/>
+                            <constraint firstItem="ZWD-6w-zad" firstAttribute="leading" secondItem="6A7-vQ-9cO" secondAttribute="leading" id="BEj-HZ-SLM"/>
+                            <constraint firstAttribute="trailing" secondItem="xW5-1q-sld" secondAttribute="trailing" constant="20" id="Hlo-ae-WOz" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="jBq-Fh-atF" firstAttribute="centerX" secondItem="L3Q-bf-2Nb" secondAttribute="centerX" id="IwF-eS-5CR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="GDP-ho-7o1" firstAttribute="trailing" secondItem="xW5-1q-sld" secondAttribute="trailing" id="Ljv-3N-pyT"/>
+                            <constraint firstItem="zMc-Mq-TAr" firstAttribute="centerX" secondItem="ZWD-6w-zad" secondAttribute="centerX" multiplier="0.9" id="N2j-J4-RvP"/>
+                            <constraint firstItem="xW5-1q-sld" firstAttribute="top" secondItem="jBq-Fh-atF" secondAttribute="bottom" constant="34" id="O6u-aN-Sdq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="GDP-ho-7o1" firstAttribute="centerX" secondItem="xW5-1q-sld" secondAttribute="centerX" id="Pol-AQ-sFM"/>
+                            <constraint firstItem="6A7-vQ-9cO" firstAttribute="leading" secondItem="ofe-FK-nLL" secondAttribute="leading" constant="20" symbolic="YES" id="TOx-G0-5Jg"/>
+                            <constraint firstItem="6A7-vQ-9cO" firstAttribute="centerX" secondItem="hbN-gX-HBB" secondAttribute="centerX" id="Uqm-1x-FdW"/>
+                            <constraint firstItem="hbN-gX-HBB" firstAttribute="top" secondItem="GDP-ho-7o1" secondAttribute="bottom" constant="23" id="V8p-s7-IIU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="ZWD-6w-zad" firstAttribute="top" secondItem="6A7-vQ-9cO" secondAttribute="bottom" constant="32" id="WyV-TS-6Ej"/>
+                            <constraint firstItem="ZWD-6w-zad" firstAttribute="centerX" secondItem="6A7-vQ-9cO" secondAttribute="centerX" id="X5J-o4-6rv"/>
+                            <constraint firstItem="23w-6E-Mdc" firstAttribute="centerY" secondItem="zMc-Mq-TAr" secondAttribute="centerY" id="YF9-b3-5td"/>
+                            <constraint firstItem="6A7-vQ-9cO" firstAttribute="top" secondItem="hbN-gX-HBB" secondAttribute="bottom" constant="23" id="YJO-22-KIa"/>
+                            <constraint firstItem="jBq-Fh-atF" firstAttribute="top" secondItem="ofe-FK-nLL" secondAttribute="top" constant="182" identifier="topConstraintHeader" id="ch0-np-e1X" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="zMc-Mq-TAr" firstAttribute="top" secondItem="ZWD-6w-zad" secondAttribute="bottom" constant="23" id="fsM-MJ-7f2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="23w-6E-Mdc" firstAttribute="leading" secondItem="zMc-Mq-TAr" secondAttribute="trailing" constant="4.3333333333333428" id="tUn-2j-HZN"/>
+                            <constraint firstItem="GDP-ho-7o1" firstAttribute="top" secondItem="xW5-1q-sld" secondAttribute="bottom" constant="18" id="u0d-XU-zZz" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="hbN-gX-HBB" firstAttribute="centerX" secondItem="GDP-ho-7o1" secondAttribute="centerX" id="xtV-rz-TKI"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="btnResendOTP" destination="23w-6E-Mdc" id="yic-C1-brD"/>
+                        <outlet property="btnSendOTP" destination="ZWD-6w-zad" id="0f3-Ux-reO"/>
+                        <outlet property="lblTimer" destination="hbN-gX-HBB" id="h75-C4-liT"/>
+                        <outlet property="otpTextFieldView" destination="6A7-vQ-9cO" id="TLq-VS-hyV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aK-Tk-2bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="781.77339901477831"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="7Eo-e9-oUh">
@@ -457,6 +572,7 @@ changed your password</string>
         </designable>
     </designables>
     <resources>
+        <image name="OTP" width="210.66667175292969" height="189.33332824707031"/>
         <image name="forgetLogo" width="631.66668701171875" height="567.66668701171875"/>
         <image name="loginLogo" width="314" height="264"/>
         <image name="passwordConfirmed" width="72.333335876464844" height="53.333332061767578"/>

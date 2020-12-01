@@ -103,6 +103,8 @@ extension BaseViewController {
     }
     private func setupBackButtonWithTitle(){
         self.createLeftBarButton()
+        _headerView.bgImageContainer?.isHidden = false
+
     }
     
     private func createLeftBarButton(){

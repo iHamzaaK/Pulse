@@ -10,11 +10,11 @@ import Alamofire
 class ForgetPasswordRepositoryImplementation : ForgetPasswordRepositoryProtocol{
     
     
-    private let url = "account/forgot"
+    private let url = "wp/v2/sahifa/forgot_password_otp"
     private var isSuccess = false
     private var serverMsg = ""
     
-    func resetPassword(email: String,completionHandler: @escaping (Bool, String) -> Void) {
+    func        resetPassword(email: String,completionHandler: @escaping (Bool, String) -> Void) {
         DispatchQueue.main.async{
          ActivityIndicator.shared.showSpinner(nil, title: nil)
         }

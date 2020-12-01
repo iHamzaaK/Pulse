@@ -20,6 +20,8 @@ target 'Pulse' do
   pod 'Alamofire-SwiftyJSON'
   pod 'ActionSheetPicker-3.0', '~> 2.3.0'
   pod 'SwiftEntryKit'
+  pod 'OTPFieldView'
+
   # Pods for Pulse
 
 end

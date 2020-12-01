@@ -15,30 +15,37 @@ class ConfirmPasswordViewModel{
     var password : Observable<String> = Observable()
     var confirmPassword : Observable<String> = Observable()
     private var email : String!
-    var resetCode : Observable<String> = Observable()
+    var resetCode : String!
     var repository : ConfirmPasswordRepository!
-    init(navigationType navBar : navigationBarTypes,  injectRepo repository : ConfirmPasswordRepository, email : String) {
+    init(navigationType navBar : navigationBarTypes,  injectRepo repository : ConfirmPasswordRepository, email : String, otp : String) {
         self.navBarType = navBar
+        self.email = email
+        self.resetCode = otp
+        self.repository = repository
     }
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
     }
-    func validatePassword() throws -> Bool{
+    func validate() throws -> Bool{
         if password.value != confirmPassword.value{
             throw PasswordErrors.invalidPassword
         }
+        else if resetCode == nil { throw textFieldValidationErrors.emptyValue}
         else if !Utilities.isValidPassword(password: password.value ?? "") { throw PasswordErrors.invalidPassword}
         return true
     }
     func changePassword(completionHandler: @escaping(_ isSuccess : Bool , _ serverMsg : String)->Void){
         do{
-            if try self.validatePassword(){
-                self.repository.changeOldPassword(resetCode : resetCode.value ?? "", email: self.email, password: password.value ?? "") { (success, serverMessage) in
+            if try self.validate(){
+                self.repository.changeOldPassword(resetCode : resetCode, email: self.email, password: password.value ?? "") { (success, serverMessage) in
                     completionHandler(success, serverMessage)
                 }
             }
         }
         catch textFieldValidationErrors.invalidValue {
+            completionHandler(false, ErrorDescription.emptyData.rawValue)
+        }
+        catch textFieldValidationErrors.emptyValue {
             completionHandler(false, ErrorDescription.emptyData.rawValue)
         }
         catch PasswordErrors.invalidPassword{

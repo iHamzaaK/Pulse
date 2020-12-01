@@ -22,6 +22,8 @@ class ConfirmPasswordViewController: BaseViewController {
     var isNewPasswordSet = false{
         didSet{
             viewSuccess.isHidden = !isNewPasswordSet
+            self._headerView.isHidden = self.isNewPasswordSet
+
         }
     }
     @IBOutlet weak var btnGoBack: UIButton!
@@ -29,16 +31,28 @@ class ConfirmPasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupBinding()
     }
     
 }
 extension ConfirmPasswordViewController{
+    private func setupBinding(){
+        txtSetNewPass.bind(with: self.viewModel.password)
+        txtConfirrmPass.bind(with: self.viewModel.confirmPassword)
+
+    }
     @objc private func didTapOnNext(){
-        isNewPasswordSet = !isNewPasswordSet
-        _headerView.isHidden = isNewPasswordSet
+        self.viewModel.changePassword { (success, serverMsg) in
+            if success{
+                self.isNewPasswordSet = !self.isNewPasswordSet
+            }
+            else{
+                Alert.showAlertWithAutoHide(title: "Error", message: serverMsg, autoHidetimer: 4.0, type: .error)
+            }
+        }
     }
     @objc private func didTapOnBack(){
-        AppRouter.pop()
+        AppRouter.goToLogin()
     }
     private func setupViews(){
         navBarType = self.viewModel.getNavigationBar()
