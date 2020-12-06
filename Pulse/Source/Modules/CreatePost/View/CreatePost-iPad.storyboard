@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Iwa-bR-ycb">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="16e-VR-DlV" customClass="SettingsViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3X1-YY-IDc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8a-nN-DO9">
+                                <rect key="frame" x="0.0" y="34" width="414" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2V-X5-T3X">
+                                        <rect key="frame" x="20" y="18" width="85" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="x2V-X5-T3X" secondAttribute="bottom" constant="18" id="Voj-Er-z2Z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="x2V-X5-T3X" firstAttribute="centerY" secondItem="W8a-nN-DO9" secondAttribute="centerY" id="aNq-IH-igH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="x2V-X5-T3X" firstAttribute="leading" secondItem="W8a-nN-DO9" secondAttribute="leading" constant="20" id="e2Z-Jk-qvY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="x2V-X5-T3X" firstAttribute="top" secondItem="W8a-nN-DO9" secondAttribute="top" constant="18" id="qYl-o3-KOO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UsW-hg-RHO">
+                                <rect key="frame" x="0.0" y="97.5" width="414" height="798.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsTableViewCell" rowHeight="71" id="yZN-5P-nS8" customClass="SettingsTableViewCell" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yZN-5P-nS8" id="DEN-Ld-eFh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-fK-he6" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="0.0" width="296" height="71"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-yM-dEp">
+                                                    <rect key="frame" x="345" y="24" width="49" height="31"/>
+                                                </switch>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z2-Fg-IX7">
+                                                    <rect key="frame" x="20" y="70" width="394" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="APo-bb-s9I"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="JzP-fK-he6" secondAttribute="bottom" id="5A9-Tt-9Jq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstItem="JzP-fK-he6" firstAttribute="leading" secondItem="DEN-Ld-eFh" secondAttribute="leading" constant="20" symbolic="YES" id="89b-TL-IMJ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Z2-Fg-IX7" secondAttribute="trailing" id="IZC-K9-Kmx"/>
+                                                <constraint firstItem="3I4-yM-dEp" firstAttribute="leading" secondItem="JzP-fK-he6" secondAttribute="trailing" constant="27" id="Nrb-pS-MoW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstItem="6Z2-Fg-IX7" firstAttribute="leading" secondItem="DEN-Ld-eFh" secondAttribute="leading" constant="20" id="O4j-pq-uFf"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Z2-Fg-IX7" secondAttribute="bottom" id="P11-K5-cn9"/>
+                                                <constraint firstItem="3I4-yM-dEp" firstAttribute="centerY" secondItem="JzP-fK-he6" secondAttribute="centerY" id="PIe-M0-pm8"/>
+                                                <constraint firstItem="JzP-fK-he6" firstAttribute="top" secondItem="DEN-Ld-eFh" secondAttribute="top" id="tQB-9h-41d" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstAttribute="trailing" secondItem="3I4-yM-dEp" secondAttribute="trailing" constant="22" id="vxP-Ee-Z0v" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblTitle" destination="JzP-fK-he6" id="hqV-1E-MLG"/>
+                                            <outlet property="onOFFSwitch" destination="3I4-yM-dEp" id="ouI-Zx-Nax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ba1-o6-zDx"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="W8a-nN-DO9" secondAttribute="trailing" id="0pY-6o-olN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="UsW-hg-RHO" secondAttribute="bottom" id="BXY-LT-Bg2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="UsW-hg-RHO" firstAttribute="top" secondItem="W8a-nN-DO9" secondAttribute="bottom" id="OOW-R4-hOg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="W8a-nN-DO9" firstAttribute="top" secondItem="3X1-YY-IDc" secondAttribute="top" constant="34" identifier="topConstraintHeader" id="UUh-hJ-Hhf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="W8a-nN-DO9" firstAttribute="leading" secondItem="3X1-YY-IDc" secondAttribute="leading" id="VYC-lw-T7q" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="UsW-hg-RHO" firstAttribute="leading" secondItem="W8a-nN-DO9" secondAttribute="leading" id="WDm-CW-ywj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="W8a-nN-DO9" firstAttribute="trailing" secondItem="UsW-hg-RHO" secondAttribute="trailing" id="ahf-6I-hue" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="UsW-hg-RHO" id="xMH-AB-DNV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxH-I6-4qj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="60.9375"/>
+        </scene>
+    </scenes>
+</document>

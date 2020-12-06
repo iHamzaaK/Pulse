@@ -52,7 +52,7 @@ extension LoginViewController{
         txtEmail.bind(with: self.viewModel.email)
         txtPassword.bind(with: self.viewModel.password)
         self.viewModel.email.value = "hamzakhancs15@gmail.com"
-        self.viewModel.password.value = "Object12#"
+        self.viewModel.password.value = "Lollol12#"
     }
     @objc private func didTapOnLogin(sender : BaseUIButton){
         do{

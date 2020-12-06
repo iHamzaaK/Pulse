@@ -75,7 +75,7 @@ extension RightMenuViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.viewModel.cellHeight
+        return self.viewModel.getHeightForTableViewRow()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.viewModel.didSelectTableCell(row: indexPath.row)

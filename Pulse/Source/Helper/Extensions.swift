@@ -33,6 +33,7 @@ extension Double {
     return formattedString
   }
 }
+
 extension UIView {
 
     enum UIViewFadeStyle {

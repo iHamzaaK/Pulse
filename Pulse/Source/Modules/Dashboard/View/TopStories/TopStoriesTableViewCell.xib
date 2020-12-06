@@ -28,19 +28,29 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWd-dA-hj4" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="10" y="210" width="322" height="24"/>
+                                <rect key="frame" x="10" y="210" width="322" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Ug-Ed8">
-                                <rect key="frame" x="10" y="242.5" width="179.5" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Ug-Ed8">
+                                <rect key="frame" x="10" y="240.5" width="179.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-Xd-zXV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afV-fk-ZqY">
                                         <rect key="frame" x="75.5" y="0.0" width="2" height="20"/>
@@ -55,11 +65,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Gdr-YL-ghA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Vml-ao-UOs">
                                 <rect key="frame" x="10" y="301" width="322" height="33"/>
@@ -96,6 +108,11 @@
                                         <rect key="frame" x="41.5" y="10" width="244" height="22"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twf-Hw-cbg">
                                         <rect key="frame" x="295.5" y="8" width="26" height="26"/>
@@ -137,11 +154,16 @@
                                 </constraints>
                                 <state key="normal" image="cross-icon"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-zC-Q4D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-zC-Q4D" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="10" y="270.5" width="322" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,7 +177,7 @@
                             <constraint firstItem="NDa-Ot-D2X" firstAttribute="leading" secondItem="QuJ-ME-TLa" secondAttribute="leading" constant="6.6600000000000001" id="Gmu-DJ-do9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="NDa-Ot-D2X" firstAttribute="top" secondItem="Vml-ao-UOs" secondAttribute="bottom" constant="10" id="NN1-1H-vUe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="sWd-dA-hj4" firstAttribute="top" secondItem="bPZ-Fo-ROe" secondAttribute="bottom" constant="10" id="P8B-at-o1c" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="TxI-zC-Q4D" firstAttribute="top" secondItem="lde-Ug-Ed8" secondAttribute="bottom" constant="8" symbolic="YES" id="PLM-wV-q9O" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="TxI-zC-Q4D" firstAttribute="top" secondItem="lde-Ug-Ed8" secondAttribute="bottom" constant="10" id="PLM-wV-q9O" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="bottom" secondItem="k4a-GZ-2Zv" secondAttribute="bottom" constant="7.5" id="Smj-wD-M4x" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="gDT-wZ-KNs" firstAttribute="trailing" secondItem="k4a-GZ-2Zv" secondAttribute="trailing" id="VfV-fx-CE8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="bPZ-Fo-ROe" firstAttribute="top" secondItem="QuJ-ME-TLa" secondAttribute="top" id="Ym0-hI-bHs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -184,10 +206,10 @@
                 </subviews>
                 <color key="backgroundColor" red="0.90605407950000005" green="0.92535239459999996" blue="0.93333524469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="QuJ-ME-TLa" secondAttribute="bottom" constant="16.66" id="CQq-fy-wAz"/>
-                    <constraint firstItem="QuJ-ME-TLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16.66" id="SAt-j9-nfp"/>
-                    <constraint firstAttribute="trailing" secondItem="QuJ-ME-TLa" secondAttribute="trailing" constant="16.66" id="VXn-6y-d2h"/>
-                    <constraint firstItem="QuJ-ME-TLa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16.66" id="fmL-9T-JAm"/>
+                    <constraint firstAttribute="bottom" secondItem="QuJ-ME-TLa" secondAttribute="bottom" constant="16.66" id="CQq-fy-wAz" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="QuJ-ME-TLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16.66" id="SAt-j9-nfp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="QuJ-ME-TLa" secondAttribute="trailing" constant="16.66" id="VXn-6y-d2h" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="QuJ-ME-TLa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16.66" id="fmL-9T-JAm" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -203,9 +225,12 @@
                 <outlet property="commentView" destination="NDa-Ot-D2X" id="rtU-XZ-ert"/>
                 <outlet property="heightConstraintCommentImage" destination="lx9-BF-3W7" id="dCT-qX-4hz"/>
                 <outlet property="heightConstraintCommentView" destination="Zcn-xe-PeS" id="6hg-Mx-haA"/>
+                <outlet property="heightConstraintVideoView" destination="jWl-ij-9EK" id="Kem-ne-PpZ"/>
                 <outlet property="lblDate" destination="FKK-Xd-zXV" id="kZR-Rg-iIH"/>
                 <outlet property="lblNewsType" destination="Xfh-Qs-ITn" id="Caw-14-a0s"/>
                 <outlet property="lblTitle" destination="sWd-dA-hj4" id="CgB-YS-Gkc"/>
+                <outlet property="leadingConstraintContentView" destination="fmL-9T-JAm" id="yhw-rN-g8K"/>
+                <outlet property="trailingConstraintContentView" destination="VXn-6y-d2h" id="lMO-lW-Zoq"/>
                 <outlet property="txtComment" destination="xZ3-2S-6Cs" id="4ab-mV-ver"/>
             </connections>
             <point key="canvasLocation" x="-50.000000000000007" y="-1.0044642857142856"/>

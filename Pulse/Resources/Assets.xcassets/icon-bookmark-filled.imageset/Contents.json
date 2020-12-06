@@ -14,6 +14,16 @@
       "filename" : "filled-bookmark-icon-3x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "filled-bookmark-icon-3x-2.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "filled-bookmark-icon-3x-1.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

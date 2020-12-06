@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class Utilities{
     
     static func hexStringToUIColor (hex:String) -> UIColor {
@@ -32,7 +32,9 @@ class Utilities{
         )
     }
     static func getStoryboard(identifier: String)-> UIStoryboard{
-        return UIStoryboard(name: identifier, bundle: Bundle.main)
+        let storyboardName = identifier + "-" + self.getStoryboardTypeForDeviceType()
+
+        return UIStoryboard(name: storyboardName, bundle: Bundle.main)
     }
     static func registerNib(nibName : String, identifier : String, tblView : UITableView){
         let nib = UINib(nibName: nibName, bundle: Bundle.main)
@@ -115,7 +117,7 @@ class Utilities{
             return 80
         }
         else{
-            return 75
+            return 90
         }
     }
     static func addBlur(view: UIView, blurEffect: UIBlurEffect.Style){
@@ -137,6 +139,69 @@ class Utilities{
         //                 Ensure the blur view is in the back
         view.sendSubviewToBack(blurEffectView)
     }
+    
+    static func getDeviceTypeStr() -> String {
+        if DesignUtility.isIPad{
+            return "iPad"
+        }
+        else{
+            return "iPhone"
+        }
+    }
+    
+    static func getImageFromURL(imgView: UIImageView, url: URL){
+        imgView.kf.indicatorType = .activity
+        imgView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+
+    }
+    static func getStoryboardTypeForDeviceType()->String{
+        let storyboardType = self.getDeviceTypeStr()
+        
+        return storyboardType
+        
+    }
+    static func getImage(str: String)->UIImage?{
+        return UIImage.init(named: str)
+    }
+    static func getAttributedStringForHTMLWithFont(_ htmlStr : String , textSize : Int , fontName : String )->NSAttributedString?
+    {
+        var htmlStr = htmlStr
+        do {
+            if htmlStr .isEmpty{
+                htmlStr = "<p></p>"
+            }
+            let str = "<div style=\"color:#5A5A5A; font-size: \(textSize)px\"><font face=\"\(fontName)\">\(htmlStr)</font></div>"
+            let data : Data = str .data(using: String.Encoding.unicode)!
+            let attributedOptions : [String: Any] = [
+                convertFromNSAttributedStringDocumentAttributeKey(NSAttributedString.DocumentAttributeKey.documentType) : convertFromNSAttributedStringDocumentType(NSAttributedString.DocumentType.html),
+                convertFromNSAttributedStringDocumentAttributeKey(NSAttributedString.DocumentAttributeKey.characterEncoding): String.Encoding.utf8.rawValue
+            ]
+            do {
+                 let attributedStr = try NSAttributedString.init(data: data, options: convertToNSAttributedStringDocumentReadingOptionKeyDictionary(attributedOptions), documentAttributes: nil)
+                return attributedStr
+            } catch {
+                print( error )
+            }
+            return nil
+        }
+        catch {
+            return nil
+        }
+    }
+    static func convertFromNSAttributedStringDocumentAttributeKey(_ input: NSAttributedString.DocumentAttributeKey) -> String {
+        return input.rawValue
+    }
+
+    // Helper function inserted by Swift 4.2 migrator.
+    static func convertFromNSAttributedStringDocumentType(_ input: NSAttributedString.DocumentType) -> String {
+        return input.rawValue
+    }
+
+    // Helper function inserted by Swift 4.2 migrator.
+    static  func convertToNSAttributedStringDocumentReadingOptionKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.DocumentReadingOptionKey: Any] {
+        return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.DocumentReadingOptionKey(rawValue: key), value)})
+    }
+
 }
 import Kingfisher
 struct ImageProgressIndicator: Indicator {

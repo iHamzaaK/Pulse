@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Likes View Controller-->
+        <scene sceneID="GSR-c5-Hku">
+            <objects>
+                <viewController storyboardIdentifier="LikesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IvD-rC-uyj" customClass="LikesViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVW-nt-rKm">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="piH-bw-ER0">
+                                <rect key="frame" x="0.0" y="84.5" width="834" height="1089.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N12-Zh-NDu">
+                                <rect key="frame" x="0.0" y="33" width="834" height="51.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People who liked this" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rct-vf-zQa" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="102" y="10" width="630" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbT-cP-B6A" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="739.5" y="7.5" width="78" height="36.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36.659999999999997" id="tHW-b7-s3c"/>
+                                            <constraint firstAttribute="width" constant="78" id="yH4-0S-tMA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Rct-vf-zQa" firstAttribute="top" secondItem="N12-Zh-NDu" secondAttribute="top" constant="10" id="Dxp-wh-OC0"/>
+                                    <constraint firstItem="JbT-cP-B6A" firstAttribute="centerY" secondItem="Rct-vf-zQa" secondAttribute="centerY" id="H6f-O8-vxG"/>
+                                    <constraint firstAttribute="trailing" secondItem="JbT-cP-B6A" secondAttribute="trailing" constant="16.66" id="HfJ-sI-FWh"/>
+                                    <constraint firstItem="JbT-cP-B6A" firstAttribute="leading" secondItem="Rct-vf-zQa" secondAttribute="trailing" constant="7.5" id="M5x-AD-XqY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rct-vf-zQa" secondAttribute="bottom" constant="10" id="aOH-8Y-6hi"/>
+                                    <constraint firstItem="Rct-vf-zQa" firstAttribute="centerX" secondItem="N12-Zh-NDu" secondAttribute="centerX" id="rOc-ha-rhl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e3s-Iu-cf4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N12-Zh-NDu" firstAttribute="top" secondItem="XVW-nt-rKm" secondAttribute="top" constant="33" id="2Nv-YF-EBw"/>
+                            <constraint firstItem="e3s-Iu-cf4" firstAttribute="bottom" secondItem="piH-bw-ER0" secondAttribute="bottom" id="DDL-e8-spZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="N12-Zh-NDu" firstAttribute="leading" secondItem="XVW-nt-rKm" secondAttribute="leading" id="Hac-cP-VOW"/>
+                            <constraint firstItem="e3s-Iu-cf4" firstAttribute="trailing" secondItem="piH-bw-ER0" secondAttribute="trailing" id="Jnb-Df-FyJ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="N12-Zh-NDu" secondAttribute="trailing" id="RNa-fm-4cH"/>
+                            <constraint firstItem="piH-bw-ER0" firstAttribute="leading" secondItem="e3s-Iu-cf4" secondAttribute="leading" id="Xmd-pp-QtN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="piH-bw-ER0" firstAttribute="top" secondItem="N12-Zh-NDu" secondAttribute="bottom" id="vYP-I3-kJ7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnDone" destination="JbT-cP-B6A" id="qCU-gn-kB2"/>
+                        <outlet property="tblView" destination="piH-bw-ER0" id="jED-W8-HZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ll-Nw-qEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

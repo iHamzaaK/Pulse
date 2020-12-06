@@ -26,6 +26,11 @@ class TopStoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblNewsType: BaseUILabel!
     @IBOutlet weak var lblDate: BaseUILabel!
     @IBOutlet weak var lblTitle: BaseUILabel!
+    @IBOutlet weak var leadingConstraintContentView: BaseLayoutConstraint!
+    @IBOutlet weak var heightConstraintVideoView: BaseLayoutConstraint!
+    
+    @IBOutlet weak var trailingConstraintContentView: BaseLayoutConstraint!
+
     @IBOutlet weak var bottomConstraintCommentImage: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintCommentImage: NSLayoutConstraint!
     @IBOutlet weak var txtViewDetail: UITextView!
@@ -88,6 +93,13 @@ class TopStoriesTableViewCell: UITableViewCell {
         heightConstraintCommentImage.constant = 0
         bottomConstraintCommentImage.constant = 0
         btnDeleteCommentImage.isHidden = true
+        if DesignUtility.isIPad{
+            self.leadingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+            self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+            self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
+            self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
+
+        }
       
     }
     

@@ -14,6 +14,18 @@ class BookmarksViewController: UIViewController,IndicatorInfoProvider {
     
     @IBOutlet weak var btnAddTopic: UIButton!{
         didSet{
+            let str = "+ Add topics to create your own personal news feed"
+            let range = (str as NSString).range(of: "+ Add topics")
+            let attribute = NSMutableAttributedString.init(string: str)
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: Utilities.hexStringToUIColor(hex:"000000"), range: NSMakeRange(0, str.count))
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: Utilities.hexStringToUIColor(hex:"009ed4"), range: range)
+
+            let style = NSMutableParagraphStyle()
+            style.alignment = NSTextAlignment.center
+
+            attribute.addAttribute(.paragraphStyle, value: style, range: NSMakeRange(0, str.count))
+            btnAddTopic.setAttributedTitle(attribute, for: .normal)
+//            myLabel.attributedText = attributedText
 //            btnAddTopic.addTarget(self, action: #selector(self.didTapOnAdd), for: .touchUpInside)
         }
     }

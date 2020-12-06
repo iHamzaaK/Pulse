@@ -24,10 +24,14 @@ enum Storyboards : String{
     case quotes = "Quotes"
     case createPost = "CreatePost"
     case search = "Search"
+    case likes = "Likes"
+    case articleListing = "ArticleListing"
 
 }
 
 enum ViewControllersIdentifier: String{
+    case articleListing = "ArticleListingViewController"
+    case likes = "LikesViewController"
     case otp = "OTPViewController"
     case search = "SearchViewController"
     case createPost = "CreatePostViewController"
@@ -47,7 +51,8 @@ enum ViewControllersIdentifier: String{
     case rightMenu = "RightMenuViewController"
     case settings = "SettingsViewController"
     case myProfile = "MyProfileViewController"
-
+    case topStories = "TopStoriesViewController"
+    case myNews = "MyNewsViewController"
     
 }
 enum LocalizeFiles : String{
@@ -62,6 +67,13 @@ enum Gender : Int{
     case male
 }
 
+enum articleListingType : Int{
+    case topStories = 1
+    case myNews
+    case categories
+    case bookmarks
+    case interest
+}
 enum CellTypes{
     case dropDown
     case textField

@@ -12,6 +12,7 @@ class DashboardViewController: BaseTabBarViewController {
     var viewModel: DashboardViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         _headerView.bgColorVar = "cc"   
 //        self.tabBar.backgroundImage = UIImage()
 //        self.tabBar.shadowImage = UIImage()
@@ -29,11 +30,16 @@ class DashboardViewController: BaseTabBarViewController {
         self.tabBar.barStyle = .black
         self.tabBar.layer.cornerRadius = 20
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        createViewControllers()
 
         navBarType = self.viewModel.getNavigationBar()
         NotificationCenter.default.addObserver(self, selector: #selector(self.openCreatePost), name: Notification.Name("createPost"), object: nil)
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = 0
     }
     
     @objc func openCreatePost(){
@@ -43,6 +49,28 @@ class DashboardViewController: BaseTabBarViewController {
     }
     override func headedrViewSearchTextChanged(str: String) {
         print(str)
+    }
+    func createViewControllers(){
+        let topStoriesVC = ArticleListingBuilder.build(title: "Top Stories", type: .topStories, categoryId: nil)
+        topStoriesVC.tabBarItem = UITabBarItem(title: "Top Stories", image: Utilities.getImage(str: "outlined-Logo-1"), selectedImage: Utilities.getImage(str: "filled-top-stories-logo"))
+        let categoriesVC = DashboardBuilder.CategoriesBuilder()
+        categoriesVC.tabBarItem = UITabBarItem(title: "Categories", image: Utilities.getImage(str: "outlined-categories-icon-1"), selectedImage: Utilities.getImage(str: "filled-categories-icon-"))
+        
+        let myNews = DashboardBuilder.MyNewsBuilder()//ArticleListingBuilder.build(title: "My News", type: .myNews, categoryId: nil)
+        myNews.tabBarItem = UITabBarItem(title: "My News", image: Utilities.getImage(str: "outlined-my-news-icon-1"), selectedImage: Utilities.getImage(str: "filled-my-news-icon"))
+
+        
+        let navigationController1 = UINavigationController(rootViewController: topStoriesVC)
+        navigationController1.setNavigationBarHidden(true, animated: false)
+        let navigationController2 = UINavigationController(rootViewController: myNews)
+        navigationController2.setNavigationBarHidden(true, animated: false)
+        let navigationController3 = UINavigationController(rootViewController: categoriesVC)
+        navigationController3.setNavigationBarHidden(true, animated: false)
+
+        self.viewControllers = [navigationController1, navigationController2,navigationController3]
+//
+
+
     }
     /*
     // MARK: - Navigation
@@ -54,4 +82,12 @@ class DashboardViewController: BaseTabBarViewController {
     }
     */
 
+}
+extension DashboardViewController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+    }
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
+    }
 }

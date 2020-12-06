@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +20,7 @@
                         <rect key="frame" x="9" y="10" width="26" height="26"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ISu-qj-132" secondAttribute="height" multiplier="1:1" id="OF9-Yf-dZg"/>
-                            <constraint firstAttribute="width" constant="26" id="TNw-Da-UDu"/>
+                            <constraint firstAttribute="width" constant="26" id="TNw-Da-UDu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
@@ -32,6 +31,11 @@
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                <real key="value" value="27"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC7-ge-8Gc" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
                         <rect key="frame" x="148" y="15.5" width="5" height="5"/>
@@ -44,46 +48,61 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN8-9O-LJJ">
-                        <rect key="frame" x="45" y="34.5" width="270" height="47.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN8-9O-LJJ" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                        <rect key="frame" x="45" y="38" width="270" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JR-eo-dm6" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="270" height="47.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JR-eo-dm6" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="4" y="4" width="262" height="32"/>
                                 <string key="text">Labelv Label Label Label Label Label Label Label LabelLabelv Label Label Label Label Label Label Label LabelLabelv Label Label Label Label Label Label Label LabelLabelv Label Label Label Label Label Label Label Label</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1JR-eo-dm6" firstAttribute="top" secondItem="sN8-9O-LJJ" secondAttribute="top" id="9fM-fT-CNf"/>
-                            <constraint firstAttribute="bottom" secondItem="1JR-eo-dm6" secondAttribute="bottom" id="C5K-EL-1L1"/>
-                            <constraint firstAttribute="trailing" secondItem="1JR-eo-dm6" secondAttribute="trailing" id="YpQ-HS-H3s"/>
-                            <constraint firstItem="1JR-eo-dm6" firstAttribute="leading" secondItem="sN8-9O-LJJ" secondAttribute="leading" id="Z3r-9G-8LL"/>
+                            <constraint firstItem="1JR-eo-dm6" firstAttribute="top" secondItem="sN8-9O-LJJ" secondAttribute="top" constant="4" id="9fM-fT-CNf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="1JR-eo-dm6" secondAttribute="bottom" constant="4" id="C5K-EL-1L1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="1JR-eo-dm6" secondAttribute="trailing" constant="4" id="YpQ-HS-H3s" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="1JR-eo-dm6" firstAttribute="leading" secondItem="sN8-9O-LJJ" secondAttribute="leading" constant="4" id="Z3r-9G-8LL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" text="4h ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpZ-yh-XMB" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                        <rect key="frame" x="157" y="10" width="147" height="14.5"/>
+                        <rect key="frame" x="157" y="11" width="147" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                <real key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="sN8-9O-LJJ" secondAttribute="trailing" constant="5" id="2rH-UA-T70"/>
-                    <constraint firstItem="bpZ-yh-XMB" firstAttribute="leading" secondItem="rC7-ge-8Gc" secondAttribute="trailing" constant="4" id="3pp-EU-qMN"/>
-                    <constraint firstItem="ISu-qj-132" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6hy-8Y-9jI"/>
-                    <constraint firstItem="rC7-ge-8Gc" firstAttribute="leading" secondItem="Ce2-3Z-sDM" secondAttribute="trailing" constant="5" id="G5u-kU-efD"/>
-                    <constraint firstItem="ISu-qj-132" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="UJQ-5g-RbX"/>
-                    <constraint firstItem="rC7-ge-8Gc" firstAttribute="centerY" secondItem="Ce2-3Z-sDM" secondAttribute="centerY" id="Xif-cb-BwA"/>
-                    <constraint firstAttribute="bottom" secondItem="sN8-9O-LJJ" secondAttribute="bottom" constant="8" id="ZoP-7M-ksH"/>
-                    <constraint firstItem="bpZ-yh-XMB" firstAttribute="top" secondItem="Ce2-3Z-sDM" secondAttribute="top" id="eVK-Ek-17H"/>
-                    <constraint firstAttribute="trailing" secondItem="bpZ-yh-XMB" secondAttribute="trailing" constant="16" id="gSv-0A-jBC"/>
-                    <constraint firstItem="Ce2-3Z-sDM" firstAttribute="top" secondItem="ISu-qj-132" secondAttribute="top" id="h6u-5q-cgO"/>
-                    <constraint firstItem="Ce2-3Z-sDM" firstAttribute="leading" secondItem="ISu-qj-132" secondAttribute="trailing" constant="10" id="iFd-3P-je7"/>
-                    <constraint firstItem="sN8-9O-LJJ" firstAttribute="leading" secondItem="Ce2-3Z-sDM" secondAttribute="leading" id="kvG-mi-8rR"/>
-                    <constraint firstItem="sN8-9O-LJJ" firstAttribute="top" secondItem="Ce2-3Z-sDM" secondAttribute="bottom" constant="8.5" id="wNj-tK-HFu"/>
+                    <constraint firstAttribute="trailing" secondItem="sN8-9O-LJJ" secondAttribute="trailing" constant="5" id="2rH-UA-T70" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="bpZ-yh-XMB" firstAttribute="leading" secondItem="rC7-ge-8Gc" secondAttribute="trailing" constant="4" id="3pp-EU-qMN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="ISu-qj-132" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6hy-8Y-9jI" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="rC7-ge-8Gc" firstAttribute="leading" secondItem="Ce2-3Z-sDM" secondAttribute="trailing" constant="5" id="G5u-kU-efD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="bpZ-yh-XMB" firstAttribute="centerY" secondItem="Ce2-3Z-sDM" secondAttribute="centerY" id="LML-Ub-uAP"/>
+                    <constraint firstItem="ISu-qj-132" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="UJQ-5g-RbX" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="rC7-ge-8Gc" firstAttribute="centerY" secondItem="Ce2-3Z-sDM" secondAttribute="centerY" id="Xif-cb-BwA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="bottom" secondItem="sN8-9O-LJJ" secondAttribute="bottom" constant="12" id="ZoP-7M-ksH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="bpZ-yh-XMB" secondAttribute="trailing" constant="16" id="gSv-0A-jBC" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="Ce2-3Z-sDM" firstAttribute="top" secondItem="ISu-qj-132" secondAttribute="top" id="h6u-5q-cgO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="Ce2-3Z-sDM" firstAttribute="leading" secondItem="ISu-qj-132" secondAttribute="trailing" constant="10" id="iFd-3P-je7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="sN8-9O-LJJ" firstAttribute="leading" secondItem="Ce2-3Z-sDM" secondAttribute="leading" id="kvG-mi-8rR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="sN8-9O-LJJ" firstAttribute="top" secondItem="Ce2-3Z-sDM" secondAttribute="bottom" constant="12" id="wNj-tK-HFu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -92,14 +111,12 @@
                 <outlet property="lblComment" destination="1JR-eo-dm6" id="kqk-Wd-tQM"/>
                 <outlet property="lblTime" destination="bpZ-yh-XMB" id="gX5-qa-6Nr"/>
                 <outlet property="lblUsername" destination="Ce2-3Z-sDM" id="j4V-Di-74U"/>
+                <outlet property="widthConstraintImageView" destination="TNw-Da-UDu" id="eMf-6c-syA"/>
             </connections>
             <point key="canvasLocation" x="155.07246376811597" y="131.25"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="userImage" width="145" height="145"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

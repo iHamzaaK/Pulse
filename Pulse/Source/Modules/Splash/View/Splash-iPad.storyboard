@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="2K3-SQ-YVp">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wY2-37-R8K" customClass="SplashViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ty-PZ-Vfx">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-splash" translatesAutoresizingMaskIntoConstraints="NO" id="aAI-X5-NoP">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pp3-yQ-qHP">
+                                <rect key="frame" x="283" y="136" width="268" height="149.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0J4-vM-CRZ"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pp3-yQ-qHP" firstAttribute="centerX" secondItem="0J4-vM-CRZ" secondAttribute="centerX" id="0Wg-cy-hpM"/>
+                            <constraint firstItem="aAI-X5-NoP" firstAttribute="leading" secondItem="1ty-PZ-Vfx" secondAttribute="leading" id="979-fk-LE2"/>
+                            <constraint firstItem="aAI-X5-NoP" firstAttribute="bottom" secondItem="1ty-PZ-Vfx" secondAttribute="bottom" id="FYy-cx-Ghi"/>
+                            <constraint firstItem="pp3-yQ-qHP" firstAttribute="top" secondItem="1ty-PZ-Vfx" secondAttribute="top" constant="136" id="R6t-0T-mai"/>
+                            <constraint firstItem="aAI-X5-NoP" firstAttribute="top" secondItem="1ty-PZ-Vfx" secondAttribute="top" id="TLa-Jp-i16"/>
+                            <constraint firstItem="pp3-yQ-qHP" firstAttribute="height" secondItem="1ty-PZ-Vfx" secondAttribute="height" multiplier="0.125" id="jQG-bX-rxi"/>
+                            <constraint firstAttribute="trailing" secondItem="aAI-X5-NoP" secondAttribute="trailing" id="ohF-cm-SBV"/>
+                            <constraint firstItem="pp3-yQ-qHP" firstAttribute="width" secondItem="1ty-PZ-Vfx" secondAttribute="width" multiplier="0.321256" id="xTR-N3-6Ka"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="834" height="1194"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKB-wE-iXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="-48"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg-splash" width="281.5" height="609"/>
+        <image name="white-logo" width="100" height="84"/>
+    </resources>
+</document>

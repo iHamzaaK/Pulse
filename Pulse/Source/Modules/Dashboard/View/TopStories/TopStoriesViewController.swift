@@ -8,7 +8,7 @@
 import UIKit
 import ReadMoreTextView
 class TopStoriesViewController: UIViewController {
-    
+    var viewModel : TopStoriesViewModel!
     @IBOutlet weak var viewQuote: UIView!
     @IBOutlet weak var lblQoute: BaseUILabel!
     @IBOutlet weak var lblQouteDate: BaseUILabel!
@@ -18,6 +18,7 @@ class TopStoriesViewController: UIViewController {
 //            tblView.delegate = self
 //            tblView.dataSource = self
             Utilities.registerNib(nibName: "TopStoriesTableViewCell", identifier: "TopStoriesTableViewCell", tblView: tblView)
+            
         }
     }
     

@@ -8,14 +8,13 @@
 import UIKit
 
 class MyNewsViewController: SegmentedPagerTabStripViewController {
-    
+    var viewModel : MyNewsViewModel!
     var isReload = false
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         // change segmented style
         settings.style.segmentedControlColor = .white
-        
-
     }
     
     
@@ -24,7 +23,7 @@ class MyNewsViewController: SegmentedPagerTabStripViewController {
         
 
         guard isReload else {
-            return [DashboardBuilder.InterestBuild(), DashboardBuilder.BookmarkBuild()]
+            return [ArticleListingBuilder.build(title: "Interests", type: .interest, categoryId: nil), ArticleListingBuilder.build(title: "Bookmarks", type: .interest, categoryId: nil)]
         }
 
         var childViewControllers =  [DashboardBuilder.InterestBuild(), DashboardBuilder.BookmarkBuild()]

@@ -14,7 +14,7 @@ open class BaseLayoutConstraint: NSLayoutConstraint {
     override open func awakeFromNib() {
         
         super.awakeFromNib();
-        self.constant = DesignUtility.convertToRatio(constant, sizedForIPad: false, sizedForNavi:false)
+        self.constant = DesignUtility.convertToRatio(constant, sizedForIPad: DesignUtility.isIPad, sizedForNavi:false)
         
         if self.identifier == "topConstraintHeader"{
             self.constant = Utilities.getHeaderHeight()

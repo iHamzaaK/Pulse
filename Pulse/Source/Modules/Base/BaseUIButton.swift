@@ -10,7 +10,9 @@ import UIKit
 class BaseUIButton: UIButton {
     
    
-    
+    @IBInspectable  var nibFontForIPhone : CGFloat = 0.0
+    @IBInspectable  var nibFontForIPad : CGFloat = 0.0
+
     @IBInspectable var isRoundRect : Bool = false{
         didSet{
             
@@ -54,7 +56,17 @@ class BaseUIButton: UIButton {
         self.isSelected = false
         if let title = self.titleLabel?.text{
             self.setTitle(title, for: .normal)
+            var fontSize = self.titleLabel!.font.pointSize
+            if nibFontForIPad != 0.0 && DesignUtility.isIPad{
+                fontSize = nibFontForIPad
+            }
+            else if nibFontForIPhone != 0.0 && !DesignUtility.isIPad{
+                fontSize = nibFontForIPhone
+            }
+            let font = UIFont.systemFont(ofSize: DesignUtility.getFontSize(fSize: fontSize))
+            self.titleLabel!.font = font
         }
+       
     }
     override func layoutSubviews() {
         super.layoutSubviews()

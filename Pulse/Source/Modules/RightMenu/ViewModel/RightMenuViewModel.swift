@@ -22,7 +22,7 @@ enum RightMenuCell : Int{
 class RightMenuViewModel{
     private var navBarType : navigationBarTypes!
     private var tblCells = [RightMenuCellModel]()
-    var cellHeight : CGFloat = DesignUtility.convertToRatio(40, sizedForIPad: false, sizedForNavi: false)
+    var cellHeight : CGFloat = 0.0
     init(navigationType navBar : navigationBarTypes){
         self.navBarType = navBar
         tblCells = [
@@ -62,6 +62,14 @@ class RightMenuViewModel{
             break
             
         }
+    }
+    func getHeightForTableViewRow()->CGFloat{
+        var height : CGFloat = 40
+        if DesignUtility.isIPad{
+            height = 50
+        }
+        cellHeight = DesignUtility.convertToRatio(height, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+        return cellHeight
     }
     
 }

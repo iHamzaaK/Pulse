@@ -43,8 +43,22 @@ class BaseUITextfield : UITextField{
         if let placeHolderText = self.placeholder{
             self.placeholder = placeHolderText
         }
+        var fontSize = self.font!.pointSize
+
+        if nibFontForIPad != 0.0 && DesignUtility.isIPad{
+            fontSize = nibFontForIPad
+        }
+        else if nibFontForIPhone != 0.0 && !DesignUtility.isIPad{
+            fontSize = nibFontForIPhone
+        }
+        let modifiedFontSize = DesignUtility.getFontSize(fSize: fontSize)
+        
+        let font = UIFont.systemFont(ofSize: modifiedFontSize)
+        self.font = font
         
     }
+    @IBInspectable  var nibFontForIPhone : CGFloat = 0.0
+    @IBInspectable  var nibFontForIPad : CGFloat = 0.0
     
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)

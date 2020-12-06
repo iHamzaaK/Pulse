@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Likes View Controller-->
+        <scene sceneID="98U-lN-A0O">
+            <objects>
+                <viewController storyboardIdentifier="LikesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4jp-xw-KTa" customClass="LikesViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ia-59-wXb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XSo-zH-RBU">
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApB-3l-Gas">
+                                <rect key="frame" x="0.0" y="33" width="414" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People who liked this" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGo-It-Pvv">
+                                        <rect key="frame" x="102" y="10" width="210" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmP-Ch-bZ0" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="319.5" y="2" width="78" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="78" id="s5R-Ow-wAC"/>
+                                            <constraint firstAttribute="height" constant="36.659999999999997" id="yV2-Rv-FhP"/>
+                                        </constraints>
+                                        <state key="normal" title="Done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="FmP-Ch-bZ0" firstAttribute="centerY" secondItem="IGo-It-Pvv" secondAttribute="centerY" id="LHi-nP-dHa"/>
+                                    <constraint firstAttribute="trailing" secondItem="FmP-Ch-bZ0" secondAttribute="trailing" constant="16.66" id="O3g-Kh-ygI"/>
+                                    <constraint firstAttribute="bottom" secondItem="IGo-It-Pvv" secondAttribute="bottom" constant="10" id="WDj-hH-jAm"/>
+                                    <constraint firstItem="IGo-It-Pvv" firstAttribute="centerX" secondItem="ApB-3l-Gas" secondAttribute="centerX" id="bY9-nK-uAR"/>
+                                    <constraint firstItem="FmP-Ch-bZ0" firstAttribute="leading" secondItem="IGo-It-Pvv" secondAttribute="trailing" constant="7.5" id="btO-R5-XJZ"/>
+                                    <constraint firstItem="IGo-It-Pvv" firstAttribute="top" secondItem="ApB-3l-Gas" secondAttribute="top" constant="10" id="ogl-CJ-84K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s1g-tn-KOw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s1g-tn-KOw" firstAttribute="trailing" secondItem="XSo-zH-RBU" secondAttribute="trailing" id="2rk-dG-Qq6" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="XSo-zH-RBU" firstAttribute="leading" secondItem="s1g-tn-KOw" secondAttribute="leading" id="844-jv-z6P" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="XSo-zH-RBU" firstAttribute="top" secondItem="ApB-3l-Gas" secondAttribute="bottom" id="FH4-G4-GKh"/>
+                            <constraint firstItem="s1g-tn-KOw" firstAttribute="bottom" secondItem="XSo-zH-RBU" secondAttribute="bottom" id="Kco-0I-qkg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="ApB-3l-Gas" firstAttribute="leading" secondItem="1Ia-59-wXb" secondAttribute="leading" id="Soa-h8-hSV"/>
+                            <constraint firstAttribute="trailing" secondItem="ApB-3l-Gas" secondAttribute="trailing" id="tKk-Er-Jw7"/>
+                            <constraint firstItem="ApB-3l-Gas" firstAttribute="top" secondItem="1Ia-59-wXb" secondAttribute="top" constant="33" id="ytl-Kh-FcJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnDone" destination="FmP-Ch-bZ0" id="KdF-Hj-F02"/>
+                        <outlet property="tblView" destination="XSo-zH-RBU" id="2Tu-YC-JXj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLK-eC-6WN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

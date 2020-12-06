@@ -2,18 +2,28 @@
   "images" : [
     {
       "filename" : "seach-1x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
       "filename" : "search-2x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
       "filename" : "search-3x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "search-3x-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "search-3x-2.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

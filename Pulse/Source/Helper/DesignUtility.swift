@@ -22,7 +22,7 @@ public class DesignUtility: NSObject {
     @nonobjc static let deviceRatioIphone:CGFloat =
         (UIScreen.main.bounds.height > 736.0 ? 667.0 : UIScreen.main.bounds.height ) / 736.0;
     
-    @nonobjc static let deviceRatioIpad:CGFloat = UIScreen.main.bounds.height / 1366.0;
+    @nonobjc static let deviceRatioIpad:CGFloat = UIScreen.main.bounds.height / 1194;
     
     
     public class func getValueFromRatio(_ value:CGFloat) ->CGFloat
@@ -89,6 +89,7 @@ public class DesignUtility: NSObject {
         return self.convertToRatio(value, sizedForIPad: false, sizedForNavi:true);
     }
     
+    
     public class func convertToRatio(_ value:CGFloat, sizedForIPad:Bool = false, sizedForNavi:Bool = false) -> CGFloat {
         
         if (DesignUtility.isIPad && !sizedForIPad) {
@@ -98,8 +99,11 @@ public class DesignUtility: NSObject {
             return value * DesignUtility.deviceRatioWN; // With Navigation
         }
         
-        
-        return value * DesignUtility.deviceRatio;
+        var ratio = DesignUtility.deviceRatio
+        if sizedForIPad{
+            ratio = DesignUtility.deviceRatioIpad
+        }
+        return value * ratio;
     }
     
     public class func convertPointToRatio(_ value:CGPoint, sizedForIPad:Bool = false) -> CGPoint {

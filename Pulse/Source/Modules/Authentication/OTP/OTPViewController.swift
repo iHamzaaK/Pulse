@@ -38,8 +38,8 @@ class OTPViewController: BaseViewController {
         self.otpTextFieldView.filledBorderColor = UIColor.black
         self.otpTextFieldView.cursorColor = UIColor.lightGray
         self.otpTextFieldView.displayType = .underlinedBottom
-        self.otpTextFieldView.fieldSize = 34
-        self.otpTextFieldView.separatorSpace = 8
+        self.otpTextFieldView.fieldSize = DesignUtility.getFontSize(fSize: 34)
+        self.otpTextFieldView.separatorSpace = 24//DesignUtility.getFontSize(fSize: 8)
         self.otpTextFieldView.shouldAllowIntermediateEditing = false
         self.otpTextFieldView.delegate = self
         self.otpTextFieldView.initializeUI()
@@ -85,7 +85,6 @@ extension OTPViewController {
             self.viewModel.otpProcess { (success, serverMsg) in
                 if success{
                     AppRouter.goToSpecificController(vc: ConfirmPasswordBuilder.build(email: self.viewModel.userEmail, otp: self.viewModel.otp))
-                    
                     self.otpTimer?.invalidate()
                     self.otpTimer = nil
                 }

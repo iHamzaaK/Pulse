@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ArticleListingTableViewCell" rowHeight="460" id="zhe-SR-6Em" customClass="ArticleListingTableViewCell" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zhe-SR-6Em" id="a5Y-PJ-5nB">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="509"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o06-NR-PTt" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                        <rect key="frame" x="16.5" y="16.5" width="342" height="476"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bc-7g-XaZ">
+                                <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-uI-NFb" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Fch-uI-NFb" secondAttribute="bottom" id="3am-0B-8jp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fch-uI-NFb" secondAttribute="trailing" id="Cug-Lf-hb0"/>
+                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="N3n-sc-OSU"/>
+                                    <constraint firstAttribute="height" constant="200" id="mZa-r1-dQN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="qSY-PP-0Of"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b55-lR-QZs" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="10" y="210" width="322" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-Kf-5Rc">
+                                <rect key="frame" x="10" y="240.5" width="179.5" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-p6-wvu" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cx-C7-Ts1">
+                                        <rect key="frame" x="75.5" y="0.0" width="2" height="20"/>
+                                        <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="Ngl-FY-hRk"/>
+                                            <constraint firstAttribute="height" constant="20" id="mkz-6N-M4h" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business/Trade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYr-Az-uXS" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="86.5" y="0.0" width="93" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vuS-VF-Ct4">
+                                <rect key="frame" x="10" y="301" width="322" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cic-kj-SzY" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5.5" width="87.5" height="22"/>
+                                        <state key="normal" image="icon-like"/>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-no-9iO" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="117.5" y="5.5" width="87" height="22"/>
+                                        <state key="normal" image="icon-share"/>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wz-bi-34f" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="234.5" y="5.5" width="87.5" height="22"/>
+                                        <state key="normal" image="icon-bookmark"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="ECp-8q-Z5V" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </stackView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-1E-cWa" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="7" y="344" width="328" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-zK-oAp">
+                                        <rect key="frame" x="6.5" y="8.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="1qW-0U-L4v" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="width" secondItem="aTp-zK-oAp" secondAttribute="height" multiplier="1:1" id="yCc-3w-k24"/>
+                                        </constraints>
+                                        <state key="normal" image="edit-icon"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpR-mG-FAk" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="41.5" y="10" width="244" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-EP-kuS">
+                                        <rect key="frame" x="295.5" y="8" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="0qB-LS-FoD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="width" secondItem="2e7-EP-kuS" secondAttribute="height" multiplier="1:1" id="fOF-wN-cuM"/>
+                                        </constraints>
+                                        <state key="normal" image="send-button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="4iG-uj-N1P" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="PpR-mG-FAk" firstAttribute="centerY" secondItem="aTp-zK-oAp" secondAttribute="centerY" id="D91-G0-yxu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="aTp-zK-oAp" firstAttribute="leading" secondItem="Pf0-1E-cWa" secondAttribute="leading" constant="6.6600000000000001" id="Vj2-Sd-Hgt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="PpR-mG-FAk" firstAttribute="leading" secondItem="aTp-zK-oAp" secondAttribute="trailing" constant="10" id="de4-ZA-ETx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="PpR-mG-FAk" secondAttribute="bottom" constant="10" id="qfo-dX-UNN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="2e7-EP-kuS" firstAttribute="leading" secondItem="PpR-mG-FAk" secondAttribute="trailing" constant="10" id="rrM-Fh-8zw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="PpR-mG-FAk" firstAttribute="top" secondItem="Pf0-1E-cWa" secondAttribute="top" constant="10" id="t4T-zs-3dp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="2e7-EP-kuS" firstAttribute="centerY" secondItem="PpR-mG-FAk" secondAttribute="centerY" id="tBC-Qz-Z8u" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="2e7-EP-kuS" secondAttribute="trailing" constant="6.6600000000000001" id="zKi-OX-GcN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jXV-9f-oVC">
+                                <rect key="frame" x="41" y="393.5" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jXV-9f-oVC" secondAttribute="height" multiplier="1:1" id="Ofv-Kl-6c6"/>
+                                    <constraint firstAttribute="width" constant="75" id="XUb-iQ-0a5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaR-pj-7Rt" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="96" y="393.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="J9E-yK-r7C" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" secondItem="CaR-pj-7Rt" secondAttribute="height" multiplier="1:1" id="cqe-LA-zA4"/>
+                                </constraints>
+                                <state key="normal" image="cross-icon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M3-7Z-CKM" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="10" y="270.5" width="322" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vuS-VF-Ct4" firstAttribute="leading" secondItem="2M3-7Z-CKM" secondAttribute="leading" id="3sb-sV-XIc" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Pf0-1E-cWa" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="6.6600000000000001" id="7x9-6D-gi5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="jXV-9f-oVC" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="41" id="8Uq-lS-pRe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="b55-lR-QZs" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="bottom" constant="10" id="8YZ-qY-dCO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="2Bc-7g-XaZ" secondAttribute="trailing" id="F4a-pb-jpF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="Pf0-1E-cWa" secondAttribute="trailing" constant="6.6600000000000001" id="GWc-Hu-heu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="jXV-9f-oVC" secondAttribute="bottom" constant="7.5" id="JyD-ks-Ihl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="2M3-7Z-CKM" secondAttribute="trailing" constant="10" id="OpQ-RM-tpG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="vuS-VF-Ct4" firstAttribute="top" secondItem="2M3-7Z-CKM" secondAttribute="bottom" constant="10" id="QPK-WV-WsB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Dg3-Kf-5Rc" firstAttribute="top" secondItem="b55-lR-QZs" secondAttribute="bottom" constant="8.5" id="TfZ-YZ-H6F" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="CaR-pj-7Rt" firstAttribute="trailing" secondItem="jXV-9f-oVC" secondAttribute="trailing" id="UO6-gT-2jQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Pf0-1E-cWa" firstAttribute="top" secondItem="vuS-VF-Ct4" secondAttribute="bottom" constant="10" id="Vi4-6Y-HYm" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="2Bc-7g-XaZ" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" id="Yzv-g3-beP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="2Bc-7g-XaZ" firstAttribute="top" secondItem="o06-NR-PTt" secondAttribute="top" id="cjt-fm-i0G" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="jXV-9f-oVC" firstAttribute="top" secondItem="Pf0-1E-cWa" secondAttribute="bottom" constant="7.5" id="dKC-1Q-ujD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="b55-lR-QZs" secondAttribute="trailing" constant="10" id="dO8-e8-T8z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="2M3-7Z-CKM" firstAttribute="leading" secondItem="Dg3-Kf-5Rc" secondAttribute="leading" id="dRI-G9-oO7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="2M3-7Z-CKM" firstAttribute="top" secondItem="Dg3-Kf-5Rc" secondAttribute="bottom" constant="10" id="fdY-ae-iCY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Dg3-Kf-5Rc" firstAttribute="leading" secondItem="b55-lR-QZs" secondAttribute="leading" id="i7O-rl-Yt6" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="CaR-pj-7Rt" firstAttribute="top" secondItem="jXV-9f-oVC" secondAttribute="top" id="jZI-qR-iVM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="vuS-VF-Ct4" firstAttribute="trailing" secondItem="2M3-7Z-CKM" secondAttribute="trailing" id="soh-nc-v0o" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="b55-lR-QZs" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="10" id="vYA-tZ-rid" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.90605407950000005" green="0.92535239459999996" blue="0.93333524469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="o06-NR-PTt" secondAttribute="bottom" constant="16.66" id="1KC-eq-D1G" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="o06-NR-PTt" firstAttribute="leading" secondItem="a5Y-PJ-5nB" secondAttribute="leading" constant="16.66" id="8hy-dH-G9R" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="o06-NR-PTt" firstAttribute="top" secondItem="a5Y-PJ-5nB" secondAttribute="top" constant="16.66" id="Jl8-S6-Ps3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="o06-NR-PTt" secondAttribute="trailing" constant="16.66" id="KDz-A0-pSU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="J9p-qB-ttt"/>
+            <connections>
+                <outlet property="bgImageView" destination="Fch-uI-NFb" id="PAh-FO-0v2"/>
+                <outlet property="bottomConstraintCommentImage" destination="JyD-ks-Ihl" id="bSr-NP-Bi6"/>
+                <outlet property="btnAddPhoto" destination="aTp-zK-oAp" id="b0q-kn-CXI"/>
+                <outlet property="btnBookmark" destination="5Wz-bi-34f" id="KXC-gB-MWe"/>
+                <outlet property="btnDeleteCommentImage" destination="CaR-pj-7Rt" id="5US-ah-GLj"/>
+                <outlet property="btnLike" destination="cic-kj-SzY" id="Yfg-US-hx5"/>
+                <outlet property="btnSendComment" destination="2e7-EP-kuS" id="fGc-jd-w9J"/>
+                <outlet property="btnShare" destination="y1h-no-9iO" id="sos-g8-17p"/>
+                <outlet property="commentImage" destination="jXV-9f-oVC" id="2Y6-Sc-amB"/>
+                <outlet property="commentView" destination="Pf0-1E-cWa" id="RcC-Cj-hic"/>
+                <outlet property="heightConstraintCommentImage" destination="XUb-iQ-0a5" id="grE-Yy-Eho"/>
+                <outlet property="heightConstraintCommentView" destination="4iG-uj-N1P" id="ELj-mB-JpP"/>
+                <outlet property="heightConstraintVideoView" destination="mZa-r1-dQN" id="wXP-ws-PA7"/>
+                <outlet property="lblDate" destination="Exn-p6-wvu" id="201-xc-QTE"/>
+                <outlet property="lblDescription" destination="2M3-7Z-CKM" id="eHf-EL-XIf"/>
+                <outlet property="lblNewsType" destination="VYr-Az-uXS" id="vdf-IS-V8S"/>
+                <outlet property="lblTitle" destination="b55-lR-QZs" id="LL7-Sc-WRD"/>
+                <outlet property="leadingConstraintContentView" destination="8hy-dH-G9R" id="cbA-7U-Nq0"/>
+                <outlet property="trailingConstraintContentView" destination="KDz-A0-pSU" id="6Lj-Tu-MJ5"/>
+                <outlet property="txtComment" destination="PpR-mG-FAk" id="yfU-J4-O5d"/>
+            </connections>
+            <point key="canvasLocation" x="-50.000000000000007" y="-1.0044642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cross-icon" width="16" height="16"/>
+        <image name="edit-icon" width="14" height="14"/>
+        <image name="icon-bookmark" width="11" height="11"/>
+        <image name="icon-like" width="11" height="11"/>
+        <image name="icon-share" width="11" height="11"/>
+        <image name="send-button" width="20" height="20"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

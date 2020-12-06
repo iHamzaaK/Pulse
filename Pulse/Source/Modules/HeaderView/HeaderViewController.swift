@@ -21,7 +21,8 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
         headerViewHeight = getHeaderFooterHeight()
         self.view.backgroundColor = UIColor.white
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "HeaderView", bundle: bundle)
+        let headerViewNibName = "HeaderView" + "-" + Utilities.getDeviceTypeStr()
+        let nib = UINib(nibName: headerViewNibName, bundle: bundle)
         //        let nibF = UINib(nibName: "Footer", bundle: bundle)
         
         _headerView = nib.instantiate(withOwner: self, options: nil)[0] as? HeaderView

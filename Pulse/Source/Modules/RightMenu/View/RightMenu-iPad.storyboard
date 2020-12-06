@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Right Menu View Controller-->
+        <scene sceneID="aqY-VN-Nfx">
+            <objects>
+                <viewController storyboardIdentifier="RightMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IpP-4b-4qY" customClass="RightMenuViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmw-Pd-Qw7">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jd5-Y7-knp">
+                                <rect key="frame" x="0.0" y="270" width="834" height="924"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="85" id="iGZ-Wi-FzM" customClass="RightMenuTableViewCell" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="834" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iGZ-Wi-FzM" id="lGf-WL-tGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ID-k4-hu9" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="42.5" width="794" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                    <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0ID-k4-hu9" firstAttribute="leading" secondItem="lGf-WL-tGw" secondAttribute="leading" constant="20" id="Gki-S4-Yv7"/>
+                                                <constraint firstAttribute="trailing" secondItem="0ID-k4-hu9" secondAttribute="trailing" constant="20" id="aiJ-M1-4Te"/>
+                                                <constraint firstItem="0ID-k4-hu9" firstAttribute="centerX" secondItem="lGf-WL-tGw" secondAttribute="centerX" id="p30-ba-qfX"/>
+                                                <constraint firstItem="0ID-k4-hu9" firstAttribute="centerY" secondItem="lGf-WL-tGw" secondAttribute="centerY" id="xzN-GZ-gSi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTitle" destination="0ID-k4-hu9" id="vc9-MM-KEk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8h-bd-1T3">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="250"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="1hR-Jz-gpe" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="102" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1hR-Jz-gpe" secondAttribute="height" multiplier="1:1" id="L55-1w-MNK"/>
+                                            <constraint firstAttribute="width" constant="100" id="qtw-0F-Q7k" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rizwan Saleh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj6-Ul-GhV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="102" width="165.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVM-eW-0hk" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="142.5" width="120" height="29"/>
+                                        <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="8PM-Kl-Pfd" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Edit Profile">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW4-lq-wE6" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="779" y="62" width="22" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="NP4-Hk-nYX"/>
+                                            <constraint firstAttribute="width" secondItem="NW4-lq-wE6" secondAttribute="height" multiplier="1:1" id="NxD-NH-wAY"/>
+                                        </constraints>
+                                        <state key="normal" image="cross-icon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NW4-lq-wE6" secondAttribute="trailing" constant="33" id="18n-ct-HEd" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="250" id="72C-3H-QGS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="NW4-lq-wE6" firstAttribute="top" secondItem="I8h-bd-1T3" secondAttribute="top" constant="62" id="Jqd-BH-lhe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="1hR-Jz-gpe" secondAttribute="bottom" constant="48" id="U52-QG-51e" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="oVM-eW-0hk" firstAttribute="leading" secondItem="Vj6-Ul-GhV" secondAttribute="leading" id="UNR-F6-DWL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="1hR-Jz-gpe" firstAttribute="leading" secondItem="I8h-bd-1T3" secondAttribute="leading" constant="26" id="WxP-1r-UjC" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Vj6-Ul-GhV" firstAttribute="leading" secondItem="1hR-Jz-gpe" secondAttribute="trailing" constant="8" symbolic="YES" id="eRy-D7-OZ3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Vj6-Ul-GhV" firstAttribute="top" secondItem="1hR-Jz-gpe" secondAttribute="top" id="lzR-3N-wtL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="oVM-eW-0hk" firstAttribute="top" secondItem="Vj6-Ul-GhV" secondAttribute="bottom" constant="7" id="qq9-l1-cdR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUb-K2-C04" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1064" width="75" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.30196078430000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqF-Iv-Owr" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1113" width="175" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Terms and Conditions">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5dN-mT-42K"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="I8h-bd-1T3" firstAttribute="leading" secondItem="bmw-Pd-Qw7" secondAttribute="leading" id="6N8-W0-zhR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="I8h-bd-1T3" firstAttribute="top" secondItem="bmw-Pd-Qw7" secondAttribute="top" id="DDC-qk-jFR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="Jd5-Y7-knp" secondAttribute="bottom" id="FYs-JD-S8n" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="eqF-Iv-Owr" firstAttribute="top" secondItem="IUb-K2-C04" secondAttribute="bottom" constant="8" symbolic="YES" id="Fjp-dV-HSj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Jd5-Y7-knp" firstAttribute="top" secondItem="I8h-bd-1T3" secondAttribute="bottom" constant="20" id="G4w-5L-84Z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="IUb-K2-C04" firstAttribute="leading" secondItem="bmw-Pd-Qw7" secondAttribute="leading" constant="20" id="PCN-1Q-85y"/>
+                            <constraint firstItem="5dN-mT-42K" firstAttribute="trailing" secondItem="Jd5-Y7-knp" secondAttribute="trailing" id="YWG-d4-o87" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="I8h-bd-1T3" secondAttribute="trailing" id="cES-nn-Ziv" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="eqF-Iv-Owr" firstAttribute="leading" secondItem="IUb-K2-C04" secondAttribute="leading" id="g2Q-M7-JTd" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Jd5-Y7-knp" firstAttribute="leading" secondItem="5dN-mT-42K" secondAttribute="leading" id="prF-zm-ww0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="eqF-Iv-Owr" secondAttribute="bottom" constant="47" id="tmQ-L8-4UG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="NW4-lq-wE6" id="BRU-a7-lBh"/>
+                        <outlet property="btnEditProfile" destination="oVM-eW-0hk" id="v8Y-ay-g3I"/>
+                        <outlet property="btnLogout" destination="IUb-K2-C04" id="Xv1-B8-vjf"/>
+                        <outlet property="btnTerms" destination="eqF-Iv-Owr" id="gv7-Mn-Pu9"/>
+                        <outlet property="tblView" destination="Jd5-Y7-knp" id="05l-8v-sRL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mD-1Q-tfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-568.1159420289855" y="61.607142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cross-icon" width="16" height="16"/>
+        <image name="userImage" width="145" height="145"/>
+    </resources>
+</document>
