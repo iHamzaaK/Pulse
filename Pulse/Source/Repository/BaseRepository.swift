@@ -54,7 +54,7 @@ class BaseRepository{
        let requestURL = URL(string:baseURL + url)!
        // var responceData:[String:Any]?
        Alamofire.upload(multipartFormData: { (multiFormData) in
-          multiFormData.append(imageData, withName: "arrRestaurantImages",fileName: "halal.jpg" , mimeType: "image/jpg")
+          multiFormData.append(imageData, withName: "avatar",fileName: "userprofilePicture.jpg" , mimeType: "image/jpg")
           
           for (key, value) in param {
              multiFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)

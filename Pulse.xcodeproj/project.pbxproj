@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184852257ED928001CE193 /* Montserrat-Light.otf */; };
+		63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184853257ED928001CE193 /* Montserrat-Medium.otf */; };
+		63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184854257ED928001CE193 /* Montserrat-SemiBold.otf */; };
+		63184859257ED92C001CE193 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184855257ED928001CE193 /* Montserrat-Regular.otf */; };
 		6346A1E0255BDB33006B3FDF /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A1CF255BDB33006B3FDF /* BarView.swift */; };
 		6346A1E1255BDB33006B3FDF /* BarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A1D0255BDB33006B3FDF /* BarPagerTabStripViewController.swift */; };
 		6346A1E2255BDB33006B3FDF /* ButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6346A1D1255BDB33006B3FDF /* ButtonBarPagerTabStripViewController.swift */; };
@@ -208,6 +212,10 @@
 /* Begin PBXFileReference section */
 		5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
 		5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63184852257ED928001CE193 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		63184853257ED928001CE193 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		63184854257ED928001CE193 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		63184855257ED928001CE193 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		6346A1CE255BDB32006B3FDF /* Pulse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pulse-Bridging-Header.h"; sourceTree = "<group>"; };
 		6346A1CF255BDB33006B3FDF /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		6346A1D0255BDB33006B3FDF /* BarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarPagerTabStripViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +436,17 @@
 				5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63184851257ED920001CE193 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				63184852257ED928001CE193 /* Montserrat-Light.otf */,
+				63184853257ED928001CE193 /* Montserrat-Medium.otf */,
+				63184855257ED928001CE193 /* Montserrat-Regular.otf */,
+				63184854257ED928001CE193 /* Montserrat-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		6346A1CD255BDB09006B3FDF /* XLPagerStrip */ = {
@@ -1212,6 +1231,7 @@
 		63C1098C2555F43D0097EDC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63184851257ED920001CE193 /* Fonts */,
 				63C1097F2555EF0C0097EDC3 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -1487,7 +1507,10 @@
 				639CF69225617EA20013DAC7 /* QuotesTableViewCell.xib in Resources */,
 				637F7D1B25798BAA00F44400 /* MyProfile-iPad.storyboard in Resources */,
 				63D94FF3255A838A00B2E5AD /* FullArticle-iPhone.storyboard in Resources */,
+				63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */,
 				637F7D0F25798B1A00F44400 /* FullArticle-iPad.storyboard in Resources */,
+				63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */,
+				63184859257ED92C001CE193 /* Montserrat-Regular.otf in Resources */,
 				6346A1E8255BDB33006B3FDF /* ButtonCell.xib in Resources */,
 				63629B1725561071003836A2 /* HeaderView-iPhone.xib in Resources */,
 				6393FFDA257BCA5500D55ECE /* SubCategoryTableViewCell.xib in Resources */,
@@ -1509,6 +1532,7 @@
 				637F7D2125798BE100F44400 /* CreatePost-iPad.storyboard in Resources */,
 				6385CA2C256887ED000D21D8 /* CreatePost-iPhone.storyboard in Resources */,
 				63C109802555EF0C0097EDC3 /* Assets.xcassets in Resources */,
+				63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */,
 				63B7B9C0256033A700C32A4E /* SeeAllCommentsTableViewCell.xib in Resources */,
 				6372E6B62558016300A03E01 /* TopStoriesTableViewCell.xib in Resources */,
 				63EE49AF257A50B2008083D7 /* HeaderView-iPad.xib in Resources */,

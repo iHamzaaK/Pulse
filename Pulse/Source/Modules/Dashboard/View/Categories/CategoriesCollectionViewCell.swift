@@ -42,6 +42,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.lblTitle.addShadow()
         if DesignUtility.isIPad{
             widthConstraintSmall.constant = 81
         }

@@ -23,6 +23,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var lblNewsType: BaseUILabel!
     @IBOutlet weak var lblDate: BaseUILabel!
     @IBOutlet weak var lblDescription: BaseUILabel!
+    @IBOutlet weak var lblTotalLikes: BaseUILabel!
 
     @IBOutlet weak var lblTitle: BaseUILabel!
     @IBOutlet weak var leadingConstraintContentView: BaseLayoutConstraint!
@@ -31,14 +32,30 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var bottomConstraintCommentImage: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintCommentImage: NSLayoutConstraint!
     @IBOutlet weak var bgImageView: BaseUIImageView!
+    @IBOutlet weak var heightConstraintLikeCountStackView : NSLayoutConstraint!
     var isVideo : Bool = false
     var articleID : Int = -1
     var cellViewModel : ArticleListingCellViewModel!{
         didSet{
             lblTitle.text = cellViewModel.title
-//            lblNewsType.text =
-//            lblDate.text =
-            lblDescription.attributedText = cellViewModel.getDescription()
+            lblNewsType.text = cellViewModel.tag
+            lblDate.text = cellViewModel.date
+            lblTotalLikes.text = cellViewModel.showTotalLikes()
+        
+            if cellViewModel.likeCount < 1 {
+                heightConstraintLikeCountStackView.constant = 0
+            }
+            else{
+                heightConstraintLikeCountStackView.constant = 30
+            }
+            btnLike.setImage(cellViewModel.showLiked(), for: .normal)
+            btnBookmark.setImage(cellViewModel.showBookmark(), for: .normal)
+            let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
+            let readmoreFontColor = UIColor.blue
+            lblDescription.text = cellViewModel.getShortDescription()
+            DispatchQueue.main.async {
+                self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+            }
             if let bgImageURL = cellViewModel.getBgImageURLForCell() {
                 Utilities.getImageFromURL(imgView: bgImageView, url: bgImageURL)
             }

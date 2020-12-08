@@ -18,8 +18,28 @@ class ArchiveUtil {
     private static let userLanguage = "userLanguage"
     private static let restaurantType = "restaurantType"
     private static let signupStep = "signupStep"
-    
-    static func loadUser()-> User?{
+    private static let categoriesKey = "categories"
+
+    static func saveCategories(categories: [CategoriesData]){
+        do{
+            let cat = try JSONEncoder().encode([categories])
+            UserDefaults.standard.set(cat, forKey: categoriesKey)
+        }
+        catch{
+            //print("Not working")
+        }
+    }
+    static func getCategories()-> [CategoriesData]?{
+        guard let cat = UserDefaults.standard.data(forKey: categoriesKey) else { return nil}
+        do{
+            let catData = try JSONDecoder().decode([CategoriesData].self, from: cat)
+            return catData
+        }
+        catch{
+            return nil
+        }
+    }
+    static func getUser()-> User?{
         guard let user = UserDefaults.standard.data(forKey: userDataKey) else { return nil}
         do{
             let userData = try JSONDecoder().decode(User.self, from: user)

@@ -39,6 +39,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
                                         <real key="value" value="37"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>

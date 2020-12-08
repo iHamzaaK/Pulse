@@ -38,7 +38,7 @@ class CategoriesViewModel
     }
     func getCellViewModelForRow(row: Int)->CategoryCellViewModel{
         let category = self.categories[row]
-        let cellViewModel = CategoryCellViewModel(id: category.id, name: category.name ?? "", description: category.descriptionField ?? "", parent: category.parent ?? -1, icon: category.icon ?? "", image: category.image ?? "", child: category.child ?? [])
+        let cellViewModel = CategoryCellViewModel(id: category.id, name: category.name ?? "", description: category.descriptionField ?? "", parent: category.parent ?? -1, icon: category.icon ?? "", image: category.image ?? "", child: category.child ?? [], isVideo: category.isVideo ?? false, isQuote: category.isQoute ?? false)
         return cellViewModel
         
     }
@@ -81,7 +81,16 @@ class CategoriesViewModel
     }
     func goToCategoryPostsForParent(row: Int, completionHandler: (_ vc: UIViewController)->Void){
         let category = self.categories[row]
-        let vc = ArticleListingBuilder.build(title: category.name ?? "", type: .categories, categoryId: category.id)
+        var vc : UIViewController!
+        if category.isQoute ?? false{
+            vc = QuotesBuilder.build()
+        }
+        else if category.isVideo ?? false{
+            vc = VideosBuilder.build()
+        }
+        else{
+            vc = ArticleListingBuilder.build(title: category.name ?? "", type: .categories, categoryId: category.id)
+        }
         completionHandler(vc)
     }
     func goToCategoryPostsForSubCategoory(row: Int, completionHandler: (_ vc: UIViewController)->Void){
@@ -105,7 +114,8 @@ struct  CategoryCellViewModel {
     let icon : String
     let image : String
     let child : [CategoriesChild]
-    
+    let isVideo : Bool
+    let isQuote : Bool
     func getBgImageURLForCell()-> URL?{
         return URL(string: image)
 
@@ -116,5 +126,11 @@ struct  CategoryCellViewModel {
     }
     func getChildren()->[CategoriesChild]{
         return child
+    }
+    func checkIfSubscribed(subscrpition: [String])->Bool{
+        if subscrpition.contains(String(id)){
+            return true
+        }
+        return false
     }
 }

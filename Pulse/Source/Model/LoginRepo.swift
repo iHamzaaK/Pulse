@@ -54,6 +54,7 @@ struct LoginData: Decodable {
         let lastName : String?
         let nicename : String?
         let token : String?
+    let subscription : [String]?
 
 
         enum CodingKeys: String, CodingKey {
@@ -64,6 +65,7 @@ struct LoginData: Decodable {
             case lastName = "lastName"
             case nicename = "nicename"
             case token = "token"
+            case subscription = "subscription"
         }
         init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -74,6 +76,8 @@ struct LoginData: Decodable {
             lastName = try values.decodeIfPresent(String.self, forKey: .lastName) ?? String()
             nicename = try values.decodeIfPresent(String.self, forKey: .nicename) ?? String()
             token = try values.decodeIfPresent(String.self, forKey: .token) ?? String()
+            subscription = try values.decodeIfPresent([String].self, forKey: .subscription) ?? []
+
         }
 
 

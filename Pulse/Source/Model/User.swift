@@ -15,6 +15,7 @@ struct User: Codable{
     var email : String
     var password : String
     var accessToken : String
+    var subscription : [String]
 //    var status : String
 //    var userType : String
     

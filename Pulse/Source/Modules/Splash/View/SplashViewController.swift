@@ -15,14 +15,24 @@ class SplashViewController: BaseViewController
     {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
+        for family: String in UIFont.familyNames
+               {
+                   print(family)
+                   for names: String in UIFont.fontNames(forFamilyName: family)
+                   {
+                       print("== \(names)")
+                   }
+               }
     }
     override func viewDidAppear(_ animated: Bool) {
         navigate()
     }
     func navigate(){
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (_) in
-            let vc = LoginBuilder.build()
-            AppRouter.goToSpecificController(vc: vc)
+            self.viewModel.checkUserState { (vc) in
+                AppRouter.goToSpecificController(vc: vc)
+
+            }
         }
 //        self.viewModel.checkUserState { (vc) in
 //            AppRouter.createInitialRoute(vc: vc)

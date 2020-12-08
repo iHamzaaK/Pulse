@@ -56,10 +56,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Light.otf</string>
+		<string>Montserrat-Medium.otf</string>
+		<string>Montserrat-Regular.otf</string>
+		<string>Montserrat-SemiBold.otf</string>
+	</array>
 </dict>
 </plist>

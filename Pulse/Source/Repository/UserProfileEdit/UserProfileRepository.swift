@@ -7,5 +7,5 @@
 
 import Foundation
 protocol UserProfileRepository{
-    func changeUserProfile(resetCode : String,email : String,password : String, completionHandler: @escaping (Bool, String) -> Void)
+    func changeUserProfile(params : [String: String]?, avatar : Data?, completionHandler: @escaping (Bool, String) -> Void)
 }

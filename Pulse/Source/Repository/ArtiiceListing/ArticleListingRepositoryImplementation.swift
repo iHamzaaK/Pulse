@@ -20,9 +20,9 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
         var endpoint = ""
         switch type {
         case .topStories:
-            endpoint = "paged=\(paged)&posts_per_page=10&type=\(type.rawValue)"
+            endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .myNews:
-            endpoint = "paged=\(paged)&posts_per_page=10&type=\(type.rawValue)"
+            endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .categories:
             endpoint = "category_id=\(categoryId!)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .interest:

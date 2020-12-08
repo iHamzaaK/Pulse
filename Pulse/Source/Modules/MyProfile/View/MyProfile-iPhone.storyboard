@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,50 +21,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Ho-u8U" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-QS-BMb" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rizwan Saleh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-FO-sBI" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="258" width="155" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ws8-B6-gXd" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="155" width="90" height="90"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ws8-B6-gXd" secondAttribute="height" multiplier="1:1" id="Pcm-H3-cxv"/>
-                                            <constraint firstAttribute="width" constant="90" id="dcP-Ds-GtW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hv4-w4-fDL" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="93" y="197" width="20" height="20"/>
-                                        <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Hv4-w4-fDL" secondAttribute="height" multiplier="1:1" id="Eee-Dl-Etg"/>
-                                            <constraint firstAttribute="width" constant="20" id="I56-EC-FXa"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="pencil" catalog="system"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="0w5-FO-sBI" firstAttribute="leading" secondItem="ea7-QS-BMb" secondAttribute="leading" constant="21" id="0Dy-Xf-G5p" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="Hv4-w4-fDL" firstAttribute="trailing" secondItem="ws8-B6-gXd" secondAttribute="trailing" id="5qa-wg-DfR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="0w5-FO-sBI" firstAttribute="top" secondItem="ws8-B6-gXd" secondAttribute="bottom" constant="13" id="QWn-iw-FYC" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstAttribute="height" constant="310" id="TCn-89-0CZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="ws8-B6-gXd" firstAttribute="leading" secondItem="0w5-FO-sBI" secondAttribute="leading" id="gRN-45-fzs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="Hv4-w4-fDL" firstAttribute="bottom" secondItem="ws8-B6-gXd" secondAttribute="bottom" id="nZ6-2B-bXU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstAttribute="bottom" secondItem="0w5-FO-sBI" secondAttribute="bottom" constant="22" id="wjq-zN-lLx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-Cv-mkC" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="16.5" y="326.5" width="381" height="569.5"/>
                                 <subviews>
@@ -144,7 +101,7 @@
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="shY-ev-U4c">
                                         <rect key="frame" x="0.0" y="125" width="381" height="444.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iXg-4W-Qsi">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -163,7 +120,7 @@
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="zH1-B1-1fX" secondAttribute="trailing" constant="13" id="03c-my-sQt"/>
                                     <constraint firstAttribute="bottom" secondItem="shY-ev-U4c" secondAttribute="bottom" id="0X5-Nd-jJR"/>
@@ -179,17 +136,166 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-QS-BMb" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rizwan Saleh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-FO-sBI" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="258" width="155" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ws8-B6-gXd" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="155" width="90" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ws8-B6-gXd" secondAttribute="height" multiplier="1:1" id="Pcm-H3-cxv"/>
+                                            <constraint firstAttribute="width" constant="90" id="dcP-Ds-GtW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hv4-w4-fDL" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="93" y="197" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Hv4-w4-fDL" secondAttribute="height" multiplier="1:1" id="Eee-Dl-Etg"/>
+                                            <constraint firstAttribute="width" constant="20" id="I56-EC-FXa"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="pencil" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0w5-FO-sBI" firstAttribute="leading" secondItem="ea7-QS-BMb" secondAttribute="leading" constant="21" id="0Dy-Xf-G5p" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Hv4-w4-fDL" firstAttribute="trailing" secondItem="ws8-B6-gXd" secondAttribute="trailing" id="5qa-wg-DfR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="0w5-FO-sBI" firstAttribute="top" secondItem="ws8-B6-gXd" secondAttribute="bottom" constant="13" id="QWn-iw-FYC" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="310" id="TCn-89-0CZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="ws8-B6-gXd" firstAttribute="leading" secondItem="0w5-FO-sBI" secondAttribute="leading" id="gRN-45-fzs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Hv4-w4-fDL" firstAttribute="bottom" secondItem="ws8-B6-gXd" secondAttribute="bottom" id="nZ6-2B-bXU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="0w5-FO-sBI" secondAttribute="bottom" constant="22" id="wjq-zN-lLx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etJ-2c-8gf" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-type your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOK-7X-yba" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="20" y="598.5" width="374" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="8o4-ri-3Pk" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" systemColor="systemGrayColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1.1000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set a new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LSD-Nm-rwv" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="20" y="530.5" width="374" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="wDH-zq-oqV" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" systemColor="systemGrayColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" name="AccentColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1.1000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgetLogo" translatesAutoresizingMaskIntoConstraints="NO" id="noz-8I-jsA">
+                                        <rect key="frame" x="102" y="200" width="210" height="189"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="189" identifier="topConstraintHeader" id="AHd-cs-Yfw"/>
+                                            <constraint firstAttribute="width" constant="210" id="J2h-Bx-Ufi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXl-aB-eNZ" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="666.5" width="374" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="C9J-Y6-OxI" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="SET PASSWORD">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-xQ-n87">
+                                        <rect key="frame" x="20" y="462" width="281.5" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuO-31-cna">
+                                        <rect key="frame" x="20" y="47" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fuO-31-cna" secondAttribute="height" multiplier="1:1" id="51Y-Xc-3P8"/>
+                                            <constraint firstAttribute="width" constant="40" id="z56-TA-act"/>
+                                        </constraints>
+                                        <state key="normal" image="search-close-icon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="uXl-aB-eNZ" firstAttribute="trailing" secondItem="LSD-Nm-rwv" secondAttribute="trailing" id="6ct-7j-65P"/>
+                                    <constraint firstItem="noz-8I-jsA" firstAttribute="top" secondItem="etJ-2c-8gf" secondAttribute="top" constant="200" id="87k-Jc-H4S" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="uXl-aB-eNZ" firstAttribute="top" secondItem="qOK-7X-yba" secondAttribute="bottom" constant="30" id="8CT-eV-9Td"/>
+                                    <constraint firstItem="uXl-aB-eNZ" firstAttribute="leading" secondItem="LSD-Nm-rwv" secondAttribute="leading" id="9Aq-TU-yPu"/>
+                                    <constraint firstItem="qOK-7X-yba" firstAttribute="top" secondItem="LSD-Nm-rwv" secondAttribute="bottom" constant="30" id="EuR-fI-gic"/>
+                                    <constraint firstItem="noz-8I-jsA" firstAttribute="centerX" secondItem="etJ-2c-8gf" secondAttribute="centerX" id="HDK-Pm-sTg"/>
+                                    <constraint firstItem="fuO-31-cna" firstAttribute="leading" secondItem="etJ-2c-8gf" secondAttribute="leading" constant="20" symbolic="YES" id="HqQ-SR-fb9"/>
+                                    <constraint firstItem="7zw-xQ-n87" firstAttribute="top" secondItem="noz-8I-jsA" secondAttribute="bottom" constant="73" id="ULG-KP-lhn"/>
+                                    <constraint firstItem="LSD-Nm-rwv" firstAttribute="leading" secondItem="etJ-2c-8gf" secondAttribute="leading" constant="20" symbolic="YES" id="VUc-T4-yC4"/>
+                                    <constraint firstItem="qOK-7X-yba" firstAttribute="height" secondItem="LSD-Nm-rwv" secondAttribute="height" id="VmA-6r-1M9"/>
+                                    <constraint firstItem="LSD-Nm-rwv" firstAttribute="top" secondItem="7zw-xQ-n87" secondAttribute="bottom" constant="29" id="ZH6-zJ-ghf"/>
+                                    <constraint firstItem="qOK-7X-yba" firstAttribute="leading" secondItem="LSD-Nm-rwv" secondAttribute="leading" id="iKG-t6-zwQ"/>
+                                    <constraint firstItem="fuO-31-cna" firstAttribute="top" secondItem="etJ-2c-8gf" secondAttribute="top" constant="47" id="jFV-vL-hVB"/>
+                                    <constraint firstItem="qOK-7X-yba" firstAttribute="trailing" secondItem="LSD-Nm-rwv" secondAttribute="trailing" id="jH4-Ip-BwG"/>
+                                    <constraint firstItem="7zw-xQ-n87" firstAttribute="leading" secondItem="etJ-2c-8gf" secondAttribute="leading" constant="20" symbolic="YES" id="kPJ-XE-aYR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LSD-Nm-rwv" secondAttribute="trailing" constant="20" symbolic="YES" id="luB-tH-DUd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kKi-OL-Qv2"/>
                         <color key="backgroundColor" red="0.80523985620000005" green="0.85254418850000002" blue="0.99609690900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="etJ-2c-8gf" firstAttribute="height" secondItem="MXA-q8-Ag3" secondAttribute="height" id="0EM-tl-u82"/>
                             <constraint firstAttribute="trailing" secondItem="HBj-Cv-mkC" secondAttribute="trailing" constant="16.66" id="2oE-RB-5tx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="ea7-QS-BMb" firstAttribute="top" secondItem="MXA-q8-Ag3" secondAttribute="top" id="8On-ne-b7b" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="ea7-QS-BMb" firstAttribute="leading" secondItem="MXA-q8-Ag3" secondAttribute="leading" id="8oS-OY-tZV" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="HBj-Cv-mkC" firstAttribute="top" secondItem="ea7-QS-BMb" secondAttribute="bottom" constant="16.66" id="GSN-7c-XdY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="HBj-Cv-mkC" firstAttribute="leading" secondItem="MXA-q8-Ag3" secondAttribute="leading" constant="16.66" id="I82-kM-lDo" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="bottom" secondItem="HBj-Cv-mkC" secondAttribute="bottom" id="KCl-eO-tfY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="etJ-2c-8gf" firstAttribute="centerX" secondItem="kKi-OL-Qv2" secondAttribute="centerX" id="LyN-Pd-rQx"/>
                             <constraint firstAttribute="trailing" secondItem="4Ko-Ho-u8U" secondAttribute="trailing" id="RRe-oV-9Rn" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="etJ-2c-8gf" firstAttribute="centerY" secondItem="kKi-OL-Qv2" secondAttribute="centerY" id="SHS-iy-zlS"/>
+                            <constraint firstItem="etJ-2c-8gf" firstAttribute="width" secondItem="MXA-q8-Ag3" secondAttribute="width" id="hWC-Kq-zXa"/>
                             <constraint firstItem="4Ko-Ho-u8U" firstAttribute="height" secondItem="ea7-QS-BMb" secondAttribute="height" id="jeN-60-cPq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="ea7-QS-BMb" secondAttribute="trailing" id="lQ3-fF-ceh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="4Ko-Ho-u8U" firstAttribute="leading" secondItem="MXA-q8-Ag3" secondAttribute="leading" id="lSe-cq-oCq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -201,10 +307,14 @@
                         <outlet property="btnChangePassword" destination="fLC-rn-OB6" id="Ku2-5A-ZK8"/>
                         <outlet property="btnEditDisplayImage" destination="Hv4-w4-fDL" id="O2d-4I-STA"/>
                         <outlet property="btnMyInterest" destination="sVW-p5-AwJ" id="LBf-LI-QMe"/>
+                        <outlet property="btnSetPassword" destination="uXl-aB-eNZ" id="3P6-y5-f4q"/>
                         <outlet property="collectionView" destination="shY-ev-U4c" id="C7P-yQ-gyn"/>
                         <outlet property="coverImage" destination="4Ko-Ho-u8U" id="rng-ne-KGE"/>
                         <outlet property="displayImage" destination="ws8-B6-gXd" id="Cfp-zF-qJd"/>
                         <outlet property="lblUserName" destination="0w5-FO-sBI" id="wAH-f3-bKU"/>
+                        <outlet property="passwordView" destination="etJ-2c-8gf" id="Iqi-cI-3sa"/>
+                        <outlet property="txtConfirrmPass" destination="qOK-7X-yba" id="IN9-SA-bIu"/>
+                        <outlet property="txtSetNewPass" destination="LSD-Nm-rwv" id="nsK-3D-O5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXU-YI-Fx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -212,12 +322,28 @@
             <point key="canvasLocation" x="-333.33333333333337" y="47.544642857142854"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="LSD-Nm-rwv">
+            <size key="intrinsicContentSize" width="129" height="18.5"/>
+        </designable>
+        <designable name="qOK-7X-yba">
+            <size key="intrinsicContentSize" width="180" height="18.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="forgetLogo" width="632" height="568"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="search-close-icon" width="10" height="10"/>
         <image name="userImage" width="145" height="145"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -24,28 +24,13 @@ class SplashViewModel
     func checkUserState(completionHandler : @escaping (_ vc : UIViewController)->()){
         var vc : UIViewController! =  LoginBuilder.build()
         if ArchiveUtil.getUserToken() != ""{
-            
-//            let dashboardRepo = DashboardRepositoryImplementation()
-//            dashboardRepo.getDashboardData { (isSuccess, serverMsg, data) in
-//                if isSuccess{
-//                    guard let data = data else { return }
-//                    vc = DashboardBuilder.build(dashboardRepo: data)
-//                    completionHandler(vc)
-//                }
-//                else{
-            
-//                    vc  = LoginBuilder.build()
-//                    completionHandler(vc)
-//                }
-//            }
+            vc = DashboardBuilder.build()
+
         }
         else{
             vc  = LoginBuilder.build()
-            completionHandler(vc)
         }
-        
-        
-        
+        completionHandler(vc)
     }
     
 }
