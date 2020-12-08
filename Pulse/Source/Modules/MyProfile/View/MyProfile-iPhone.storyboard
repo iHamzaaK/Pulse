@@ -35,6 +35,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Medium"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="83f-Pw-6Gj">
                                                         <rect key="frame" x="317" y="20.5" width="30" height="15"/>
@@ -70,6 +73,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Medium"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-yt-0Q6">
                                                         <rect key="frame" x="317" y="20.5" width="30" height="15"/>
@@ -246,7 +252,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-xQ-n87">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-xQ-n87" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="462" width="281.5" height="39.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                         <nil key="textColor"/>
@@ -283,7 +289,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kKi-OL-Qv2"/>
-                        <color key="backgroundColor" red="0.80523985620000005" green="0.85254418850000002" blue="0.99609690900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="etJ-2c-8gf" firstAttribute="height" secondItem="MXA-q8-Ag3" secondAttribute="height" id="0EM-tl-u82"/>
                             <constraint firstAttribute="trailing" secondItem="HBj-Cv-mkC" secondAttribute="trailing" constant="16.66" id="2oE-RB-5tx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>

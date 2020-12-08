@@ -89,6 +89,8 @@ class CategoriesViewController: UIViewController {
         layer1.bounds = shapes.bounds
         layer1.position = shapes.center
         shapes.layer.addSublayer(layer1)
+//        Utilities.addBlur(view: subCategoryView, blurEffect: .systemUltraThinMaterial)
+        subCategoryView.alpha = 0.9
     }
     func setFlowLayout()-> UICollectionViewFlowLayout{
         
