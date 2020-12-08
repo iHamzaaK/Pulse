@@ -18,6 +18,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgSmall : BaseUIImageView!
     @IBOutlet weak var widthConstraintSmall : NSLayoutConstraint!
     @IBOutlet weak var cellContentView: UIView!
+    @IBOutlet weak var subscribedView: UIView!
+
     var cellViewModel : CategoryCellViewModel!{
         didSet{
             self.lblTitle.text = cellViewModel.name
@@ -31,11 +33,13 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
             if let imgSmallURL = cellViewModel.getImageForCategoryLogo() {
                 Utilities.getImageFromURL(imgView: imgSmall, url: imgSmallURL)
             }
+            imgSmall.addShadow()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        subscribedView.isHidden = true
         self.translatesAutoresizingMaskIntoConstraints  = false
         cellContentView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -46,6 +50,9 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         if DesignUtility.isIPad{
             widthConstraintSmall.constant = 81
         }
+    }
+    func showSubscription(isSubscribed: Bool){
+        subscribedView.isHidden = !isSubscribed
     }
     
 

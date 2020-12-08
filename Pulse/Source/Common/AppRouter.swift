@@ -65,6 +65,7 @@ class AppRouter{
     }
     static func goToHomeFromRightMenu(){
         slideMenu.closeRight()
+        
         self.navController.popToRootViewController(animated: true)
         
     }

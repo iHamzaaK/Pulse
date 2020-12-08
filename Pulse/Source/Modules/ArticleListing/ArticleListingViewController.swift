@@ -99,4 +99,25 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.viewModel.showQuoteView(){
+
+        if scrollView.contentOffset.y > 50 {// the value when you want the headerview to hide
+            view.layoutIfNeeded()
+            heightConstraintViewQuote.constant = 0
+            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+
+        }else {
+            // expand the header
+            view.layoutIfNeeded()
+            heightConstraintViewQuote.constant = 90 // Your initial height of header view
+            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+         }
+        }
+    }
+    
 }

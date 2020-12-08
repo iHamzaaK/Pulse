@@ -24,6 +24,7 @@ class SplashViewModel
     func checkUserState(completionHandler : @escaping (_ vc : UIViewController)->()){
         var vc : UIViewController! =  LoginBuilder.build()
         if ArchiveUtil.getUserToken() != ""{
+            NotificationCenter.default.post(name: Notification.Name("updateUserImage"), object: nil)
             vc = DashboardBuilder.build()
 
         }

@@ -52,7 +52,7 @@ extension LoginViewController{
         txtEmail.bind(with: self.viewModel.email)
         txtPassword.bind(with: self.viewModel.password)
         self.viewModel.email.value = "hamzakhancs15@gmail.com"
-        self.viewModel.password.value = "Lollol12#"
+        self.viewModel.password.value = "Lollol123$"
     }
     @objc private func didTapOnLogin(sender : BaseUIButton){
         do{
@@ -60,7 +60,10 @@ extension LoginViewController{
                 self.viewModel.login { (isSuccess, errorMsg) in
                     if isSuccess {
 
-                        AppRouter.goToSpecificController(vc: DashboardBuilder.build())
+                        AppRouter.createInitialRoute(vc: DashboardBuilder.build())
+                        
+                        NotificationCenter.default.post(name: Notification.Name("updateUserImage"), object: nil)
+
                     }
                     else{
                         Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)

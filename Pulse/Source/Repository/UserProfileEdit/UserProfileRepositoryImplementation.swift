@@ -16,10 +16,6 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
         DispatchQueue.main.async{
             ActivityIndicator.shared.showSpinner(nil,title: nil)
         }
-//        let params = [
-//            "categories": categories,
-//            "password": password
-//        ] as [String : Any]
         let headers = [
             "Accept": "application/json",
             "Authorization": "Bearer \(ArchiveUtil.getUserToken())("
@@ -30,12 +26,18 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
                 if success {
                     guard let data = data else {return}
                     let decoder = JSONDecoder()
-                    let model = try? decoder.decode(GeneralRepoModel.self, from: data.rawData())
-                    guard let statusCode = model?.success else { return }
+                    let model = try? decoder.decode(LoginRepo.self, from: data.rawData())
+                    guard let success = model?.success else { return }
                     guard let statusMsg = model?.message else { return }
                     self.isSuccess = success
                     self.serverMsg = statusMsg
-                    
+                    guard let modelData = model?.data else { return }
+                    guard let subscription = modelData.subscription else { return}
+                    guard let avatar = modelData.avatar else { return}
+                    var user = ArchiveUtil.getUser()!
+                    user.subscription = subscription
+                    user.avatar = avatar
+                    ArchiveUtil.saveUser(userData: user)
                 }
                 completionHandler(self.isSuccess,self.serverMsg)
                 
@@ -49,11 +51,18 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
                 if self.isSuccess{
                     guard let data = data else { return }
                     let decoder = JSONDecoder()
-                    let model = try? decoder.decode(GeneralRepoModel.self, from: data.rawData())
+                    let model = try? decoder.decode(LoginRepo.self, from: data.rawData())
                     guard let statusCode = model?.statusCode else { return }
                     self.isSuccess = statusCode != StatusCode.success.rawValue ? false : true
                     guard let statusMsg = model?.message else { return }
                     self.serverMsg = statusMsg
+                    guard let modelData = model?.data else { return }
+                    guard let subscription = modelData.subscription else { return}
+                    guard let avatar = modelData.avatar else { return}
+                    var user = ArchiveUtil.getUser()!
+                    user.subscription = subscription
+                    user.avatar = avatar
+                    ArchiveUtil.saveUser(userData: user)
                 }
                 completionHandler(self.isSuccess, self.serverMsg)
                 

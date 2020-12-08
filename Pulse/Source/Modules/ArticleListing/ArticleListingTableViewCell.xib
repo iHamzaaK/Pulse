@@ -248,7 +248,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.90605407950000005" green="0.92535239459999996" blue="0.93333524469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="o06-NR-PTt" secondAttribute="bottom" constant="16.66" id="1KC-eq-D1G" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                     <constraint firstItem="o06-NR-PTt" firstAttribute="leading" secondItem="a5Y-PJ-5nB" secondAttribute="leading" constant="16.66" id="8hy-dH-G9R" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>

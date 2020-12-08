@@ -9,6 +9,8 @@
 import UIKit
 class RightMenuViewController: BaseViewController {
     var viewModel : RightMenuViewModel!
+    @IBOutlet weak var lblName : BaseUILabel!
+    @IBOutlet weak var imgView : BaseUIImageView!
     @IBOutlet weak var tblView : UITableView!{
         didSet{
             tblView.delegate = self
@@ -42,9 +44,15 @@ extension RightMenuViewController{
         Utilities.addBlur(view: self.view, blurEffect: .systemUltraThinMaterialLight)
         navBarType = self.viewModel.getNavigationBar()
         btnClose.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)
-        btnEditProfile.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)      
+        btnEditProfile.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateImage), name: Notification.Name("updateUserImage"), object: nil)
     }
-    
+    @objc func updateImage(){
+        let user = ArchiveUtil.getUser()
+        guard let avatarURL = user?.getAvatarURL() else { return }
+        lblName.text = (user?.firstName ?? "") + " " + (user?.lastName ?? "")
+        Utilities.getImageFromURL(imgView: imgView, url: avatarURL)
+    }
 }
 extension RightMenuViewController{
     @objc func didTapOnClose(){

@@ -52,10 +52,13 @@ class LoginRepositoryImplementation: LoginRepository{
                     guard let userLastName = modelData.lastName else{return}
                     guard let userDisplayNaame = modelData.displayName else{return}
                     guard let subscription = modelData.subscription else { return}
-                    let user = User(id: userID, firstName: userFirstName, lastName: userLastName, displayName: userDisplayNaame, email: userEmail, password: password, accessToken: accessToken,subscription: subscription)
+                    guard let avatar = modelData.avatar else { return}
+
+                    let user = User(id: userID, firstName: userFirstName, lastName: userLastName, displayName: userDisplayNaame, email: userEmail, password: password, accessToken: accessToken,subscription: subscription, avatar : avatar)
                         ArchiveUtil.saveUser(userData: user)
-                    }
                     completionHandler(self.isSuccess, self.serverMsg)
+
+                    }
 
                     
                 

@@ -25,7 +25,7 @@ class MyProfileViewController: BaseViewController {
     }
     @IBOutlet weak var btnHidePasswordView: BaseUIButton!{
         didSet{
-            btnSetPassword.addTarget(self, action: #selector(self.didTapOnHidePassword(_:)), for: .touchUpInside)
+            btnHidePasswordView.addTarget(self, action: #selector(self.didTapOnHidePassword(_:)), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnSetPassword: BaseUIButton!{
@@ -60,6 +60,16 @@ class MyProfileViewController: BaseViewController {
         setupData()
         setupBinding()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.viewModel.updateSubscription { (success, serverMsg) in
+            if success{
+                print("Subscription added")
+            }
+        }
+    }
+    
+}
+extension MyProfileViewController{
     private func setupBinding(){
         txtSetNewPass.bind(with: self.viewModel.password)
         txtConfirrmPass.bind(with: self.viewModel.confirmPassword)
@@ -79,6 +89,10 @@ class MyProfileViewController: BaseViewController {
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     func setupData(){
+        let user = ArchiveUtil.getUser()
+        guard let avatarURL = user?.getAvatarURL() else { return }
+        Utilities.getImageFromURL(imgView: displayImage, url: avatarURL)
+
         self.lblUserName.text = self.viewModel.getName()
         if self.viewModel.categories.count < 1{
             self.viewModel.getCategories { (sucess, servermsg) in
@@ -89,16 +103,12 @@ class MyProfileViewController: BaseViewController {
         }
     }
     func setFlowLayout()-> UICollectionViewFlowLayout{
-        
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 3
         layout.minimumLineSpacing = 3
         return layout
     }
-}
-extension MyProfileViewController{
-    
     @objc private func didTapOnHidePassword(_ sender : BaseUIButton){
         self.viewModel.hidePasswordView = !self.viewModel.hidePasswordView
         self.passwordView.isHidden = self.viewModel.hidePasswordView
@@ -116,11 +126,13 @@ extension MyProfileViewController{
     @objc private func didTapOnChangePassword(_ sender : BaseUIButton){
         self.viewModel.hidePasswordView = !self.viewModel.hidePasswordView
         self.passwordView.isHidden = self.viewModel.hidePasswordView
+        self.view.bringSubviewToFront(passwordView)
     }
     @objc private func didTapOnExpand(_ sender : BaseUIButton){
         self.viewModel.hideCategories = !self.viewModel.hideCategories
         self.collectionView.isHidden = self.viewModel.hideCategories
     }
+    
     
 }
 extension MyProfileViewController: ImagePickerDelegate{
@@ -129,7 +141,6 @@ extension MyProfileViewController: ImagePickerDelegate{
     }
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {
-          
             guard let pictureData = image?.jpegData(compressionQuality: 0.50) else { return }
             self.viewModel.updatePicture(avatar: pictureData) { (success, serverMsg) in
                 if success{
@@ -149,8 +160,15 @@ extension MyProfileViewController : UICollectionViewDelegate, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
         let cellViewModel = self.viewModel.getCellViewModelForRow(row: indexPath.row)
+        let isSubscribed = self.viewModel.checkSubscription(row: indexPath.row)
         cell.cellViewModel = cellViewModel
+        cell.showSubscription(isSubscribed: isSubscribed)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CategoriesCollectionViewCell
+        self.viewModel.didSelectItem(row: indexPath.row)
+        cell.showSubscription(isSubscribed: self.viewModel.checkSubscription(row: indexPath.row))
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return self.viewModel.getItemHeight(collectionWidth: self.collectionView.bounds.width)

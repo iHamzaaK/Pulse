@@ -14,7 +14,7 @@ class MyProfileViewModel
     let headerTitle = ""
     private let navBarType : navigationBarTypes!
     private let name : String!
-    let subscrpition: [String]!
+    var subscrpition: [String]!
     var showInterest : Bool = false
 //    let userData = ArchiveUtil.getUser()
     let profileRepo : UserProfileRepository!
@@ -72,10 +72,11 @@ class MyProfileViewModel
         }
 
     }
-    func updateSubscription(subscriptionId : String, completionHandler: @escaping( _ isSuccess : Bool , _ serverMsg: String)->Void){
-        
+    func updateSubscription(completionHandler: @escaping( _ isSuccess : Bool , _ serverMsg: String)->Void){
+        let strSubscription = subscrpition.joined(separator: ",")
+        print(strSubscription)
         let param = [
-            "subscription" : ""
+            "categories" : strSubscription
         ]
         self.updateProfile(param: param, avatar: nil) { (success, serverMsg) in
             completionHandler(success,serverMsg)
@@ -113,6 +114,33 @@ class MyProfileViewModel
     }
     func getCategoriesCount()->Int{
         return categories?.count ?? 0
+    }
+    func checkSubscription(row: Int)->Bool{
+        let category = self.categories[row]
+        guard let categoryID = category.id  else { return false }
+        if subscrpition.contains(String(categoryID)){
+            return true
+        }
+        return false
+//        while subscrpition.contains(String(categoryID)) {
+//            if let categoryIdIndex = subscrpition.firstIndex(of: String(categoryID)) {
+//                subscrpition.remove(at: categoryIdIndex)
+//            }
+//        }
+        
+    }
+    func didSelectItem(row: Int){
+        let category = self.categories[row]
+        guard let categoryID = category.id  else { return }
+        
+        if subscrpition.contains(String(categoryID)) {
+            if let categoryIdIndex = subscrpition.firstIndex(of: String(categoryID)) {
+                subscrpition.remove(at: categoryIdIndex)
+            }
+        }else{
+            subscrpition.append(String(categoryID))
+        }
+        
     }
     func getCellViewModelForRow(row: Int)->CategoryCellViewModel{
         let category = self.categories[row]

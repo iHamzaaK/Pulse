@@ -47,17 +47,14 @@ class CategoriesViewController: UIViewController {
     }
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
-            
             Utilities.registerNibForCollectionView(nibName: "CategoriesCollectionViewCell", identifier: "CategoriesCollectionViewCell", colView: collectionView)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         getCategories()
-        
         setupSubCategoryView()
-       setupView()
-        
+        setupView()
     }
     func setupView(){
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")

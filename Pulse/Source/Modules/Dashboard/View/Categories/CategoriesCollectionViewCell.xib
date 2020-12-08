@@ -24,9 +24,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="206" height="161"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="17q-U5-79z" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="152.5" y="107.5" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="122.5" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="40e-Wq-0mt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="width" constant="25" id="40e-Wq-0mt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="width" secondItem="17q-U5-79z" secondAttribute="height" multiplier="1:1" id="SNS-Df-TGm"/>
                                 </constraints>
                             </imageView>
@@ -42,16 +42,23 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="subscribed" translatesAutoresizingMaskIntoConstraints="NO" id="hVz-lP-9jn">
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="161"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="17q-U5-79z" secondAttribute="trailing" constant="13.66" id="0dr-YH-9oQ"/>
+                            <constraint firstItem="hVz-lP-9jn" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="4di-KU-tab"/>
                             <constraint firstItem="xgK-8X-3PF" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" constant="13.33" id="5QB-MX-D6f"/>
+                            <constraint firstItem="hVz-lP-9jn" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="DfH-Q0-Y6o"/>
+                            <constraint firstAttribute="bottom" secondItem="hVz-lP-9jn" secondAttribute="bottom" id="Jap-0S-xwt"/>
                             <constraint firstItem="Jau-bj-ULf" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="ZFX-Sa-JRl"/>
                             <constraint firstAttribute="bottom" secondItem="Jau-bj-ULf" secondAttribute="bottom" id="cJp-Rt-6wT"/>
                             <constraint firstAttribute="bottom" secondItem="17q-U5-79z" secondAttribute="bottom" constant="13.66" id="dIN-Ou-eRL"/>
                             <constraint firstAttribute="trailing" secondItem="Jau-bj-ULf" secondAttribute="trailing" id="gtu-0j-nx7"/>
                             <constraint firstAttribute="trailing" secondItem="xgK-8X-3PF" secondAttribute="trailing" constant="13.33" id="hs0-Ku-ace"/>
+                            <constraint firstAttribute="trailing" secondItem="hVz-lP-9jn" secondAttribute="trailing" id="iG3-gi-8MD"/>
                             <constraint firstItem="xgK-8X-3PF" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" constant="13.33" id="jBr-U6-mPq"/>
                             <constraint firstItem="Jau-bj-ULf" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="y1U-K2-BUH"/>
                         </constraints>
@@ -71,6 +78,7 @@
                 <outlet property="imgBg" destination="Jau-bj-ULf" id="pjr-5h-EBb"/>
                 <outlet property="imgSmall" destination="17q-U5-79z" id="maN-vG-8s8"/>
                 <outlet property="lblTitle" destination="xgK-8X-3PF" id="j18-Gh-205"/>
+                <outlet property="subscribedView" destination="hVz-lP-9jn" id="wJo-7o-Xha"/>
                 <outlet property="widthConstraintSmall" destination="40e-Wq-0mt" id="4U7-2q-pkP"/>
             </connections>
             <point key="canvasLocation" x="-285.50724637681162" y="-63.28125"/>
@@ -79,6 +87,7 @@
     <resources>
         <image name="bg-splash" width="281.5" height="609"/>
         <image name="headerLogo" width="136" height="115"/>
+        <image name="subscribed" width="56" height="56"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

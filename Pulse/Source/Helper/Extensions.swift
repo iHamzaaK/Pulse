@@ -24,6 +24,15 @@ extension UIStackView {
         }
     }
 }
+extension UIImageView{
+    func addShadow(){
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 3.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.masksToBounds = false
+    }
+}
 extension Double {
   func asString(style: DateComponentsFormatter.UnitsStyle) -> String {
     let formatter = DateComponentsFormatter()

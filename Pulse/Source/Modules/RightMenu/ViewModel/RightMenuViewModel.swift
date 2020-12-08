@@ -13,7 +13,7 @@ struct RightMenuCellModel{
     var image : String
 }
 enum RightMenuCell : Int{
-    case write
+//    case write
     case home
     case bookmarks
     case settings
@@ -26,7 +26,7 @@ class RightMenuViewModel{
     init(navigationType navBar : navigationBarTypes){
         self.navBarType = navBar
         tblCells = [
-            RightMenuCellModel(value: "Write a news/story   ", image: ""),
+//            RightMenuCellModel(value: "Write a news/story   ", image: ""),
             RightMenuCellModel(value: "Home", image: ""),
             RightMenuCellModel(value: "Bookmarks", image: ""),
             RightMenuCellModel(value: "Settings", image: ""),
@@ -45,10 +45,10 @@ class RightMenuViewModel{
     func didSelectTableCell(row: Int){
         guard let rightCell = RightMenuCell(rawValue: row) else { return }
         switch rightCell {
-        case .write:
-            NotificationCenter.default.post(name: Notification.Name("createPost"), object: nil)
-            AppRouter.showHideRightMenu()
-            break
+//        case .write:
+//            NotificationCenter.default.post(name: Notification.Name("createPost"), object: nil)
+//            AppRouter.showHideRightMenu()
+//            break
         case .home:
             AppRouter.goToHomeFromRightMenu()
             break

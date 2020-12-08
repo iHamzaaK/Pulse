@@ -4,9 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Article Listing View Controller-->
         <scene sceneID="zQF-Kp-Mws">
@@ -38,8 +42,8 @@
                                     <constraint firstItem="yxk-Ja-oIt" firstAttribute="centerY" secondItem="sRB-JS-mNZ" secondAttribute="centerY" id="nAw-dF-gok" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-rt-OIm">
-                                <rect key="frame" x="0.0" y="139" width="390" height="57"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-rt-OIm">
+                                <rect key="frame" x="0.0" y="139" width="390" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="151" height="13"/>
@@ -53,9 +57,9 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Quote of the day is very important for us!”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="31" width="350" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Quote of the day is very important for us!”“Quote of the day is very important for us!”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="21" width="350" height="67"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -74,24 +78,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="8gu-CE-beM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="90" id="8gu-CE-beM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="brt-ni-2vQ" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="CAd-r4-nZ9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstAttribute="bottom" secondItem="brt-ni-2vQ" secondAttribute="bottom" constant="8" id="KHM-sS-UJ5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="brt-ni-2vQ" secondAttribute="bottom" constant="2" id="KHM-sS-UJ5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="Ui5-Ik-LoO" firstAttribute="centerY" secondItem="36Q-FO-2mt" secondAttribute="centerY" id="Qwd-0b-9AG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="trailing" secondItem="brt-ni-2vQ" secondAttribute="trailing" constant="20" id="VKQ-vN-UoT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="trailing" secondItem="Ui5-Ik-LoO" secondAttribute="trailing" constant="19" id="bSF-bS-mlg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="top" constant="8" id="gKa-7X-WBs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="brt-ni-2vQ" firstAttribute="top" secondItem="36Q-FO-2mt" secondAttribute="bottom" constant="10" id="hHz-oW-gs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="brt-ni-2vQ" firstAttribute="top" secondItem="36Q-FO-2mt" secondAttribute="bottom" id="hHz-oW-gs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="ud8-OO-PG1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-nL-RNa">
-                                <rect key="frame" x="0.0" y="193" width="390" height="651"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-nL-RNa">
+                                <rect key="frame" x="0.0" y="226" width="390" height="618"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LhT-aQ-zcf"/>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.97254901959999995" blue="0.98039215690000003" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dpb-rt-OIm" firstAttribute="trailing" secondItem="sRB-JS-mNZ" secondAttribute="trailing" id="7Zo-1O-0hk" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="NSt-nL-RNa" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="bottom" constant="-3" id="GKF-8b-BQU"/>
@@ -122,9 +126,4 @@
             <point key="canvasLocation" x="1932" y="-1700"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

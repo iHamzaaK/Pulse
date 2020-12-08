@@ -16,8 +16,10 @@ struct User: Codable{
     var password : String
     var accessToken : String
     var subscription : [String]
-//    var status : String
-//    var userType : String
-    
+    var avatar : String
+    func getAvatarURL()-> URL?{
+        guard let url = URL(string: avatar) else { return nil}
+        return url
+    }    
 }
 
