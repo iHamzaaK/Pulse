@@ -10,6 +10,13 @@ import UIKit
 class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblSearchResult : BaseUILabel!
+    var articleID : String = ""
+    var cellViewModel : SearchCellViewModel!{
+        didSet{
+            articleID = cellViewModel.articleID
+            lblSearchResult.text = cellViewModel.articleTitle
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -7,6 +7,6 @@
 
 import Foundation
 protocol SearchRepository{
-    func changeOldPassword(resetCode : String,email : String,password : String, completionHandler: @escaping (Bool, String) -> Void)
+    func search(searchText: String, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
 }
 

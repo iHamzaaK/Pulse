@@ -10,36 +10,38 @@ import Foundation
 class SearchRepositoryImplementation : SearchRepository{
     
     
-    private let url = "wp/v2/posts?search"
+    private let url = "wp/v2/sahifa/posts/search?"
     private var isSuccess = false
     private var serverMsg = ""
-    func changeOldPassword(resetCode : String, email : String,password: String, completionHandler: @escaping (Bool, String) -> Void) {
+    func search(searchText: String, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
+    {
         DispatchQueue.main.async{
             ActivityIndicator.shared.showSpinner(nil,title: nil)
         }
-        let params = [
-            "otp": resetCode,
-            "email": email,
-            "password": password
-        ]
+        let endpoint = "s=\(searchText)&limit=\(limit)"
         let headers = [
             "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Authorization": "Bearer " + ArchiveUtil.getUserToken()
         ]
-        BaseRepository.instance.requestService(url: url, method: .get, params: params, header: headers) { (success, serverMsg, data) in
+        BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
             print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{
                 guard let data = data else { return }
                 let decoder = JSONDecoder()
-                let model = try? decoder.decode(GeneralRepoModel.self, from: data.rawData())
-                guard let statusCode = model?.statusCode else { return }
-                self.isSuccess = statusCode != StatusCode.success.rawValue ? false : true
+                let model = try? decoder.decode(SearchRepo.self, from: data.rawData())
+                guard let success = model?.success else { return }
+                self.isSuccess = success
                 guard let statusMsg = model?.message else { return }
                 self.serverMsg = statusMsg
+                guard let searchData = model?.data else { return }
+                completionHandler(self.isSuccess, self.serverMsg, searchData)
+
             }
-            completionHandler(self.isSuccess, self.serverMsg)
+            else{
+                completionHandler(self.isSuccess, self.serverMsg, nil)
+            }
             
         }
     }

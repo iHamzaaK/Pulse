@@ -18,21 +18,7 @@ class SearchViewController: BaseViewController {
     var viewModel : SearchViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.alpha = 0
-        _headerView.leftButtonImage = "search-close-icon"
-        navBarType = self.viewModel.getNavigationBar()
-            view.isOpaque = false
-        view.backgroundColor = UIColor.clear
-
-            let blurBgView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
-            blurBgView.translatesAutoresizingMaskIntoConstraints = false
-
-            view.insertSubview(blurBgView, at: 0)
-
-            NSLayoutConstraint.activate([
-                blurBgView.heightAnchor.constraint(equalTo: view.heightAnchor),
-                blurBgView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                ])
+        setupView()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -55,19 +41,47 @@ class SearchViewController: BaseViewController {
         }
     }
     override func headedrViewSearchTextChanged(str: String) {
-        print(str)
+        if str.count > 3{
+            self.viewModel.getSearchData(searchText: str) { (success, serverMsg) in
+                if success{
+                    self.tblView.reloadData()
+                }
+            }
+        }
     }
 
 }
+extension SearchViewController{
+
+    func setupView(){
+        view.alpha = 0
+        _headerView.leftButtonImage = "search-close-icon"
+        navBarType = self.viewModel.getNavigationBar()
+            view.isOpaque = false
+        view.backgroundColor = UIColor.clear
+
+            let blurBgView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+            blurBgView.translatesAutoresizingMaskIntoConstraints = false
+
+            view.insertSubview(blurBgView, at: 0)
+
+            NSLayoutConstraint.activate([
+                blurBgView.heightAnchor.constraint(equalTo: view.heightAnchor),
+                blurBgView.widthAnchor.constraint(equalTo: view.widthAnchor),
+                ])
+    }
+}
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.viewModel.getSearchCount()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
+        let cellViewModel = self.viewModel.cellViewModelForRow(row: indexPath.row)
+        cell.cellViewModel = cellViewModel
         return cell
     }
 }

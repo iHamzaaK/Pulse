@@ -13,8 +13,8 @@ class SearchBuilder
         let sb = Utilities.getStoryboard(identifier: Storyboards.search.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.search.rawValue) as! SearchViewController
         let navBarType = navigationBarTypes.searchNavBar
-
-        let viewModel = SearchViewModel(navigationType: navBarType)
+        let repo = SearchRepositoryImplementation()
+        let viewModel = SearchViewModel(navigationType: navBarType, repo : repo)
         vc.viewModel = viewModel
         return vc
     }

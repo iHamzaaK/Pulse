@@ -53,7 +53,7 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
                     let decoder = JSONDecoder()
                     let model = try? decoder.decode(LoginRepo.self, from: data.rawData())
                     guard let statusCode = model?.statusCode else { return }
-                    self.isSuccess = statusCode != StatusCode.success.rawValue ? false : true
+                    self.isSuccess = model?.success ?? false
                     guard let statusMsg = model?.message else { return }
                     self.serverMsg = statusMsg
                     guard let modelData = model?.data else { return }

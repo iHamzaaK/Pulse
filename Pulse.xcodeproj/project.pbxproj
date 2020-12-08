@@ -97,6 +97,8 @@
 		637F7D2125798BE100F44400 /* CreatePost-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637F7D2025798BE100F44400 /* CreatePost-iPad.storyboard */; };
 		637F7D2425798BF800F44400 /* Search-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637F7D2325798BF800F44400 /* Search-iPad.storyboard */; };
 		637F7D2725798C1100F44400 /* Likes-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637F7D2625798C1100F44400 /* Likes-iPad.storyboard */; };
+		6385A066258037F70034085F /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385A064258037F70034085F /* SearchData.swift */; };
+		6385A067258037F70034085F /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385A065258037F70034085F /* SearchRepo.swift */; };
 		6385CA0C25687C3C000D21D8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385CA0B25687C3C000D21D8 /* SettingsViewModel.swift */; };
 		6385CA1225687C51000D21D8 /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385CA1125687C51000D21D8 /* SettingsBuilder.swift */; };
 		6385CA1625687C5F000D21D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385CA1525687C5F000D21D8 /* SettingsViewController.swift */; };
@@ -304,6 +306,8 @@
 		637F7D2025798BE100F44400 /* CreatePost-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "CreatePost-iPad.storyboard"; sourceTree = "<group>"; };
 		637F7D2325798BF800F44400 /* Search-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Search-iPad.storyboard"; sourceTree = "<group>"; };
 		637F7D2625798C1100F44400 /* Likes-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Likes-iPad.storyboard"; sourceTree = "<group>"; };
+		6385A064258037F70034085F /* SearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
+		6385A065258037F70034085F /* SearchRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		6385CA0B25687C3C000D21D8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		6385CA1125687C51000D21D8 /* SettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
 		6385CA1525687C5F000D21D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -831,6 +835,15 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		6385A05E258037BA0034085F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6385A064258037F70034085F /* SearchData.swift */,
+				6385A065258037F70034085F /* SearchRepo.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		6385CA0925687C27000D21D8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1320,6 +1333,7 @@
 		63C109B82555F70C0097EDC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6385A05E258037BA0034085F /* Search */,
 				638777E5257C303C004D5A27 /* ArticleListing */,
 				63DB1557257BAFFA007BA6B9 /* CategoriesRepo */,
 				6371918025715F7600277101 /* User.swift */,
@@ -1606,7 +1620,9 @@
 				63A8CD7A2577BFB000A60F56 /* LikesRepositoryImplementation.swift in Sources */,
 				63EE49AB257A4642008083D7 /* MyNewsViewModel.swift in Sources */,
 				6372E6A22557F8BB00A03E01 /* DashboardViewController.swift in Sources */,
+				6385A067258037F70034085F /* SearchRepo.swift in Sources */,
 				63C109DC2555FF830097EDC3 /* DesignUtility.swift in Sources */,
+				6385A066258037F70034085F /* SearchData.swift in Sources */,
 				63A8CD622577B85100A60F56 /* UserProfileRepositoryImplementation.swift in Sources */,
 				63C109D92555FF830097EDC3 /* Alert.swift in Sources */,
 				6346A20B255BDCA5006B3FDF /* BookmarksViewController.swift in Sources */,
