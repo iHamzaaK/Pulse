@@ -149,9 +149,11 @@ class Utilities{
         }
     }
     
-    static func getImageFromURL(imgView: UIImageView, url: URL){
+    static func getImageFromURL(imgView: UIImageView, url: URL, completion: @escaping( _ result : Result<RetrieveImageResult, KingfisherError>)->Void){
         imgView.kf.indicatorType = .activity
-        imgView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
+        imgView.kf.setImage(with: url, placeholder: UIImage.init(named: "placeholder")!, options: [.transition(.fade(0.1)),.cacheOriginalImage], completionHandler: { result in
+            completion(result)
+        })
 
     }
     static func getStoryboardTypeForDeviceType()->String{

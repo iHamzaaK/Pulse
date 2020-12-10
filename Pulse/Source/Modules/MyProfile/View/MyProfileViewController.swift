@@ -91,8 +91,9 @@ extension MyProfileViewController{
     func setupData(){
         let user = ArchiveUtil.getUser()
         guard let avatarURL = user?.getAvatarURL() else { return }
-        Utilities.getImageFromURL(imgView: displayImage, url: avatarURL)
-
+        Utilities.getImageFromURL(imgView: displayImage, url: avatarURL) { (_) in
+            
+        }
         self.lblUserName.text = self.viewModel.getName()
         if self.viewModel.categories.count < 1{
             self.viewModel.getCategories { (sucess, servermsg) in

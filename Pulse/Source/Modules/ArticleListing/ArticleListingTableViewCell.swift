@@ -8,12 +8,11 @@
 import UIKit
 import ReadMoreTextView
 protocol ArticleListingCellProtocol : class {
-    func didTapOnBtnDeleteCommentImage()->Void
-    func didTapOnBtnSendComment()->Void
-    func didTapOnBtnAddPhoto()->Void
-    func didTapOnBtnLike()->Void
-    func didTapOnBtnShare()->Void
-    func didTapOnBtnComment()->Void
+    func didTapOnBtnLike(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnComment(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnBookmark(row: Int)->Void
+
 }
 class ArticleListingTableViewCell: UITableViewCell {
     
@@ -52,13 +51,21 @@ class ArticleListingTableViewCell: UITableViewCell {
             btnBookmark.setImage(cellViewModel.showBookmark(), for: .normal)
             let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
             let readmoreFontColor = UIColor.blue
+            if let bgImageURL = cellViewModel.getBgImageURLForCell() {
+                Utilities.getImageFromURL(imgView: bgImageView, url: bgImageURL){ (_) in
+                    self.setNeedsLayout()
+                }
+            }
+            else{
+                self.bgImageView.image = UIImage.init(named: "placeholder")
+            }
             lblDescription.text = cellViewModel.getShortDescription()
+            self.lblDescription.alpha = 0
             DispatchQueue.main.async {
                 self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
             }
-            if let bgImageURL = cellViewModel.getBgImageURLForCell() {
-                Utilities.getImageFromURL(imgView: bgImageView, url: bgImageURL)
-            }
+            self.lblDescription.alpha = 1
+
             isVideo = cellViewModel.isVideo
             articleID = cellViewModel.articleID
         }
@@ -74,32 +81,32 @@ class ArticleListingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var btnSendComment: UIButton!{
         didSet{
-            btnSendComment.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            btnSendComment.addTarget(self, action: #selector(self.didTapOnBtnComment), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnAddPhoto: UIButton!{
         didSet{
-            btnAddPhoto.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+//            btnAddPhoto.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnBookmark: BaseUIButton!{
         didSet{
-            btnBookmark.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            btnBookmark.addTarget(self, action: #selector(self.didTapOnBookmark), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnShare: BaseUIButton!{
         didSet{
-            btnShare.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            btnShare.addTarget(self, action: #selector(self.didTapOnBtnShare), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnLike: BaseUIButton!{
         didSet{
-            btnLike.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            btnLike.addTarget(self, action: #selector(self.didTapOnBtnLike), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnDeleteCommentImage : BaseUIButton!{
         didSet{
-            btnDeleteCommentImage.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+//            btnDeleteCommentImage.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var commentImage: UIImageView!{
@@ -130,7 +137,7 @@ class ArticleListingTableViewCell: UITableViewCell {
             self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
 
         }
-      
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -154,21 +161,18 @@ class ArticleListingTableViewCell: UITableViewCell {
         hideCommentView = true
     }
     @objc private func didTapOnBtnLike(){
-        delegate.didTapOnBtnLike()
+        delegate.didTapOnBtnLike(cellViewModel: self.cellViewModel)
     }
     @objc private func didTapOnBtnShare(){
-        delegate.didTapOnBtnShare()
+        delegate.didTapOnBtnShare(cellViewModel: self.cellViewModel)
     }
     @objc private func didTapOnBtnComment(){
-        delegate.didTapOnBtnComment()
+        delegate.didTapOnBtnComment(cellViewModel: self.cellViewModel)
     }
-    @objc private func didTapOnBtnSendComment(){
-        delegate.didTapOnBtnSendComment()
+    
+
+    @objc private func didTapOnBookmark(){
+        delegate.didTapOnBtnBookmark(row: self.tag)
     }
-    @objc private func didTapOnBtnAddPhoto(){
-        delegate.didTapOnBtnAddPhoto()
-    }
-    @objc private func didTapOnDeleteButton(){
-        delegate.didTapOnBtnDeleteCommentImage()
-    }
+
 }

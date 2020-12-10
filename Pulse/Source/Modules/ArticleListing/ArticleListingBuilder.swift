@@ -13,7 +13,9 @@ class ArticleListingBuilder
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.articleListing.rawValue) as! ArticleListingViewController
         let navBarType = navigationBarTypes.backButtonWithTitle
         let repo = ArticleListingRepositoryImplementation()
-        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title )
+        let bookmarkRepo = BookmarksRepositoryImplementation()
+
+        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title, bookmarkRepo: bookmarkRepo )
         vc.viewModel = viewModel
         return vc
     }

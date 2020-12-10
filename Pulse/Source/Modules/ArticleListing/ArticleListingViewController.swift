@@ -1,4 +1,4 @@
-            //
+//
 //  ArticleListingViewController.swift
 //  Pulse
 //
@@ -42,7 +42,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-//        self.tblView.reloadData()
+        //        self.tblView.reloadData()
         
     }
     func getData(paged: Int){
@@ -52,7 +52,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
                     self.tblView.delegate = self
                     self.tblView.dataSource = self
                     self.tblView.reloadData()
-
+                    
                 }
             }
         }
@@ -70,53 +70,86 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     }
 }
 
-extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSource{
+extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSource, ArticleListingCellProtocol{
+    func didTapOnBtnLike(cellViewModel: ArticleListingCellViewModel) {
+        
+    }
+    
+    func didTapOnBtnShare(cellViewModel: ArticleListingCellViewModel) {
+        
+    }
+    
+    func didTapOnBtnComment(cellViewModel: ArticleListingCellViewModel) {
+        
+    }
+    
+    
+
+    
+    func didTapOnBtnBookmark(row: Int) {
+        self.viewModel.addRemoveBookmark(row: row) { (isBookmarked, success, serverMsg) in
+            if success{
+                let indexPath = IndexPath(row: row, section: 0)
+                UIView.performWithoutAnimation({
+                    let loc = self.tblView.contentOffset
+                    self.tblView.reloadRows(at: [indexPath], with: .none)
+                    self.tblView.contentOffset = loc
+                    })
+
+            }
+        }
+    }
+    
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.getArticleCount()
-        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListingTableViewCell", for: indexPath) as! ArticleListingTableViewCell
+        cell.tag = indexPath.row
         cell.cellViewModel = self.viewModel.cellViewModelForRow(row: indexPath.row)
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-         let count = self.viewModel.getArticleCount()
-             if count>1{
-                    let lastElement = count - 1
-                    if indexPath.row == lastElement {
-                        //call get api for next page
-                        pageNo += 1
-                    }
-                }
+        let count = self.viewModel.getArticleCount()
+        if count>1{
+            let lastElement = count - 1
+            if indexPath.row == lastElement {
+                //call get api for next page
+                pageNo += 1
+            }
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.viewModel.showQuoteView(){
-
-        if scrollView.contentOffset.y > 50 {// the value when you want the headerview to hide
-            view.layoutIfNeeded()
-            heightConstraintViewQuote.constant = 0
-            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-
-        }else {
-            // expand the header
-            view.layoutIfNeeded()
-            heightConstraintViewQuote.constant = 90 // Your initial height of header view
-            UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-         }
+            
+            if scrollView.contentOffset.y > 50 {// the value when you want the headerview to hide
+                view.layoutIfNeeded()
+                heightConstraintViewQuote.constant = 0
+                UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+                
+            }else {
+                // expand the header
+                view.layoutIfNeeded()
+                heightConstraintViewQuote.constant = 90 // Your initial height of header view
+                UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
         }
     }
     

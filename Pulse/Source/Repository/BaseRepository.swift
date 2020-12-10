@@ -30,7 +30,10 @@ class BaseRepository{
           if response.error == nil{
              guard let data = response.value else { return }
              guard let statusCode = data["statusCode"].int
-                else { return }
+                else {
+                completionHandler(false,"",nil)
+                return
+             }
              if statusCode == StatusCode.authExpired.rawValue{
                 completionHandler(false,"",nil)
                 AppRouter.logout()

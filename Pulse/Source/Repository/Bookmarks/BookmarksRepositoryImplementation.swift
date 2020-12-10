@@ -9,23 +9,21 @@ import Foundation
 class BookmarksRepositoryImplementation : BookmarksRepository{
     
     
-    private let url = "wp/v2/sahifa/change-password"
+    
+    
+    private let url = "wp/v2/sahifa/bookmarks/add"
     private var isSuccess = false
     private var serverMsg = ""
-    func changeOldPassword(resetCode : String, email : String,password: String, completionHandler: @escaping (Bool, String) -> Void) {
-        DispatchQueue.main.async{
-            ActivityIndicator.shared.showSpinner(nil,title: nil)
-        }
+    func adddRemoveBookmark(id: String, completionHandler: @escaping (Bool, String) -> Void) {
+        
         let params = [
-            "otp": resetCode,
-            "email": email,
-            "password": password
+            "id": id,
         ]
         let headers = [
             "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
         ]
-        BaseRepository.instance.requestService(url: url, method: .post, params: params, header: headers) { (success, serverMsg, data) in
+        BaseRepository.instance.requestService(url: url, method: .post, params: params, header: headers, showSpinner: false) { (success, serverMsg, data) in
             print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg

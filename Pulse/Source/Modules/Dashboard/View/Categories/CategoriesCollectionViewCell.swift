@@ -28,10 +28,13 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
             parentID = cellViewModel.parent
             children = cellViewModel.child
             if let bgImageURL = cellViewModel.getBgImageURLForCell() {
-                Utilities.getImageFromURL(imgView: imgBg, url: bgImageURL)
-            }
+                Utilities.getImageFromURL(imgView: imgBg, url: bgImageURL){ (_) in
+                    
+                }            }
             if let imgSmallURL = cellViewModel.getImageForCategoryLogo() {
-                Utilities.getImageFromURL(imgView: imgSmall, url: imgSmallURL)
+                Utilities.getImageFromURL(imgView: imgSmall, url: imgSmallURL){ (_) in
+                    
+                }
             }
             imgSmall.addShadow()
         }

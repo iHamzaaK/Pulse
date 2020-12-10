@@ -16,7 +16,7 @@ struct ArticleListingData : Codable {
     let shortDescription: String
     let date : String
     let tag : String
-    let isBookmarked : Bool
+    var isBookmarked : Bool
     let isLiked : Bool
     let likeCount : Int
 

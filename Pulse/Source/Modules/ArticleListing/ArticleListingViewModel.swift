@@ -12,11 +12,12 @@ class ArticleListingViewModel
     private let navBarType : navigationBarTypes!
     let type : articleListingType!
     let repository : ArticleListingRepository!
+    let bookmarkRepository : BookmarksRepository!
     var categoryId = -1
     var artiicleList : [ArticleListingData] = []
     var quote : [ArticleListingQuoteOfTheDay] = []
     var maximumPages = 1
-    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String) {
+    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository) {
         self.navBarType = navBar
         self.type = type
         self.repository = repo
@@ -24,6 +25,7 @@ class ArticleListingViewModel
             self.categoryId = categoryId ?? -1
         }
         self.headerTitle = title
+        self.bookmarkRepository = bookmarkRepo
     
     }
     func getNavigationBar()-> navigationBarTypes{
@@ -69,6 +71,27 @@ class ArticleListingViewModel
     func didTapOnCell(row: Int, completionHandler:( _ vc : UIViewController)->Void){
         
     }
+    func addRemoveBookmark(row: Int ,completionHandler: @escaping ( _ isBookmarked : Bool , _ success : Bool , _ serverMsg : String)->Void){
+        let article = artiicleList[row]
+        let articleID = String(article.id ?? -1)
+        self.bookmarkRepository.adddRemoveBookmark(id: articleID) { (success, message) in
+            if success {
+                if message == "Bookmark has successfully saved."{
+                    self.artiicleList[row].isBookmarked = true
+                    completionHandler(true,success, message)
+                }
+                else{
+                    self.artiicleList[row].isBookmarked = false
+
+                    completionHandler(false,success, message)
+                }
+            }
+            else{
+                completionHandler(false,success, message)
+
+            }
+        }
+    }
 }
 
 
@@ -84,8 +107,8 @@ struct ArticleListingCellViewModel{
     let shortDescription: String
     let date : String
     let tag : String
-    let isBookmarked : Bool
-    let isLiked : Bool
+    var isBookmarked : Bool
+    var isLiked : Bool
     let likeCount : Int
     
     func getShortDescription()->String{

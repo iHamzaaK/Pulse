@@ -51,7 +51,9 @@ extension RightMenuViewController{
         let user = ArchiveUtil.getUser()
         guard let avatarURL = user?.getAvatarURL() else { return }
         lblName.text = (user?.firstName ?? "") + " " + (user?.lastName ?? "")
-        Utilities.getImageFromURL(imgView: imgView, url: avatarURL)
+        Utilities.getImageFromURL(imgView: imgView, url: avatarURL){ (_) in
+            
+        }
     }
 }
 extension RightMenuViewController{
