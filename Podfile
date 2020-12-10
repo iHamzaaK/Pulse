@@ -21,6 +21,7 @@ target 'Pulse' do
   pod 'ActionSheetPicker-3.0', '~> 2.3.0'
   pod 'SwiftEntryKit'
   pod 'OTPFieldView'
+  pod 'MMPlayerView'
 
   # Pods for Pulse
 

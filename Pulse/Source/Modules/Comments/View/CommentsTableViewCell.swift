@@ -16,7 +16,19 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var btnSeeAllComments : BaseUIButton?
     @IBOutlet weak var widthConstraintImageView : BaseLayoutConstraint?
     @IBOutlet weak var leadingConstraintImageView : BaseLayoutConstraint?
-
+    var cellViewModel : CommentCellViewModel!{
+        didSet{
+            if let imageURL  = cellViewModel.getImageURL() {
+                Utilities.getImageFromURL(imgView: imgViewUserName!, url: imageURL) { (_) in
+                    self.setNeedsLayout()
+                }
+            }
+            lblUsername?.text = cellViewModel.author
+            lblTime?.text = cellViewModel.timestamp
+            lblComment?.text = cellViewModel.comment
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

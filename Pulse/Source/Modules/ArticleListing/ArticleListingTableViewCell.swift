@@ -7,11 +7,15 @@
 
 import UIKit
 import ReadMoreTextView
+import MMPlayerView
+import AVFoundation
+
 protocol ArticleListingCellProtocol : class {
     func didTapOnBtnLike(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnComment(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnBookmark(row: Int)->Void
+    func didTapOnPlay(row: Int , isPlaying: Bool)->Void
 
 }
 class ArticleListingTableViewCell: UITableViewCell {
@@ -23,6 +27,12 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDate: BaseUILabel!
     @IBOutlet weak var lblDescription: BaseUILabel!
     @IBOutlet weak var lblTotalLikes: BaseUILabel!
+    @IBOutlet weak var btnPlay : BaseUIButton!{
+        didSet{
+            btnPlay.isHidden = true
+            btnPlay.addTarget(self, action: #selector(self.didTapOnPlay), for: .touchUpInside)
+        }
+    }
 
     @IBOutlet weak var lblTitle: BaseUILabel!
     @IBOutlet weak var leadingConstraintContentView: BaseLayoutConstraint!
@@ -34,6 +44,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var heightConstraintLikeCountStackView : NSLayoutConstraint!
     var isVideo : Bool = false
     var articleID : Int = -1
+    var videoStr = ""
     var cellViewModel : ArticleListingCellViewModel!{
         didSet{
             lblTitle.text = cellViewModel.title
@@ -61,12 +72,13 @@ class ArticleListingTableViewCell: UITableViewCell {
             }
             lblDescription.text = cellViewModel.getShortDescription()
             self.lblDescription.alpha = 0
-            DispatchQueue.main.async {
-                self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-            }
+//            DispatchQueue.main.async {
+//                self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+//            }
             self.lblDescription.alpha = 1
+            
 
-            isVideo = cellViewModel.isVideo
+            isVideo = true//cellViewModel.isVideo
             articleID = cellViewModel.articleID
         }
     }
@@ -173,6 +185,10 @@ class ArticleListingTableViewCell: UITableViewCell {
 
     @objc private func didTapOnBookmark(){
         delegate.didTapOnBtnBookmark(row: self.tag)
+    }
+    @objc  private func didTapOnPlay(){
+
+        delegate.didTapOnPlay(row: self.tag, isPlaying: false)
     }
 
 }

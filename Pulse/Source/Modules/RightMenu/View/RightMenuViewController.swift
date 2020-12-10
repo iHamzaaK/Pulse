@@ -72,7 +72,7 @@ extension RightMenuViewController{
         AppRouter.logout()
     }
     @objc func didTapOnTerms(){
-        AppRouter.goToSpecificController(vc: FullArticleBuilder.build())
+//        AppRouter.goToSpecificController(vc: FullArticleBuilder.build())
     }
 }
 extension RightMenuViewController: UITableViewDelegate, UITableViewDataSource{

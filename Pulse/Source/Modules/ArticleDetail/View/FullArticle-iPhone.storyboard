@@ -17,27 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEP-h7-MVL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEP-h7-MVL">
                                 <rect key="frame" x="0.0" y="71" width="414" height="825"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZh-7o-3tt">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="719.5"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JZh-7o-3tt" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="18.5" y="40" width="381" height="615.5"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omE-ue-3UD" userLabel="VideoView">
-                                                <rect key="frame" x="16.5" y="0.0" width="381" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="381" height="200"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Et9-X6-wh1" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="381" height="200"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Et9-X6-wh1" firstAttribute="leading" secondItem="omE-ue-3UD" secondAttribute="leading" id="4fN-xp-Tpy"/>
                                                     <constraint firstAttribute="height" constant="200" id="JcS-Ui-ILT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Et9-X6-wh1" secondAttribute="trailing" id="VI4-i4-S9X"/>
+                                                    <constraint firstItem="Et9-X6-wh1" firstAttribute="top" secondItem="omE-ue-3UD" secondAttribute="top" id="W7J-Qr-xHr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Et9-X6-wh1" secondAttribute="bottom" id="v4m-Ik-QGL"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H6-iV-p5Q" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                                <rect key="frame" x="18" y="210" width="378" height="20.5"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H6-iV-p5Q" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="210" width="345" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="svT-8C-UdG">
-                                                <rect key="frame" x="18" y="239" width="179.5" height="20"/>
+                                                <rect key="frame" x="18" y="218.5" width="179.5" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMU-iQ-SGV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="20"/>
@@ -62,14 +71,9 @@
                                                 </subviews>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-7u-4fz">
-                                                <rect key="frame" x="18" y="267" width="378" height="116.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="18" y="246.5" width="345" height="33"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="AccentColor"/>
-                                                <string key="text">Al contrario di quanto si pensi, Lorem
-Ipsum non è semplicemente sequen und
-quando un anonimo tipografo.Al contrario di quanto si pensi, Lorem
-Ipsum non è semplicemente sequen und
-aAl contrario di quanto si pea</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -83,18 +87,18 @@ aAl contrario di quanto si pea</string>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-VG-B4V">
-                                                <rect key="frame" x="18" y="394.5" width="378" height="33"/>
+                                                <rect key="frame" x="18" y="290.5" width="345" height="33"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCg-Ao-Bn0" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="5.5" width="106" height="22"/>
+                                                        <rect key="frame" x="0.0" y="5.5" width="95" height="22"/>
                                                         <state key="normal" image="icon-like"/>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-eY-yn8" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                                        <rect key="frame" x="136" y="5.5" width="106" height="22"/>
+                                                        <rect key="frame" x="125" y="5.5" width="95" height="22"/>
                                                         <state key="normal" image="icon-share"/>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-5q-I59" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                                        <rect key="frame" x="272" y="5.5" width="106" height="22"/>
+                                                        <rect key="frame" x="250" y="5.5" width="95" height="22"/>
                                                         <state key="normal" image="icon-bookmark"/>
                                                     </button>
                                                 </subviews>
@@ -102,8 +106,20 @@ aAl contrario di quanto si pea</string>
                                                     <constraint firstAttribute="height" constant="33" id="sbh-Eh-1aW"/>
                                                 </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DL-Ol-Y9K" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                                <rect key="frame" x="23.5" y="333.5" width="334" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Regular"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avu-zL-G5y" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
-                                                <rect key="frame" x="23.5" y="437.5" width="367" height="38.5"/>
+                                                <rect key="frame" x="23.5" y="343.5" width="334" height="38.5"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcO-Bl-qYW">
                                                         <rect key="frame" x="6.5" y="7" width="25" height="25"/>
@@ -114,12 +130,12 @@ aAl contrario di quanto si pea</string>
                                                         <state key="normal" image="Icon"/>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Comment ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zto-MN-h8T" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
-                                                        <rect key="frame" x="41.5" y="10" width="283" height="18.5"/>
+                                                        <rect key="frame" x="41.5" y="10" width="250" height="18.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pd-Fr-ZDt">
-                                                        <rect key="frame" x="334.5" y="6.5" width="26" height="26"/>
+                                                        <rect key="frame" x="301.5" y="6.5" width="26" height="26"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="2Pd-Fr-ZDt" secondAttribute="height" multiplier="1:1" id="Ced-kD-19x"/>
                                                             <constraint firstAttribute="width" constant="26" id="L0N-NM-OLA"/>
@@ -144,16 +160,18 @@ aAl contrario di quanto si pea</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNQ-Di-6HK">
-                                                <rect key="frame" x="23.5" y="484" width="367" height="213"/>
+                                                <rect key="frame" x="23.5" y="390" width="334" height="213"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="213" id="aoh-7i-KJU"/>
                                                 </constraints>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="avu-zL-G5y" firstAttribute="top" secondItem="4DL-Ol-Y9K" secondAttribute="bottom" constant="10" id="2GS-EM-cOC"/>
                                             <constraint firstItem="svT-8C-UdG" firstAttribute="leading" secondItem="2H6-iV-p5Q" secondAttribute="leading" id="3sW-xu-4rh"/>
+                                            <constraint firstItem="4DL-Ol-Y9K" firstAttribute="leading" secondItem="avu-zL-G5y" secondAttribute="leading" id="7mN-Ua-WOd"/>
                                             <constraint firstItem="RNQ-Di-6HK" firstAttribute="top" secondItem="avu-zL-G5y" secondAttribute="bottom" constant="8" symbolic="YES" id="BLk-FA-h05"/>
                                             <constraint firstItem="omE-ue-3UD" firstAttribute="top" secondItem="JZh-7o-3tt" secondAttribute="top" id="HK9-sw-Qmx"/>
                                             <constraint firstItem="gtX-7u-4fz" firstAttribute="top" secondItem="svT-8C-UdG" secondAttribute="bottom" constant="8" symbolic="YES" id="IZq-jr-VFB"/>
@@ -165,33 +183,40 @@ aAl contrario di quanto si pea</string>
                                             <constraint firstItem="2H6-iV-p5Q" firstAttribute="leading" secondItem="JZh-7o-3tt" secondAttribute="leading" constant="18" id="RjO-ms-QFc"/>
                                             <constraint firstAttribute="trailing" secondItem="2H6-iV-p5Q" secondAttribute="trailing" constant="18" id="Sos-hw-Xya"/>
                                             <constraint firstItem="RNQ-Di-6HK" firstAttribute="centerX" secondItem="avu-zL-G5y" secondAttribute="centerX" id="T5W-UT-Xwq"/>
-                                            <constraint firstAttribute="trailing" secondItem="omE-ue-3UD" secondAttribute="trailing" constant="16.670000000000002" id="aYq-im-Nof"/>
+                                            <constraint firstAttribute="trailing" secondItem="omE-ue-3UD" secondAttribute="trailing" id="aYq-im-Nof"/>
                                             <constraint firstItem="RNQ-Di-6HK" firstAttribute="leading" secondItem="avu-zL-G5y" secondAttribute="leading" id="bfM-F4-gvc"/>
-                                            <constraint firstItem="omE-ue-3UD" firstAttribute="leading" secondItem="JZh-7o-3tt" secondAttribute="leading" constant="16.670000000000002" id="d0W-6k-oys"/>
+                                            <constraint firstItem="omE-ue-3UD" firstAttribute="leading" secondItem="JZh-7o-3tt" secondAttribute="leading" id="d0W-6k-oys"/>
                                             <constraint firstItem="RNQ-Di-6HK" firstAttribute="trailing" secondItem="avu-zL-G5y" secondAttribute="trailing" id="dfz-YT-jxQ"/>
                                             <constraint firstItem="EQp-VG-B4V" firstAttribute="leading" secondItem="gtX-7u-4fz" secondAttribute="leading" id="eMC-eD-1DJ"/>
                                             <constraint firstItem="EQp-VG-B4V" firstAttribute="top" secondItem="gtX-7u-4fz" secondAttribute="bottom" constant="11" id="gnd-db-M4p"/>
                                             <constraint firstItem="avu-zL-G5y" firstAttribute="leading" secondItem="JZh-7o-3tt" secondAttribute="leading" constant="23.329999999999998" id="jdW-xB-Kir"/>
+                                            <constraint firstItem="4DL-Ol-Y9K" firstAttribute="trailing" secondItem="avu-zL-G5y" secondAttribute="trailing" id="k4a-ez-AK2"/>
                                             <constraint firstItem="2H6-iV-p5Q" firstAttribute="top" secondItem="omE-ue-3UD" secondAttribute="bottom" constant="10" id="peb-9Z-DU0"/>
+                                            <constraint firstItem="4DL-Ol-Y9K" firstAttribute="top" secondItem="EQp-VG-B4V" secondAttribute="bottom" constant="10" id="tmS-FF-LO0"/>
                                             <constraint firstItem="svT-8C-UdG" firstAttribute="top" secondItem="2H6-iV-p5Q" secondAttribute="bottom" constant="8.5" id="vXW-sH-9Eg"/>
-                                            <constraint firstItem="avu-zL-G5y" firstAttribute="top" secondItem="EQp-VG-B4V" secondAttribute="bottom" constant="10" id="wMG-Np-MYA"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="JZh-7o-3tt" firstAttribute="width" secondItem="OEP-h7-MVL" secondAttribute="width" id="9OI-zU-BH1"/>
+                                    <constraint firstAttribute="trailing" secondItem="JZh-7o-3tt" secondAttribute="trailing" constant="16.5" id="4A0-FZ-icP"/>
+                                    <constraint firstItem="JZh-7o-3tt" firstAttribute="width" secondItem="OEP-h7-MVL" secondAttribute="width" multiplier="0.92" id="9OI-zU-BH1"/>
+                                    <constraint firstItem="JZh-7o-3tt" firstAttribute="leading" secondItem="OEP-h7-MVL" secondAttribute="leading" constant="16.5" id="GaX-Xo-RWJ"/>
                                     <constraint firstAttribute="bottom" secondItem="JZh-7o-3tt" secondAttribute="bottom" id="fpd-OB-aPw"/>
                                     <constraint firstItem="JZh-7o-3tt" firstAttribute="top" secondItem="OEP-h7-MVL" secondAttribute="top" constant="40" id="kON-LD-Oil"/>
-                                    <constraint firstAttribute="trailing" secondItem="JZh-7o-3tt" secondAttribute="trailing" id="oVV-0A-PSd"/>
-                                    <constraint firstItem="JZh-7o-3tt" firstAttribute="leading" secondItem="OEP-h7-MVL" secondAttribute="leading" id="tCW-qg-zSk"/>
+                                    <constraint firstItem="JZh-7o-3tt" firstAttribute="top" secondItem="OEP-h7-MVL" secondAttribute="top" constant="40" id="tS5-mS-nER"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="E99-ho-gfQ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="SaZ-eX-suZ"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W8w-Ri-1ea"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="OEP-h7-MVL" firstAttribute="top" secondItem="u92-hd-7b5" secondAttribute="top" constant="71" identifier="topConstraintHeader" id="6n9-0d-bKv"/>
                             <constraint firstAttribute="trailing" secondItem="OEP-h7-MVL" secondAttribute="trailing" id="J3v-r7-Ba3"/>
@@ -204,11 +229,17 @@ aAl contrario di quanto si pea</string>
                         <outlet property="btnLike" destination="VCg-Ao-Bn0" id="lgz-Ah-kIx"/>
                         <outlet property="btnSendComment" destination="2Pd-Fr-ZDt" id="Epg-2R-xO9"/>
                         <outlet property="btnShare" destination="p6i-eY-yn8" id="l9R-Db-Zyg"/>
+                        <outlet property="heightConstraintTableView" destination="aoh-7i-KJU" id="wLz-HK-0jr"/>
+                        <outlet property="imgView" destination="Et9-X6-wh1" id="b4d-Zx-cI1"/>
                         <outlet property="lblNewsTitle" destination="2H6-iV-p5Q" id="xAV-S8-2c5"/>
                         <outlet property="lblNewsType" destination="3CB-03-sFR" id="JuR-cd-fTc"/>
                         <outlet property="lblTime" destination="NMU-iQ-SGV" id="Feo-8d-jXT"/>
+                        <outlet property="lblTotalLikes" destination="4DL-Ol-Y9K" id="smO-q3-hdd"/>
                         <outlet property="tblViewComments" destination="RNQ-Di-6HK" id="anw-77-UaG"/>
                         <outlet property="txtViewArticle" destination="gtX-7u-4fz" id="VDB-87-L88"/>
+                        <outlet property="viewComment" destination="avu-zL-G5y" id="Q1d-fx-e5m"/>
+                        <outlet property="viewStackLikeShareComment" destination="EQp-VG-B4V" id="BQo-kT-caJ"/>
+                        <outlet property="viewStackTimeType" destination="svT-8C-UdG" id="Bej-IK-byY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d8-GN-MGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -218,9 +249,9 @@ aAl contrario di quanto si pea</string>
     </scenes>
     <resources>
         <image name="Icon" width="11.5" height="10.5"/>
-        <image name="icon-bookmark" width="11" height="11"/>
-        <image name="icon-like" width="11" height="11"/>
-        <image name="icon-share" width="11" height="11"/>
+        <image name="icon-bookmark" width="22" height="22"/>
+        <image name="icon-like" width="22" height="22"/>
+        <image name="icon-share" width="22" height="22"/>
         <image name="send-button" width="20" height="20"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -230,9 +261,6 @@ aAl contrario di quanto si pea</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

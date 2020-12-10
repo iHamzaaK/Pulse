@@ -7,11 +7,7 @@
 
 import Foundation
 class ArticleListingRepositoryImplementation : ArticleListingRepository{
-   
-    
-    
-    
-    
+
     private let url = "wp/v2/sahifa/category/posts?"
     private var isSuccess = false
     private var serverMsg = ""

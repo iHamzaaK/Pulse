@@ -69,7 +69,10 @@ class ArticleListingViewModel
         return cellViewModel
     }
     func didTapOnCell(row: Int, completionHandler:( _ vc : UIViewController)->Void){
-        
+        let article = artiicleList[row]
+        let articleID = String(article.id ?? -1)
+        let vc = FullArticleBuilder.build(articleID: articleID)
+        completionHandler(vc)
     }
     func addRemoveBookmark(row: Int ,completionHandler: @escaping ( _ isBookmarked : Bool , _ success : Bool , _ serverMsg : String)->Void){
         let article = artiicleList[row]

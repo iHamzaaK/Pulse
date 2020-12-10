@@ -9,6 +9,7 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - MMPlayerView (6.0.2)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - CDAlertView
   - IQKeyboardManagerSwift
   - Kingfisher
+  - MMPlayerView
   - NVActivityIndicatorView
   - OTPFieldView
   - ReadMoreTextView
@@ -47,6 +49,7 @@ SPEC REPOS:
     - CDAlertView
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MMPlayerView
     - NVActivityIndicatorView
     - OTPFieldView
     - QuickLayout
@@ -65,6 +68,7 @@ SPEC CHECKSUMS:
   CDAlertView: ee6a87c90c4283c8d316d55633db1a6981f1cc51
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  MMPlayerView: e28bace82369bcfbfbe29f9dcd30eeb641a46754
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   OTPFieldView: 700a752fe62c41d1c4914c78aa500fb30d97c255
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
@@ -76,6 +80,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: de23da84993c5cdf7a8bc1aba1b556ae67c93dcd
+PODFILE CHECKSUM: 4e620bfa2147a47ae946f4f1b7dbc1e388e97285
 
 COCOAPODS: 1.10.0

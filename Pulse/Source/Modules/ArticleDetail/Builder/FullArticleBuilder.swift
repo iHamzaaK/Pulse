@@ -8,12 +8,13 @@
 import UIKit
 class FullArticleBuilder
 {
-    static func build()-> UIViewController{
+    static func build(articleID: String)-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.fullArticle.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.fullArticle.rawValue) as! FullArticleViewController
         let navBarType = navigationBarTypes.backButtonWithRightMenuButton
-
-        let viewModel = FullArticleViewModel(navigationType: navBarType)
+        let repo  = ArticleDetailRepositoryImplementation()
+        let bookmarkRepo = BookmarksRepositoryImplementation()
+        let viewModel = FullArticleViewModel(navigationType: navBarType, repo : repo, articleID: articleID, bookmarkRepo: bookmarkRepo)
         vc.viewModel = viewModel
         return vc
     }
