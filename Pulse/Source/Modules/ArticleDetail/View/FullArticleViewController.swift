@@ -90,7 +90,9 @@ extension FullArticleViewController{
                 self.lblTotalLikes.text = self.viewModel.getTotalLikeCount()
                 self.btnBookmark.setImage(UIImage(named: strImage), for: .normal)
                 self.tblViewComments.reloadData()
-                self.heightConstraintTableView?.constant = self.tblViewComments.contentSize.height
+                if self.viewModel.getCommentCounts() < 1{
+                self.heightConstraintTableView?.constant = 0
+                }
                 self.viewStackLikeShareComment.alpha = 1
                 self.tblViewComments.alpha = 1
                 self.viewStackTimeType.alpha = 1

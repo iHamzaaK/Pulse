@@ -86,7 +86,7 @@ class FullArticleViewModel
         return cellViewModel
     }
     func getArticleData(completionHandler: @escaping ( _ success : Bool , _ message : String)->Void){
-        self.repository.getArticleDetail(articleID: articleID) { (success, serverMsg, data, commments)  in
+        self.repository.getArticleDetail(articleID: "8120") { (success, serverMsg, data, commments)  in
             if success{
                 if let articleData = data?.first{
                     self.articleData = articleData
