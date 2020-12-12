@@ -163,6 +163,8 @@ extension MyProfileViewController : UICollectionViewDelegate, UICollectionViewDe
         let cellViewModel = self.viewModel.getCellViewModelForRow(row: indexPath.row)
         let isSubscribed = self.viewModel.checkSubscription(row: indexPath.row)
         cell.cellViewModel = cellViewModel
+        let cellFont = cell.lblTitle.font.fontName
+        cell.lblTitle.font = UIFont(name: cellFont, size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
         cell.showSubscription(isSubscribed: isSubscribed)
         return cell
     }

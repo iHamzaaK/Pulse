@@ -11,8 +11,19 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var btnForgetPassword: UIButton!
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var txtPassword: HoshiTextField!
-    @IBOutlet weak var txtEmail: HoshiTextField!
+    @IBOutlet weak var txtPassword: HoshiTextField!{
+        didSet{
+            txtPassword.delegate = self
+            txtPassword.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)
+
+        }
+    }
+    @IBOutlet weak var txtEmail: HoshiTextField!{
+        didSet{
+            txtEmail.delegate = self
+            txtEmail.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)
+        }
+    }
     @IBOutlet weak var lblEmailError: UILabel!{
         didSet{
             lblEmailError.text = ""
@@ -41,6 +52,9 @@ extension LoginViewController{
         txtPassword.isSecureTextEntry = true
         btnForgetPassword.addTarget(self, action: #selector(self.didTapOnForget), for: .touchUpInside)
         btnNext.addTarget(self, action: #selector(self.didTapOnLogin), for: .touchUpInside)
+        let font = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(18, sizedForIPad: false, sizedForNavi: false))
+        self.txtEmail.font = font
+        self.txtPassword.font = font
 
     }
     @objc private func didTapOnForget(){
@@ -66,16 +80,25 @@ extension LoginViewController{
 
                     }
                     else{
-                        Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)
+                        self.lblEmailError.isHidden = false
+                        self.lblPasswordError.isHidden = false
+                        self.lblEmailError.text = ErrorDescription.invalidEmail.rawValue
+                        self.lblPasswordError.text = ErrorDescription.invalidPasswordd.rawValue
+
+//                        Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)
                     }
                 }
             }
         }
         catch EmailErrors.invalidEmail{
-            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: ErrorDescription.invalidEmail.rawValue, autoHidetimer: 2, type: .error)
+            lblEmailError.text = ErrorDescription.invalidEmail.rawValue
+            lblEmailError.isHidden = false
+//            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: ErrorDescription.invalidEmail.rawValue, autoHidetimer: 2, type: .error)
         }
         catch PasswordErrors.invalidPassword{
-            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: ErrorDescription.invalidPasswordd.rawValue, autoHidetimer: 2, type: .error)
+            lblPasswordError.text = ErrorDescription.invalidPasswordd.rawValue
+            lblPasswordError.isHidden = false
+//            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: ErrorDescription.invalidPasswordd.rawValue, autoHidetimer: 2, type: .error)
         }
         catch{
         }
@@ -84,6 +107,20 @@ extension LoginViewController{
 
 extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtEmail{
+            txtPassword.becomeFirstResponder()
+        }
+        else {
+            self.view.endEditing(true)
+        }
         return true
+    }
+    
+   
+    @objc func didChangeText(){
+        self.lblPasswordError.isHidden = true
+        self.lblEmailError.isHidden = true
+        self.lblPasswordError.text =  ""
+        self.lblEmailError.text = ""
     }
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2402F129258249BB0092CD04 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2402F128258249BB0092CD04 /* PlayerView.swift */; };
+		24479F8B2584354A009B00EB /* QuotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F8A2584354A009B00EB /* QuotesRepository.swift */; };
+		24479F8F25843559009B00EB /* QuotesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F8E25843559009B00EB /* QuotesRepositoryImplementation.swift */; };
+		24479F93258440D8009B00EB /* QuotesRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F92258440D8009B00EB /* QuotesRepoModel.swift */; };
+		24479F9625844501009B00EB /* LikeRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F9525844501009B00EB /* LikeRepoModel.swift */; };
 		2460AB5625826ABF00D3BF43 /* CoverA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460AB5425826ABF00D3BF43 /* CoverA.swift */; };
 		2460AB5725826ABF00D3BF43 /* CoverA.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2460AB5525826ABF00D3BF43 /* CoverA.xib */; };
 		2460AB5E2582C72A00D3BF43 /* PostDetailRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460AB5B2582C72900D3BF43 /* PostDetailRepo.swift */; };
@@ -221,6 +225,10 @@
 
 /* Begin PBXFileReference section */
 		2402F128258249BB0092CD04 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		24479F8A2584354A009B00EB /* QuotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepository.swift; sourceTree = "<group>"; };
+		24479F8E25843559009B00EB /* QuotesRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepositoryImplementation.swift; sourceTree = "<group>"; };
+		24479F92258440D8009B00EB /* QuotesRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepoModel.swift; sourceTree = "<group>"; };
+		24479F9525844501009B00EB /* LikeRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRepoModel.swift; sourceTree = "<group>"; };
 		2460AB5425826ABF00D3BF43 /* CoverA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverA.swift; sourceTree = "<group>"; };
 		2460AB5525826ABF00D3BF43 /* CoverA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoverA.xib; sourceTree = "<group>"; };
 		2460AB5B2582C72900D3BF43 /* PostDetailRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailRepo.swift; sourceTree = "<group>"; };
@@ -450,6 +458,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24479F8925843538009B00EB /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				24479F8A2584354A009B00EB /* QuotesRepository.swift */,
+				24479F8E25843559009B00EB /* QuotesRepositoryImplementation.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		24479F91258440C3009B00EB /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				24479F92258440D8009B00EB /* QuotesRepoModel.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		24479F9825844505009B00EB /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				24479F9525844501009B00EB /* LikeRepoModel.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
 		2460AB5325826AB500D3BF43 /* CoverVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1372,6 +1405,7 @@
 		63C109B82555F70C0097EDC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24479F91258440C3009B00EB /* Quotes */,
 				2460AB5A2582C71A00D3BF43 /* ArticleDetail */,
 				6385A05E258037BA0034085F /* Search */,
 				638777E5257C303C004D5A27 /* ArticleListing */,
@@ -1379,6 +1413,7 @@
 				6371918025715F7600277101 /* User.swift */,
 				63719183257164CF00277101 /* LoginRepo.swift */,
 				6386894325768F07003ECCD3 /* General.swift */,
+				24479F9825844505009B00EB /* Likes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1386,6 +1421,7 @@
 		63C109B92555F7100097EDC3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				24479F8925843538009B00EB /* Quotes */,
 				638777F4257C30FD004D5A27 /* Artiice */,
 				63A8CD692577BC6200A60F56 /* Favourites */,
 				63A8CD682577BC5C00A60F56 /* Bookmarks */,
@@ -1684,6 +1720,7 @@
 				6386894825769357003ECCD3 /* OTPViewModel.swift in Sources */,
 				63A8CD5F2577B83F00A60F56 /* UserProfileRepository.swift in Sources */,
 				6346A1EB255BDB33006B3FDF /* PagerTabStripError.swift in Sources */,
+				24479F8B2584354A009B00EB /* QuotesRepository.swift in Sources */,
 				6386893725768CDB003ECCD3 /* OTPRepository.swift in Sources */,
 				2460AB5F2582C72A00D3BF43 /* PostDetailComment.swift in Sources */,
 				636EAB13256029D200476A03 /* CommentsBuilder.swift in Sources */,
@@ -1698,6 +1735,7 @@
 				63C109C62555FF7C0097EDC3 /* AppRouter.swift in Sources */,
 				6346A206255BDBC4006B3FDF /* MyNewsViewController.swift in Sources */,
 				2460AB5625826ABF00D3BF43 /* CoverA.swift in Sources */,
+				24479F9625844501009B00EB /* LikeRepoModel.swift in Sources */,
 				63C109C82555FF7C0097EDC3 /* Enum.swift in Sources */,
 				6386894425768F07003ECCD3 /* General.swift in Sources */,
 				6386894B25769361003ECCD3 /* OTPBuilder.swift in Sources */,
@@ -1705,6 +1743,7 @@
 				63629AF725560F83003836A2 /* SplashBuilder.swift in Sources */,
 				639CF69125617EA20013DAC7 /* QuotesTableViewCell.swift in Sources */,
 				63C109E22555FF830097EDC3 /* ActivityIndicatorWrapper.swift in Sources */,
+				24479F8F25843559009B00EB /* QuotesRepositoryImplementation.swift in Sources */,
 				6372E6B92558018100A03E01 /* TopStoriesViewModel.swift in Sources */,
 				63C109C12555FF740097EDC3 /* BaseRepository.swift in Sources */,
 				63719142257110F800277101 /* SearchViewController.swift in Sources */,
@@ -1786,6 +1825,7 @@
 				636EAB10256029C900476A03 /* CommentsViewModel.swift in Sources */,
 				6372E6A82557F96700A03E01 /* DashboardViewModel.swift in Sources */,
 				6346A1E7255BDB33006B3FDF /* IndicatorInfo.swift in Sources */,
+				24479F93258440D8009B00EB /* QuotesRepoModel.swift in Sources */,
 				6385CA1625687C5F000D21D8 /* SettingsViewController.swift in Sources */,
 				63C109E02555FF830097EDC3 /* DatePickerExtension.swift in Sources */,
 				63C109DE2555FF830097EDC3 /* ArchiveUtils.swift in Sources */,

@@ -11,7 +11,7 @@ import MMPlayerView
 import AVFoundation
 
 protocol ArticleListingCellProtocol : class {
-    func didTapOnBtnLike(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnLike(row : Int)->Void
     func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnComment(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnBookmark(row: Int)->Void
@@ -52,7 +52,7 @@ class ArticleListingTableViewCell: UITableViewCell {
             lblDate.text = cellViewModel.date
             lblTotalLikes.text = cellViewModel.showTotalLikes()
         
-            if cellViewModel.likeCount < 1 {
+            if cellViewModel.likeCount < 1 && !cellViewModel.isLiked {
                 heightConstraintLikeCountStackView.constant = 0
             }
             else{
@@ -76,7 +76,11 @@ class ArticleListingTableViewCell: UITableViewCell {
 //                self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
 //            }
             self.lblDescription.alpha = 1
-            
+            var strLikeImage = "icon-like"
+            if self.cellViewModel.isLiked{
+                strLikeImage += "-filled"
+            }
+            self.btnLike.setImage(UIImage(named: strLikeImage)!, for: .normal)
 
             isVideo = true//cellViewModel.isVideo
             articleID = cellViewModel.articleID
@@ -173,7 +177,7 @@ class ArticleListingTableViewCell: UITableViewCell {
         hideCommentView = true
     }
     @objc private func didTapOnBtnLike(){
-        delegate.didTapOnBtnLike(cellViewModel: self.cellViewModel)
+        delegate.didTapOnBtnLike(row: self.tag)
     }
     @objc private func didTapOnBtnShare(){
         delegate.didTapOnBtnShare(cellViewModel: self.cellViewModel)

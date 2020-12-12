@@ -9,8 +9,8 @@ struct PostDetailData : Codable {
 	let daysAgo : String?
 	let descriptionField : String?
 	let id : String?
-	let isBookmarked : Bool?
-	let isLiked : Bool?
+	var isBookmarked : Bool?
+	var isLiked : Bool?
 	let isVideo : Bool?
 	let likeCount : Int?
 	let permalink : String?

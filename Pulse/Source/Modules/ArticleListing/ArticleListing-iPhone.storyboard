@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-rt-OIm">
-                                <rect key="frame" x="0.0" y="139" width="390" height="90"/>
+                                <rect key="frame" x="0.0" y="139" width="390" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="151" height="13"/>
@@ -57,8 +57,9 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Quote of the day is very important for us!”“Quote of the day is very important for us!”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="21" width="350" height="67"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="21" width="350" height="37"/>
+                                        <string key="text">“Quote of the day is very important for us!”“Quote of the day is very important for us!”“Quote of the day is very important for us!”</string>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -66,7 +67,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Medium"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Oct/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-Ik-LoO" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/Oct/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-Ik-LoO" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="296" y="8" width="75" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="fH0-Xc-e3m" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -75,22 +76,29 @@
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReE-FA-xnm" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="8gu-CE-beM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="60" id="8gu-CE-beM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="brt-ni-2vQ" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="CAd-r4-nZ9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="bottom" secondItem="brt-ni-2vQ" secondAttribute="bottom" constant="2" id="KHM-sS-UJ5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="ReE-FA-xnm" secondAttribute="bottom" id="Kr1-bC-UsH"/>
                                     <constraint firstItem="Ui5-Ik-LoO" firstAttribute="centerY" secondItem="36Q-FO-2mt" secondAttribute="centerY" id="Qwd-0b-9AG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="trailing" secondItem="brt-ni-2vQ" secondAttribute="trailing" constant="20" id="VKQ-vN-UoT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="ReE-FA-xnm" secondAttribute="trailing" id="WAB-P3-uvM"/>
                                     <constraint firstAttribute="trailing" secondItem="Ui5-Ik-LoO" secondAttribute="trailing" constant="19" id="bSF-bS-mlg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="ReE-FA-xnm" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="top" id="dc9-n2-dLD"/>
+                                    <constraint firstItem="ReE-FA-xnm" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" id="dnS-Fv-eDY"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="top" constant="8" id="gKa-7X-WBs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="brt-ni-2vQ" firstAttribute="top" secondItem="36Q-FO-2mt" secondAttribute="bottom" id="hHz-oW-gs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="ud8-OO-PG1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-nL-RNa">
-                                <rect key="frame" x="0.0" y="226" width="390" height="618"/>
+                                <rect key="frame" x="0.0" y="196" width="390" height="648"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
@@ -111,6 +119,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UN5-Iv-Cc9"/>
                     <connections>
+                        <outlet property="btnQuote" destination="ReE-FA-xnm" id="tCv-x5-t78"/>
                         <outlet property="heightConstraintTitle" destination="IOP-mQ-CV8" id="rdk-xP-bNs"/>
                         <outlet property="heightConstraintViewQuote" destination="8gu-CE-beM" id="ecJ-Ns-ynQ"/>
                         <outlet property="lblArticleTypeHeading" destination="yxk-Ja-oIt" id="mfp-yv-d1l"/>
@@ -123,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbO-Vr-WN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-1700"/>
+            <point key="canvasLocation" x="1930.7692307692307" y="-1700.4739336492889"/>
         </scene>
     </scenes>
 </document>

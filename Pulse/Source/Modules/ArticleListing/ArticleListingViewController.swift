@@ -24,14 +24,21 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
         l.repeatWhenEnd = false
         return l
     }()
+    var lblQuoteHeight : CGFloat = 60
     var testVideoURLArr = ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4","http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-85.mp4", "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"]
     var viewModel : ArticleListingViewModel!
     @IBOutlet weak var viewQuote: UIView!
     @IBOutlet weak var lblQoute: BaseUILabel!
     @IBOutlet weak var lblQouteDate: BaseUILabel!
     @IBOutlet weak var lblArticleTypeHeading: BaseUILabel!
+    @IBOutlet weak var btnQuote: BaseUIButton!{
+        didSet{
+            btnQuote.addTarget(self, action: #selector(self.didTapOnQuote), for: .touchUpInside)
+        }
+    }
+
     @IBOutlet weak var heightConstraintViewQuote : NSLayoutConstraint!
-    @IBOutlet weak var heightConstraintTitle : NSLayoutConstraint!
+    @IBOutlet var heightConstraintTitle : NSLayoutConstraint!
     @IBOutlet weak var topConstraint : NSLayoutConstraint!
     var expandedCells = Set<Int>()
     var pageNo = 1{
@@ -58,7 +65,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
             NSObject.cancelPreviousPerformRequests(withTarget: self)
             self.perform(#selector(self.startLoading), with: nil, afterDelay: 0.2)
         }
-        tblView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 200, right:0)
+        tblView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.updateByContentOffset()
             self?.startLoading()
@@ -93,6 +100,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+        mmPlayerLayer.player?.pause()
     }
     
     deinit {
@@ -104,10 +112,21 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
         self.viewModel.getListing(paged: paged) { (success, serverMsg) in
             if success{
                 DispatchQueue.main.async {
+                    if self.viewModel.showQuoteView(){
+                        self.lblQoute.text = self.viewModel.getQuote()?.title ?? ""
+                        self.lblQuoteHeight  = 90
+                        if self.lblQoute.maxNumberOfLines == 1{
+                            self.lblQuoteHeight = 60
+                        }
+                        self.heightConstraintViewQuote.constant = self.lblQuoteHeight
+                    }
+                    else{
+                        self.heightConstraintViewQuote.constant = 0
+                    }
                     self.tblView.delegate = self
                     self.tblView.dataSource = self
                     self.tblView.reloadData()
-                    
+ 
                 }
             }
         }
@@ -122,6 +141,9 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
             navBarType = .clearNavBar
             topConstraint.constant = 0
         }
+    }
+    @objc func didTapOnQuote(){
+        AppRouter.goToSpecificController(vc: QuotesBuilder.build())
     }
 }
 
@@ -214,8 +236,18 @@ extension ArticleListingViewController: MMPlayerFromProtocol{
     
 }
 extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSource, ArticleListingCellProtocol{
-    func didTapOnBtnLike(cellViewModel: ArticleListingCellViewModel) {
-        
+    func didTapOnBtnLike(row: Int) {
+        self.viewModel.getLiked(row: row) { (success, serverMsg, isLiked) in
+            if success{
+                let indexPath = IndexPath(row: row, section: 0)
+                UIView.performWithoutAnimation({
+                    let loc = self.tblView.contentOffset
+                    self.tblView.reloadRows(at: [indexPath], with: .none)
+                    self.tblView.contentOffset = loc
+                    })
+
+            }
+        }
     }
     
     func didTapOnBtnShare(cellViewModel: ArticleListingCellViewModel) {
@@ -306,7 +338,8 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
             }else {
                 // expand the header
                 view.layoutIfNeeded()
-                heightConstraintViewQuote.constant = 90 // Your initial height of header view
+                
+                heightConstraintViewQuote.constant = lblQuoteHeight // Your initial height of header view
                 UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
                     self.view.layoutIfNeeded()
                 }, completion: nil)

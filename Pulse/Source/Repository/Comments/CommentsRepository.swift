@@ -7,5 +7,5 @@
 
 import Foundation
 protocol CommentsRepository{
-    func changeOldPassword(resetCode : String,email : String,password : String, completionHandler: @escaping (Bool, String) -> Void)
+    func getAllComments(articleID : String, completionHandler: @escaping (Bool, String, _ comments: [PostDetailComment]?) -> Void)
 }

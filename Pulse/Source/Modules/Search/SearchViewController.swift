@@ -84,4 +84,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
         cell.cellViewModel = cellViewModel
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.didTapOnCell(row: indexPath.row) { (vc) in
+            AppRouter.goToSpecificController(vc: vc)
+        }
+    }
 }

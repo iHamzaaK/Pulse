@@ -12,8 +12,8 @@ class QuotesBuilder
         let sb = Utilities.getStoryboard(identifier: Storyboards.quotes.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.quotes.rawValue) as! QuotesViewController
         let navBarType = navigationBarTypes.backButtonWithRightMenuButton
-
-        let viewModel = QuotesViewModel(navigationType: navBarType)
+        let repo  = QuotesRepositoryImplementation()
+        let viewModel = QuotesViewModel(navigationType: navBarType, repo : repo)
         vc.viewModel = viewModel
         return vc
     }

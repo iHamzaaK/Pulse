@@ -12,7 +12,7 @@ class BaseUIButton: UIButton {
    
     @IBInspectable  var nibFontForIPhone : CGFloat = 0.0
     @IBInspectable  var nibFontForIPad : CGFloat = 0.0
-
+    @IBInspectable var fontName : String = ""
     @IBInspectable var isRoundRect : Bool = false{
         didSet{
             
@@ -63,7 +63,11 @@ class BaseUIButton: UIButton {
             else if nibFontForIPhone != 0.0 && !DesignUtility.isIPad{
                 fontSize = nibFontForIPhone
             }
-            let font = UIFont.systemFont(ofSize: DesignUtility.getFontSize(fSize: fontSize))
+            if fontName == ""{
+                fontName = "Montserrat-Regular"
+            }
+            let font = UIFont.init(name: fontName , size: DesignUtility.getFontSize(fSize: fontSize))
+//            let font = UIFont.systemFont(ofSize: )
             self.titleLabel!.font = font
         }
        

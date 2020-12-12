@@ -14,8 +14,9 @@ class ArticleListingBuilder
         let navBarType = navigationBarTypes.backButtonWithTitle
         let repo = ArticleListingRepositoryImplementation()
         let bookmarkRepo = BookmarksRepositoryImplementation()
+        let likeRepo = LikesRepositoryImplementation()
 
-        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title, bookmarkRepo: bookmarkRepo )
+        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title, bookmarkRepo: bookmarkRepo, likeRepo: likeRepo)
         vc.viewModel = viewModel
         return vc
     }

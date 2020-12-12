@@ -12,10 +12,15 @@ class QuotesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblQuotes : BaseUILabel!
     @IBOutlet weak var lblAuthor : BaseUILabel!
     @IBOutlet weak var lblDate : BaseUILabel!
+    var cellViewModel : QuoteCellViewModel!{
+        didSet{
+            lblQuotes.text = cellViewModel.quoteTitle
+        }
+    }
 //    @IBOutlet weak var containerView : BaseUIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor =  Utilities.hexStringToUIColor(hex: "E5E5FF")
+        self.contentView.backgroundColor =  Utilities.hexStringToUIColor(hex: "E5E5E5")
         // Initialization code
     }
 

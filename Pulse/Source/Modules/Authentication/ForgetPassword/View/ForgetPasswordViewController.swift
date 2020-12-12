@@ -10,14 +10,24 @@ import TextFieldEffects
 class ForgetPasswordViewController: BaseViewController {
     
     var viewModel : ForgetPasswordViewModel!
-    @IBOutlet weak var txtEmail: HoshiTextField!
+    @IBOutlet weak var txtEmail: HoshiTextField!{
+        didSet{
+            txtEmail.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)
+
+        }
+    }
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnBackToLogin: UIButton!
-    
+    @IBOutlet weak var lblEmailError: UILabel!{
+        didSet{
+            lblEmailError.text = ""
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupBinding()
+        lblEmailError.isHidden = false
     }
 
 }
@@ -46,7 +56,9 @@ extension ForgetPasswordViewController{
             self.goToChangePassword()
          }
          else{
-            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2, type: .error)
+            self.lblEmailError.text = serverMsg
+            self.lblEmailError.isHidden = false
+//            Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2, type: .error)
 
          }
       }
@@ -58,6 +70,11 @@ extension ForgetPasswordViewController{
 }
 extension ForgetPasswordViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
         return true
+    }
+    @objc func didChangeText(){
+        lblEmailError.text = ""
+        lblEmailError.isHidden = true
     }
 }

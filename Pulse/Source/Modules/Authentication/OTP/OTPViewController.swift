@@ -88,6 +88,10 @@ extension OTPViewController {
                     self.otpTimer?.invalidate()
                     self.otpTimer = nil
                 }
+                else{
+                    Alert.showAlertWithAutoHide(title: "Error", message: serverMsg, autoHidetimer: 2.0, type: .error)
+
+                }
             }
         }
         else{

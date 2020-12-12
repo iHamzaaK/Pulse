@@ -105,13 +105,13 @@ enum KeyboardTypes{
 }
 enum StatusCode : Int{
     case success = 200
-    case authExpired = 1001
+    case authExpired = 401
     case error = 1002
 }
 enum ErrorDescription : String {
     case errorTitle = "Error"
-    case invalidEmail = "Invalid Email"
-    case invalidPasswordd = "Invalid Password. Password must be of atleast 6 characters including an uppercase, lowercase and number"
+    case invalidEmail = "Entered wrong Email ID"
+    case invalidPasswordd = "Entered a wrong password"
     case passwordMismatch = "Password and confirm password doesn't match."
     case invalidData = "Input not correct"
     case invalidDate = "Time To should be greater then time from"

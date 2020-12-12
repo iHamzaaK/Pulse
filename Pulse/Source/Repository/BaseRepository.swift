@@ -29,7 +29,7 @@ class BaseRepository{
           }
           if response.error == nil{
              guard let data = response.value else { return }
-             guard let statusCode = data["statusCode"].int
+            guard let statusCode = response.response?.statusCode
                 else {
                 completionHandler(false,"",nil)
                 return
@@ -38,7 +38,12 @@ class BaseRepository{
                 completionHandler(false,"",nil)
                 AppRouter.logout()
              }
+             else if statusCode != StatusCode.success.rawValue{
+                completionHandler(false, "Something went wrong", nil)
+             }
+             else{
              completionHandler(true,"",data )
+             }
              
           }
           else{

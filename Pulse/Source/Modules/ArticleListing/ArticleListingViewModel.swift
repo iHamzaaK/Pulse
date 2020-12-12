@@ -13,11 +13,13 @@ class ArticleListingViewModel
     let type : articleListingType!
     let repository : ArticleListingRepository!
     let bookmarkRepository : BookmarksRepository!
+    let likeRepository : LikesRepository!
+
     var categoryId = -1
     var artiicleList : [ArticleListingData] = []
     var quote : [ArticleListingQuoteOfTheDay] = []
     var maximumPages = 1
-    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository) {
+    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository, likeRepo : LikesRepository) {
         self.navBarType = navBar
         self.type = type
         self.repository = repo
@@ -26,13 +28,16 @@ class ArticleListingViewModel
         }
         self.headerTitle = title
         self.bookmarkRepository = bookmarkRepo
-    
+        self.likeRepository = likeRepo
     }
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
     }
     func getHeaderTitle()->String{
         self.headerTitle
+    }
+    func getQuote()->ArticleListingQuoteOfTheDay?{
+        return self.quote.first
     }
     func getArticleCount()->Int{
         return self.artiicleList.count
@@ -44,7 +49,7 @@ class ArticleListingViewModel
         return false
     }
     func showQuoteView()->Bool{
-        if type == articleListingType.topStories{
+        if type == articleListingType.topStories && self.getQuote()?.title != ""{
             return true
         }
         return false
@@ -73,6 +78,25 @@ class ArticleListingViewModel
         let articleID = String(article.id ?? -1)
         let vc = FullArticleBuilder.build(articleID: articleID)
         completionHandler(vc)
+    }
+    func getLiked(row : Int , completionHandler: @escaping (  _ success : Bool , _ serverMsg : String, _ isLiked : Bool?)->Void){
+        let article = artiicleList[row]
+        let articleID = String(article.id ?? -1)
+
+        self.likeRepository.getLiked(articleID: articleID) { (success, serverMsg, _ isLiked : Bool?) in
+            if success{
+                guard let isLiked = isLiked else {
+                    completionHandler(false, "Invalid Response", nil)
+                    return
+                }
+                self.artiicleList[row].isLiked = isLiked
+                completionHandler(success, serverMsg, isLiked)
+            }
+            else{
+                completionHandler(success,serverMsg,nil)
+            }
+
+        }
     }
     func addRemoveBookmark(row: Int ,completionHandler: @escaping ( _ isBookmarked : Bool , _ success : Bool , _ serverMsg : String)->Void){
         let article = artiicleList[row]

@@ -53,7 +53,9 @@ class BaseUITextfield : UITextField{
         }
         let modifiedFontSize = DesignUtility.getFontSize(fSize: fontSize)
         
-        let font = UIFont.systemFont(ofSize: modifiedFontSize)
+       
+        let fontName = "Montserrat-Regular"
+        let font = UIFont.init(name: fontName , size: modifiedFontSize)
         self.font = font
         
     }

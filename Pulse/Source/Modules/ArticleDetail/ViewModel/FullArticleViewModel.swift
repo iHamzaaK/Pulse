@@ -17,12 +17,14 @@ class FullArticleViewModel
     var articleData : PostDetailData!
     var articleComments = [PostDetailComment]()
     let bookmarkRepository : BookmarksRepository!
+    let likesRepository : LikesRepository!
 
-    init(navigationType navBar : navigationBarTypes, repo : ArticleDetailRepository, articleID : String, bookmarkRepo: BookmarksRepository) {
+    init(navigationType navBar : navigationBarTypes, repo : ArticleDetailRepository, articleID : String, bookmarkRepo: BookmarksRepository, likesRepo : LikesRepository) {
         self.navBarType = navBar
         self.repository = repo
         self.articleID  = articleID
         self.bookmarkRepository = bookmarkRepo
+        self.likesRepository = likesRepo
     }
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
@@ -33,6 +35,24 @@ class FullArticleViewModel
     }
     func isVideo()->Bool{
         return articleData.isVideo ?? false
+    }
+    func getLiked( completionHandler: @escaping (  _ success : Bool , _ serverMsg : String, _ isLiked : Bool?)->Void){
+        let articleID = articleData.id ?? ""
+
+        self.likesRepository.getLiked(articleID: articleID) { (success, serverMsg, _ isLiked : Bool?) in
+            if success{
+                guard let isLiked = isLiked else {
+                    completionHandler(false, "Invalid Response", nil)
+                    return
+                }
+                self.articleData.isLiked = isLiked
+                completionHandler(success, serverMsg, isLiked)
+            }
+            else{
+                completionHandler(success,serverMsg,nil)
+            }
+
+        }
     }
     func getTotalLikeCount()->String{
         var strUserLiked = ""
@@ -68,6 +88,9 @@ class FullArticleViewModel
     func getTitle()->String{
         return articleData.title ?? ""
     }
+    func getWeblink()->String{
+        return articleData.permalink ?? ""
+    }
     func getType()->String{
         return articleData.tag ?? ""
     }
@@ -80,13 +103,16 @@ class FullArticleViewModel
     func isBookmarked()->Bool{
         return articleData.isBookmarked ?? false
     }
+    func isLiked()->Bool{
+        return articleData.isLiked ?? false
+    }
     func cellViewModelForComment(row: Int)->CommentCellViewModel{
         let comment = articleComments[row]
         let cellViewModel = CommentCellViewModel(id: comment.id ?? -1 , comment: comment.commentContent ?? "", author: comment.commentAuthor ?? "", timestamp: comment.daysAgo ?? "", avatar: comment.avatar ?? "")
         return cellViewModel
     }
     func getArticleData(completionHandler: @escaping ( _ success : Bool , _ message : String)->Void){
-        self.repository.getArticleDetail(articleID: "8120") { (success, serverMsg, data, commments)  in
+        self.repository.getArticleDetail(articleID: articleID) { (success, serverMsg, data, commments)  in
             if success{
                 if let articleData = data?.first{
                     self.articleData = articleData
@@ -98,6 +124,11 @@ class FullArticleViewModel
             }
             completionHandler(success , serverMsg)
         }
+    }
+    func didTapOnSeeAllComments(row : Int , completionHandler: (_ vc : UIViewController)->Void){
+        let comment = articleComments[row]
+        let vc = CommmentsViewBuilder.build(articleID: String(comment.id ?? -1))
+        completionHandler(vc)
     }
     func addRemoveBookmark(completionHandler: @escaping ( _ isBookmarked : Bool , _ success : Bool , _ serverMsg : String)->Void){
        

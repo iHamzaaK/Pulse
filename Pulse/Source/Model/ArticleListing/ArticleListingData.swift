@@ -17,7 +17,7 @@ struct ArticleListingData : Codable {
     let date : String
     let tag : String
     var isBookmarked : Bool
-    let isLiked : Bool
+    var isLiked : Bool
     let likeCount : Int
 
 	enum CodingKeys: String, CodingKey {

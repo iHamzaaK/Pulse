@@ -7,5 +7,5 @@
 
 import Foundation
 protocol LikesRepository{
-    func changeOldPassword(resetCode : String,email : String,password : String, completionHandler: @escaping (Bool, String) -> Void)
+    func getLiked(articleID: String, completionHandler: @escaping (Bool, String,  _ isLiked : Bool?) -> Void)
 }
