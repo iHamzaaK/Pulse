@@ -23,11 +23,16 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bc-7g-XaZ">
                                 <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-uI-NFb" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-QH-tJW" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-uI-NFb" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-Bh-8y7" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-Bh-8y7" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="200"/>
+                                        <state key="normal" image="play-button"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,12 +40,16 @@
                                     <constraint firstAttribute="bottom" secondItem="Fch-uI-NFb" secondAttribute="bottom" id="3am-0B-8jp"/>
                                     <constraint firstItem="tFw-Bh-8y7" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="6vm-bE-bfk"/>
                                     <constraint firstAttribute="trailing" secondItem="Fch-uI-NFb" secondAttribute="trailing" id="Cug-Lf-hb0"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKy-QH-tJW" secondAttribute="trailing" id="GH3-WQ-ySO"/>
+                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="MnI-Yg-w1f"/>
                                     <constraint firstItem="Fch-uI-NFb" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="N3n-sc-OSU"/>
+                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="XKC-7L-ukh"/>
                                     <constraint firstAttribute="bottom" secondItem="tFw-Bh-8y7" secondAttribute="bottom" id="YIY-w7-txT"/>
                                     <constraint firstAttribute="height" constant="200" id="mZa-r1-dQN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="tFw-Bh-8y7" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="mpE-PX-dtb"/>
                                     <constraint firstAttribute="trailing" secondItem="tFw-Bh-8y7" secondAttribute="trailing" id="n2R-NS-gAZ"/>
                                     <constraint firstItem="Fch-uI-NFb" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="qSY-PP-0Of"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKy-QH-tJW" secondAttribute="bottom" id="wE6-bR-mYB"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b55-lR-QZs" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
@@ -286,6 +295,7 @@
                 <outlet property="lblTitle" destination="b55-lR-QZs" id="LL7-Sc-WRD"/>
                 <outlet property="lblTotalLikes" destination="HBV-PO-CAC" id="3Za-MA-ROA"/>
                 <outlet property="leadingConstraintContentView" destination="8hy-dH-G9R" id="cbA-7U-Nq0"/>
+                <outlet property="playerView" destination="eKy-QH-tJW" id="vju-zg-N35"/>
                 <outlet property="trailingConstraintContentView" destination="KDz-A0-pSU" id="6Lj-Tu-MJ5"/>
                 <outlet property="txtComment" destination="PpR-mG-FAk" id="yfU-J4-O5d"/>
             </connections>
@@ -299,6 +309,7 @@
         <image name="icon-like" width="22" height="22"/>
         <image name="icon-share" width="22" height="22"/>
         <image name="likes-stats-icon" width="17" height="17"/>
+        <image name="play-button" width="37.5" height="37.5"/>
         <image name="send-button" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

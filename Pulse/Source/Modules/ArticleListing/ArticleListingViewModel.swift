@@ -80,7 +80,7 @@ class ArticleListingViewModel
         completionHandler(vc)
     }
     func getLiked(row : Int , completionHandler: @escaping (  _ success : Bool , _ serverMsg : String, _ isLiked : Bool?)->Void){
-        let article = artiicleList[row]
+        var article = artiicleList[row]
         let articleID = String(article.id ?? -1)
 
         self.likeRepository.getLiked(articleID: articleID) { (success, serverMsg, _ isLiked : Bool?) in
@@ -89,7 +89,15 @@ class ArticleListingViewModel
                     completionHandler(false, "Invalid Response", nil)
                     return
                 }
-                self.artiicleList[row].isLiked = isLiked
+                article.isLiked = isLiked
+                if isLiked{
+                    article.likeCount = article.likeCount + 1
+                }
+                else{
+                    article.likeCount = article.likeCount - 1
+                }
+                self.artiicleList[row] = article
+                
                 completionHandler(success, serverMsg, isLiked)
             }
             else{
@@ -141,44 +149,8 @@ struct ArticleListingCellViewModel{
     func getShortDescription()->String{
         return shortDescription
     }
-    func showBookmark()->UIImage{
-        var imageName = "icon-bookmark"
-        if isBookmarked{
-            imageName += "-filled"
-        }
-        return UIImage.init(named: imageName)!
-        
-    }
-    func showTotalLikes()->String{
-        var strUserLiked = ""
-        var othersLiked = ""
-        if isLiked{
-            strUserLiked = "You"
-        }
-        if likeCount > 0{
-            othersLiked = "\(likeCount) others liked this"
-        }
-        
-        if isLiked && likeCount > 0{
-            return strUserLiked + " and " + othersLiked
-        }
-        else if isLiked && likeCount < 1{
-            return "\(strUserLiked) liked this"
-        }
-        else if !isLiked &&  likeCount > 0{
-            return othersLiked
-        }
-        else{
-            return ""
-        }
-    }
-    func showLiked()->UIImage{
-        var imageName = "icon-like"
-        if isLiked{
-            imageName += "-filled"
-        }
-        return UIImage.init(named: imageName)!
-    }
+    
+    
     
     func getVideoURL()-> URL?{
         guard let url = URL(string: videoURL) else { return nil}

@@ -7,9 +7,8 @@
 
 import UIKit
 import ReadMoreTextView
-import MMPlayerView
 import AVFoundation
-
+import YouTubePlayer
 protocol ArticleListingCellProtocol : class {
     func didTapOnBtnLike(row : Int)->Void
     func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
@@ -29,11 +28,10 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTotalLikes: BaseUILabel!
     @IBOutlet weak var btnPlay : BaseUIButton!{
         didSet{
-            btnPlay.isHidden = true
             btnPlay.addTarget(self, action: #selector(self.didTapOnPlay), for: .touchUpInside)
         }
     }
-
+    @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var lblTitle: BaseUILabel!
     @IBOutlet weak var leadingConstraintContentView: BaseLayoutConstraint!
     @IBOutlet weak var heightConstraintVideoView: BaseLayoutConstraint!
@@ -44,45 +42,19 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var heightConstraintLikeCountStackView : NSLayoutConstraint!
     var isVideo : Bool = false
     var articleID : Int = -1
-    var videoStr = ""
+    var videoStr = "https://youtu.be/AH3lD8fafnE"
     var cellViewModel : ArticleListingCellViewModel!{
         didSet{
             lblTitle.text = cellViewModel.title
             lblNewsType.text = cellViewModel.tag
             lblDate.text = cellViewModel.date
-            lblTotalLikes.text = cellViewModel.showTotalLikes()
-        
-            if cellViewModel.likeCount < 1 && !cellViewModel.isLiked {
-                heightConstraintLikeCountStackView.constant = 0
-            }
-            else{
-                heightConstraintLikeCountStackView.constant = 30
-            }
-            btnLike.setImage(cellViewModel.showLiked(), for: .normal)
-            btnBookmark.setImage(cellViewModel.showBookmark(), for: .normal)
-            let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
-            let readmoreFontColor = UIColor.blue
-            if let bgImageURL = cellViewModel.getBgImageURLForCell() {
-                Utilities.getImageFromURL(imgView: bgImageView, url: bgImageURL){ (_) in
-                    self.setNeedsLayout()
-                }
-            }
-            else{
-                self.bgImageView.image = UIImage.init(named: "placeholder")
-            }
-            lblDescription.text = cellViewModel.getShortDescription()
-            self.lblDescription.alpha = 0
-//            DispatchQueue.main.async {
-//                self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-//            }
-            self.lblDescription.alpha = 1
-            var strLikeImage = "icon-like"
-            if self.cellViewModel.isLiked{
-                strLikeImage += "-filled"
-            }
-            self.btnLike.setImage(UIImage(named: strLikeImage)!, for: .normal)
-
-            isVideo = true//cellViewModel.isVideo
+            lblTotalLikes.text = showTotalLikes(isLiked: cellViewModel.isLiked, likeCount: cellViewModel.likeCount)
+            showHideLikesView(likeCount: cellViewModel.likeCount,isLiked: cellViewModel.isLiked)
+            btnLike.setImage(showLiked(isLiked: cellViewModel.isLiked), for: .normal)
+            btnBookmark.setImage(showBookmark(isBookmarked: cellViewModel.isBookmarked), for: .normal)
+            setupDescription()
+            setupThumbnailImage()
+            setupVideo()
             articleID = cellViewModel.articleID
         }
     }
@@ -155,11 +127,12 @@ class ArticleListingTableViewCell: UITableViewCell {
         }
 
     }
+    override func prepareForReuse() {
+        resetVideo()
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func configCell(){
@@ -175,6 +148,95 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     func configCellForVideos(){
         hideCommentView = true
+    }
+    
+    func showBookmark(isBookmarked: Bool)->UIImage{
+        var imageName = "icon-bookmark"
+        if isBookmarked{
+            imageName += "-filled"
+        }
+        return UIImage.init(named: imageName)!
+        
+    }
+    func showTotalLikes(isLiked: Bool , likeCount : Int)->String{
+        var strUserLiked = ""
+        var othersLiked = ""
+        if isLiked{
+            strUserLiked = "You"
+        }
+        if likeCount > 0{
+            othersLiked = "\(likeCount) others liked this"
+        }
+        
+        if isLiked && likeCount > 0{
+            return strUserLiked + " and " + othersLiked
+        }
+        else if isLiked && likeCount < 1{
+            return "\(strUserLiked) liked this"
+        }
+        else if !isLiked &&  likeCount > 0{
+            return othersLiked
+        }
+        else{
+            return ""
+        }
+    }
+    func resetVideo(){
+        self.playerView.clear()
+        self.playerView.pause()
+        playerView.isHidden = true
+        sendSubviewToBack(self.playerView)
+        bgImageView.isHidden = false
+        btnPlay.isHidden = false
+    }
+    func setupVideo(){
+        isVideo = true//cellViewModel.isVideo
+        btnPlay.isHidden = false
+        playerView.isHidden = true
+        sendSubviewToBack(playerView)
+        bgImageView.isHidden = false
+        playerView.clear()
+        playerView.pause()
+        playerView.playerVars = [
+            "playsinline": "1",
+            ] as YouTubePlayerView.YouTubePlayerParameters
+        playerView.loadVideoID("JLVXQn3fqgg")
+    }
+    func setupDescription(){
+        let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
+        let readmoreFontColor = UIColor.blue
+        lblDescription.text = cellViewModel.getShortDescription()
+        self.lblDescription.alpha = 0
+        DispatchQueue.main.async {
+            self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+        }
+        self.lblDescription.alpha = 1
+    }
+    
+    func setupThumbnailImage(){
+        if let bgImageURL = cellViewModel.getBgImageURLForCell() {
+            Utilities.getImageFromURL(imgView: bgImageView, url: bgImageURL){ (_) in
+                self.setNeedsLayout()
+            }
+        }
+        else{
+            self.bgImageView.image = UIImage.init(named: "placeholder")
+        }
+    }
+    func showHideLikesView(likeCount : Int, isLiked : Bool){
+        if likeCount < 1 && !isLiked {
+            heightConstraintLikeCountStackView.constant = 0
+        }
+        else{
+            heightConstraintLikeCountStackView.constant = 30
+        }
+    }
+    func showLiked(isLiked: Bool)->UIImage{
+        var imageName = "icon-like"
+        if isLiked{
+            imageName += "-filled"
+        }
+        return UIImage.init(named: imageName)!
     }
     @objc private func didTapOnBtnLike(){
         delegate.didTapOnBtnLike(row: self.tag)

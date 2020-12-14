@@ -13,15 +13,13 @@ class LikesRepositoryImplementation : LikesRepository{
     private var isSuccess = false
     private var serverMsg = ""
     func getLiked(articleID: String, completionHandler: @escaping (Bool, String, _ isLiked : Bool?) -> Void) {
-        DispatchQueue.main.async{
-            ActivityIndicator.shared.showSpinner(nil,title: nil)
-        }
+        
         let endpoint = articleID
         let headers = [
             "Accept": "application/json",
             "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
         ]
-        BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
+        BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers,showSpinner: false) { (success, serverMsg, data) in
             print(data)
             self.isSuccess = success
             if self.isSuccess{

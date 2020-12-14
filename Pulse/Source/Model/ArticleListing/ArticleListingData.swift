@@ -18,7 +18,7 @@ struct ArticleListingData : Codable {
     let tag : String
     var isBookmarked : Bool
     var isLiked : Bool
-    let likeCount : Int
+    var likeCount : Int
 
 	enum CodingKeys: String, CodingKey {
 		case descriptionField = "description"

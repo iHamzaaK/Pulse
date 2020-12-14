@@ -6,19 +6,19 @@
 //
 
 import UIKit
-import MMPlayerView
+//import MMPlayerView
 import AVFoundation
 class FullArticleViewController: BaseViewController {
     var viewModel : FullArticleViewModel!
-    lazy var mmPlayerLayer: MMPlayerLayer = {
-        let l = MMPlayerLayer()
-        l.cacheType = .memory(count: 5)
-        l.coverFitType = .fitToPlayerView
-        l.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        l.replace(cover: CoverA.instantiateFromNib())
-        l.repeatWhenEnd = false
-        return l
-    }()
+//    lazy var mmPlayerLayer: MMPlayerLayer = {
+//        let l = MMPlayerLayer()
+//        l.cacheType = .memory(count: 5)
+//        l.coverFitType = .fitToPlayerView
+//        l.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//        l.replace(cover: CoverA.instantiateFromNib())
+//        l.repeatWhenEnd = false
+//        return l
+//    }()
     @IBOutlet weak var lblNewsTitle: BaseUILabel!
     @IBOutlet weak var imgView: BaseUIImageView!
     @IBOutlet weak var lblTime: BaseUILabel!
@@ -65,7 +65,7 @@ class FullArticleViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     deinit {
-        mmPlayerLayer.player = nil
+//        mmPlayerLayer.player = nil
         print("ViewController deinit")
     }
     
@@ -78,43 +78,43 @@ extension FullArticleViewController{
             return
         }
         // start loading video
-        mmPlayerLayer.resume()
+//        mmPlayerLayer.resume()
     }
     private func setupVideo(videoURL : String){
         guard let url = URL(string: videoURL) else {
-            mmPlayerLayer.player = nil
+//            mmPlayerLayer.player = nil
             return
         }
         
         // this thumb use when transition start and your video dosent start
-        mmPlayerLayer.thumbImageView.image = self.imgView.image
-        // set video where to play
-        mmPlayerLayer.playView = self.imgView
-        mmPlayerLayer.set(url: url)
-        mmPlayerLayer.resume()
+//        mmPlayerLayer.thumbImageView.image = self.imgView.image
+//        // set video where to play
+//        mmPlayerLayer.playView = self.imgView
+//        mmPlayerLayer.set(url: url)
+//        mmPlayerLayer.resume()
     }
     private func videoSettings(){
-        mmPlayerLayer.autoPlay = true
-        mmPlayerLayer.getStatusBlock { [weak self] (status) in
-            switch status {
-            case .failed(let err):
-                let alert = UIAlertController(title: "err", message: err.description, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self?.present(alert, animated: true, completion: nil)
-            case .ready:
-                print("Ready to Play")
-            case .playing:
-                print("Playing")
-            case .pause:
-                print("Pause")
-            case .end:
-                print("End")
-            default: break
-            }
-        }
-        mmPlayerLayer.getOrientationChange { (status) in
-            print("Player OrientationChange \(status)")
-        }
+//        mmPlayerLayer.autoPlay = true
+//        mmPlayerLayer.getStatusBlock { [weak self] (status) in
+//            switch status {
+//            case .failed(let err):
+//                let alert = UIAlertController(title: "err", message: err.description, preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self?.present(alert, animated: true, completion: nil)
+//            case .ready:
+//                print("Ready to Play")
+//            case .playing:
+//                print("Playing")
+//            case .pause:
+//                print("Pause")
+//            case .end:
+//                print("End")
+//            default: break
+//            }
+//        }
+//        mmPlayerLayer.getOrientationChange { (status) in
+//            print("Player OrientationChange \(status)")
+//        }
 
     }
     private func getData(){
@@ -141,7 +141,7 @@ extension FullArticleViewController{
                     self.setupVideo(videoURL: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
                 }
                 else{
-                    self.mmPlayerLayer.player = nil
+//                    self.mmPlayerLayer.player = nil
                 }
                 var strImage = "icon-bookmark"
                 if self.viewModel.isBookmarked(){
