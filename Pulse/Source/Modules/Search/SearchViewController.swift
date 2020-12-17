@@ -19,6 +19,7 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+//        _headerView.searchTextField?.placeholder = "Min. 3 charachters required for search"
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +42,7 @@ class SearchViewController: BaseViewController {
         }
     }
     override func headedrViewSearchTextChanged(str: String) {
-        if str.count > 3{
+        if str.count % 2 == 0{
             self.viewModel.getSearchData(searchText: str) { (success, serverMsg) in
                 if success{
                     self.tblView.reloadData()

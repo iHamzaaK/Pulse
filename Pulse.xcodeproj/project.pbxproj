@@ -19,6 +19,25 @@
 		2460AB602582C72A00D3BF43 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460AB5D2582C72A00D3BF43 /* PostDetailData.swift */; };
 		2460AB642582C7A600D3BF43 /* ArticleDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460AB632582C7A600D3BF43 /* ArticleDetailRepository.swift */; };
 		2460AB672582C7B800D3BF43 /* ArticleDetailRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460AB662582C7B800D3BF43 /* ArticleDetailRepositoryImplementation.swift */; };
+		24731886258909B300ADC04E /* AllLikesRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731884258909B300ADC04E /* AllLikesRepoModel.swift */; };
+		24731887258909B300ADC04E /* AllLikesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731885258909B300ADC04E /* AllLikesData.swift */; };
+		2473188B2589136200ADC04E /* VideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473188A2589136200ADC04E /* VideoRepository.swift */; };
+		2473188E2589161500ADC04E /* VideoRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473188D2589161500ADC04E /* VideoRepositoryImplementation.swift */; };
+		24731892258959CA00ADC04E /* NotificationListingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731891258959CA00ADC04E /* NotificationListingBuilder.swift */; };
+		24731895258959D200ADC04E /* NotificationListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731894258959D200ADC04E /* NotificationListingViewModel.swift */; };
+		24731899258959EE00ADC04E /* NotificationListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731898258959EE00ADC04E /* NotificationListingViewController.swift */; };
+		2473189D25895A0C00ADC04E /* NotificationListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2473189B25895A0C00ADC04E /* NotificationListingTableViewCell.swift */; };
+		2473189E25895A0C00ADC04E /* NotificationListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2473189C25895A0C00ADC04E /* NotificationListingTableViewCell.xib */; };
+		247318A22589629900ADC04E /* NotificationListingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318A12589629900ADC04E /* NotificationListingRepository.swift */; };
+		247318A6258962AA00ADC04E /* NotificationListingRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318A5258962AA00ADC04E /* NotificationListingRepositoryImplementation.swift */; };
+		247318A925896AD100ADC04E /* NotificationListing-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247318A825896AD100ADC04E /* NotificationListing-iPhone.storyboard */; };
+		247318EC258B7E1B00ADC04E /* PolicyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318EB258B7E1B00ADC04E /* PolicyBuilder.swift */; };
+		247318F0258B7E2300ADC04E /* PolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318EF258B7E2300ADC04E /* PolicyViewModel.swift */; };
+		247318F6258B7E3C00ADC04E /* Policy-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247318F5258B7E3C00ADC04E /* Policy-iPhone.storyboard */; };
+		247318F9258B7E4700ADC04E /* Policy-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247318F8258B7E4700ADC04E /* Policy-iPad.storyboard */; };
+		247318FE258B7E8700ADC04E /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318FD258B7E8700ADC04E /* PolicyViewController.swift */; };
+		24731902258B7F2300ADC04E /* PolicyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731901258B7F2300ADC04E /* PolicyRepository.swift */; };
+		24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */; };
 		63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184852257ED928001CE193 /* Montserrat-Light.otf */; };
 		63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184853257ED928001CE193 /* Montserrat-Medium.otf */; };
 		63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184854257ED928001CE193 /* Montserrat-SemiBold.otf */; };
@@ -236,6 +255,25 @@
 		2460AB5D2582C72A00D3BF43 /* PostDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
 		2460AB632582C7A600D3BF43 /* ArticleDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailRepository.swift; sourceTree = "<group>"; };
 		2460AB662582C7B800D3BF43 /* ArticleDetailRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailRepositoryImplementation.swift; sourceTree = "<group>"; };
+		24731884258909B300ADC04E /* AllLikesRepoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLikesRepoModel.swift; sourceTree = "<group>"; };
+		24731885258909B300ADC04E /* AllLikesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLikesData.swift; sourceTree = "<group>"; };
+		2473188A2589136200ADC04E /* VideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepository.swift; sourceTree = "<group>"; };
+		2473188D2589161500ADC04E /* VideoRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepositoryImplementation.swift; sourceTree = "<group>"; };
+		24731891258959CA00ADC04E /* NotificationListingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingBuilder.swift; sourceTree = "<group>"; };
+		24731894258959D200ADC04E /* NotificationListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingViewModel.swift; sourceTree = "<group>"; };
+		24731898258959EE00ADC04E /* NotificationListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingViewController.swift; sourceTree = "<group>"; };
+		2473189B25895A0C00ADC04E /* NotificationListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingTableViewCell.swift; sourceTree = "<group>"; };
+		2473189C25895A0C00ADC04E /* NotificationListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListingTableViewCell.xib; sourceTree = "<group>"; };
+		247318A12589629900ADC04E /* NotificationListingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingRepository.swift; sourceTree = "<group>"; };
+		247318A5258962AA00ADC04E /* NotificationListingRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListingRepositoryImplementation.swift; sourceTree = "<group>"; };
+		247318A825896AD100ADC04E /* NotificationListing-iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "NotificationListing-iPhone.storyboard"; sourceTree = "<group>"; };
+		247318EB258B7E1B00ADC04E /* PolicyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyBuilder.swift; sourceTree = "<group>"; };
+		247318EF258B7E2300ADC04E /* PolicyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewModel.swift; sourceTree = "<group>"; };
+		247318F5258B7E3C00ADC04E /* Policy-iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Policy-iPhone.storyboard"; sourceTree = "<group>"; };
+		247318F8258B7E4700ADC04E /* Policy-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Policy-iPad.storyboard"; sourceTree = "<group>"; };
+		247318FD258B7E8700ADC04E /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		24731901258B7F2300ADC04E /* PolicyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepository.swift; sourceTree = "<group>"; };
+		24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
 		5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63184852257ED928001CE193 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -478,6 +516,8 @@
 		24479F9825844505009B00EB /* Likes */ = {
 			isa = PBXGroup;
 			children = (
+				24731885258909B300ADC04E /* AllLikesData.swift */,
+				24731884258909B300ADC04E /* AllLikesRepoModel.swift */,
 				24479F9525844501009B00EB /* LikeRepoModel.swift */,
 			);
 			path = Likes;
@@ -500,6 +540,58 @@
 				2460AB5B2582C72900D3BF43 /* PostDetailRepo.swift */,
 			);
 			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		247318892589135100ADC04E /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				2473188A2589136200ADC04E /* VideoRepository.swift */,
+				2473188D2589161500ADC04E /* VideoRepositoryImplementation.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		24731890258959B700ADC04E /* NotificationListing */ = {
+			isa = PBXGroup;
+			children = (
+				24731891258959CA00ADC04E /* NotificationListingBuilder.swift */,
+				24731894258959D200ADC04E /* NotificationListingViewModel.swift */,
+				24731898258959EE00ADC04E /* NotificationListingViewController.swift */,
+				2473189B25895A0C00ADC04E /* NotificationListingTableViewCell.swift */,
+				2473189C25895A0C00ADC04E /* NotificationListingTableViewCell.xib */,
+				247318A825896AD100ADC04E /* NotificationListing-iPhone.storyboard */,
+			);
+			path = NotificationListing;
+			sourceTree = "<group>";
+		};
+		247318A02589628700ADC04E /* NotificationListing */ = {
+			isa = PBXGroup;
+			children = (
+				247318A12589629900ADC04E /* NotificationListingRepository.swift */,
+				247318A5258962AA00ADC04E /* NotificationListingRepositoryImplementation.swift */,
+			);
+			path = NotificationListing;
+			sourceTree = "<group>";
+		};
+		247318EA258B7E0C00ADC04E /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				247318EB258B7E1B00ADC04E /* PolicyBuilder.swift */,
+				247318EF258B7E2300ADC04E /* PolicyViewModel.swift */,
+				247318F5258B7E3C00ADC04E /* Policy-iPhone.storyboard */,
+				247318F8258B7E4700ADC04E /* Policy-iPad.storyboard */,
+				247318FD258B7E8700ADC04E /* PolicyViewController.swift */,
+			);
+			path = Policy;
+			sourceTree = "<group>";
+		};
+		24731900258B7F1500ADC04E /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				24731901258B7F2300ADC04E /* PolicyRepository.swift */,
+				24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */,
+			);
+			path = Policy;
 			sourceTree = "<group>";
 		};
 		442CA713746B81744D2AC55E /* Frameworks */ = {
@@ -1347,6 +1439,8 @@
 		63C109B52555F6EF0097EDC3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				247318EA258B7E0C00ADC04E /* Policy */,
+				24731890258959B700ADC04E /* NotificationListing */,
 				63DB1587257BBDA1007BA6B9 /* ArticleListing */,
 				63A8CD8E2577C46700A60F56 /* Likes */,
 				63719140257110E800277101 /* Search */,
@@ -1421,6 +1515,9 @@
 		63C109B92555F7100097EDC3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				24731900258B7F1500ADC04E /* Policy */,
+				247318A02589628700ADC04E /* NotificationListing */,
+				247318892589135100ADC04E /* Video */,
 				24479F8925843538009B00EB /* Quotes */,
 				638777F4257C30FD004D5A27 /* Artiice */,
 				63A8CD692577BC6200A60F56 /* Favourites */,
@@ -1606,6 +1703,7 @@
 				2460AB5725826ABF00D3BF43 /* CoverA.xib in Resources */,
 				6393FFDA257BCA5500D55ECE /* SubCategoryTableViewCell.xib in Resources */,
 				637F7D1525798B7100F44400 /* Videos-iPad.storyboard in Resources */,
+				247318F6258B7E3C00ADC04E /* Policy-iPhone.storyboard in Resources */,
 				63AD8F652579568F00350DC9 /* Authentication-iPad.storyboard in Resources */,
 				6372E69F2557F64B00A03E01 /* Dashboard-iPhone.storyboard in Resources */,
 				63A8CD9F2577CA3800A60F56 /* Likes-iPhone.storyboard in Resources */,
@@ -1614,12 +1712,14 @@
 				637F7D0C25798AF500F44400 /* Dashboard-iPad.storyboard in Resources */,
 				637F7D0925798ACD00F44400 /* RightMenu-iPad.storyboard in Resources */,
 				636EAB0A256028E700476A03 /* CommentsTableViewCell.xib in Resources */,
+				247318A925896AD100ADC04E /* NotificationListing-iPhone.storyboard in Resources */,
 				63629B24255611EE003836A2 /* RightMenu-iPhone.storyboard in Resources */,
 				637F7D1225798B5500F44400 /* Comments-iPad.storyboard in Resources */,
 				637A78372566D3A700C9A08D /* MyProfile-iPhone.storyboard in Resources */,
 				638777FC257C5008004D5A27 /* ArticleListing-iPhone.storyboard in Resources */,
 				63B7B9E125603A0A00C32A4E /* Quotes-iPhone.storyboard in Resources */,
 				63A8CD9C2577C9D300A60F56 /* LikesTableViewCell.xib in Resources */,
+				247318F9258B7E4700ADC04E /* Policy-iPad.storyboard in Resources */,
 				637F7D2125798BE100F44400 /* CreatePost-iPad.storyboard in Resources */,
 				6385CA2C256887ED000D21D8 /* CreatePost-iPhone.storyboard in Resources */,
 				63C109802555EF0C0097EDC3 /* Assets.xcassets in Resources */,
@@ -1638,6 +1738,7 @@
 				63629AF325560F43003836A2 /* Splash-iPhone.storyboard in Resources */,
 				637F7D2425798BF800F44400 /* Search-iPad.storyboard in Resources */,
 				6385CA1925687C6B000D21D8 /* Settings-iPhone.storyboard in Resources */,
+				2473189E25895A0C00ADC04E /* NotificationListingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1690,13 +1791,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24731895258959D200ADC04E /* NotificationListingViewModel.swift in Sources */,
 				6346A1EE255BDB33006B3FDF /* SwipeDirection.swift in Sources */,
 				6346A1E0255BDB33006B3FDF /* BarView.swift in Sources */,
 				63629B1F255611E8003836A2 /* RightMenuViewModel.swift in Sources */,
 				636EAB17256029E100476A03 /* CommentsViewController.swift in Sources */,
+				24731902258B7F2300ADC04E /* PolicyRepository.swift in Sources */,
 				63A8CD7A2577BFB000A60F56 /* LikesRepositoryImplementation.swift in Sources */,
 				63EE49AB257A4642008083D7 /* MyNewsViewModel.swift in Sources */,
 				6372E6A22557F8BB00A03E01 /* DashboardViewController.swift in Sources */,
+				2473189D25895A0C00ADC04E /* NotificationListingTableViewCell.swift in Sources */,
 				6385A067258037F70034085F /* SearchRepo.swift in Sources */,
 				63C109DC2555FF830097EDC3 /* DesignUtility.swift in Sources */,
 				6385A066258037F70034085F /* SearchData.swift in Sources */,
@@ -1708,6 +1812,7 @@
 				63C109C72555FF7C0097EDC3 /* Constants.swift in Sources */,
 				63629B0725561049003836A2 /* BaseUIButton.swift in Sources */,
 				6385CA29256886B2000D21D8 /* CreatePostBuilder.swift in Sources */,
+				24731892258959CA00ADC04E /* NotificationListingBuilder.swift in Sources */,
 				63B7B9DB256039D300C32A4E /* QuotesViewModel.swift in Sources */,
 				6386893425768CD0003ECCD3 /* ForgetPasswordRepositoryImplementation.swift in Sources */,
 				6346A1E3255BDB33006B3FDF /* SegmentedPagerTabStripViewController.swift in Sources */,
@@ -1744,6 +1849,7 @@
 				639CF69125617EA20013DAC7 /* QuotesTableViewCell.swift in Sources */,
 				63C109E22555FF830097EDC3 /* ActivityIndicatorWrapper.swift in Sources */,
 				24479F8F25843559009B00EB /* QuotesRepositoryImplementation.swift in Sources */,
+				24731899258959EE00ADC04E /* NotificationListingViewController.swift in Sources */,
 				6372E6B92558018100A03E01 /* TopStoriesViewModel.swift in Sources */,
 				63C109C12555FF740097EDC3 /* BaseRepository.swift in Sources */,
 				63719142257110F800277101 /* SearchViewController.swift in Sources */,
@@ -1773,10 +1879,12 @@
 				63DB1563257BB044007BA6B9 /* CategoriesChild.swift in Sources */,
 				63629AEF25560F30003836A2 /* SplashViewController.swift in Sources */,
 				6346A1E5255BDB33006B3FDF /* PagerTabStripBehaviour.swift in Sources */,
+				247318A6258962AA00ADC04E /* NotificationListingRepositoryImplementation.swift in Sources */,
 				6385CA0C25687C3C000D21D8 /* SettingsViewModel.swift in Sources */,
 				63EEE73B255AE841003B64D2 /* BaseHeaderTabViewController.swift in Sources */,
 				63B7B9D8256039C900C32A4E /* QuotesViewController.swift in Sources */,
 				6385CA232568869D000D21D8 /* CreatePostViewController.swift in Sources */,
+				247318FE258B7E8700ADC04E /* PolicyViewController.swift in Sources */,
 				63A8CD902577C47200A60F56 /* LikesBuilder.swift in Sources */,
 				63DB1582257BBD94007BA6B9 /* ArticleListingViewModel.swift in Sources */,
 				638777F9257C3130004D5A27 /* ArticleListingRepositoryImplementation.swift in Sources */,
@@ -1786,8 +1894,10 @@
 				63C109DD2555FF830097EDC3 /* Extensions.swift in Sources */,
 				639F03912556D57C00772893 /* ForgetPasswordViewController.swift in Sources */,
 				6372E6862557DA2900A03E01 /* ConfirmPasswordBuilder.swift in Sources */,
+				24731887258909B300ADC04E /* AllLikesData.swift in Sources */,
 				63629B1425561071003836A2 /* HeaderView.swift in Sources */,
 				63A8CD9B2577C9D300A60F56 /* LikesTableViewCell.swift in Sources */,
+				247318A22589629900ADC04E /* NotificationListingRepository.swift in Sources */,
 				63629B0A25561049003836A2 /* BaseUITextfield.swift in Sources */,
 				2460AB602582C72A00D3BF43 /* PostDetailData.swift in Sources */,
 				63D94FE8255A82B500B2E5AD /* FullArticleBuilder.swift in Sources */,
@@ -1796,6 +1906,8 @@
 				6346A1ED255BDB33006B3FDF /* PagerTabStripViewController.swift in Sources */,
 				6346A1EC255BDB33006B3FDF /* TwitterPagerTabStripViewController.swift in Sources */,
 				63629B1525561071003836A2 /* FooterView.swift in Sources */,
+				247318EC258B7E1B00ADC04E /* PolicyBuilder.swift in Sources */,
+				24731886258909B300ADC04E /* AllLikesRepoModel.swift in Sources */,
 				639F037F2556D44600772893 /* LoginViewController.swift in Sources */,
 				638777F1257C30AB004D5A27 /* ArticleListingData.swift in Sources */,
 				63A8CD942577C47C00A60F56 /* LikesViewModel.swift in Sources */,
@@ -1805,6 +1917,7 @@
 				63A8CD6E2577BE9100A60F56 /* FavouritesRepositoryImplementation.swift in Sources */,
 				63C109DB2555FF830097EDC3 /* ImagePicker.swift in Sources */,
 				6372E6A52557F94C00A03E01 /* DashboardBuilder.swift in Sources */,
+				2473188B2589136200ADC04E /* VideoRepository.swift in Sources */,
 				6371914B2571113800277101 /* SearchViewModel.swift in Sources */,
 				637A78332566D39C00C9A08D /* MyProfileViewController.swift in Sources */,
 				63B7B9CE256039AB00C32A4E /* VideosBuilder.swift in Sources */,
@@ -1819,6 +1932,7 @@
 				637A783D2566D3D100C9A08D /* MyProfileBuilder.swift in Sources */,
 				6346A1EA255BDB33006B3FDF /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				63629B2B2556122C003836A2 /* RightMenuTableViewCell.swift in Sources */,
+				247318F0258B7E2300ADC04E /* PolicyViewModel.swift in Sources */,
 				63C109772555EF0B0097EDC3 /* AppDelegate.swift in Sources */,
 				63C109D82555FF830097EDC3 /* FacebookSharing.swift in Sources */,
 				2460AB5E2582C72A00D3BF43 /* PostDetailRepo.swift in Sources */,
@@ -1848,6 +1962,7 @@
 				63B7B9D2256039B200C32A4E /* VideosViewModel.swift in Sources */,
 				6386894125768D13003ECCD3 /* ConfirmPasswordRepositoryImplementation.swift in Sources */,
 				6372E6D1255804F600A03E01 /* UITextView+Extension.swift in Sources */,
+				24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */,
 				6386893E25768D09003ECCD3 /* ConfirmPasswordRepository.swift in Sources */,
 				638777F0257C30AB004D5A27 /* ArticleListingRepo.swift in Sources */,
 				63629B0925561049003836A2 /* BaseParallaxHeaderView.swift in Sources */,
@@ -1857,6 +1972,7 @@
 				6346A1E2255BDB33006B3FDF /* ButtonBarPagerTabStripViewController.swift in Sources */,
 				6372E6D42558121E00A03E01 /* BaseUIView.swift in Sources */,
 				638777F6257C310F004D5A27 /* ArticleListingRepository.swift in Sources */,
+				2473188E2589161500ADC04E /* VideoRepositoryImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

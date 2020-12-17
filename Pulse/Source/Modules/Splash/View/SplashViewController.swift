@@ -15,14 +15,6 @@ class SplashViewController: BaseViewController
     {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
-        for family: String in UIFont.familyNames
-               {
-                   print(family)
-                   for names: String in UIFont.fontNames(forFamilyName: family)
-                   {
-                       print("== \(names)")
-                   }
-               }
     }
     override func viewDidAppear(_ animated: Bool) {
         navigate()

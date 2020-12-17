@@ -15,7 +15,8 @@ protocol ArticleListingCellProtocol : class {
     func didTapOnBtnComment(cellViewModel : ArticleListingCellViewModel)->Void
     func didTapOnBtnBookmark(row: Int)->Void
     func didTapOnPlay(row: Int , isPlaying: Bool)->Void
-
+    func didTapOnShowAllLikes(row: Int)->Void
+    
 }
 class ArticleListingTableViewCell: UITableViewCell {
     
@@ -31,10 +32,17 @@ class ArticleListingTableViewCell: UITableViewCell {
             btnPlay.addTarget(self, action: #selector(self.didTapOnPlay), for: .touchUpInside)
         }
     }
+    @IBOutlet weak var btnShowAllLikes : BaseUIButton!{
+        didSet{
+            btnShowAllLikes.addTarget(self, action: #selector(self.didTapOnShowAllLikes), for: .touchUpInside)
+        }
+    }
     @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var lblTitle: BaseUILabel!
     @IBOutlet weak var leadingConstraintContentView: BaseLayoutConstraint!
     @IBOutlet weak var heightConstraintVideoView: BaseLayoutConstraint!
+    @IBOutlet weak var heightConstraintShortDescription: BaseLayoutConstraint!
+    
     @IBOutlet weak var trailingConstraintContentView: BaseLayoutConstraint!
     @IBOutlet weak var bottomConstraintCommentImage: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintCommentImage: NSLayoutConstraint!
@@ -56,6 +64,7 @@ class ArticleListingTableViewCell: UITableViewCell {
             setupThumbnailImage()
             setupVideo()
             articleID = cellViewModel.articleID
+            
         }
     }
     var hideCommentView : Bool = false{
@@ -74,7 +83,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var btnAddPhoto: UIButton!{
         didSet{
-//            btnAddPhoto.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            //            btnAddPhoto.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var btnBookmark: BaseUIButton!{
@@ -94,18 +103,18 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var btnDeleteCommentImage : BaseUIButton!{
         didSet{
-//            btnDeleteCommentImage.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
+            //            btnDeleteCommentImage.addTarget(self, action: #selector(self.didTapOnDeleteButton), for: .touchUpInside)
         }
     }
     @IBOutlet weak var commentImage: UIImageView!{
         didSet{
             commentImage.layer.borderWidth = 1
             commentImage.layer.borderColor = UIColor.gray.cgColor
-//            if commentImage.image == nil{
-                commentImage.isHidden = true
-                btnDeleteCommentImage.isHidden = true
-                
-//            }
+            //            if commentImage.image == nil{
+            commentImage.isHidden = true
+            btnDeleteCommentImage.isHidden = true
+            
+            //            }
         }
     }
     weak var delegate : ArticleListingCellProtocol!
@@ -123,9 +132,9 @@ class ArticleListingTableViewCell: UITableViewCell {
             self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
             self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
             self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
-
+            
         }
-
+        
     }
     override func prepareForReuse() {
         resetVideo()
@@ -137,14 +146,14 @@ class ArticleListingTableViewCell: UITableViewCell {
     
     func configCell(){
         hideCommentView = false
-
+        
     }
     func configCellForInterest(){
         hideCommentView = true
     }
     func configCelllForBookmarks(){
         hideCommentView = true
-
+        
     }
     func configCellForVideos(){
         hideCommentView = true
@@ -199,18 +208,19 @@ class ArticleListingTableViewCell: UITableViewCell {
         playerView.pause()
         playerView.playerVars = [
             "playsinline": "1",
-            ] as YouTubePlayerView.YouTubePlayerParameters
+        ] as YouTubePlayerView.YouTubePlayerParameters
         playerView.loadVideoID("JLVXQn3fqgg")
     }
     func setupDescription(){
-        let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
-        let readmoreFontColor = UIColor.blue
-        lblDescription.text = cellViewModel.getShortDescription()
-        self.lblDescription.alpha = 0
-        DispatchQueue.main.async {
-            self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-        }
-        self.lblDescription.alpha = 1
+            let shortDescription = cellViewModel.getShortDescription()
+            if shortDescription.count > 0{
+                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
+                let readmoreFontColor = UIColor.blue
+                lblDescription.text = shortDescription
+                DispatchQueue.main.async {
+                    self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+                }
+            }
     }
     
     func setupThumbnailImage(){
@@ -230,6 +240,7 @@ class ArticleListingTableViewCell: UITableViewCell {
         else{
             heightConstraintLikeCountStackView.constant = 30
         }
+        self.layoutIfNeeded()
     }
     func showLiked(isLiked: Bool)->UIImage{
         var imageName = "icon-like"
@@ -247,14 +258,14 @@ class ArticleListingTableViewCell: UITableViewCell {
     @objc private func didTapOnBtnComment(){
         delegate.didTapOnBtnComment(cellViewModel: self.cellViewModel)
     }
-    
-
+    @objc private func didTapOnShowAllLikes(){
+        delegate.didTapOnShowAllLikes(row: self.tag)
+    }
     @objc private func didTapOnBookmark(){
         delegate.didTapOnBtnBookmark(row: self.tag)
     }
     @objc  private func didTapOnPlay(){
-
         delegate.didTapOnPlay(row: self.tag, isPlaying: false)
     }
-
+    
 }

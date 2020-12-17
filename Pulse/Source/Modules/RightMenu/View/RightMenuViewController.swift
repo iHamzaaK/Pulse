@@ -63,16 +63,15 @@ extension RightMenuViewController{
     @objc func didTapOnEditProfile(){
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in
             AppRouter.goToSpecificController(vc: MyProfileBuilder.build())
-
         }
         slideMenu.closeRight()
-
     }
     @objc func didTapOnLogout(){
         AppRouter.logout()
     }
     @objc func didTapOnTerms(){
 //        AppRouter.goToSpecificController(vc: FullArticleBuilder.build())
+        AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Terms and Conditions"))
     }
 }
 extension RightMenuViewController: UITableViewDelegate, UITableViewDataSource{

@@ -107,7 +107,7 @@ extension BaseTabBarViewController {
     private func setupleftRightButtonsWithLogo(){
         _headerView.rightSecondaryButtonImage = "seach-1x"
         createRightBarButton()
-        _headerView.leftButtonImage = "write-a-story-icon-1x"
+        _headerView.leftButtonImage = "notification-icon"
         _headerView.bgImageContainer?.isHidden = false
     }
    

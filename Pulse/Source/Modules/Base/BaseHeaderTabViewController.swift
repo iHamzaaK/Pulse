@@ -91,6 +91,9 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
                     if self._headerView.leftButtonImage == "menuIcon" {
                         //
                     }
+                    else if self._headerView.leftButtonImage == "notification-icon"{
+                        AppRouter.goToSpecificController(vc: NotificationListingBuilder.build())
+                    }
                     else{
                         self.navigationController!.popViewController(animated: true)
                         

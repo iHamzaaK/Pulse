@@ -10,6 +10,9 @@
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Article Listing View Controller-->
@@ -45,20 +48,17 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-rt-OIm">
                                 <rect key="frame" x="0.0" y="139" width="390" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="8" width="151" height="13"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="13" id="4Nq-jO-52B" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="8" width="175.33333333333334" height="21"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="21" width="350" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brt-ni-2vQ" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="33" width="350" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui5-Ik-LoO" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="371" y="8" width="0.0" height="13"/>
+                                        <rect key="frame" x="371" y="12" width="0.0" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="fH0-Xc-e3m" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                         </constraints>
@@ -83,7 +83,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8gu-CE-beM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="brt-ni-2vQ" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="CAd-r4-nZ9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstAttribute="bottom" secondItem="brt-ni-2vQ" secondAttribute="bottom" constant="2" id="KHM-sS-UJ5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="brt-ni-2vQ" secondAttribute="bottom" constant="2" id="Cs9-8M-8zd"/>
                                     <constraint firstAttribute="bottom" secondItem="ReE-FA-xnm" secondAttribute="bottom" id="Kr1-bC-UsH"/>
                                     <constraint firstItem="Ui5-Ik-LoO" firstAttribute="centerY" secondItem="36Q-FO-2mt" secondAttribute="centerY" id="Qwd-0b-9AG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="trailing" secondItem="brt-ni-2vQ" secondAttribute="trailing" constant="20" id="VKQ-vN-UoT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -92,7 +92,7 @@
                                     <constraint firstItem="ReE-FA-xnm" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="top" id="dc9-n2-dLD"/>
                                     <constraint firstItem="ReE-FA-xnm" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" id="dnS-Fv-eDY"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="top" constant="8" id="gKa-7X-WBs" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="brt-ni-2vQ" firstAttribute="top" secondItem="36Q-FO-2mt" secondAttribute="bottom" id="hHz-oW-gs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="brt-ni-2vQ" firstAttribute="top" secondItem="36Q-FO-2mt" secondAttribute="bottom" constant="4" id="hHz-oW-gs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="36Q-FO-2mt" firstAttribute="leading" secondItem="dpb-rt-OIm" secondAttribute="leading" constant="20" id="ud8-OO-PG1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>

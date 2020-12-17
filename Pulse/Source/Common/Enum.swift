@@ -26,10 +26,13 @@ enum Storyboards : String{
     case search = "Search"
     case likes = "Likes"
     case articleListing = "ArticleListing"
-
+    case notificationListing = "NotificationListing"
+    case policy = "Policy"
 }
 
 enum ViewControllersIdentifier: String{
+    case policy = "PolicyViewController"
+    case notificationListing = "NotificationListingViewController"
     case articleListing = "ArticleListingViewController"
     case likes = "LikesViewController"
     case otp = "OTPViewController"
@@ -73,6 +76,7 @@ enum articleListingType : Int{
     case categories
     case bookmarks
     case interest
+    case videos
 }
 enum CellTypes{
     case dropDown

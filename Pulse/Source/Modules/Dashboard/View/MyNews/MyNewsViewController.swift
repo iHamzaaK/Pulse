@@ -23,10 +23,10 @@ class MyNewsViewController: SegmentedPagerTabStripViewController {
         
 
         guard isReload else {
-            return [ArticleListingBuilder.build(title: "Interests", type: .interest, categoryId: nil), ArticleListingBuilder.build(title: "Bookmarks", type: .bookmarks, categoryId: nil)]
+            return [ArticleListingBuilder.build(title: "Interests", type: .interest, categoryId: nil, navBarType: .clearNavBar), ArticleListingBuilder.build(title: "Bookmarks", type: .bookmarks, categoryId: nil,navBarType: .clearNavBar)]
         }
 
-        var childViewControllers =  [DashboardBuilder.InterestBuild(), DashboardBuilder.BookmarkBuild()]
+        var childViewControllers =  [ArticleListingBuilder.build(title: "Interests", type: .interest, categoryId: nil, navBarType: .clearNavBar), ArticleListingBuilder.build(title: "Bookmarks", type: .bookmarks, categoryId: nil,navBarType: .clearNavBar)]
         let count = childViewControllers.count
 
         for index in childViewControllers.indices {

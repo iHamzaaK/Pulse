@@ -35,10 +35,12 @@ class LikesViewController: BaseViewController {
 
 extension LikesViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.viewModel.getUserLikeArrCount()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikesTableViewCell") as! LikesTableViewCell
+        let cellViewModel = self.viewModel.cellViewModelForRow(row: indexPath.row)
+        cell.cellViewModel = cellViewModel
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

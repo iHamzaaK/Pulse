@@ -14,12 +14,13 @@ class ArticleListingViewModel
     let repository : ArticleListingRepository!
     let bookmarkRepository : BookmarksRepository!
     let likeRepository : LikesRepository!
-
+    let videoRepository : VideosRepository!
+    var arrVideos : [ArticleListingData] = []
     var categoryId = -1
     var artiicleList : [ArticleListingData] = []
     var quote : [ArticleListingQuoteOfTheDay] = []
     var maximumPages = 1
-    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository, likeRepo : LikesRepository) {
+    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository, likeRepo : LikesRepository, videoRepository: VideosRepository) {
         self.navBarType = navBar
         self.type = type
         self.repository = repo
@@ -29,6 +30,7 @@ class ArticleListingViewModel
         self.headerTitle = title
         self.bookmarkRepository = bookmarkRepo
         self.likeRepository = likeRepo
+        self.videoRepository = videoRepository
     }
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
@@ -74,10 +76,42 @@ class ArticleListingViewModel
         return cellViewModel
     }
     func didTapOnCell(row: Int, completionHandler:( _ vc : UIViewController)->Void){
-        let article = artiicleList[row]
+        if self.type != .videos{
+            let article = artiicleList[row]
+            let articleID = String(article.id ?? -1)
+            let vc = FullArticleBuilder.build(articleID: articleID)
+            completionHandler(vc)
+        }
+    }
+    func getAllVideos(completionHandler: @escaping ( _ success :Bool , _ serverMsg : String )->Void){
+        self.videoRepository.getVideos { (success, serverMsg, data) in
+            if success{
+                guard let data = data else {
+                    completionHandler(false, "Invalid Response")
+                    return
+                }
+                self.artiicleList = data
+            }
+            completionHandler(success, serverMsg)
+        }
+    }
+    func getAllLikes(row : Int, completionHandler: @escaping ( _ success :Bool , _ serverMsg : String, _ vc: UIViewController? )->Void){
+        var article = artiicleList[row]
         let articleID = String(article.id ?? -1)
-        let vc = FullArticleBuilder.build(articleID: articleID)
-        completionHandler(vc)
+        
+        self.likeRepository.getAllLikes(articleID: articleID) { (success, serverMsg,  _ userLikedArr : [AllLikesData]?) in
+            if success{
+                guard let userLikedArr = userLikedArr else {
+                    completionHandler(success, serverMsg , nil)
+
+                    return }
+                let vc = LikesViewBuilder.build(userLikeArr: userLikedArr)
+                completionHandler(success, serverMsg , vc)
+            }
+            else{
+                completionHandler(success, serverMsg , nil)
+            }
+        }
     }
     func getLiked(row : Int , completionHandler: @escaping (  _ success : Bool , _ serverMsg : String, _ isLiked : Bool?)->Void){
         var article = artiicleList[row]

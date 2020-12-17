@@ -68,7 +68,7 @@ extension BaseViewController {
              self.setupBackButtonWithTitle()
             break
         case .leftRightButtonsWithLogo:
-            
+            self.setupleftRightButtonsWithLogo()
             break
         }
     }
@@ -115,8 +115,11 @@ extension BaseViewController {
         _headerView.rightButtonImage = "menuIcon"
     }
     
-    private func createLeftRightButtonsWithLogo(){
-        
+    private func setupleftRightButtonsWithLogo(){
+        _headerView.rightSecondaryButtonImage = "seach-1x"
+        createRightBarButton()
+        _headerView.leftButtonImage = ""
+        _headerView.bgImageContainer?.isHidden = false
     }
     private func createSearchTextField(){
         _headerView.searchTextField?.isHidden = false
@@ -124,7 +127,7 @@ extension BaseViewController {
         _headerView.btnRight?.isHidden = false
         _headerView.rightButtonImage = "menu"
         _headerView.btnLeft?.isHidden = false
-        _headerView.leftButtonImage = "back"
+        _headerView.leftButtonImage = "notification-icon"
     }
     @objc func didEditText(textField : BaseUITextfield){
     }

@@ -25,6 +25,8 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
             endpoint = ""
         case .bookmarks:
             endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
+        case .videos:
+            break
         }
         
         

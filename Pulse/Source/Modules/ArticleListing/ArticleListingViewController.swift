@@ -8,15 +8,15 @@
 import UIKit
 import AVFoundation
 import AVKit
-//import MMPlayerView
+import YouTubePlayer
 class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: viewModel.headerTitle)
     }
     var offsetObservation: NSKeyValueObservation?
-    var advTableViewCells = Set<ArticleListingTableViewCell>() // here I save the cell retrieved in `tableView(_:cellForRowAt:)`
-    var lblQuoteHeight : CGFloat = 60
-    var testVideoURLArr = ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4","http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-85.mp4", "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"]
+    
+    var lblQuoteHeight : CGFloat = DesignUtility.convertToRatio(60, sizedForIPad: false, sizedForNavi: false)
+    var refreshControl = UIRefreshControl()
     var viewModel : ArticleListingViewModel!
     @IBOutlet weak var viewQuote: UIView!
     @IBOutlet weak var lblQoute: BaseUILabel!
@@ -66,7 +66,6 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        //        self.tblView.reloadData()
         
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,15 +79,35 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
         offsetObservation = nil
         print("ViewController deinit")
     }
+    
+}
+
+extension ArticleListingViewController{
     func getData(paged: Int){
+        self.refreshControl.endRefreshing()
+        if viewModel.type == articleListingType.videos{
+            self.viewModel.getAllVideos { (success, serverMsg) in
+                if success{
+                    self.tblView.reloadData()
+
+                }
+                else{
+                    Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+                    AppRouter.pop()
+
+                }
+            }
+        }
+        else{
         self.viewModel.getListing(paged: paged) { (success, serverMsg) in
             if success{
                 DispatchQueue.main.async {
                     if self.viewModel.showQuoteView(){
+                        self.viewQuote.isHidden = false
                         self.lblQoute.text = self.viewModel.getQuote()?.title ?? ""
-                        self.lblQuoteHeight  = 90
+                        self.lblQuoteHeight  = DesignUtility.convertToRatio(80, sizedForIPad: false, sizedForNavi: false)
                         if self.lblQoute.maxNumberOfLines == 1{
-                            self.lblQuoteHeight = 60
+                            self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad: false, sizedForNavi: false)
                         }
                         self.heightConstraintViewQuote.constant = self.lblQuoteHeight
                     }
@@ -101,25 +120,31 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
                 }
             }
         }
+        }
     }
     func setupView(){
+        viewQuote.isHidden = true
         lblArticleTypeHeading.text =  self.viewModel.getHeaderTitle()
         if !self.viewModel.showQuoteView(){
             heightConstraintViewQuote.constant = 0
         }
+        
         if !self.viewModel.showTitle(){
             heightConstraintTitle.constant = 0
             navBarType = .clearNavBar
             topConstraint.constant = 0
         }
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+           tblView .addSubview(refreshControl) // not required when using UITableViewController
     }
     @objc func didTapOnQuote(){
         AppRouter.goToSpecificController(vc: QuotesBuilder.build())
     }
-}
-
-import YouTubePlayer
-extension ArticleListingViewController{
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.getData(paged: 1)
+    }
     fileprivate func updateByContentOffset() {
         if let path = findCurrentPath(),
             self.presentedViewController == nil {
@@ -138,9 +163,6 @@ extension ArticleListingViewController{
         if self.presentedViewController != nil {
             return
         }
-        // start loading video
-        
-        
     }
     
     func stopVideos(){
@@ -168,6 +190,14 @@ extension ArticleListingViewController{
     
 }
 extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSource, ArticleListingCellProtocol{
+    func didTapOnShowAllLikes(row: Int) {
+        self.viewModel.getAllLikes(row: row) { (success, serverMsg, vc) in
+            if success{
+                AppRouter.goToSpecificController(vc: vc!)
+            }
+        }
+    }
+    
     func didTapOnBtnLike(row: Int) {
         self.viewModel.getLiked(row: row) { (success, serverMsg, isLiked) in
             if success{
@@ -204,6 +234,9 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
             cell.bringSubviewToFront(cell.playerView)
             cell.bgImageView.isHidden = true
             cell.btnPlay.isHidden = true
+            if cell.playerView.ready{
+                cell.playerView.play()
+            }
         }
     }
     
@@ -227,13 +260,9 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         cell.tag = indexPath.row
         cell.cellViewModel = self.viewModel.cellViewModelForRow(row: indexPath.row)
         cell.delegate = self
-//        cell.videoStr  = testVideoURLArr[indexPath.row%4]
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListingTableViewCell", for: indexPath) as! ArticleListingTableViewCell
-//        cell.playerView.clear()
-        
         let count = self.viewModel.getArticleCount()
         if count>1{
             let lastElement = count - 1
@@ -250,13 +279,6 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
             AppRouter.goToSpecificController(vc: vc)
         }
     }
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListingTableViewCell", for: indexPath) as! ArticleListingTableViewCell
-//        self.stopVideoPlayer(indexPath: indexPath, cell: cell)
-//
-//    }
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

@@ -16,6 +16,8 @@ class SettingsViewController: BaseViewController {
             tblView.dataSource = self
             tblView.estimatedRowHeight = 50
             tblView.rowHeight = UITableView.automaticDimension
+            tblView.separatorStyle = .none
+//            tblView.separatorColor = Utilities.hexStringToUIColor(hex: "CCCCCC")
             Utilities.registerNib(nibName: "QuotesTableViewCell", identifier: "QuotesTableViewCell", tblView: tblView)
         }
     }
@@ -39,16 +41,18 @@ class SettingsViewController: BaseViewController {
 }
 extension SettingsViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
+        cell.lblTitle.text = "Push Notifications"
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return DesignUtility.convertToRatio(55, sizedForIPad: false, sizedForNavi: false)
     }
 }

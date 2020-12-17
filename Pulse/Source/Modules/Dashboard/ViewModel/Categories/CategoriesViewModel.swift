@@ -86,16 +86,16 @@ class CategoriesViewModel
             vc = QuotesBuilder.build()
         }
         else if category.isVideo ?? false{
-            vc = VideosBuilder.build()
+            vc = ArticleListingBuilder.build(title: category.name ?? "", type: .videos, categoryId: category.id, navBarType: .backButtonWithRightMenuButton)
         }
         else{
-            vc = ArticleListingBuilder.build(title: category.name ?? "", type: .categories, categoryId: category.id)
+            vc = ArticleListingBuilder.build(title: category.name ?? "", type: .categories, categoryId: category.id, navBarType: .backButtonWithRightMenuButton)
         }
         completionHandler(vc)
     }
     func goToCategoryPostsForSubCategoory(row: Int, completionHandler: (_ vc: UIViewController)->Void){
         let subCategoryId = subCategory[row].id
-        let vc = ArticleListingBuilder.build(title: strCategoryTitle, type: .categories, categoryId: subCategoryId)
+        let vc = ArticleListingBuilder.build(title: strCategoryTitle, type: .categories, categoryId: subCategoryId, navBarType: .backButtonWithRightMenuButton)
         completionHandler(vc)
     }
     func getSubCategoryCount()-> Int{

@@ -56,9 +56,9 @@ class RightMenuViewModel{
             break
         case .settings:
             AppRouter.goToSpecificController(vc: SettingsBuilder.build())
-
             break
         case .privacyPolicy:
+            AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Privacy Policy"))
             break
             
         }

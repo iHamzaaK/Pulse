@@ -36,6 +36,25 @@ class FullArticleViewModel
     func isVideo()->Bool{
         return articleData.isVideo ?? false
     }
+    func getVideoURl()->String{
+        return articleData.videoUrl ?? ""
+    }
+    func getAllLikes(completionHandler: @escaping ( _ success :Bool , _ serverMsg : String, _ vc: UIViewController? )->Void){
+        let articleID = articleData.id ?? ""
+        self.likesRepository.getAllLikes(articleID: articleID) { (success, serverMsg,  _ userLikedArr : [AllLikesData]?) in
+            if success{
+                guard let userLikedArr = userLikedArr else {
+                    completionHandler(success, serverMsg , nil)
+
+                    return }
+                let vc = LikesViewBuilder.build(userLikeArr: userLikedArr)
+                completionHandler(success, serverMsg , vc)
+            }
+            else{
+                completionHandler(success, serverMsg , nil)
+            }
+        }
+    }
     func getLiked( completionHandler: @escaping (  _ success : Bool , _ serverMsg : String, _ isLiked : Bool?)->Void){
         let articleID = articleData.id ?? ""
 
@@ -46,6 +65,15 @@ class FullArticleViewModel
                     return
                 }
                 self.articleData.isLiked = isLiked
+//                article.isLiked = isLiked
+                if isLiked{
+                    self.articleData.likeCount = self.articleData.likeCount! + 1
+                }
+                else{
+                    self.articleData.likeCount = self.articleData.likeCount! - 1
+                }
+//                self.artiicleList[row] = article
+                
                 completionHandler(success, serverMsg, isLiked)
             }
             else{
@@ -137,11 +165,11 @@ class FullArticleViewModel
             if success {
                 if message == "Bookmark has successfully saved."{
                     
+                    self.articleData.isBookmarked = true
                     completionHandler(true,success, message)
                 }
                 else{
-                   
-
+                    self.articleData.isBookmarked = false
                     completionHandler(false,success, message)
                 }
             }

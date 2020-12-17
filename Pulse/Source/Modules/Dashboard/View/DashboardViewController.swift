@@ -13,7 +13,8 @@ class DashboardViewController: BaseTabBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        _headerView.bgColorVar = "cc"   
+        _headerView.bgColorVar = "cc"
+//        _headerView.leftButtonImage = "notification-icon"
 //        self.tabBar.backgroundImage = UIImage()
 //        self.tabBar.shadowImage = UIImage()
 //        tabBar.layer.borderWidth = 0
@@ -51,7 +52,7 @@ class DashboardViewController: BaseTabBarViewController {
         print(str)
     }
     func createViewControllers(){
-        let topStoriesVC = ArticleListingBuilder.build(title: "Top Stories", type: .topStories, categoryId: nil)
+        let topStoriesVC = ArticleListingBuilder.build(title: "Top Stories", type: .topStories, categoryId: nil, navBarType: .clearNavBar)
         topStoriesVC.tabBarItem = UITabBarItem(title: "Top Stories", image: Utilities.getImage(str: "outlined-Logo-1"), selectedImage: Utilities.getImage(str: "filled-top-stories-logo"))
         let categoriesVC = DashboardBuilder.CategoriesBuilder()
         categoriesVC.tabBarItem = UITabBarItem(title: "Categories", image: Utilities.getImage(str: "outlined-categories-icon-1"), selectedImage: Utilities.getImage(str: "filled-categories-icon-"))

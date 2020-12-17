@@ -12,7 +12,7 @@ struct PostDetailData : Codable {
 	var isBookmarked : Bool?
 	var isLiked : Bool?
 	let isVideo : Bool?
-	let likeCount : Int?
+	var likeCount : Int?
 	let permalink : String?
 	let shortDescription : String?
 	let tag : String?
