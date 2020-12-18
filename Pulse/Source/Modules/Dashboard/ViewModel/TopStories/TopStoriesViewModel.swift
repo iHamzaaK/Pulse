@@ -22,9 +22,9 @@ class TopStoriesViewModel
     func getItemHeight(row : Int)-> CGSize{
         var width  = UIScreen.main.bounds.width
         var height : CGFloat = 200.0
-        if  DesignUtility.isIPad{
-            height = 415
-        }
+//        if  DesignUtility.isIPad{
+//            height = 415
+//        }
         height = DesignUtility.convertToRatio(height, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
         
         if row != 0 {

@@ -65,9 +65,9 @@ class RightMenuViewModel{
     }
     func getHeightForTableViewRow()->CGFloat{
         var height : CGFloat = 40
-        if DesignUtility.isIPad{
-            height = 50
-        }
+//        if DesignUtility.isIPad{
+//            height = 50
+//        }
         cellHeight = DesignUtility.convertToRatio(height, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
         return cellHeight
     }

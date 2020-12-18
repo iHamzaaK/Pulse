@@ -93,13 +93,13 @@ class TopStoriesTableViewCell: UITableViewCell {
         heightConstraintCommentImage.constant = 0
         bottomConstraintCommentImage.constant = 0
         btnDeleteCommentImage.isHidden = true
-        if DesignUtility.isIPad{
-            self.leadingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
-            self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
-            self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
-            self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
-
-        }
+//        if DesignUtility.isIPad{
+//            self.leadingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+//            self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+//            self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
+//            self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
+//
+//        }
       
     }
     

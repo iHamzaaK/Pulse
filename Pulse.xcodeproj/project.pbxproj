@@ -38,6 +38,7 @@
 		247318FE258B7E8700ADC04E /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247318FD258B7E8700ADC04E /* PolicyViewController.swift */; };
 		24731902258B7F2300ADC04E /* PolicyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731901258B7F2300ADC04E /* PolicyRepository.swift */; };
 		24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */; };
+		24731909258BA16200ADC04E /* ArticleListing-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */; };
 		63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184852257ED928001CE193 /* Montserrat-Light.otf */; };
 		63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184853257ED928001CE193 /* Montserrat-Medium.otf */; };
 		63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184854257ED928001CE193 /* Montserrat-SemiBold.otf */; };
@@ -274,6 +275,7 @@
 		247318FD258B7E8700ADC04E /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
 		24731901258B7F2300ADC04E /* PolicyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepository.swift; sourceTree = "<group>"; };
 		24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepositoryImplementation.swift; sourceTree = "<group>"; };
+		24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "ArticleListing-iPad.storyboard"; sourceTree = "<group>"; };
 		5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
 		5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63184852257ED928001CE193 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -1588,6 +1590,7 @@
 				63DB157C257BBD93007BA6B9 /* ArticleListingViewController.swift */,
 				63DB157D257BBD94007BA6B9 /* ArticleListingViewModel.swift */,
 				638777FB257C5008004D5A27 /* ArticleListing-iPhone.storyboard */,
+				24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */,
 			);
 			path = ArticleListing;
 			sourceTree = "<group>";
@@ -1736,6 +1739,7 @@
 				63B7B9E425603A1500C32A4E /* Videos-iPhone.storyboard in Resources */,
 				637F7D1E25798BC200F44400 /* Settings-iPad.storyboard in Resources */,
 				63629AF325560F43003836A2 /* Splash-iPhone.storyboard in Resources */,
+				24731909258BA16200ADC04E /* ArticleListing-iPad.storyboard in Resources */,
 				637F7D2425798BF800F44400 /* Search-iPad.storyboard in Resources */,
 				6385CA1925687C6B000D21D8 /* Settings-iPhone.storyboard in Resources */,
 				2473189E25895A0C00ADC04E /* NotificationListingTableViewCell.xib in Resources */,

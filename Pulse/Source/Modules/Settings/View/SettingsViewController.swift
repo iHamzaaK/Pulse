@@ -53,6 +53,6 @@ extension SettingsViewController : UITableViewDelegate, UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return DesignUtility.convertToRatio(55, sizedForIPad: false, sizedForNavi: false)
+        return DesignUtility.convertToRatio(55, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
     }
 }

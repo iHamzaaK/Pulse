@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         let appearance = UITabBarItem.appearance()
-        let attributes = [NSAttributedString.Key.font:UIFont(name: "Montserrat-Medium", size: DesignUtility.convertToRatio(10, sizedForIPad: false, sizedForNavi: false))]
+        let attributes = [NSAttributedString.Key.font:UIFont(name: "Montserrat-Medium", size: DesignUtility.convertToRatio(10, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false))]
         appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
 
         return true

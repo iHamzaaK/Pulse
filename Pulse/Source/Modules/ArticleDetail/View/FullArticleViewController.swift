@@ -140,7 +140,7 @@ extension FullArticleViewController{
                 let strLike  = self.viewModel.getTotalLikeCount()
                 if strLike != ""{
                     self.viewLikeStack.isHidden = false
-                    self.heightConstraintLikeCountStackView?.constant = DesignUtility.convertToRatio(30, sizedForIPad: false, sizedForNavi: false)
+                    self.heightConstraintLikeCountStackView?.constant = DesignUtility.convertToRatio(30, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
                 }
                 self.lblTotalLikes.text = strLike
                 self.btnBookmark.setImage(UIImage(named: strImage), for: .normal)
@@ -193,7 +193,7 @@ extension FullArticleViewController{
                 let strLike  = self.viewModel.getTotalLikeCount()
                 if strLike != ""{
                     self.viewLikeStack.isHidden = false
-                    self.heightConstraintLikeCountStackView?.constant = DesignUtility.convertToRatio(30, sizedForIPad: false, sizedForNavi: false)
+                    self.heightConstraintLikeCountStackView?.constant = DesignUtility.convertToRatio(30, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
                 }
                 else{
                     self.viewLikeStack.isHidden = true

@@ -31,7 +31,7 @@ extension PolicyViewController{
         }
     }
     func getDescription()->NSAttributedString?{
-        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad: false, sizedForNavi: false)
+        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
         let text =  Utilities.getAttributedStringForHTMLWithFont("<b><i>THIS IS SAMPLE TEXT FOR POLICY</i></b>", textSize: Int(fontSize), fontName: "Montserrat-Regular")
     
         return text

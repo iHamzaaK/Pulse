@@ -108,7 +108,7 @@ class FullArticleViewModel
         }
     }
     func getDescription()->NSAttributedString?{
-        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad: false, sizedForNavi: false)
+        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
         let text =  Utilities.getAttributedStringForHTMLWithFont(articleData.descriptionField ?? "", textSize: Int(fontSize), fontName: "Montserrat-Regular")
     
         return text

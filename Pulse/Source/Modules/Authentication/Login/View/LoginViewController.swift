@@ -11,10 +11,13 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var btnForgetPassword: UIButton!
     @IBOutlet weak var btnNext: UIButton!
+    let font = UIFont.init(name: "Montserrat-Regular" , size: 18.33)
+
     @IBOutlet weak var txtPassword: HoshiTextField!{
         didSet{
             txtPassword.delegate = self
             txtPassword.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)
+            txtPassword.font = font
 
         }
     }
@@ -22,6 +25,8 @@ class LoginViewController: BaseViewController {
         didSet{
             txtEmail.delegate = self
             txtEmail.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)
+            txtEmail.font = font
+
         }
     }
     @IBOutlet weak var lblEmailError: UILabel!{
@@ -52,7 +57,7 @@ extension LoginViewController{
         txtPassword.isSecureTextEntry = true
         btnForgetPassword.addTarget(self, action: #selector(self.didTapOnForget), for: .touchUpInside)
         btnNext.addTarget(self, action: #selector(self.didTapOnLogin), for: .touchUpInside)
-        let font = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(18, sizedForIPad: false, sizedForNavi: false))
+        let font = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(18, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false))
         self.txtEmail.font = font
         self.txtPassword.font = font
 

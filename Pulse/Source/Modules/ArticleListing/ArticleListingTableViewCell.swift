@@ -127,13 +127,13 @@ class ArticleListingTableViewCell: UITableViewCell {
         heightConstraintCommentImage.constant = 0
         bottomConstraintCommentImage.constant = 0
         btnDeleteCommentImage.isHidden = true
-        if DesignUtility.isIPad{
-            self.leadingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
-            self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
-            self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
-            self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
-            
-        }
+//        if DesignUtility.isIPad{
+//            self.leadingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+//            self.trailingConstraintContentView.constant = DesignUtility.convertToRatio(30, sizedForIPad: true, sizedForNavi: false)
+//            self.heightConstraintVideoView.constant = DesignUtility.convertToRatio(295, sizedForIPad: true, sizedForNavi: false)
+//            self.heightConstraintCommentView.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
+//
+//        }
         
     }
     override func prepareForReuse() {
@@ -214,7 +214,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     func setupDescription(){
             let shortDescription = cellViewModel.getShortDescription()
             if shortDescription.count > 0{
-                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: false, sizedForNavi: false))
+                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
                 let readmoreFontColor = UIColor.blue
                 lblDescription.text = shortDescription
                 DispatchQueue.main.async {

@@ -15,7 +15,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     }
     var offsetObservation: NSKeyValueObservation?
     
-    var lblQuoteHeight : CGFloat = DesignUtility.convertToRatio(60, sizedForIPad: false, sizedForNavi: false)
+    var lblQuoteHeight : CGFloat = DesignUtility.convertToRatio(60, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
     var refreshControl = UIRefreshControl()
     var viewModel : ArticleListingViewModel!
     @IBOutlet weak var viewQuote: UIView!
@@ -105,9 +105,9 @@ extension ArticleListingViewController{
                     if self.viewModel.showQuoteView(){
                         self.viewQuote.isHidden = false
                         self.lblQoute.text = self.viewModel.getQuote()?.title ?? ""
-                        self.lblQuoteHeight  = DesignUtility.convertToRatio(80, sizedForIPad: false, sizedForNavi: false)
+                        self.lblQuoteHeight  = DesignUtility.convertToRatio(80, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
                         if self.lblQoute.maxNumberOfLines == 1{
-                            self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad: false, sizedForNavi: false)
+                            self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
                         }
                         self.heightConstraintViewQuote.constant = self.lblQuoteHeight
                     }

@@ -100,9 +100,9 @@ public class DesignUtility: NSObject {
         }
         
         var ratio = DesignUtility.deviceRatio
-        if sizedForIPad{
-            ratio = DesignUtility.deviceRatioIpad
-        }
+//        if sizedForIPad{
+//            ratio = DesignUtility.deviceRatioIpad
+//        }
         return value * ratio;
     }
     

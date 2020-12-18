@@ -196,9 +196,9 @@ struct ArticleListingCellViewModel{
     }
     func getDescription()-> NSAttributedString?{
         var fontSize = 15
-        if DesignUtility.isIPad{
-            fontSize = 22
-        }
+//        if DesignUtility.isIPad{
+//            fontSize = 22
+//        }
         fontSize = Int(DesignUtility.convertToRatio(CGFloat(fontSize), sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
         let attirbutedString = Utilities.getAttributedStringForHTMLWithFont(description, textSize: fontSize, fontName: "Helvetica")
         return attirbutedString

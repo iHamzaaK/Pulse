@@ -32,10 +32,10 @@ class CommentsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        if DesignUtility.isIPad{
-            widthConstraintImageView?.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
-            leadingConstraintImageView?.constant = DesignUtility.convertToRatio(75  , sizedForIPad: true, sizedForNavi: false)
-        }
+//        if DesignUtility.isIPad{
+//            widthConstraintImageView?.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)
+//            leadingConstraintImageView?.constant = DesignUtility.convertToRatio(75  , sizedForIPad: true, sizedForNavi: false)
+//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
