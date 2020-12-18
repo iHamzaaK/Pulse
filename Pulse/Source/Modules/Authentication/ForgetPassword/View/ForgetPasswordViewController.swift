@@ -10,7 +10,7 @@ import TextFieldEffects
 class ForgetPasswordViewController: BaseViewController {
     
     var viewModel : ForgetPasswordViewModel!
-    let font = UIFont.init(name: "Montserrat-Regular" , size: 18.33)
+    let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
     @IBOutlet weak var txtEmail: HoshiTextField!{
         didSet{
             txtEmail.addTarget(self, action: #selector(self.didChangeText), for: .editingChanged)

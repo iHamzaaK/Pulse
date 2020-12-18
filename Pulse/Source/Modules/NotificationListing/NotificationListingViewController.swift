@@ -21,6 +21,7 @@ class NotificationListingViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBarType = self.viewModel.getNavigationBar()
         // Do any additional setup after loading the view.
     }
 

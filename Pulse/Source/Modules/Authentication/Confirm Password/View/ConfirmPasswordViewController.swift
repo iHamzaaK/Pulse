@@ -9,7 +9,7 @@ import UIKit
 import TextFieldEffects
 class ConfirmPasswordViewController: BaseViewController {
     var viewModel : ConfirmPasswordViewModel!
-    let font = UIFont.init(name: "Montserrat-Regular" , size: 18.33)
+    let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
     @IBOutlet weak var txtSetNewPass: HoshiTextField!{
         didSet{
             txtSetNewPass.font = font

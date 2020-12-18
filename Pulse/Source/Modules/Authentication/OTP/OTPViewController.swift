@@ -13,6 +13,7 @@ class OTPViewController: BaseViewController {
     @IBOutlet weak var btnResendOTP: UIButton!
     @IBOutlet weak var btnSendOTP: BaseUIButton!
     @IBOutlet var otpTextFieldView: OTPFieldView!
+    let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
     var viewModel : OTPViewModel!
     var otpTimer: Timer?
     var timeExpired : Bool = false
@@ -38,7 +39,8 @@ class OTPViewController: BaseViewController {
         self.otpTextFieldView.filledBorderColor = UIColor.black
         self.otpTextFieldView.cursorColor = UIColor.lightGray
         self.otpTextFieldView.displayType = .underlinedBottom
-        self.otpTextFieldView.fieldSize = DesignUtility.getFontSize(fSize: 34)
+        self.otpTextFieldView.fieldFont = font!
+        self.otpTextFieldView.fieldSize = DesignUtility.getFontSize(fSize: 18)
         self.otpTextFieldView.separatorSpace = 24//DesignUtility.getFontSize(fSize: 8)
         self.otpTextFieldView.shouldAllowIntermediateEditing = false
         self.otpTextFieldView.delegate = self

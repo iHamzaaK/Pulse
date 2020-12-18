@@ -11,7 +11,7 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var btnForgetPassword: UIButton!
     @IBOutlet weak var btnNext: UIButton!
-    let font = UIFont.init(name: "Montserrat-Regular" , size: 18.33)
+    let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
 
     @IBOutlet weak var txtPassword: HoshiTextField!{
         didSet{
