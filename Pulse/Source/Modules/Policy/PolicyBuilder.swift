@@ -8,12 +8,12 @@
 import Foundation
 class PolicyBuilder
 {
-    static func build(title: String)-> UIViewController{
+    static func build(title: String, endPoint: String)-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.policy.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.policy.rawValue) as! PolicyViewController
         let navBarType = navigationBarTypes.backButtonWithRightMenuButton
         let repo = PolicyRepositoryImplementation()
-        let viewModel = PolicyViewModel(navigationType: navBarType, repo : repo, title : title)
+        let viewModel = PolicyViewModel(navigationType: navBarType, repo : repo, title : title, endPoint: endPoint)
         vc.viewModel = viewModel
         return vc
     }

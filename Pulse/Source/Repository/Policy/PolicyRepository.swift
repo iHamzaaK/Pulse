@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol PolicyRepository {
-    func getPolicy(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void)
+    func getPolicy(endpoint : String ,completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void)
 }

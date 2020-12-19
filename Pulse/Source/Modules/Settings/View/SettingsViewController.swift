@@ -39,14 +39,18 @@ class SettingsViewController: BaseViewController {
     */
 
 }
-extension SettingsViewController : UITableViewDelegate, UITableViewDataSource{
+extension SettingsViewController : UITableViewDelegate, UITableViewDataSource, SettingsProtocol{
+    func didTurnOnOffSwitch(switchFlag: Bool) {
+        self.viewModel.updateProfile(switchFlag: switchFlag) { (success, serverMsg) in
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell") as! SettingsTableViewCell
         cell.lblTitle.text = "Push Notifications"
-        
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -8,10 +8,10 @@
 import Foundation
 class PolicyRepositoryImplementation : PolicyRepository{
 
-    private let url = "wp/v2/sahifa/videos"
+    private let url = "wp/v2/sahifa/"
     private var isSuccess = false
     private var serverMsg = ""
-    func getPolicy(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String )->Void){
+    func getPolicy(endpoint : String, completionHandler: @escaping ( _ success : Bool , _ serverMsg : String )->Void){
         
         
         DispatchQueue.main.async{
@@ -21,7 +21,7 @@ class PolicyRepositoryImplementation : PolicyRepository{
             "Accept": "application/json",
             "Authorization": "Bearer " + ArchiveUtil.getUserToken()
         ]
-        BaseRepository.instance.requestService(url: url, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
+        BaseRepository.instance.requestService(url: url+endpoint , method: .get, params: nil, header: headers) { (success, serverMsg, data) in
             print(data)
             if success{
 //                guard let data = data else { return }

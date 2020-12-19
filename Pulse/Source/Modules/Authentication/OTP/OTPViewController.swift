@@ -40,7 +40,7 @@ class OTPViewController: BaseViewController {
         self.otpTextFieldView.cursorColor = UIColor.lightGray
         self.otpTextFieldView.displayType = .underlinedBottom
         self.otpTextFieldView.fieldFont = font!
-        self.otpTextFieldView.fieldSize = DesignUtility.getFontSize(fSize: 18)
+        self.otpTextFieldView.fieldSize = DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
         self.otpTextFieldView.separatorSpace = 24//DesignUtility.getFontSize(fSize: 8)
         self.otpTextFieldView.shouldAllowIntermediateEditing = false
         self.otpTextFieldView.delegate = self

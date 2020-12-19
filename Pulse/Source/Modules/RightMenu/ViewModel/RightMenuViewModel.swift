@@ -53,12 +53,14 @@ class RightMenuViewModel{
             AppRouter.goToHomeFromRightMenu()
             break
         case .bookmarks:
+            let vc = ArticleListingBuilder.build(title: "Bookmarks", type: .bookmarks, categoryId: nil,navBarType: .backButtonWithRightMenuButton)
+            AppRouter.goToSpecificController(vc: vc)    
             break
         case .settings:
             AppRouter.goToSpecificController(vc: SettingsBuilder.build())
             break
         case .privacyPolicy:
-            AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Privacy Policy"))
+            AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Privacy Policy", endPoint: "privacy-policy"))
             break
             
         }

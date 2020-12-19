@@ -34,9 +34,12 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
                     guard let modelData = model?.data else { return }
                     guard let subscription = modelData.subscription else { return}
                     guard let avatar = modelData.avatar else { return}
+                    guard let notificationOn = modelData.notificationOn else { return}
+
                     var user = ArchiveUtil.getUser()!
                     user.subscription = subscription
                     user.avatar = avatar
+                    user.notificationOn = notificationOn
                     ArchiveUtil.saveUser(userData: user)
                 }
                 completionHandler(self.isSuccess,self.serverMsg)

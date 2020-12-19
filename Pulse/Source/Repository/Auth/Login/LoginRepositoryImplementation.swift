@@ -53,8 +53,9 @@ class LoginRepositoryImplementation: LoginRepository{
                     guard let userDisplayNaame = modelData.displayName else{return}
                     guard let subscription = modelData.subscription else { return}
                     guard let avatar = modelData.avatar else { return}
+                    guard let notificationOn = modelData.notificationOn else { return}
 
-                    let user = User(id: userID, firstName: userFirstName, lastName: userLastName, displayName: userDisplayNaame, email: userEmail, password: password, accessToken: accessToken,subscription: subscription, avatar : avatar)
+                    let user = User(id: userID, firstName: userFirstName, lastName: userLastName, displayName: userDisplayNaame, email: userEmail, password: password, accessToken: accessToken,subscription: subscription, avatar : avatar, notificationOn: notificationOn)
                         ArchiveUtil.saveUser(userData: user)
                     completionHandler(self.isSuccess, self.serverMsg)
 

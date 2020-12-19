@@ -131,8 +131,9 @@ extension ArticleListingViewController{
         
         if !self.viewModel.showTitle(){
             heightConstraintTitle.constant = 0
-            navBarType = .clearNavBar
-            topConstraint.constant = 0
+            if navBarType == .clearNavBar{
+                topConstraint.constant = 0
+            }
         }
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
            refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)

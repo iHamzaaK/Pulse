@@ -71,7 +71,7 @@ extension RightMenuViewController{
     }
     @objc func didTapOnTerms(){
 //        AppRouter.goToSpecificController(vc: FullArticleBuilder.build())
-        AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Terms and Conditions"))
+        AppRouter.goToSpecificController(vc: PolicyBuilder.build(title: "Terms and Conditions", endPoint: "terms-conditions"))
     }
 }
 extension RightMenuViewController: UITableViewDelegate, UITableViewDataSource{

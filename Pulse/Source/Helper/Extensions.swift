@@ -213,3 +213,8 @@ extension Date {
         return components
     }
 }
+extension Bool {
+    var intValue: Int {
+        return self ? 1 : 0
+    }
+}

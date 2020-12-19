@@ -11,11 +11,12 @@ class PolicyViewModel {
     let headerTitle: String!
     private let navBarType : navigationBarTypes!
     let repo : PolicyRepository!
-    
-    init(navigationType navBar : navigationBarTypes, repo : PolicyRepository, title : String) {
+    let endPoint : String
+    init(navigationType navBar : navigationBarTypes, repo : PolicyRepository, title : String, endPoint : String) {
         self.navBarType = navBar
         self.repo = repo
         self.headerTitle = title
+        self.endPoint = endPoint
     }
     func getTitle()->String{
         return headerTitle
@@ -24,7 +25,7 @@ class PolicyViewModel {
         return navBarType
     }
     func getPolicy(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void){
-        self.repo.getPolicy(completionHandler: { (success, serverMsg) in
+        self.repo.getPolicy(endpoint: self.endPoint, completionHandler: { (success, serverMsg) in
             completionHandler(success, serverMsg)
         })
     }
