@@ -11,9 +11,18 @@ class MyProfileViewController: BaseViewController {
     
     var viewModel : MyProfileViewModel!
     var imagePicker : ImagePicker!
-    
-    @IBOutlet weak var txtSetNewPass: HoshiTextField!
-    @IBOutlet weak var txtConfirrmPass: HoshiTextField!
+    let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
+
+    @IBOutlet weak var txtSetNewPass: HoshiTextField!{
+        didSet{
+            txtSetNewPass.font = font
+        }
+    }
+    @IBOutlet weak var txtConfirrmPass: HoshiTextField!{
+        didSet{
+            txtConfirrmPass.font = font
+        }
+    }
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
             collectionView.delegate = self

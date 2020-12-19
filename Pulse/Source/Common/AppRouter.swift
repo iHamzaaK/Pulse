@@ -10,10 +10,14 @@ import UIKit
 import SlideMenuControllerSwift
 class AppRouter{
     private static var window : UIWindow?
+    private static var rightMenuWidth: CGFloat = 0.8
     private static var navController : BaseNavigationViewController = BaseNavigationViewController()
     static var slideMenu : SlideMenuController!{
         didSet{
-            slideMenu.changeRightViewWidth(UIScreen.main.bounds.width * 0.8)
+            if DesignUtility.isIPad{
+                rightMenuWidth = 0.45
+            }
+            slideMenu.changeRightViewWidth(UIScreen.main.bounds.width * rightMenuWidth)
             SlideMenuOptions.panFromBezel = false
             SlideMenuOptions.rightPanFromBezel = false
             SlideMenuOptions.contentViewScale = 1.0

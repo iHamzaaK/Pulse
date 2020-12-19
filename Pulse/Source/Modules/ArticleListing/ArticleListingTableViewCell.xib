@@ -37,19 +37,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Fch-uI-NFb" secondAttribute="bottom" id="3am-0B-8jp"/>
-                                    <constraint firstItem="tFw-Bh-8y7" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="6vm-bE-bfk"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fch-uI-NFb" secondAttribute="trailing" id="Cug-Lf-hb0"/>
-                                    <constraint firstAttribute="trailing" secondItem="eKy-QH-tJW" secondAttribute="trailing" id="GH3-WQ-ySO"/>
-                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="MnI-Yg-w1f"/>
-                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="N3n-sc-OSU"/>
-                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="XKC-7L-ukh"/>
-                                    <constraint firstAttribute="bottom" secondItem="tFw-Bh-8y7" secondAttribute="bottom" id="YIY-w7-txT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fch-uI-NFb" secondAttribute="bottom" id="3am-0B-8jp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="tFw-Bh-8y7" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="6vm-bE-bfk" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fch-uI-NFb" secondAttribute="trailing" id="Cug-Lf-hb0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKy-QH-tJW" secondAttribute="trailing" id="GH3-WQ-ySO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="MnI-Yg-w1f" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="N3n-sc-OSU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="eKy-QH-tJW" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="top" id="XKC-7L-ukh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="tFw-Bh-8y7" secondAttribute="bottom" id="YIY-w7-txT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="height" constant="200" id="mZa-r1-dQN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="tFw-Bh-8y7" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="mpE-PX-dtb"/>
-                                    <constraint firstAttribute="trailing" secondItem="tFw-Bh-8y7" secondAttribute="trailing" id="n2R-NS-gAZ"/>
-                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="qSY-PP-0Of"/>
-                                    <constraint firstAttribute="bottom" secondItem="eKy-QH-tJW" secondAttribute="bottom" id="wE6-bR-mYB"/>
+                                    <constraint firstItem="tFw-Bh-8y7" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="mpE-PX-dtb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="tFw-Bh-8y7" secondAttribute="trailing" id="n2R-NS-gAZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="Fch-uI-NFb" firstAttribute="leading" secondItem="2Bc-7g-XaZ" secondAttribute="leading" id="qSY-PP-0Of" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKy-QH-tJW" secondAttribute="bottom" id="wE6-bR-mYB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News about COVID-19 Vaccine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b55-lR-QZs" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
@@ -118,11 +118,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="centerX" secondItem="H4q-uq-jGa" secondAttribute="centerX" id="5EG-QV-f5a"/>
-                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="height" secondItem="H4q-uq-jGa" secondAttribute="height" id="Sf9-YZ-udQ"/>
-                                            <constraint firstAttribute="width" constant="30" id="hOs-Ln-Q4t"/>
-                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="width" secondItem="H4q-uq-jGa" secondAttribute="width" id="m3O-h5-Lk5"/>
-                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="centerY" secondItem="H4q-uq-jGa" secondAttribute="centerY" id="sid-bB-0CP"/>
+                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="centerX" secondItem="H4q-uq-jGa" secondAttribute="centerX" id="5EG-QV-f5a" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="height" secondItem="H4q-uq-jGa" secondAttribute="height" id="Sf9-YZ-udQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="width" constant="30" id="hOs-Ln-Q4t" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="width" secondItem="H4q-uq-jGa" secondAttribute="width" id="m3O-h5-Lk5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="mjA-yl-GF2" firstAttribute="centerY" secondItem="H4q-uq-jGa" secondAttribute="centerY" id="sid-bB-0CP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBV-PO-CAC" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
@@ -133,7 +133,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5o9-W2-bae"/>
+                                    <constraint firstAttribute="height" constant="30" id="5o9-W2-bae" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0K-3v-ohZ" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
@@ -207,33 +207,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="leading" secondItem="vuS-VF-Ct4" secondAttribute="leading" id="3NR-gt-llN"/>
+                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="leading" secondItem="vuS-VF-Ct4" secondAttribute="leading" id="3NR-gt-llN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="vuS-VF-Ct4" firstAttribute="leading" secondItem="2M3-7Z-CKM" secondAttribute="leading" id="3sb-sV-XIc" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Pf0-1E-cWa" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="6.6600000000000001" id="7x9-6D-gi5" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="jXV-9f-oVC" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="41" id="8Uq-lS-pRe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="b55-lR-QZs" firstAttribute="top" secondItem="2Bc-7g-XaZ" secondAttribute="bottom" constant="10" id="8YZ-qY-dCO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="width" secondItem="UoI-ga-ZbO" secondAttribute="width" id="BXs-W5-1bl"/>
+                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="width" secondItem="UoI-ga-ZbO" secondAttribute="width" id="BXs-W5-1bl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="2Bc-7g-XaZ" secondAttribute="trailing" id="F4a-pb-jpF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="Pf0-1E-cWa" secondAttribute="trailing" constant="6.6600000000000001" id="GWc-Hu-heu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="bottom" secondItem="jXV-9f-oVC" secondAttribute="bottom" constant="7.5" id="JyD-ks-Ihl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="2M3-7Z-CKM" secondAttribute="trailing" constant="10" id="OpQ-RM-tpG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="trailing" secondItem="vuS-VF-Ct4" secondAttribute="trailing" id="PXU-nq-Zqp"/>
+                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="trailing" secondItem="vuS-VF-Ct4" secondAttribute="trailing" id="PXU-nq-Zqp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="vuS-VF-Ct4" firstAttribute="top" secondItem="2M3-7Z-CKM" secondAttribute="bottom" constant="10" id="QPK-WV-WsB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="centerX" secondItem="UoI-ga-ZbO" secondAttribute="centerX" id="T3D-Ey-q2q"/>
+                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="centerX" secondItem="UoI-ga-ZbO" secondAttribute="centerX" id="T3D-Ey-q2q" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Dg3-Kf-5Rc" firstAttribute="top" secondItem="b55-lR-QZs" secondAttribute="bottom" constant="8.5" id="TfZ-YZ-H6F" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="CaR-pj-7Rt" firstAttribute="trailing" secondItem="jXV-9f-oVC" secondAttribute="trailing" id="UO6-gT-2jQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="height" secondItem="UoI-ga-ZbO" secondAttribute="height" id="YVF-Jz-wnW"/>
+                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="height" secondItem="UoI-ga-ZbO" secondAttribute="height" id="YVF-Jz-wnW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="2Bc-7g-XaZ" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" id="Yzv-g3-beP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="2Bc-7g-XaZ" firstAttribute="top" secondItem="o06-NR-PTt" secondAttribute="top" id="cjt-fm-i0G" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="jXV-9f-oVC" firstAttribute="top" secondItem="Pf0-1E-cWa" secondAttribute="bottom" constant="7.5" id="dKC-1Q-ujD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="b55-lR-QZs" secondAttribute="trailing" constant="10" id="dO8-e8-T8z" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="2M3-7Z-CKM" firstAttribute="leading" secondItem="Dg3-Kf-5Rc" secondAttribute="leading" id="dRI-G9-oO7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="2M3-7Z-CKM" firstAttribute="top" secondItem="Dg3-Kf-5Rc" secondAttribute="bottom" constant="10" id="fdY-ae-iCY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="top" secondItem="vuS-VF-Ct4" secondAttribute="bottom" constant="16" id="fpS-EE-yZ3"/>
-                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="centerY" secondItem="UoI-ga-ZbO" secondAttribute="centerY" id="hIx-NX-vDj"/>
+                            <constraint firstItem="UoI-ga-ZbO" firstAttribute="top" secondItem="vuS-VF-Ct4" secondAttribute="bottom" constant="16" id="fpS-EE-yZ3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="s0K-3v-ohZ" firstAttribute="centerY" secondItem="UoI-ga-ZbO" secondAttribute="centerY" id="hIx-NX-vDj" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Dg3-Kf-5Rc" firstAttribute="leading" secondItem="b55-lR-QZs" secondAttribute="leading" id="i7O-rl-Yt6" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="CaR-pj-7Rt" firstAttribute="top" secondItem="jXV-9f-oVC" secondAttribute="top" id="jZI-qR-iVM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="Pf0-1E-cWa" firstAttribute="top" secondItem="UoI-ga-ZbO" secondAttribute="bottom" id="sdo-nE-OPe"/>
+                            <constraint firstItem="Pf0-1E-cWa" firstAttribute="top" secondItem="UoI-ga-ZbO" secondAttribute="bottom" id="sdo-nE-OPe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="vuS-VF-Ct4" firstAttribute="trailing" secondItem="2M3-7Z-CKM" secondAttribute="trailing" id="soh-nc-v0o" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="b55-lR-QZs" firstAttribute="leading" secondItem="o06-NR-PTt" secondAttribute="leading" constant="10" id="vYA-tZ-rid" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
@@ -253,9 +253,13 @@
                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="o06-NR-PTt" secondAttribute="bottom" constant="16.66" id="1KC-eq-D1G" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                    <constraint firstItem="o06-NR-PTt" firstAttribute="leading" secondItem="a5Y-PJ-5nB" secondAttribute="leading" constant="16.66" id="8hy-dH-G9R" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="o06-NR-PTt" firstAttribute="leading" secondItem="a5Y-PJ-5nB" secondAttribute="leading" constant="16.66" id="8hy-dH-G9R" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target">
+                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                    </constraint>
                     <constraint firstItem="o06-NR-PTt" firstAttribute="top" secondItem="a5Y-PJ-5nB" secondAttribute="top" constant="16.66" id="Jl8-S6-Ps3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                    <constraint firstAttribute="trailing" secondItem="o06-NR-PTt" secondAttribute="trailing" constant="16.66" id="KDz-A0-pSU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="trailing" secondItem="o06-NR-PTt" secondAttribute="trailing" constant="16.66" id="KDz-A0-pSU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target">
+                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                    </constraint>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="J9p-qB-ttt"/>
@@ -283,6 +287,7 @@
                 <outlet property="lblTotalLikes" destination="HBV-PO-CAC" id="3Za-MA-ROA"/>
                 <outlet property="leadingConstraintContentView" destination="8hy-dH-G9R" id="cbA-7U-Nq0"/>
                 <outlet property="playerView" destination="eKy-QH-tJW" id="vju-zg-N35"/>
+                <outlet property="stackViewLikeCount" destination="UoI-ga-ZbO" id="Fw3-da-uEp"/>
                 <outlet property="trailingConstraintContentView" destination="KDz-A0-pSU" id="6Lj-Tu-MJ5"/>
                 <outlet property="txtComment" destination="PpR-mG-FAk" id="yfU-J4-O5d"/>
             </connections>

@@ -24,17 +24,23 @@ class CategoriesViewModel
     }
     func getItemHeight(row : Int)-> CGSize{
         var width  = UIScreen.main.bounds.width
-        var height : CGFloat = 200.0
-//        if  DesignUtility.isIPad{
-//            height = 415
-//        }
-        height = DesignUtility.convertToRatio(height, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
-        
-        if row != 0 {
-            width = UIScreen.main.bounds.width/2 - 2
-            height = width
+        var height : CGFloat = DesignUtility.convertToRatio(200, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+
+        if !DesignUtility.isIPad{
+            height = DesignUtility.convertToRatio(height, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+            if row != 0 {
+                width = UIScreen.main.bounds.width/2 - 2
+                height = width
+            }
         }
-            return CGSize(width: width, height: height)
+        else{
+            if row != 0 {
+                width = UIScreen.main.bounds.width/3 - 2
+                height = width
+            }
+        }
+        return CGSize(width: width, height: height)
+
     }
     func getCellViewModelForRow(row: Int)->CategoryCellViewModel{
         let category = self.categories[row]

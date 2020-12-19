@@ -35,17 +35,17 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="go-to-icon" translatesAutoresizingMaskIntoConstraints="NO" id="pua-iF-T1V">
                                                     <rect key="frame" x="374" y="18.5" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pua-iF-T1V" secondAttribute="height" multiplier="1:1" id="eU9-Ba-ubT"/>
-                                                        <constraint firstAttribute="width" constant="30" id="xgo-aJ-AVQ"/>
+                                                        <constraint firstAttribute="width" secondItem="pua-iF-T1V" secondAttribute="height" multiplier="1:1" id="eU9-Ba-ubT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                        <constraint firstAttribute="width" constant="30" id="xgo-aJ-AVQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YOf-8b-RFF" firstAttribute="leading" secondItem="ccp-dp-87H" secondAttribute="leading" constant="20" symbolic="YES" id="1iM-p9-G2B"/>
+                                                <constraint firstItem="YOf-8b-RFF" firstAttribute="leading" secondItem="ccp-dp-87H" secondAttribute="leading" constant="20" symbolic="YES" id="1iM-p9-G2B" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                                 <constraint firstAttribute="trailing" secondItem="pua-iF-T1V" secondAttribute="trailing" constant="10" id="P40-GR-ZDu" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                                <constraint firstItem="pua-iF-T1V" firstAttribute="leading" secondItem="YOf-8b-RFF" secondAttribute="trailing" constant="18" id="a5F-dN-nxl"/>
-                                                <constraint firstItem="YOf-8b-RFF" firstAttribute="centerY" secondItem="ccp-dp-87H" secondAttribute="centerY" id="lOf-Dk-trb"/>
-                                                <constraint firstItem="pua-iF-T1V" firstAttribute="centerY" secondItem="YOf-8b-RFF" secondAttribute="centerY" id="pUv-BD-XFG"/>
+                                                <constraint firstItem="pua-iF-T1V" firstAttribute="leading" secondItem="YOf-8b-RFF" secondAttribute="trailing" constant="18" id="a5F-dN-nxl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstItem="YOf-8b-RFF" firstAttribute="centerY" secondItem="ccp-dp-87H" secondAttribute="centerY" id="lOf-Dk-trb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                <constraint firstItem="pua-iF-T1V" firstAttribute="centerY" secondItem="YOf-8b-RFF" secondAttribute="centerY" id="pUv-BD-XFG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -58,10 +58,10 @@
                         <viewLayoutGuide key="safeArea" id="xPj-ub-GPV"/>
                         <color key="backgroundColor" white="1" alpha="0.23291703345070422" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="QSD-Eq-J3d" secondAttribute="bottom" id="0tb-rX-CTn"/>
+                            <constraint firstAttribute="bottom" secondItem="QSD-Eq-J3d" secondAttribute="bottom" id="0tb-rX-CTn" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="QSD-Eq-J3d" firstAttribute="top" secondItem="a3s-lb-65k" secondAttribute="top" constant="34" identifier="topConstraintHeader" id="D7b-RH-TTy" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="QSD-Eq-J3d" firstAttribute="leading" secondItem="a3s-lb-65k" secondAttribute="leading" id="Fq3-0C-sfY"/>
-                            <constraint firstAttribute="trailing" secondItem="QSD-Eq-J3d" secondAttribute="trailing" id="YTs-sL-KR2"/>
+                            <constraint firstItem="QSD-Eq-J3d" firstAttribute="leading" secondItem="a3s-lb-65k" secondAttribute="leading" id="Fq3-0C-sfY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="QSD-Eq-J3d" secondAttribute="trailing" id="YTs-sL-KR2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
                     <connections>

@@ -203,14 +203,16 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
             if success{
                 DispatchQueue.main.async {
                     
-         
+                    self.tblView.beginUpdates()
                 let indexPath = IndexPath(row: row, section: 0)
                 let cell = self.tblView.cellForRow(at: indexPath) as! ArticleListingTableViewCell
                 let cellViewModel = self.viewModel.cellViewModelForRow(row: row)
                     cell.lblTotalLikes.text = cell.showTotalLikes(isLiked: cellViewModel.isLiked, likeCount: cellViewModel.likeCount)
                 cell.btnLike.setImage(cell.showLiked(isLiked: cellViewModel.isLiked), for: .normal)
                 cell.showHideLikesView(likeCount: cellViewModel.likeCount, isLiked: cellViewModel.isLiked)
-//                cell.layoutIfNeeded()
+                cell.layoutIfNeeded()
+                    
+                    self.tblView.endUpdates()
                 }
             }
         }

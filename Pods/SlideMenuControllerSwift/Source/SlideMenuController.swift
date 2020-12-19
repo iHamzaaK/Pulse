@@ -672,7 +672,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     open func isRightOpen() -> Bool {
-        return rightViewController != nil && rightContainerView.frame.origin.x == view.bounds.width - rightContainerView.frame.size.width
+        return rightViewController != nil && Int(rightContainerView.frame.origin.x) == Int(view.bounds.width - rightContainerView.frame.size.width)
     }
     
     open func isRightHidden() -> Bool {

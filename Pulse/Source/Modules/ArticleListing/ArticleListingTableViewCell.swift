@@ -27,6 +27,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDate: BaseUILabel!
     @IBOutlet weak var lblDescription: BaseUILabel!
     @IBOutlet weak var lblTotalLikes: BaseUILabel!
+    @IBOutlet weak var stackViewLikeCount : UIStackView!
     @IBOutlet weak var btnPlay : BaseUIButton!{
         didSet{
             btnPlay.addTarget(self, action: #selector(self.didTapOnPlay), for: .touchUpInside)
@@ -235,6 +236,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     func showHideLikesView(likeCount : Int, isLiked : Bool){
         if likeCount < 1 && !isLiked {
+            
             heightConstraintLikeCountStackView.constant = 0
         }
         else{

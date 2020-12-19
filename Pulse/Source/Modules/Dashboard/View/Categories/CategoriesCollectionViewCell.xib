@@ -36,9 +36,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                        <real key="value" value="37"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
@@ -48,29 +45,29 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="17q-U5-79z" secondAttribute="trailing" constant="13.66" id="0dr-YH-9oQ"/>
-                            <constraint firstItem="hVz-lP-9jn" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="4di-KU-tab"/>
-                            <constraint firstItem="xgK-8X-3PF" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" constant="13.33" id="5QB-MX-D6f"/>
-                            <constraint firstItem="hVz-lP-9jn" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="DfH-Q0-Y6o"/>
-                            <constraint firstAttribute="bottom" secondItem="hVz-lP-9jn" secondAttribute="bottom" id="Jap-0S-xwt"/>
-                            <constraint firstItem="Jau-bj-ULf" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="ZFX-Sa-JRl"/>
-                            <constraint firstAttribute="bottom" secondItem="Jau-bj-ULf" secondAttribute="bottom" id="cJp-Rt-6wT"/>
-                            <constraint firstAttribute="bottom" secondItem="17q-U5-79z" secondAttribute="bottom" constant="13.66" id="dIN-Ou-eRL"/>
-                            <constraint firstAttribute="trailing" secondItem="Jau-bj-ULf" secondAttribute="trailing" id="gtu-0j-nx7"/>
-                            <constraint firstAttribute="trailing" secondItem="xgK-8X-3PF" secondAttribute="trailing" constant="13.33" id="hs0-Ku-ace"/>
-                            <constraint firstAttribute="trailing" secondItem="hVz-lP-9jn" secondAttribute="trailing" id="iG3-gi-8MD"/>
-                            <constraint firstItem="xgK-8X-3PF" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" constant="13.33" id="jBr-U6-mPq"/>
-                            <constraint firstItem="Jau-bj-ULf" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="y1U-K2-BUH"/>
+                            <constraint firstAttribute="trailing" secondItem="17q-U5-79z" secondAttribute="trailing" constant="13.66" id="0dr-YH-9oQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="hVz-lP-9jn" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="4di-KU-tab" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="xgK-8X-3PF" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" constant="13.33" id="5QB-MX-D6f" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="hVz-lP-9jn" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="DfH-Q0-Y6o" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="hVz-lP-9jn" secondAttribute="bottom" id="Jap-0S-xwt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Jau-bj-ULf" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" id="ZFX-Sa-JRl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="Jau-bj-ULf" secondAttribute="bottom" id="cJp-Rt-6wT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="17q-U5-79z" secondAttribute="bottom" constant="13.66" id="dIN-Ou-eRL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="Jau-bj-ULf" secondAttribute="trailing" id="gtu-0j-nx7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="xgK-8X-3PF" secondAttribute="trailing" constant="13.33" id="hs0-Ku-ace" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="hVz-lP-9jn" secondAttribute="trailing" id="iG3-gi-8MD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="xgK-8X-3PF" firstAttribute="leading" secondItem="GCo-uo-d86" secondAttribute="leading" constant="13.33" id="jBr-U6-mPq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="Jau-bj-ULf" firstAttribute="top" secondItem="GCo-uo-d86" secondAttribute="top" id="y1U-K2-BUH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="GCo-uo-d86" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Eo-5o-e2U"/>
-                <constraint firstAttribute="trailing" secondItem="GCo-uo-d86" secondAttribute="trailing" id="4L6-fd-7Wa"/>
-                <constraint firstAttribute="bottom" secondItem="GCo-uo-d86" secondAttribute="bottom" id="y90-tO-332"/>
-                <constraint firstItem="GCo-uo-d86" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yyO-Qx-VAz"/>
+                <constraint firstItem="GCo-uo-d86" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Eo-5o-e2U" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="GCo-uo-d86" secondAttribute="trailing" id="4L6-fd-7Wa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstAttribute="bottom" secondItem="GCo-uo-d86" secondAttribute="bottom" id="y90-tO-332" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstItem="GCo-uo-d86" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yyO-Qx-VAz" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
             </constraints>
             <size key="customSize" width="206" height="161"/>
             <connections>

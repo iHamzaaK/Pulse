@@ -32,7 +32,7 @@ class Utilities{
         )
     }
     static func getStoryboard(identifier: String)-> UIStoryboard{
-        let storyboardName = identifier + "-" + self.getStoryboardTypeForDeviceType()
+        let storyboardName = identifier + "-" + "iPhone"//self.getStoryboardTypeForDeviceType()
 
         return UIStoryboard(name: storyboardName, bundle: Bundle.main)
     }
