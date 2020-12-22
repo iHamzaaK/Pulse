@@ -13,10 +13,11 @@ class ArticleListingBuilder
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.articleListing.rawValue) as! ArticleListingViewController
         let navBarType = navBarType
         let repo = ArticleListingRepositoryImplementation()
+        let commentRepo = CommentsRepositoryImplementation()
         let bookmarkRepo = BookmarksRepositoryImplementation()
         let likeRepo = LikesRepositoryImplementation()
         let videoRepo = VideosRepositoryImplementation()
-        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title, bookmarkRepo: bookmarkRepo, likeRepo: likeRepo,videoRepository: videoRepo)
+        let viewModel = ArticleListingViewModel(navigationType: navBarType, type: type, repo : repo, categoryId: categoryId, title : title, bookmarkRepo: bookmarkRepo, likeRepo: likeRepo,videoRepository: videoRepo, commentRepository : commentRepo)
         vc.viewModel = viewModel
         return vc
     }

@@ -2,18 +2,28 @@
   "images" : [
     {
       "filename" : "filled-top-stories-logo-1x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
       "filename" : "filled-top-stories-logo-2x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "filled-top-stories-logo-3x.png",
-      "idiom" : "universal",
+      "filename" : "filled-top-stories-logo-3x-1.png",
+      "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "filled-top-stories-logo-3x-2.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "filled-top-stories-logo-3x.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

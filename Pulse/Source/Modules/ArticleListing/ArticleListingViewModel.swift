@@ -14,19 +14,21 @@ class ArticleListingViewModel
     let repository : ArticleListingRepository!
     let bookmarkRepository : BookmarksRepository!
     let likeRepository : LikesRepository!
+    let commentRepository : CommentsRepository!
     let videoRepository : VideosRepository!
     var arrVideos : [ArticleListingData] = []
     var categoryId = -1
     var artiicleList : [ArticleListingData] = []
     var quote : [ArticleListingQuoteOfTheDay] = []
     var maximumPages = 1
-    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository, likeRepo : LikesRepository, videoRepository: VideosRepository) {
+    init(navigationType navBar : navigationBarTypes, type : articleListingType, repo : ArticleListingRepository, categoryId : Int?, title : String, bookmarkRepo : BookmarksRepository, likeRepo : LikesRepository, videoRepository: VideosRepository, commentRepository: CommentsRepository) {
         self.navBarType = navBar
         self.type = type
         self.repository = repo
         if categoryId != nil{
             self.categoryId = categoryId ?? -1
         }
+        self.commentRepository = commentRepository
         self.headerTitle = title
         self.bookmarkRepository = bookmarkRepo
         self.likeRepository = likeRepo
@@ -74,6 +76,15 @@ class ArticleListingViewModel
         let article = artiicleList[row]
         let cellViewModel = ArticleListingCellViewModel(articleID: article.id ?? -1, title: article.title ?? "", permalink: article.permalink ?? "", thumbnail: article.thumbnail  ?? "", description: article.descriptionField  ?? "", isVideo: article.isVideo ?? false, videoURL: article.videoUrl ?? "", type : self.type,shortDescription: article.shortDescription , date: article.date ,tag: article.tag,isBookmarked: article.isBookmarked,isLiked: article.isLiked , likeCount: article.likeCount)
         return cellViewModel
+    }
+    func postComment(row : Int, comment : String, completionHandler: @escaping (_ success : Bool , _ serverMsg : String)->Void){
+        let article = artiicleList[row]
+        guard let articleId = article.id else { completionHandler(false, "Article id not found")
+            return
+        }
+        self.commentRepository.postComment(id: String(articleId), comment: comment) { (success, serverMsg, commentData) in
+            completionHandler(success , serverMsg)
+        }
     }
     func didTapOnCell(row: Int, completionHandler:( _ vc : UIViewController)->Void){
         if self.type != .videos{
@@ -200,7 +211,7 @@ struct ArticleListingCellViewModel{
 //            fontSize = 22
 //        }
         fontSize = Int(DesignUtility.convertToRatio(CGFloat(fontSize), sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
-        let attirbutedString = Utilities.getAttributedStringForHTMLWithFont(description, textSize: fontSize, fontName: "Helvetica")
+        let attirbutedString = Utilities.getAttributedStringForHTMLWithFont(description, textSize: fontSize, fontName: "Montserrat-Regular")
         return attirbutedString
     }
 }

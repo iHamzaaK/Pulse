@@ -12,6 +12,7 @@ class FullArticleViewController: BaseViewController {
     var viewModel : FullArticleViewModel!
     
     @IBOutlet weak var playerView : YouTubePlayerView!
+    @IBOutlet weak var txtComment : BaseUITextfield!
     @IBOutlet weak var lblNewsTitle: BaseUILabel!
     @IBOutlet weak var imgView: BaseUIImageView!
     @IBOutlet weak var lblTime: BaseUILabel!
@@ -47,7 +48,11 @@ class FullArticleViewController: BaseViewController {
             btnBookmark.addTarget(self, action: #selector(self.didTapOnBookmark), for: .touchUpInside)
         }
     }
-    @IBOutlet weak var btnSendComment: UIButton!
+    @IBOutlet weak var btnSendComment: UIButton!{
+        didSet{
+            btnSendComment.addTarget(self, action: #selector(self.didTapOnSendComment), for: .touchUpInside)
+        }
+    }
     @IBOutlet weak var txtViewArticle: UITextView!
     @IBOutlet weak var heightConstraintTableView : BaseLayoutConstraint?
     @IBOutlet weak var heightConstraintLikeCountStackView : BaseLayoutConstraint?
@@ -169,6 +174,23 @@ extension FullArticleViewController{
     override func viewDidLayoutSubviews() {
         if DesignUtility.isIPad{
             heightConstraintTableView?.constant = tblViewComments.contentSize.height
+        }
+    }
+    
+}
+extension FullArticleViewController{
+    @objc func didTapOnSendComment(){
+        let articleText = self.txtComment.text ?? ""
+        if articleText.count > 0{
+            self.viewModel.postComment(comment: articleText) { (success, serverMsg) in
+                if success{
+                    if self.viewModel.getCommentCounts() < 3{
+                        self.tblViewComments.reloadData()
+                        self.txtComment.text = ""
+                        self.txtComment.resignFirstResponder()
+                    }
+                }
+            }
         }
     }
     @objc func didTapOnPlayBtn(){

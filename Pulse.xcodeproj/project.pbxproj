@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2402F129258249BB0092CD04 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2402F128258249BB0092CD04 /* PlayerView.swift */; };
+		240D9FA5258E5E810025791E /* PolicyRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D9FA4258E5E810025791E /* PolicyRepoModel.swift */; };
+		240D9FAB258F7A220025791E /* NotificationRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D9FA9258F7A220025791E /* NotificationRepoModel.swift */; };
+		240D9FAC258F7A220025791E /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240D9FAA258F7A220025791E /* NotificationData.swift */; };
 		24479F8B2584354A009B00EB /* QuotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F8A2584354A009B00EB /* QuotesRepository.swift */; };
 		24479F8F25843559009B00EB /* QuotesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F8E25843559009B00EB /* QuotesRepositoryImplementation.swift */; };
 		24479F93258440D8009B00EB /* QuotesRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24479F92258440D8009B00EB /* QuotesRepoModel.swift */; };
@@ -39,6 +42,7 @@
 		24731902258B7F2300ADC04E /* PolicyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731901258B7F2300ADC04E /* PolicyRepository.swift */; };
 		24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */; };
 		24731909258BA16200ADC04E /* ArticleListing-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */; };
+		24B7C57D25915DCF00C78308 /* CommentRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7C57C25915DCF00C78308 /* CommentRepoModel.swift */; };
 		63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184852257ED928001CE193 /* Montserrat-Light.otf */; };
 		63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184853257ED928001CE193 /* Montserrat-Medium.otf */; };
 		63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184854257ED928001CE193 /* Montserrat-SemiBold.otf */; };
@@ -245,6 +249,9 @@
 
 /* Begin PBXFileReference section */
 		2402F128258249BB0092CD04 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		240D9FA4258E5E810025791E /* PolicyRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepoModel.swift; sourceTree = "<group>"; };
+		240D9FA9258F7A220025791E /* NotificationRepoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRepoModel.swift; sourceTree = "<group>"; };
+		240D9FAA258F7A220025791E /* NotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		24479F8A2584354A009B00EB /* QuotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepository.swift; sourceTree = "<group>"; };
 		24479F8E25843559009B00EB /* QuotesRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepositoryImplementation.swift; sourceTree = "<group>"; };
 		24479F92258440D8009B00EB /* QuotesRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesRepoModel.swift; sourceTree = "<group>"; };
@@ -276,6 +283,7 @@
 		24731901258B7F2300ADC04E /* PolicyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepository.swift; sourceTree = "<group>"; };
 		24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "ArticleListing-iPad.storyboard"; sourceTree = "<group>"; };
+		24B7C57C25915DCF00C78308 /* CommentRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepoModel.swift; sourceTree = "<group>"; };
 		5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
 		5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63184852257ED928001CE193 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -498,6 +506,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240D9FA2258E5E120025791E /* Policy */ = {
+			isa = PBXGroup;
+			children = (
+				240D9FA4258E5E810025791E /* PolicyRepoModel.swift */,
+			);
+			path = Policy;
+			sourceTree = "<group>";
+		};
+		240D9FA8258F7A110025791E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				240D9FAA258F7A220025791E /* NotificationData.swift */,
+				240D9FA9258F7A220025791E /* NotificationRepoModel.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		24479F8925843538009B00EB /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
@@ -594,6 +619,14 @@
 				24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */,
 			);
 			path = Policy;
+			sourceTree = "<group>";
+		};
+		24B7C57B25915DC200C78308 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				24B7C57C25915DCF00C78308 /* CommentRepoModel.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		442CA713746B81744D2AC55E /* Frameworks */ = {
@@ -1501,6 +1534,9 @@
 		63C109B82555F70C0097EDC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24B7C57B25915DC200C78308 /* Comment */,
+				240D9FA8258F7A110025791E /* Notification */,
+				240D9FA2258E5E120025791E /* Policy */,
 				24479F91258440C3009B00EB /* Quotes */,
 				2460AB5A2582C71A00D3BF43 /* ArticleDetail */,
 				6385A05E258037BA0034085F /* Search */,
@@ -1855,6 +1891,7 @@
 				24479F8F25843559009B00EB /* QuotesRepositoryImplementation.swift in Sources */,
 				24731899258959EE00ADC04E /* NotificationListingViewController.swift in Sources */,
 				6372E6B92558018100A03E01 /* TopStoriesViewModel.swift in Sources */,
+				240D9FAB258F7A220025791E /* NotificationRepoModel.swift in Sources */,
 				63C109C12555FF740097EDC3 /* BaseRepository.swift in Sources */,
 				63719142257110F800277101 /* SearchViewController.swift in Sources */,
 				6371917E25715C3200277101 /* LoginRepositoryImplementation.swift in Sources */,
@@ -1951,6 +1988,7 @@
 				6385CA1C25687CF7000D21D8 /* SettingsTableViewCell.swift in Sources */,
 				2402F129258249BB0092CD04 /* PlayerView.swift in Sources */,
 				6385CA1225687C51000D21D8 /* SettingsBuilder.swift in Sources */,
+				24B7C57D25915DCF00C78308 /* CommentRepoModel.swift in Sources */,
 				63DB1583257BBD94007BA6B9 /* ArticleListingBuilder.swift in Sources */,
 				63D94FEC255A82BF00B2E5AD /* FullArticleViewModel.swift in Sources */,
 				637191722571367900277101 /* SearchTableViewCell.swift in Sources */,
@@ -1967,10 +2005,12 @@
 				6386894125768D13003ECCD3 /* ConfirmPasswordRepositoryImplementation.swift in Sources */,
 				6372E6D1255804F600A03E01 /* UITextView+Extension.swift in Sources */,
 				24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */,
+				240D9FA5258E5E810025791E /* PolicyRepoModel.swift in Sources */,
 				6386893E25768D09003ECCD3 /* ConfirmPasswordRepository.swift in Sources */,
 				638777F0257C30AB004D5A27 /* ArticleListingRepo.swift in Sources */,
 				63629B0925561049003836A2 /* BaseParallaxHeaderView.swift in Sources */,
 				639F03822556D45600772893 /* LoginViewModel.swift in Sources */,
+				240D9FAC258F7A220025791E /* NotificationData.swift in Sources */,
 				6386893025768CB9003ECCD3 /* ForgetPasswordRepository.swift in Sources */,
 				63C109792555EF0B0097EDC3 /* SceneDelegate.swift in Sources */,
 				6346A1E2255BDB33006B3FDF /* ButtonBarPagerTabStripViewController.swift in Sources */,

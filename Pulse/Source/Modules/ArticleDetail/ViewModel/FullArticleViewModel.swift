@@ -18,13 +18,14 @@ class FullArticleViewModel
     var articleComments = [PostDetailComment]()
     let bookmarkRepository : BookmarksRepository!
     let likesRepository : LikesRepository!
-
-    init(navigationType navBar : navigationBarTypes, repo : ArticleDetailRepository, articleID : String, bookmarkRepo: BookmarksRepository, likesRepo : LikesRepository) {
+    let commentRepository : CommentsRepository!
+    init(navigationType navBar : navigationBarTypes, repo : ArticleDetailRepository, articleID : String, bookmarkRepo: BookmarksRepository, likesRepo : LikesRepository, commentRepo : CommentsRepository) {
         self.navBarType = navBar
         self.repository = repo
         self.articleID  = articleID
         self.bookmarkRepository = bookmarkRepo
         self.likesRepository = likesRepo
+        self.commentRepository = commentRepo
     }
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
@@ -79,6 +80,17 @@ class FullArticleViewModel
             else{
                 completionHandler(success,serverMsg,nil)
             }
+
+        }
+    }
+    func postComment(comment : String, completionHandler: @escaping (_ success : Bool , _ serverMsg : String)->Void){
+        self.commentRepository.postComment(id: articleID, comment: comment) { (success, serverMsg, commentData) in
+            if success{
+                guard let commentData = commentData else { completionHandler(false , "Invalid Response")
+                    return }
+                self.articleComments.append(commentData)
+            }
+            completionHandler(success , serverMsg)
 
         }
     }

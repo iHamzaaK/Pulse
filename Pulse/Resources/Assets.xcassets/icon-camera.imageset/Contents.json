@@ -2,18 +2,28 @@
   "images" : [
     {
       "filename" : "camera-icon-1x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
       "filename" : "camera-icon-2x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
       "filename" : "camera-icon-3x.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "camera-icon-3x-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "camera-icon-3x-2.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

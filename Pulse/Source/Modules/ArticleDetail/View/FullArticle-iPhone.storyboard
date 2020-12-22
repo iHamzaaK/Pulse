@@ -282,6 +282,7 @@
                         <outlet property="lblTotalLikes" destination="Wep-97-52F" id="2HE-a1-aMd"/>
                         <outlet property="playerView" destination="UDb-6t-egO" id="k3z-xg-1If"/>
                         <outlet property="tblViewComments" destination="RNQ-Di-6HK" id="anw-77-UaG"/>
+                        <outlet property="txtComment" destination="zto-MN-h8T" id="Ovl-BC-tec"/>
                         <outlet property="txtViewArticle" destination="gtX-7u-4fz" id="VDB-87-L88"/>
                         <outlet property="videoView" destination="omE-ue-3UD" id="BsP-0k-3KR"/>
                         <outlet property="viewComment" destination="avu-zL-G5y" id="Q1d-fx-e5m"/>

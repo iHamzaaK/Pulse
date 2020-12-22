@@ -14,8 +14,9 @@ class FullArticleBuilder
         let navBarType = navigationBarTypes.backButtonWithRightMenuButton
         let repo  = ArticleDetailRepositoryImplementation()
         let bookmarkRepo = BookmarksRepositoryImplementation()
+        let commentRepo = CommentsRepositoryImplementation()
         let likesRepo = LikesRepositoryImplementation()
-        let viewModel = FullArticleViewModel(navigationType: navBarType, repo : repo, articleID: articleID, bookmarkRepo: bookmarkRepo, likesRepo: likesRepo)
+        let viewModel = FullArticleViewModel(navigationType: navBarType, repo : repo, articleID: articleID, bookmarkRepo: bookmarkRepo, likesRepo: likesRepo, commentRepo: commentRepo)
         vc.viewModel = viewModel
         return vc
     }

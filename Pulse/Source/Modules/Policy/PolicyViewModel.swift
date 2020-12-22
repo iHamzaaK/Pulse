@@ -24,9 +24,16 @@ class PolicyViewModel {
     func getNavigationBar()-> navigationBarTypes{
         return navBarType
     }
-    func getPolicy(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void){
-        self.repo.getPolicy(endpoint: self.endPoint, completionHandler: { (success, serverMsg) in
-            completionHandler(success, serverMsg)
+    func getDescription(content: String)-> NSAttributedString?{
+        var fontSize = 15
+        fontSize = Int(DesignUtility.convertToRatio(CGFloat(fontSize), sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
+        let attirbutedString = Utilities.getAttributedStringForHTMLWithFont(content, textSize: fontSize, fontName: "Montserrat-Regular")
+        return attirbutedString
+    }
+    func getPolicy(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String, _ policyContent  : NSAttributedString?)->Void){
+        self.repo.getPolicy(endpoint: self.endPoint, completionHandler: { (success, serverMsg, content)  in
+           
+            completionHandler(success, serverMsg, self.getDescription(content: content))
         })
     }
 }

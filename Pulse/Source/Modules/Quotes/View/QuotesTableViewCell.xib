@@ -34,47 +34,32 @@ tempor incididunt ut labor.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                        <real key="value" value="26"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="-  by John Slamvich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-pe-CZk" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="13.5" y="110.5" width="119" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/06/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYa-wC-UbV" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="200" y="102.5" width="72.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ia2-Xs-rAz" firstAttribute="leading" secondItem="Aen-iN-V7L" secondAttribute="leading" id="5Ju-Du-dtt"/>
-                            <constraint firstAttribute="trailing" secondItem="VHe-C2-Dv4" secondAttribute="trailing" constant="13.33" id="Cbp-bq-JeX"/>
-                            <constraint firstAttribute="trailing" secondItem="XYa-wC-UbV" secondAttribute="trailing" constant="13.33" id="GcG-bN-RzY"/>
-                            <constraint firstItem="cqL-pe-CZk" firstAttribute="leading" secondItem="VHe-C2-Dv4" secondAttribute="leading" id="TnE-WP-xXS"/>
-                            <constraint firstItem="ia2-Xs-rAz" firstAttribute="top" secondItem="Aen-iN-V7L" secondAttribute="top" id="Wns-wk-HkQ"/>
-                            <constraint firstItem="VHe-C2-Dv4" firstAttribute="leading" secondItem="Aen-iN-V7L" secondAttribute="leading" constant="13.33" id="c0a-xh-Xih"/>
-                            <constraint firstItem="XYa-wC-UbV" firstAttribute="centerY" secondItem="cqL-pe-CZk" secondAttribute="centerY" id="cs0-Hi-4Pe"/>
-                            <constraint firstAttribute="bottom" secondItem="cqL-pe-CZk" secondAttribute="bottom" constant="16.66" id="kZn-Ng-jHB"/>
-                            <constraint firstItem="VHe-C2-Dv4" firstAttribute="top" secondItem="Aen-iN-V7L" secondAttribute="top" constant="12.66" id="mDe-Ds-I5d"/>
-                            <constraint firstItem="cqL-pe-CZk" firstAttribute="top" secondItem="VHe-C2-Dv4" secondAttribute="bottom" constant="6" id="re0-Xq-wQv"/>
+                            <constraint firstItem="ia2-Xs-rAz" firstAttribute="leading" secondItem="Aen-iN-V7L" secondAttribute="leading" id="5Ju-Du-dtt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="VHe-C2-Dv4" secondAttribute="trailing" constant="13.33" id="Cbp-bq-JeX" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="XYa-wC-UbV" secondAttribute="trailing" constant="13.33" id="GcG-bN-RzY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="cqL-pe-CZk" firstAttribute="leading" secondItem="VHe-C2-Dv4" secondAttribute="leading" id="TnE-WP-xXS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="ia2-Xs-rAz" firstAttribute="top" secondItem="Aen-iN-V7L" secondAttribute="top" id="Wns-wk-HkQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="VHe-C2-Dv4" firstAttribute="leading" secondItem="Aen-iN-V7L" secondAttribute="leading" constant="13.33" id="c0a-xh-Xih" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="XYa-wC-UbV" firstAttribute="centerY" secondItem="cqL-pe-CZk" secondAttribute="centerY" id="cs0-Hi-4Pe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="cqL-pe-CZk" secondAttribute="bottom" constant="16.66" id="kZn-Ng-jHB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="VHe-C2-Dv4" firstAttribute="top" secondItem="Aen-iN-V7L" secondAttribute="top" constant="12.66" id="mDe-Ds-I5d" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="cqL-pe-CZk" firstAttribute="top" secondItem="VHe-C2-Dv4" secondAttribute="bottom" constant="6" id="re0-Xq-wQv" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -85,10 +70,10 @@ tempor incididunt ut labor.</string>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Aen-iN-V7L" secondAttribute="trailing" constant="24.66" id="3cT-wM-k70"/>
-                    <constraint firstItem="Aen-iN-V7L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FbY-W8-p57"/>
-                    <constraint firstAttribute="bottom" secondItem="Aen-iN-V7L" secondAttribute="bottom" constant="16.66" id="g2S-pQ-Oh7"/>
-                    <constraint firstItem="Aen-iN-V7L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24.66" id="tFG-Ar-Uqg"/>
+                    <constraint firstAttribute="trailing" secondItem="Aen-iN-V7L" secondAttribute="trailing" constant="24.66" id="3cT-wM-k70" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="Aen-iN-V7L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FbY-W8-p57" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstAttribute="bottom" secondItem="Aen-iN-V7L" secondAttribute="bottom" constant="16.66" id="g2S-pQ-Oh7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                    <constraint firstItem="Aen-iN-V7L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24.66" id="tFG-Ar-Uqg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

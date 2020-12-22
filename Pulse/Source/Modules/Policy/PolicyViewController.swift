@@ -22,18 +22,25 @@ class PolicyViewController: BaseViewController {
 extension PolicyViewController{
     func setupView(){
         self.lblPolicy.text = self.viewModel.getTitle()
-        self.txtViewPolicy.attributedText = getDescription()
+//        self.txtViewPolicy.attributedText = getDescription()
+        self.getData()
         navBarType = self.viewModel.getNavigationBar()
     }
     func getData(){
-        self.viewModel.getPolicy { (success, serverMsg) in
-            
+        self.viewModel.getPolicy { (success, serverMsg, content)  in
+            guard let content = content else {
+                Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: "Policy not available", autoHidetimer: 2.0, type: .error)
+                AppRouter.pop()
+                return
+                
+            }
+            self.txtViewPolicy.attributedText = content
         }
     }
-    func getDescription()->NSAttributedString?{
-        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
-        let text =  Utilities.getAttributedStringForHTMLWithFont("<b><i>THIS IS SAMPLE TEXT FOR POLICY</i></b>", textSize: Int(fontSize), fontName: "Montserrat-Regular")
-    
-        return text
-    }
+//    func getDescription()->NSAttributedString?{
+//        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
+//        let text =  Utilities.getAttributedStringForHTMLWithFont("<b><i>THIS IS SAMPLE TEXT FOR POLICY</i></b>", textSize: Int(fontSize), fontName: "Montserrat-Regular")
+//
+//        return text
+//    }
 }

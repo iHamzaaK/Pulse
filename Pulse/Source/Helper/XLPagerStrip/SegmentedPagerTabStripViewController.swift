@@ -64,8 +64,8 @@ class SegmentedPagerTabStripViewController: PagerTabStripViewController, PagerTa
         }
         segmentedControl.tintColor = settings.style.segmentedControlColor ?? segmentedControl.tintColor
         segmentedControl.addTarget(self, action: #selector(SegmentedPagerTabStripViewController.segmentedControlChanged(_:)), for: .valueChanged)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 15)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 15)!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "Montserrat-Regular", size: 15)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "Montserrat-Regular", size: 15)!, NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
         reloadSegmentedControl()
     }
 

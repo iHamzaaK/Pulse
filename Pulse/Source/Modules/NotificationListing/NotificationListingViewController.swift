@@ -22,6 +22,7 @@ class NotificationListingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
+        self.getData()
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +39,14 @@ extension NotificationListingViewController{
 extension NotificationListingViewController: UITableViewDataSource , UITableViewDelegate,SwipeableCellDelegate{
     func didTapOnDelete(row: Int) {
         print("Delete row at \(row)")
-        self.viewModel.didTapOnDelete(row: row)
+        self.viewModel.didTapOnDelete(row: row) { (success, serverMsg) in
+            if success{
+                self.tblView.reloadData()
+            }
+            else{
+                Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+            }
+        }
     }
     func cellDidOpen(row: Int) {
         let indexPath : IndexPath = IndexPath(row: row, section: 0)
@@ -80,6 +88,12 @@ extension NotificationListingViewController: UITableViewDataSource , UITableView
             deleteAction.backgroundColor = .systemRed
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.didTapOnCell(row: indexPath.row) { (vc) in
+            guard let vc = vc else { return }
+            AppRouter.goToSpecificController(vc: vc)
+        }
     }
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return DesignUtility.convertToRatio(90, sizedForIPad: false, sizedForNavi: false)

@@ -223,8 +223,12 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func didTapOnBtnComment(cellViewModel: ArticleListingCellViewModel) {
-        
+    func didTapOnBtnComment(row: Int, comment : String) {
+//        self.tblView.beginUpdates()
+
+        self.viewModel.postComment(row: row, comment: comment) { (success, serverMsg) in
+                Alert.showAlertWithAutoHide(title: "", message: serverMsg, autoHidetimer: 2.0, type: .notification)
+            }
     }
     
     

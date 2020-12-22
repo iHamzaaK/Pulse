@@ -44,6 +44,7 @@ class NotificationListingTableViewCell: UITableViewCell {
         didSet{
             self.lblTag.text = cellViewModel.tag
             self.lblTitle.text = cellViewModel.title
+            self.btnComments.setTitle("\(cellViewModel.commentCount)", for: .normal)
             self.setupThumbnailImage()
         }
     }
@@ -218,6 +219,7 @@ class NotificationListingTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         self.panRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(self.panThisCell(recognizer:)))
         self.panRecognizer.delegate = self;
         self.myContentView.addGestureRecognizer(self.panRecognizer)

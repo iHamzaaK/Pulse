@@ -12,7 +12,7 @@ import YouTubePlayer
 protocol ArticleListingCellProtocol : class {
     func didTapOnBtnLike(row : Int)->Void
     func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
-    func didTapOnBtnComment(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnComment(row : Int, comment: String)->Void
     func didTapOnBtnBookmark(row: Int)->Void
     func didTapOnPlay(row: Int , isPlaying: Bool)->Void
     func didTapOnShowAllLikes(row: Int)->Void
@@ -54,6 +54,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     var videoStr = "https://youtu.be/AH3lD8fafnE"
     var cellViewModel : ArticleListingCellViewModel!{
         didSet{
+            txtComment.text = ""
             lblTitle.text = cellViewModel.title
             lblNewsType.text = cellViewModel.tag
             lblDate.text = cellViewModel.date
@@ -139,6 +140,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     override func prepareForReuse() {
         resetVideo()
+        txtComment.text = ""
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -258,7 +260,9 @@ class ArticleListingTableViewCell: UITableViewCell {
         delegate.didTapOnBtnShare(cellViewModel: self.cellViewModel)
     }
     @objc private func didTapOnBtnComment(){
-        delegate.didTapOnBtnComment(cellViewModel: self.cellViewModel)
+        delegate.didTapOnBtnComment(row: self.tag, comment: self.txtComment.text ?? "")
+        txtComment.text = ""
+        txtComment.resignFirstResponder()
     }
     @objc private func didTapOnShowAllLikes(){
         delegate.didTapOnShowAllLikes(row: self.tag)

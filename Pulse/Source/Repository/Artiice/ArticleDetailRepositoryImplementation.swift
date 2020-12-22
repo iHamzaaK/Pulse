@@ -15,7 +15,7 @@ class ArticleDetailRepositoryImplementation : ArticleDetailRepository{
     private var serverMsg = ""
     func getArticleDetail(articleID: String, completionHandler: @escaping (Bool, String, [PostDetailData]? , [PostDetailComment]?) -> Void) {
 
-        var endpoint = "\(articleID)?comments=3"
+        var endpoint = "\(articleID)?comments=10"
         
         
         DispatchQueue.main.async{

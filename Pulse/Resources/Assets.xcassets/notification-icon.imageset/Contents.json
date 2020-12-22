@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "notification-icon@3x.png",
+      "filename" : "notification-icon@2x.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "notification-icon@2x.png",
+      "filename" : "notification-icon@3x.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
@@ -14,6 +14,16 @@
       "filename" : "notification-icon.png",
       "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "notification-icon-1.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "notification-icon-2.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {

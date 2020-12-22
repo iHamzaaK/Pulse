@@ -39,10 +39,10 @@
                             </connections>
                         </textField>
                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbR-Dg-WRX" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="270" y="13" width="60" height="55"/>
+                            <rect key="frame" x="280" y="28" width="40" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="55" id="7eg-mV-zpf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                <constraint firstAttribute="width" constant="60" id="M3j-w1-SHJ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="height" constant="40" id="7eg-mV-zpf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="width" constant="40" id="M3j-w1-SHJ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
@@ -67,8 +67,8 @@
                                 <mask key="constraints">
                                     <exclude reference="IDv-Br-TEp"/>
                                     <exclude reference="cds-AB-fvb"/>
-                                    <exclude reference="obj-vj-BOi"/>
                                     <exclude reference="mPV-KZ-7Bz"/>
+                                    <exclude reference="obj-vj-BOi"/>
                                 </mask>
                             </variation>
                             <connections>
@@ -92,10 +92,10 @@
                             </state>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="bot-pZ-eqn"/>
                                     <exclude reference="BZt-Pb-9aF"/>
                                     <exclude reference="F5l-Qp-rZ8"/>
                                     <exclude reference="Vv7-BR-rx8"/>
+                                    <exclude reference="bot-pZ-eqn"/>
                                 </mask>
                             </variation>
                             <connections>
@@ -132,10 +132,10 @@
                             </state>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="Ucf-Hd-w8R"/>
-                                    <exclude reference="I91-fa-gBK"/>
                                     <exclude reference="2dR-ql-lcC"/>
+                                    <exclude reference="I91-fa-gBK"/>
                                     <exclude reference="UIJ-x6-o3i"/>
+                                    <exclude reference="Ucf-Hd-w8R"/>
                                 </mask>
                             </variation>
                             <connections>

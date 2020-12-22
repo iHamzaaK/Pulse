@@ -2,18 +2,28 @@
   "images" : [
     {
       "filename" : "outlined-my-news-icon-2.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
       "filename" : "outlined-my-news-icon-1.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "outlined-my-news-icon.png",
-      "idiom" : "universal",
+      "filename" : "outlined-my-news-icon-3.png",
+      "idiom" : "iphone",
       "scale" : "3x"
+    },
+    {
+      "filename" : "outlined-my-news-icon-4.png",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "outlined-my-news-icon-5.png",
+      "idiom" : "ipad",
+      "scale" : "2x"
     }
   ],
   "info" : {
