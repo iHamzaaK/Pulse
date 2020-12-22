@@ -15,7 +15,7 @@ struct ArticleListingData : Codable {
     let videoUrl : String?
     let shortDescription: String
     let date : String
-    let tag : String
+    let tag : String?
     var isBookmarked : Bool
     var isLiked : Bool
     var likeCount : Int

@@ -39,7 +39,7 @@ class VideosViewModel
     }
     func cellViewModelForRow(row: Int)-> ArticleListingCellViewModel{
         let video = arrVideos[row]
-        let cellViewModel = ArticleListingCellViewModel(articleID: video.id ?? -1, title: video.title ?? "", permalink: video.permalink ?? "", thumbnail: video.thumbnail ?? "", description: video.descriptionField ?? "", isVideo: video.isVideo ?? false, videoURL: video.videoUrl ?? "", type: self.type, shortDescription: video.shortDescription , date: video.date, tag: video.tag , isBookmarked: video.isBookmarked , isLiked: video.isLiked , likeCount: video.likeCount )
+        let cellViewModel = ArticleListingCellViewModel(articleID: video.id ?? -1, title: video.title ?? "", permalink: video.permalink ?? "", thumbnail: video.thumbnail ?? "", description: video.descriptionField ?? "", isVideo: video.isVideo ?? false, videoURL: video.videoUrl ?? "", type: self.type, shortDescription: video.shortDescription , date: video.date, tag: video.tag ?? "Uncategorized" , isBookmarked: video.isBookmarked , isLiked: video.isLiked , likeCount: video.likeCount )
         return cellViewModel
     }
 }

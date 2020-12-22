@@ -18,6 +18,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgSmall : BaseUIImageView!
     @IBOutlet weak var widthConstraintSmall : NSLayoutConstraint!
     @IBOutlet weak var cellContentView: UIView!
+    
     @IBOutlet weak var subscribedView: UIView!
 
     var cellViewModel : CategoryCellViewModel!{
@@ -36,7 +37,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
                     
                 }
             }
-            imgSmall.addShadow()
+//            imgSmall.addShadow()
         }
     }
     override func awakeFromNib() {
@@ -49,7 +50,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.lblTitle.addShadow()
+//        self.lblTitle.addShadow()
         
     }
     func showSubscription(isSubscribed: Bool){

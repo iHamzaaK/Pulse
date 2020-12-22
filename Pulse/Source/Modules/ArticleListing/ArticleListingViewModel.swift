@@ -74,7 +74,7 @@ class ArticleListingViewModel
     }
     func cellViewModelForRow(row:Int)->ArticleListingCellViewModel{
         let article = artiicleList[row]
-        let cellViewModel = ArticleListingCellViewModel(articleID: article.id ?? -1, title: article.title ?? "", permalink: article.permalink ?? "", thumbnail: article.thumbnail  ?? "", description: article.descriptionField  ?? "", isVideo: article.isVideo ?? false, videoURL: article.videoUrl ?? "", type : self.type,shortDescription: article.shortDescription , date: article.date ,tag: article.tag,isBookmarked: article.isBookmarked,isLiked: article.isLiked , likeCount: article.likeCount)
+        let cellViewModel = ArticleListingCellViewModel(articleID: article.id ?? -1, title: article.title ?? "", permalink: article.permalink ?? "", thumbnail: article.thumbnail  ?? "", description: article.descriptionField  ?? "", isVideo: article.isVideo ?? false, videoURL: article.videoUrl ?? "", type : self.type,shortDescription: article.shortDescription , date: article.date ,tag: article.tag ?? "Uncategorized",isBookmarked: article.isBookmarked,isLiked: article.isLiked , likeCount: article.likeCount)
         return cellViewModel
     }
     func postComment(row : Int, comment : String, completionHandler: @escaping (_ success : Bool , _ serverMsg : String)->Void){

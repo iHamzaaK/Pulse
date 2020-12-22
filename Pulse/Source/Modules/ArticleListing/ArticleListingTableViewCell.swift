@@ -56,13 +56,14 @@ class ArticleListingTableViewCell: UITableViewCell {
         didSet{
             txtComment.text = ""
             lblTitle.text = cellViewModel.title
-            lblNewsType.text = cellViewModel.tag
+            
             lblDate.text = cellViewModel.date
             lblTotalLikes.text = showTotalLikes(isLiked: cellViewModel.isLiked, likeCount: cellViewModel.likeCount)
             showHideLikesView(likeCount: cellViewModel.likeCount,isLiked: cellViewModel.isLiked)
             btnLike.setImage(showLiked(isLiked: cellViewModel.isLiked), for: .normal)
             btnBookmark.setImage(showBookmark(isBookmarked: cellViewModel.isBookmarked), for: .normal)
             setupDescription()
+            setupNewsType()
             setupThumbnailImage()
             setupVideo()
             articleID = cellViewModel.articleID
@@ -162,6 +163,13 @@ class ArticleListingTableViewCell: UITableViewCell {
         hideCommentView = true
     }
     
+    func setupNewsType(){
+        var newsType = cellViewModel.tag
+        if newsType == ""{
+            newsType = "Uncategorized"
+        }
+        lblNewsType.text = newsType
+    }
     func showBookmark(isBookmarked: Bool)->UIImage{
         var imageName = "icon-bookmark"
         if isBookmarked{
@@ -180,10 +188,10 @@ class ArticleListingTableViewCell: UITableViewCell {
             othersLiked = "\(likeCount) others liked this"
         }
         
-        if isLiked && likeCount > 0{
+        if isLiked && likeCount > 1{
             return strUserLiked + " and " + othersLiked
         }
-        else if isLiked && likeCount < 1{
+        else if isLiked && likeCount < 2{
             return "\(strUserLiked) liked this"
         }
         else if !isLiked &&  likeCount > 0{

@@ -244,7 +244,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="JZh-7o-3tt" secondAttribute="trailing" constant="16.5" id="4A0-FZ-icP" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="JZh-7o-3tt" firstAttribute="width" secondItem="OEP-h7-MVL" secondAttribute="width" multiplier="0.92" id="9OI-zU-BH1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>

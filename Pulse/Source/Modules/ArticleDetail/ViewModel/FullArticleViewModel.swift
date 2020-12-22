@@ -106,10 +106,10 @@ class FullArticleViewModel
             othersLiked = "\(likeCount) others liked this"
         }
         
-        if isLiked && likeCount > 0{
+        if isLiked && likeCount > 1{
             return strUserLiked + " and " + othersLiked
         }
-        else if isLiked && likeCount < 1{
+        else if isLiked && likeCount < 2{
             return "\(strUserLiked) liked this"
         }
         else if !isLiked &&  likeCount > 0{
@@ -125,6 +125,7 @@ class FullArticleViewModel
     
         return text
     }
+    
     func getTitle()->String{
         return articleData.title ?? ""
     }
@@ -132,7 +133,10 @@ class FullArticleViewModel
         return articleData.permalink ?? ""
     }
     func getType()->String{
-        return articleData.tag ?? ""
+        if articleData.tag == ""{
+            return "Uncategorized"
+        }
+        return articleData.tag ?? "Uncategorized"
     }
     func getTimeStamp()->String{
         return articleData.daysAgo ?? ""

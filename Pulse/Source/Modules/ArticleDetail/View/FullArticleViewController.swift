@@ -153,6 +153,9 @@ extension FullArticleViewController{
                 if self.viewModel.getCommentCounts() < 1{
                     self.heightConstraintTableView?.constant = 0
                 }
+                else {
+                    self.heightConstraintTableView?.constant = self.tblViewComments.contentSize.height + DesignUtility.convertToRatio(30, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+                }
                 self.viewStackLikeShareComment.alpha = 1
                 self.tblViewComments.alpha = 1
                 self.viewStackTimeType.alpha = 1
