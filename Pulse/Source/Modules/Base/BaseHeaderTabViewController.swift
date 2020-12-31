@@ -85,7 +85,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
     
     func checkBackFunction(headerView: HeaderView, openLeftOrRight : leftRightMenu ){
         if headerView == self._headerView {
-            //print("leftButtonClicked")
+            ////print("leftButtonClicked")
             if openLeftOrRight == .left {
                 if(self._headerView.leftButtonImage != ""){
                     if self._headerView.leftButtonImage == "menuIcon" {
@@ -116,7 +116,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
             
         }
         else{
-            //print("leftButtonClicked footer")
+            ////print("leftButtonClicked footer")
         }
         
     }
@@ -125,7 +125,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
     }
     
     func headedrViewSearchTextChanged(str: String) {
-        //print(str)
+        ////print(str)
 
     }
     
@@ -134,7 +134,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
         
     }
     func headerViewRightBtnDidClick(headerView: HeaderView) {
-        //print("rightButtonClicked")
+        ////print("rightButtonClicked")
         checkBackFunction(headerView: headerView, openLeftOrRight: .right)
     }
     func configureHeaderViewConstraints(){

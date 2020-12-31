@@ -183,7 +183,7 @@ class Utilities{
                  let attributedStr = try NSAttributedString.init(data: data, options: convertToNSAttributedStringDocumentReadingOptionKeyDictionary(attributedOptions), documentAttributes: nil)
                 return attributedStr
             } catch {
-                print( error )
+                //print( error )
             }
             return nil
         }

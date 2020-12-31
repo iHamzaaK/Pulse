@@ -24,7 +24,7 @@ class BookmarksRepositoryImplementation : BookmarksRepository{
             "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
         ]
         BaseRepository.instance.requestService(url: url, method: .post, params: params, header: headers, showSpinner: false) { (success, serverMsg, data) in
-            print(data)
+            //print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

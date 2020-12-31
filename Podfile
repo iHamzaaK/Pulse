@@ -22,6 +22,7 @@ target 'Pulse' do
   pod 'SwiftEntryKit'
   pod 'OTPFieldView'
   pod 'YouTubePlayer'
+  pod "ViewAnimator"
 
   # Pods for Pulse
 

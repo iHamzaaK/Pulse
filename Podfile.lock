@@ -22,6 +22,7 @@ PODS:
     - QuickLayout (= 3.0.0)
   - SwiftyJSON (4.0.0)
   - TextFieldEffects (1.6.0)
+  - ViewAnimator (3.0.2)
   - YouTubePlayer (0.7.2)
 
 DEPENDENCIES:
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - SlideMenuControllerSwift
   - SwiftEntryKit
   - TextFieldEffects
+  - ViewAnimator
   - YouTubePlayer
 
 SPEC REPOS:
@@ -59,6 +61,7 @@ SPEC REPOS:
     - SwiftEntryKit
     - SwiftyJSON
     - TextFieldEffects
+    - ViewAnimator
     - YouTubePlayer
 
 SPEC CHECKSUMS:
@@ -78,8 +81,9 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+  ViewAnimator: 16435576cd44fca0b0d63147d5031fd3e91d295a
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: e36ef4ad3a3878e4aa52baec3fc4132235e3130b
+PODFILE CHECKSUM: 42cb03368524f82c09a53b920d18a9b6e9882263
 
 COCOAPODS: 1.10.0

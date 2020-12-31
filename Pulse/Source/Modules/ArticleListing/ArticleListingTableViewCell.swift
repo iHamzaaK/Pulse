@@ -11,7 +11,7 @@ import AVFoundation
 import YouTubePlayer
 protocol ArticleListingCellProtocol : class {
     func didTapOnBtnLike(row : Int)->Void
-    func didTapOnBtnShare(cellViewModel : ArticleListingCellViewModel)->Void
+    func didTapOnBtnShare(row: Int, articleTitle : String , articleLink: String)->Void
     func didTapOnBtnComment(row : Int, comment: String)->Void
     func didTapOnBtnBookmark(row: Int)->Void
     func didTapOnPlay(row: Int , isPlaying: Bool)->Void
@@ -210,17 +210,29 @@ class ArticleListingTableViewCell: UITableViewCell {
         btnPlay.isHidden = false
     }
     func setupVideo(){
-        isVideo = true//cellViewModel.isVideo
-        btnPlay.isHidden = false
-        playerView.isHidden = true
-        sendSubviewToBack(playerView)
-        bgImageView.isHidden = false
-        playerView.clear()
-        playerView.pause()
-        playerView.playerVars = [
-            "playsinline": "1",
-        ] as YouTubePlayerView.YouTubePlayerParameters
-        playerView.loadVideoID("JLVXQn3fqgg")
+        isVideo = cellViewModel.isVideo
+        guard let url = cellViewModel.getVideoURL() else {
+            isVideo = false
+            self.resetVideo()
+            self.btnPlay.isHidden = true
+            return
+        }
+        
+        if isVideo && url.absoluteString != "" {
+            btnPlay.isHidden = false
+            playerView.isHidden = true
+            sendSubviewToBack(playerView)
+            bgImageView.isHidden = false
+            playerView.clear()
+            playerView.pause()
+            playerView.playerVars = [
+                "playsinline": "1",
+            ] as YouTubePlayerView.YouTubePlayerParameters
+            playerView.loadVideoURL(URL.init(string: "https://youtu.be/AXmXCSi1ZVA")!)
+        }
+        else{
+            self.resetVideo()
+        }
     }
     func setupDescription(){
             let shortDescription = cellViewModel.getShortDescription()
@@ -265,7 +277,7 @@ class ArticleListingTableViewCell: UITableViewCell {
         delegate.didTapOnBtnLike(row: self.tag)
     }
     @objc private func didTapOnBtnShare(){
-        delegate.didTapOnBtnShare(cellViewModel: self.cellViewModel)
+        delegate.didTapOnBtnShare(row: self.tag, articleTitle: cellViewModel.title , articleLink: cellViewModel.permalink)
     }
     @objc private func didTapOnBtnComment(){
         delegate.didTapOnBtnComment(row: self.tag, comment: self.txtComment.text ?? "")

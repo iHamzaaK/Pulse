@@ -263,6 +263,7 @@
 		2460AB5D2582C72A00D3BF43 /* PostDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
 		2460AB632582C7A600D3BF43 /* ArticleDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailRepository.swift; sourceTree = "<group>"; };
 		2460AB662582C7B800D3BF43 /* ArticleDetailRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailRepositoryImplementation.swift; sourceTree = "<group>"; };
+		246B0177259C9D4E000D3879 /* Pulse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pulse.entitlements; sourceTree = "<group>"; };
 		24731884258909B300ADC04E /* AllLikesRepoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLikesRepoModel.swift; sourceTree = "<group>"; };
 		24731885258909B300ADC04E /* AllLikesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLikesData.swift; sourceTree = "<group>"; };
 		2473188A2589136200ADC04E /* VideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepository.swift; sourceTree = "<group>"; };
@@ -1431,6 +1432,7 @@
 		63C109752555EF0B0097EDC3 /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				246B0177259C9D4E000D3879 /* Pulse.entitlements */,
 				63C109B42555F6EA0097EDC3 /* Source */,
 				63C109A82555F48E0097EDC3 /* Supporting Files */,
 				63C1098C2555F43D0097EDC3 /* Resources */,
@@ -2157,17 +2159,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Pulse/Pulse.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GXG7525UU2;
+				DEVELOPMENT_TEAM = 594JG72V68;
 				INFOPLIST_FILE = "$(SRCROOT)/Pulse/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.object-synergy.pulse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.os.pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = adHocProfile2020Dec;
+				PROVISIONING_PROFILE_SPECIFIER = adHocPulse2020Dec;
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Supporting Files/Pulse-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2183,17 +2186,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Pulse/Pulse.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GXG7525UU2;
+				DEVELOPMENT_TEAM = 594JG72V68;
 				INFOPLIST_FILE = "$(SRCROOT)/Pulse/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.object-synergy.pulse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.os.pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = adHocProfile2020Dec;
+				PROVISIONING_PROFILE_SPECIFIER = adHocPulse2020Dec;
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Supporting Files/Pulse-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

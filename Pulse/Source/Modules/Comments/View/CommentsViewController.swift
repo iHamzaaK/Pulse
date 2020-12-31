@@ -38,10 +38,13 @@ extension CommentsViewController{
     func getData(){
         self.viewModel.getComments { (success, serverMsg) in
             if success{
+                self.lblTitle.text = self.viewModel.getArticleTitle()
                 self.tblView.reloadData()
             }
             else{
                 Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+                AppRouter.pop()
+                
             }
         }
     }

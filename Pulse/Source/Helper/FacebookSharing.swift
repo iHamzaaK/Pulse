@@ -16,7 +16,7 @@
 //   private override init(){}
 //    func shareTextOnFaceBook(vc:UIViewController,shareContent:NSString, imageUrl : String) {
 //
-//        print(imageUrl)
+//        //print(imageUrl)
 //      let content = ShareLinkContent()
 //    let url = URL(string: imageUrl)
 //    content.contentURL = url!
@@ -28,15 +28,15 @@
 //
 //   func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
 //      if sharer.shareContent.pageID != nil {
-//         //print("Share: Success")
+//         ////print("Share: Success")
 //      }
 //   }
 //   func sharer(_ sharer: Sharing, didFailWithError error: Error) {
-//      //print("Share: Fail")
-//    print(error.localizedDescription)
+//      ////print("Share: Fail")
+//    //print(error.localizedDescription)
 //   }
 //   func sharerDidCancel(_ sharer: Sharing) {
-//      //print("Share: Cancel")
+//      ////print("Share: Cancel")
 //   }
 //
 //}

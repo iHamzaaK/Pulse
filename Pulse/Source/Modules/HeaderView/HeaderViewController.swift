@@ -85,7 +85,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
     
     func checkBackFunction(headerView: HeaderView, openLeftOrRight : leftRightMenu ){
         if headerView == self._headerView {
-            //print("leftButtonClicked")
+            ////print("leftButtonClicked")
             if openLeftOrRight == .left {
                 if(self._headerView.leftButtonImage != ""){
                     if self._headerView.leftButtonImage == "menuIcon" {
@@ -113,7 +113,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
             
         }
         else{
-            //print("leftButtonClicked footer")
+            ////print("leftButtonClicked footer")
         }
         
     }
@@ -122,13 +122,13 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
     }
     
     func headedrViewSearchTextChanged(str: String) {
-        //print(str)
+        ////print(str)
 
     }
     
     
     func headerViewRightBtnDidClick(headerView: HeaderView) {
-        //print("rightButtonClicked")
+        ////print("rightButtonClicked")
         checkBackFunction(headerView: headerView, openLeftOrRight: .right)
     }
     func configureHeaderViewConstraints(){

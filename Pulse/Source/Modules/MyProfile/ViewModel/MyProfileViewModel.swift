@@ -74,7 +74,7 @@ class MyProfileViewModel
     }
     func updateSubscription(completionHandler: @escaping( _ isSuccess : Bool , _ serverMsg: String)->Void){
         let strSubscription = subscrpition.joined(separator: ",")
-        print(strSubscription)
+        //print(strSubscription)
         let param = [
             "categories" : strSubscription
         ]

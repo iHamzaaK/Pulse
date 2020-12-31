@@ -22,7 +22,7 @@ class CategoriesRepositoryImplementation : CategoriesRepository{
             "Authorization":  "Bearer " + ArchiveUtil.getUserToken()
         ]
         BaseRepository.instance.requestService(url: url, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
-            print(data)
+            //print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

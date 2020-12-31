@@ -9,12 +9,14 @@ import UIKit
 import AVFoundation
 import AVKit
 import YouTubePlayer
+import ViewAnimator
 class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: viewModel.headerTitle)
     }
     var offsetObservation: NSKeyValueObservation?
-    
+    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
     var lblQuoteHeight : CGFloat = DesignUtility.convertToRatio(60, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
     var refreshControl = UIRefreshControl()
     var viewModel : ArticleListingViewModel!
@@ -77,7 +79,10 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     deinit {
         offsetObservation?.invalidate()
         offsetObservation = nil
-        print("ViewController deinit")
+        //print("ViewController deinit")
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
@@ -89,6 +94,8 @@ extension ArticleListingViewController{
             self.viewModel.getAllVideos { (success, serverMsg) in
                 if success{
                     self.tblView.reloadData()
+                    UIView.animate(views: self.tblView.visibleCells, animations: self.animations, completion: {
+                    })
 
                 }
                 else{
@@ -110,14 +117,23 @@ extension ArticleListingViewController{
                             self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
                         }
                         self.heightConstraintViewQuote.constant = self.lblQuoteHeight
+                        UIView.animate(views: [self.viewQuote],
+                                       animations: [self.fromAnimation],
+                                       duration: 0.4)
                     }
                     else{
                         self.heightConstraintViewQuote.constant = 0
                     }
                    
                     self.tblView.reloadData()
- 
+                    UIView.animate(views: self.tblView.visibleCells, animations: self.animations, completion: {
+                    })
                 }
+            }
+            else{
+                Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+                AppRouter.pop()
+
             }
         }
         }
@@ -125,6 +141,9 @@ extension ArticleListingViewController{
     func setupView(){
         viewQuote.isHidden = true
         lblArticleTypeHeading.text =  self.viewModel.getHeaderTitle()
+        UIView.animate(views: [lblArticleTypeHeading],
+                       animations: [fromAnimation],
+                       duration: 0.4)
         if !self.viewModel.showQuoteView(){
             heightConstraintViewQuote.constant = 0
         }
@@ -219,9 +238,22 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func didTapOnBtnShare(cellViewModel: ArticleListingCellViewModel) {
-        
+    func didTapOnBtnShare(row: Int, articleTitle: String, articleLink: String) {
+        let cell = tblView.cellForRow(at: IndexPath(row: row, section: 0)) as! ArticleListingTableViewCell
+        let text = articleTitle
+        let myWebsite = NSURL(string:articleLink)
+        let shareAll = [text , myWebsite] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = cell.btnShare
+//        activityViewController.isModalInPresentation = true
+        self.present(activityViewController, animated: true, completion: nil)
+        if let popOver = activityViewController.popoverPresentationController {
+            popOver.sourceView = cell.btnShare
+          //popOver.sourceRect =
+          //popOver.barButtonItem
+        }
     }
+    
     
     func didTapOnBtnComment(row: Int, comment : String) {
 //        self.tblView.beginUpdates()
@@ -248,11 +280,20 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func didTapOnBtnBookmark(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = self.tblView.cellForRow(at: indexPath) as! ArticleListingTableViewCell
+        cell.btnBookmark.setImage(cell.showBookmark(isBookmarked: !cell.cellViewModel.isBookmarked), for: .normal)
+        
         self.viewModel.addRemoveBookmark(row: row) { (isBookmarked, success, serverMsg) in
             if success{
                 let indexPath = IndexPath(row: row, section: 0)
                 let cell = self.tblView.cellForRow(at: indexPath) as! ArticleListingTableViewCell
                 cell.btnBookmark.setImage(cell.showBookmark(isBookmarked: isBookmarked), for: .normal)
+            }
+            else{
+                let indexPath = IndexPath(row: row, section: 0)
+                let cell = self.tblView.cellForRow(at: indexPath) as! ArticleListingTableViewCell
+                cell.btnBookmark.setImage(cell.showBookmark(isBookmarked: cell.cellViewModel.isBookmarked), for: .normal)
             }
         }
     }

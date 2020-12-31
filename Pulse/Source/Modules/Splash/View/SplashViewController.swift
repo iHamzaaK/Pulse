@@ -6,15 +6,21 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class SplashViewController: BaseViewController
 {
     var viewModel : SplashViewModel!
-    // MARK: View lifecycle
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+    let zoomAnimation = AnimationType.zoom(scale: 0.5)
+
+    @IBOutlet weak var imgViewLogo : UIImageView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
+        UIView.animate(views: [self.imgViewLogo],
+                       animations: [fromAnimation,zoomAnimation], delay: 0.5)
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         navigate()

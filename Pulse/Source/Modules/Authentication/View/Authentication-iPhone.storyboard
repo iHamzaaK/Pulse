@@ -111,7 +111,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KK-FO-0F0" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="169.66666666666663" y="0.0" width="169.33333333333337" height="20"/>
-                                        <state key="normal" title="Forget Password?">
+                                        <state key="normal" title="Forgot Password?">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -243,7 +243,7 @@
                                     <constraint firstAttribute="height" constant="46" id="gRT-Av-dao" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="VERIFY EMAIL">
+                                <state key="normal" title="CONFIRM EMAIL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

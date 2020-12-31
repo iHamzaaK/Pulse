@@ -49,7 +49,7 @@ class DashboardViewController: BaseTabBarViewController {
         }
     }
     override func headedrViewSearchTextChanged(str: String) {
-        print(str)
+        //print(str)
     }
     func createViewControllers(){
         let topStoriesVC = ArticleListingBuilder.build(title: "Top Stories", type: .topStories, categoryId: nil, navBarType: .clearNavBar)

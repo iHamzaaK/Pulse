@@ -77,7 +77,7 @@ class FullArticleViewController: BaseViewController {
     }
     deinit {
         playerView = nil
-        print("ViewController deinit")
+        //print("ViewController deinit")
     }
     
 }
@@ -117,7 +117,7 @@ extension FullArticleViewController{
                 self.lblNewsType.text = self.viewModel.getType()
                 self.lblTime.text = self.viewModel.getTimeStamp()
                 
-                if !self.viewModel.isVideo(){
+                if self.viewModel.isVideo(){
                     self.setupVideo(videoURL: self.viewModel.getVideoURl())
                 }
                 else{
@@ -150,12 +150,7 @@ extension FullArticleViewController{
                 self.lblTotalLikes.text = strLike
                 self.btnBookmark.setImage(UIImage(named: strImage), for: .normal)
                 self.tblViewComments.reloadData()
-                if self.viewModel.getCommentCounts() < 1{
-                    self.heightConstraintTableView?.constant = 0
-                }
-                else {
-                    self.heightConstraintTableView?.constant = self.tblViewComments.contentSize.height + DesignUtility.convertToRatio(30, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
-                }
+                self.setContentHeight()
                 self.viewStackLikeShareComment.alpha = 1
                 self.tblViewComments.alpha = 1
                 self.viewStackTimeType.alpha = 1
@@ -174,24 +169,32 @@ extension FullArticleViewController{
         heightConstraintLikeCountStackView?.constant = 0
         navBarType = self.viewModel.getNavigationBar()
     }
-    override func viewDidLayoutSubviews() {
-        if DesignUtility.isIPad{
-            heightConstraintTableView?.constant = tblViewComments.contentSize.height
-        }
-    }
+    
     
 }
 extension FullArticleViewController{
+    func setContentHeight(){
+        if self.viewModel.getCommentCounts() < 1{
+            self.heightConstraintTableView?.constant = 0
+        }
+        else {
+            let height : CGFloat = DesignUtility.convertToRatio(70, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false) * CGFloat(self.viewModel.getCommentCounts())
+            self.heightConstraintTableView?.constant = height//CGFloat(self.viewModel.getCommentCounts() * 50)//self.tblViewComments.contentSize.height //+ DesignUtility.convertToRatio(50, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+        }
+        
+        self.view.layoutSubviews()
+    }
     @objc func didTapOnSendComment(){
         let articleText = self.txtComment.text ?? ""
         if articleText.count > 0{
             self.viewModel.postComment(comment: articleText) { (success, serverMsg) in
                 if success{
-                    if self.viewModel.getCommentCounts() < 3{
+//                    if self.viewModel.getCommentCounts() < 3{
                         self.tblViewComments.reloadData()
                         self.txtComment.text = ""
                         self.txtComment.resignFirstResponder()
-                    }
+                    self.setContentHeight()
+//                    }
                 }
             }
         }
@@ -236,15 +239,35 @@ extension FullArticleViewController{
         let myWebsite = NSURL(string:self.viewModel.getWeblink())
         let shareAll = [text , myWebsite] as [Any]
         let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.btnShare
-        activityViewController.isModalInPresentation = true
-        self.present(activityViewController, animated: true, completion: nil)
+//        activityViewController.popoverPresentationController?.sourceView = self.btnShare
+//        activityViewController.isModalInPresentation = true
+//        self.present(activityViewController, animated: true, completion: nil)
+        //        activityViewController.popoverPresentationController?.sourceView = cell.btnShare
+        //        activityViewController.isModalInPresentation = true
+                self.present(activityViewController, animated: true, completion: nil)
+                if let popOver = activityViewController.popoverPresentationController {
+                    popOver.sourceView = self.btnShare
+                  //popOver.sourceRect =
+                  //popOver.barButtonItem
+                }
     }
     @objc func didTapOnBookmark(){
+        var strImage = "icon-bookmark"
+        if self.viewModel.isBookmarked(){
+            strImage += "-filled"
+        }
+        self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
         self.viewModel.addRemoveBookmark { (isBookmarked, success, serverMsg) in
             if success{
-                var strImage = "icon-bookmark"
+                strImage = "icon-bookmark"
                 if isBookmarked{
+                    strImage += "-filled"
+                }
+                self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
+            }
+            else{
+                strImage = "icon-bookmark"
+                if self.viewModel.isBookmarked(){
                     strImage += "-filled"
                 }
                 self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
@@ -272,13 +295,22 @@ extension FullArticleViewController: YouTubePlayerDelegate{
 }
 extension FullArticleViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.getCommentCounts()
+        let commentCount = self.viewModel.getCommentCounts()
+        if commentCount == 3 {
+            tblViewComments.allowsSelection = true
+            return commentCount + 1
+        }
+        else{
+            tblViewComments.allowsSelection = false
+            return commentCount//self.viewModel.getCommentCounts()
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row != 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsTableViewCell") as! CommentsTableViewCell
             let cellViewModel = self.viewModel.cellViewModelForComment(row: indexPath.row)
             cell.cellViewModel = cellViewModel
+            
             return cell
         }
         else{

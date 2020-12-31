@@ -1,6 +1,5 @@
 //
 //  ImagePicker.swift
-//  Halal
 //
 //  Created by Hamza Khan on 31/10/2019.
 //  Copyright © 2019 Hamza. All rights reserved.
@@ -70,7 +69,7 @@ open class ImagePicker: NSObject {
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if DesignUtility.isIPad{
             alertController.popoverPresentationController?.sourceView = sourceView
             alertController.popoverPresentationController?.sourceRect = sourceView.bounds
             alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]

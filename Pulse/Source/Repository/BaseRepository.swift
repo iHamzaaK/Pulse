@@ -93,7 +93,7 @@ class BaseRepository{
                 }
              }
           case .failure(let encodingError):
-             //print(encodingError)
+             ////print(encodingError)
              completionHandler(false,"Image can not be uploaded!",nil)
              DispatchQueue.main.async{
                 ActivityIndicator.shared.hideSpinner()

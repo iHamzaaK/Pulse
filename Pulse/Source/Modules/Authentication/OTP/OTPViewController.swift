@@ -69,7 +69,7 @@ extension OTPViewController {
     }
     
     @objc func updateTimer(_ timer : Timer){
-        print(self.secondsBeforeExpiry)
+        //print(self.secondsBeforeExpiry)
         if secondsBeforeExpiry != 0 {
             secondsBeforeExpiry -= 1  // decrease counter timer
         }
@@ -115,7 +115,7 @@ extension OTPViewController {
 }
 extension OTPViewController : OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
-        print("Has entered all OTP? \(hasEntered)")
+        //print("Has entered all OTP? \(hasEntered)")
         return false
     }
     
@@ -124,7 +124,7 @@ extension OTPViewController : OTPFieldViewDelegate {
     }
     
     func enteredOTP(otp otpString: String) {
-        print("OTPString: \(otpString)")
+        //print("OTPString: \(otpString)")
         self.viewModel.otp = otpString
     }
 }

@@ -159,7 +159,7 @@ public class HeaderView: UIView, UITextFieldDelegate {
         return true
     }
     @objc func textfieldValueChanged(sender: BaseUITextfield){
-//        //print(sender.text)
+//        ////print(sender.text)
         let value = sender.text ?? ""
         delegate?.headedrViewSearchTextChanged?(str: value)
     }

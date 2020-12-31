@@ -7,11 +7,16 @@
 
 import UIKit
 import TextFieldEffects
+import ViewAnimator
 class MyProfileViewController: BaseViewController {
     
     var viewModel : MyProfileViewModel!
     var imagePicker : ImagePicker!
     let font = UIFont.init(name: "Montserrat-Regular" , size: DesignUtility.convertToRatio(18, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+    let zoomAnimation = AnimationType.zoom(scale: 0.5)
+    let rotateAnimation = AnimationType.rotate(angle: CGFloat.pi/6)
+    private let animations = [AnimationType.vector((CGVector(dx: 0, dy: 30)))]
 
     @IBOutlet weak var txtSetNewPass: HoshiTextField!{
         didSet{
@@ -68,17 +73,29 @@ class MyProfileViewController: BaseViewController {
         setupViews()
         setupData()
         setupBinding()
+        animateViews()
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.viewModel.updateSubscription { (success, serverMsg) in
             if success{
-                print("Subscription added")
+                //print("Subscription added")
             }
         }
     }
     
 }
 extension MyProfileViewController{
+    private func animateViews(){
+        UIView.animate(views: [self.displayImage,btnEditDisplayImage],
+                       animations: [zoomAnimation],
+                       duration: 0.5)
+        UIView.animate(views: [lblUserName],
+                       animations: [fromAnimation],
+                       duration: 0.5)
+        
+        
+        
+    }
     private func setupBinding(){
         txtSetNewPass.bind(with: self.viewModel.password)
         txtConfirrmPass.bind(with: self.viewModel.confirmPassword)
@@ -108,6 +125,11 @@ extension MyProfileViewController{
             self.viewModel.getCategories { (sucess, servermsg) in
                 if  sucess{
                     self.collectionView.reloadData()
+                    self.collectionView.performBatchUpdates({
+                        UIView.animate(views: self.collectionView.orderedVisibleCells,
+                                       animations: self.animations, options: [.curveEaseInOut], completion: {
+                            })
+                    }, completion: nil)
                 }
             }
         }
@@ -129,6 +151,9 @@ extension MyProfileViewController{
             if success{
                 self.viewModel.hidePasswordView = true
                 self.passwordView.isHidden = self.viewModel.hidePasswordView
+                UIView.animate(views: [self.passwordView],
+                               animations: [self.zoomAnimation],
+                               duration: 0.8)
 
             }
         }
@@ -147,7 +172,7 @@ extension MyProfileViewController{
 }
 extension MyProfileViewController: ImagePickerDelegate{
     @objc private func didTapOnEditImage(_ sender : BaseUIButton){
-        self.imagePicker.present(from: self.view)
+        self.imagePicker.present(from: self.btnEditDisplayImage)
     }
     func didSelect(image: UIImage?) {
         DispatchQueue.main.async {

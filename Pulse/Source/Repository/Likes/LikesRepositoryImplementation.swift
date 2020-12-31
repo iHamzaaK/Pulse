@@ -22,7 +22,7 @@ class LikesRepositoryImplementation : LikesRepository{
         let endpoint = articleID
        
         BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers,showSpinner: false) { (success, serverMsg, data) in
-            print(data)
+            //print(data)
             self.isSuccess = success
             if self.isSuccess{
                 guard let data = data else { return }
@@ -46,7 +46,7 @@ class LikesRepositoryImplementation : LikesRepository{
         
         let endpoint = "list/\(articleID)"
         BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers, showSpinner: false) { (success, serverMsg, data) in
-            print(data)
+            //print(data)
             self.isSuccess = success
             if self.isSuccess{
                 guard let data = data else { return }

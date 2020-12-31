@@ -26,7 +26,7 @@ class ArchiveUtil {
             UserDefaults.standard.set(cat, forKey: categoriesKey)
         }
         catch{
-            //print("Not working")
+            ////print("Not working")
         }
     }
     static func getCategories()-> [CategoriesData]?{
@@ -62,7 +62,7 @@ class ArchiveUtil {
             UserDefaults.standard.set(user, forKey: userDataKey)
         }
         catch{
-            //print("Not working")
+            ////print("Not working")
         }
     }
     static func getUserToken()->String{

@@ -16,7 +16,7 @@ class SettingsTableViewCell: UITableViewCell {
     weak var delegate : SettingsProtocol!
     var switchFlag: Bool = false {
         didSet{               //This will fire everytime the value for switchFlag is set
-            print(switchFlag) //do something with the switchFlag variable
+            //print(switchFlag) //do something with the switchFlag variable
             delegate.didTurnOnOffSwitch(switchFlag: switchFlag)
         }
     }

@@ -129,8 +129,8 @@ extension UILabel{
             
             if safeTrimmedString.count <= readMoreLength { return }
             
-            print("this number \(safeTrimmedString.count) should never be less\n")
-            print("then this number \(readMoreLength)")
+            //print("this number \(safeTrimmedString.count) should never be less\n")
+            //print("then this number \(readMoreLength)")
             
             // "safeTrimmedString.count - readMoreLength" should never be less then the readMoreLength because it'll be a negative value and will crash
             let trimmedForReadMore: String = (safeTrimmedString as NSString).replacingCharacters(in: NSRange(location: safeTrimmedString.count - readMoreLength, length: readMoreLength), with: "") + trailingText

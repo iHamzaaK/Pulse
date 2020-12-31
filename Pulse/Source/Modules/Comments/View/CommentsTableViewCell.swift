@@ -31,6 +31,7 @@ class CommentsTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
 //        if DesignUtility.isIPad{
 //            widthConstraintImageView?.constant = DesignUtility.convertToRatio(53, sizedForIPad: true, sizedForNavi: false)

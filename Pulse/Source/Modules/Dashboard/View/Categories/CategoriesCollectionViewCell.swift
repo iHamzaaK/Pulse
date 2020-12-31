@@ -14,6 +14,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     var parentID : Int!
     var children : [CategoriesChild]!
     @IBOutlet weak var lblTitle : BaseUILabel!
+    @IBOutlet weak var imgViewLayer : BaseUIImageView!
     @IBOutlet weak var imgBg : BaseUIImageView!
     @IBOutlet weak var imgSmall : BaseUIImageView!
     @IBOutlet weak var widthConstraintSmall : NSLayoutConstraint!

@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class NotificationListingViewController: BaseViewController {
     var viewModel : NotificationListingViewModel!
     var cellsCurrentlyEditing = Set<IndexPath>()
-    
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
     @IBOutlet weak var tblView : UITableView!{
         didSet{
             tblView.delegate = self
@@ -32,13 +32,16 @@ extension NotificationListingViewController{
         self.viewModel.getAllNotifications { (success, serverMsg) in
             if success{
                 self.tblView.reloadData()
+                UIView.animate(views: self.tblView.visibleCells,
+                               animations: [self.fromAnimation], delay: 0.2)
+
             }
         }
     }
 }
 extension NotificationListingViewController: UITableViewDataSource , UITableViewDelegate,SwipeableCellDelegate{
     func didTapOnDelete(row: Int) {
-        print("Delete row at \(row)")
+        //print("Delete row at \(row)")
         self.viewModel.didTapOnDelete(row: row) { (success, serverMsg) in
             if success{
                 self.tblView.reloadData()

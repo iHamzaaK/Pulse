@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class SearchViewController: BaseViewController {
     @IBOutlet weak var tblView : UITableView!{
         didSet{
@@ -15,6 +15,8 @@ class SearchViewController: BaseViewController {
             tblView.tableFooterView = UIView()
         }
     }
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+
     var viewModel : SearchViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,9 @@ class SearchViewController: BaseViewController {
             self.viewModel.getSearchData(searchText: str) { (success, serverMsg) in
                 if success{
                     self.tblView.reloadData()
+                    UIView.animate(views: self.tblView.visibleCells,
+                                   animations: [self.fromAnimation], delay: 0.2)
+
                 }
             }
         }

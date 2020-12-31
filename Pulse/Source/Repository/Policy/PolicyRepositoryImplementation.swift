@@ -22,7 +22,7 @@ class PolicyRepositoryImplementation : PolicyRepository{
             "Authorization": "Bearer " + ArchiveUtil.getUserToken()
         ]
         BaseRepository.instance.requestService(url: url+endpoint , method: .get, params: nil, header: headers) { (success, serverMsg, data) in
-            print(data)
+            //print(data)
             if success{
                 guard let data = data else { return }
                 let decoder = JSONDecoder()

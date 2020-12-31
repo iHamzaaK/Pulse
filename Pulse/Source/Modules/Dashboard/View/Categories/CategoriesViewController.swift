@@ -6,11 +6,13 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class CategoriesViewController: UIViewController {
     
     var viewModel : CategoriesViewModel!
     var refreshControl = UIRefreshControl()
+    private let animations = [AnimationType.vector((CGVector(dx: 0, dy: 30)))]
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
 
     @IBOutlet weak var lblSubCategoryTitle : BaseUILabel!
 //    let subCategoryHeight : CGFloat = DesignUtility.convertToRatio(407, sizedForIPad: false, sizedForNavi: false)
@@ -106,6 +108,11 @@ class CategoriesViewController: UIViewController {
                 self.collectionView.delegate = self
                 self.collectionView.dataSource = self
                 self.collectionView.reloadData()
+                self.collectionView.performBatchUpdates({
+                    UIView.animate(views: self.collectionView!.orderedVisibleCells,
+                                   animations: self.animations, options: [.curveEaseInOut], completion: {
+                        })
+                }, completion: nil)
             }
         }
         collectionView.collectionViewLayout = setFlowLayout()
@@ -127,6 +134,12 @@ extension CategoriesViewController : UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
         let cellViewModel = self.viewModel.getCellViewModelForRow(row: indexPath.row)
+        if indexPath.row == 0{
+            cell.imgViewLayer.image = UIImage(named: "colHeaderLayer")
+        }
+        else{
+            cell.imgViewLayer.image = UIImage(named: "colLayer")
+        }
         cell.cellViewModel = cellViewModel
         return cell
     }
@@ -137,6 +150,8 @@ extension CategoriesViewController : UICollectionViewDelegate, UICollectionViewD
         let showSubcategory = self.viewModel.showSubcategory(row: indexPath.row)
         if showSubcategory{
             tblView.reloadData()
+            UIView.animate(views: self.tblView.visibleCells,
+                           animations: [fromAnimation], delay: 0.2)
             hideSubcategory = false
         }
         else{

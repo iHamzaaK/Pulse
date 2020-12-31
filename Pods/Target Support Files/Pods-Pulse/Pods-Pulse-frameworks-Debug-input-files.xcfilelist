@@ -15,4 +15,5 @@ ${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framewor
 ${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework
+${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework
 ${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework

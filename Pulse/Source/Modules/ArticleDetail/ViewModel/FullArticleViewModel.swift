@@ -88,7 +88,10 @@ class FullArticleViewModel
             if success{
                 guard let commentData = commentData else { completionHandler(false , "Invalid Response")
                     return }
-                self.articleComments.append(commentData)
+                if self.getCommentCounts() > 2{
+                    self.articleComments.removeLast()
+                }
+                self.articleComments.insert(commentData, at: 0)
             }
             completionHandler(success , serverMsg)
 
@@ -170,8 +173,9 @@ class FullArticleViewModel
         }
     }
     func didTapOnSeeAllComments(row : Int , completionHandler: (_ vc : UIViewController)->Void){
-        let comment = articleComments[row]
-        let vc = CommmentsViewBuilder.build(articleID: String(comment.id ?? -1))
+//        let comment = articleID
+        let articleTitle = articleData.title ?? ""
+        let vc = CommmentsViewBuilder.build(articleID: articleID, articleTitle: articleTitle)
         completionHandler(vc)
     }
     func addRemoveBookmark(completionHandler: @escaping ( _ isBookmarked : Bool , _ success : Bool , _ serverMsg : String)->Void){

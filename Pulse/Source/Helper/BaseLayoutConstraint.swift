@@ -118,7 +118,7 @@ public extension UIView {
     }
     
     private func log(_ text : NSLayoutConstraint.Attribute){
-        //print("NO \(text) Constraint Found")
+        ////print("NO \(text) Constraint Found")
     }
 }
 
