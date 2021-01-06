@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 import Alamofire_SwiftyJSON
+
+
 class LoginRepositoryImplementation: LoginRepository{
     
     
@@ -22,10 +24,9 @@ class LoginRepositoryImplementation: LoginRepository{
         let params = [
             "password": password,
             "username": userName,
-//            "deviceToken": deviceUDID ,
-//            "deviceName": deviceName
+            "device_token": ArchiveUtil.getDeviceToken(),
         ]
-        let header = ["":""]
+        let header = ["Content-Type": "application/x-www-form-urlencoded"]
         BaseRepository.instance.requestService(url: loginUrl, method: .post, params: params, header: header) { (success, serverMsg, data) in
             if success{
                 guard let data = data else {return}

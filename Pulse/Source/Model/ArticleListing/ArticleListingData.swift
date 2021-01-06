@@ -44,8 +44,7 @@ struct ArticleListingData : Codable {
 		permalink = try values.decodeIfPresent(String.self, forKey: .permalink) ?? String()
 		thumbnail = try values.decodeIfPresent(String.self, forKey: .thumbnail) ?? String()
 		title = try values.decodeIfPresent(String.self, forKey: .title) ?? String()
-        
-		videoUrl = ""//try values.decodeIfPresent(String.self, forKey: .videoUrl) ?? String()
+		videoUrl = try values.decodeIfPresent(String.self, forKey: .videoUrl) ?? String()
         shortDescription = try values.decodeIfPresent(String.self, forKey: .shortDescription) ?? String()
         date = try values.decodeIfPresent(String.self, forKey: .date) ?? String()
         tag = try values.decodeIfPresent(String.self, forKey: .tag) ?? String()

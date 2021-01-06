@@ -31,6 +31,7 @@ class ConfirmPasswordViewController: BaseViewController {
         didSet{
             viewSuccess.isHidden = !isNewPasswordSet
             self._headerView.isHidden = self.isNewPasswordSet
+            ArchiveUtil.deleteSession()
 
         }
     }

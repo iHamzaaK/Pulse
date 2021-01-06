@@ -24,6 +24,29 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var lblQoute: BaseUILabel!
     @IBOutlet weak var lblQouteDate: BaseUILabel!
     @IBOutlet weak var lblArticleTypeHeading: BaseUILabel!
+    @IBOutlet weak var btnAddTopic: BaseUIButton!{
+        didSet{
+            let str = "+ Add topics to create your own personal news feed"
+            let range = (str as NSString).range(of: "+ Add topics")
+            let attribute = NSMutableAttributedString.init(string: str)
+//            attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.init(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(16, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))!, range: NSMakeRange(0, str.count))
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: Utilities.hexStringToUIColor(hex:"555555"), range: NSMakeRange(0, str.count))
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: Utilities.hexStringToUIColor(hex:"009ed4"), range: range)
+
+            let style = NSMutableParagraphStyle()
+            style.alignment = NSTextAlignment.center
+
+            attribute.addAttribute(.paragraphStyle, value: style, range: NSMakeRange(0, str.count))
+            btnAddTopic.setAttributedTitle(attribute, for: .normal)
+//            myLabel.attributedText = attributedText
+//            btnAddTopic.addTarget(self, action: #selector(self.didTapOnAdd), for: .touchUpInside)
+//            self.view.layoutIfNeeded()
+            if self.viewModel.type == .bookmarks{
+                btnAddTopic.isHidden = true
+            }
+            
+        }
+    }
     @IBOutlet weak var btnQuote: BaseUIButton!{
         didSet{
             btnQuote.addTarget(self, action: #selector(self.didTapOnQuote), for: .touchUpInside)
@@ -33,6 +56,9 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var heightConstraintViewQuote : NSLayoutConstraint!
     @IBOutlet var heightConstraintTitle : NSLayoutConstraint!
     @IBOutlet weak var topConstraint : NSLayoutConstraint!
+    @IBOutlet weak var lblEmptyViewText: UILabel!
+    @IBOutlet weak var emptyView: UIView!
+
     var expandedCells = Set<Int>()
     var pageNo = 1{
         didSet{
@@ -52,6 +78,7 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideEmptyView()
         navBarType = self.viewModel.getNavigationBar()
         getData(paged: pageNo)
         setupView()
@@ -65,14 +92,16 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
             self?.updateByContentOffset()
             self?.startLoading()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadListing), name: Notification.Name("reloadListing"), object: nil)
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+//        Notification qCenter.default.removeObserver(self)
 
     }
     
@@ -88,7 +117,28 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
 }
 
 extension ArticleListingViewController{
-    func getData(paged: Int){
+    func showEmptyView(){
+        emptyView.isHidden = false
+        tblView.isHidden = true
+        self.view.sendSubviewToBack(tblView)
+    }
+    func hideEmptyView(){
+        emptyView.isHidden = true
+        tblView.isHidden = false
+        self.view.sendSubviewToBack(emptyView)
+        tblView.reloadData()
+    }
+    @IBAction func didTapOnAddTopics(_ sender: Any) {
+//        dataSize = 10
+        AppRouter.goToSpecificController(vc: MyProfileBuilder.build())
+    }
+
+    @objc func reloadListing(){
+//        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in
+            self.getData(paged: self.pageNo)
+//        }
+    }
+    @objc func getData(paged: Int){
         self.refreshControl.endRefreshing()
         if viewModel.type == articleListingType.videos{
             self.viewModel.getAllVideos { (success, serverMsg) in
@@ -124,15 +174,27 @@ extension ArticleListingViewController{
                     else{
                         self.heightConstraintViewQuote.constant = 0
                     }
-                   
+                    if self.viewModel.getArticleCount() > 0 {
+                        self.hideEmptyView()
+                    }
+                    else{
+                        self.showEmptyView()
+                    }
                     self.tblView.reloadData()
                     UIView.animate(views: self.tblView.visibleCells, animations: self.animations, completion: {
                     })
                 }
             }
             else{
-                Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
-                AppRouter.pop()
+                if self.viewModel.type == .interest || self.viewModel.type == .bookmarks || self.viewModel.type == .myNews{
+                    if self.viewModel.getArticleCount() == 0{
+                        self.showEmptyView()
+                    }
+                }
+                else{
+                    Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+                    AppRouter.pop()
+                }
 
             }
         }
@@ -189,8 +251,8 @@ extension ArticleListingViewController{
         if let indexPaths = tblView.indexPathsForVisibleRows{
             for indexPath in indexPaths{
             if let previousCell = tblView.cellForRow(at: indexPath) as? ArticleListingTableViewCell{
-                previousCell.playerView.clear()
                 if previousCell.playerView.playerState == YouTubePlayerState.Playing{
+                    previousCell.playerView.clear()
                     previousCell.playerView.pause()
                 }
             }

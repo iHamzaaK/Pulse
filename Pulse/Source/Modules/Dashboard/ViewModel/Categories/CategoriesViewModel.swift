@@ -48,6 +48,12 @@ class CategoriesViewModel
         return cellViewModel
         
     }
+    func getCellViewModelForSubCategoryRow(row: Int)->CategoryCellViewModel{
+        let category = subCategory[row]
+        let cellViewModel = CategoryCellViewModel(id: category.id, name: category.name ?? "", description: category.descriptionField ?? "", parent: category.parent ?? -1, icon: category.icon ?? "", image: category.image ?? "", child:  [], isVideo:  false, isQuote:  false)
+        return cellViewModel
+        
+    }
     func getCategories(completionHandler: @escaping (Bool, String) -> Void){
         self.repository.getCategories { (success, serverMsg, data) in
             self.categories = data
@@ -100,8 +106,14 @@ class CategoriesViewModel
         completionHandler(vc)
     }
     func goToCategoryPostsForSubCategoory(row: Int, completionHandler: (_ vc: UIViewController)->Void){
-        let subCategoryId = subCategory[row].id
-        let vc = ArticleListingBuilder.build(title: strCategoryTitle, type: .categories, categoryId: subCategoryId, navBarType: .backButtonWithRightMenuButton)
+        let category = subCategory[row]
+        let subCatId = category.id
+        var title = strCategoryTitle
+        if category.name != ""{
+            title = strCategoryTitle + " - " + category.name!
+        }
+        
+        let vc = ArticleListingBuilder.build(title: title, type: .categories, categoryId: subCatId, navBarType: .backButtonWithRightMenuButton)
         completionHandler(vc)
     }
     func getSubCategoryCount()-> Int{

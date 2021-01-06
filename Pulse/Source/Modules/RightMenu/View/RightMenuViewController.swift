@@ -41,6 +41,7 @@ class RightMenuViewController: BaseViewController {
 }
 extension RightMenuViewController{
     private func setupView(){
+        self.view.backgroundColor = .clear
         Utilities.addBlur(view: self.view, blurEffect: .systemUltraThinMaterialLight)
         navBarType = self.viewModel.getNavigationBar()
         btnClose.addTarget(self, action: #selector(self.didTapOnClose), for: .touchUpInside)
@@ -49,8 +50,8 @@ extension RightMenuViewController{
     }
     @objc func updateImage(){
         let user = ArchiveUtil.getUser()
-        guard let avatarURL = user?.getAvatarURL() else { return }
         lblName.text = (user?.firstName ?? "") + " " + (user?.lastName ?? "")
+        guard let avatarURL = user?.getAvatarURL() else { return }
         Utilities.getImageFromURL(imgView: imgView, url: avatarURL){ (_) in
             
         }
@@ -61,7 +62,7 @@ extension RightMenuViewController{
         AppRouter.showHideRightMenu()
     }
     @objc func didTapOnEditProfile(){
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { (_) in
             AppRouter.goToSpecificController(vc: MyProfileBuilder.build())
         }
         slideMenu.closeRight()

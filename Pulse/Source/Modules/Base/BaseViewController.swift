@@ -14,6 +14,7 @@ enum navigationBarTypes{
     case backButtonWithRightMenuButton
     case backButtonWithTitle
     case leftRightButtonsWithLogo
+    
 }
 protocol navigationBarButtonProtocols: class{
     func didTapOnLeftBtn()->Void
@@ -85,6 +86,8 @@ extension BaseViewController {
     private func setupSearchNavBar(){
         self.createSearchTextField()
         _headerView.leftButtonImage = "cross-icon"
+        _headerView.rightButtonImage = ""
+        _headerView.rightSecondaryButtonImage = ""
 
     }
     private func setupProfleWithMenu(){

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+
 class CategoriesRepositoryImplementation : CategoriesRepository{
     
     
@@ -19,10 +21,12 @@ class CategoriesRepositoryImplementation : CategoriesRepository{
 //        let params = []
         let headers = [
             "Accept": "application/json",
-            "Authorization":  "Bearer " + ArchiveUtil.getUserToken()
+            "Authorization":  "Bearer " + ArchiveUtil.getUserToken(),
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
-        BaseRepository.instance.requestService(url: url, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
-            //print(data)
+        BaseRepository.instance.requestService(url: url, method: .post, params: nil, header: headers) { (success, serverMsg, data) in
+            print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

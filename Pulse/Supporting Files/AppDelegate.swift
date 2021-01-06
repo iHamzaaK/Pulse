@@ -10,18 +10,23 @@ import IQKeyboardManagerSwift
 import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
     
     
+    let notificationCenter = UNUserNotificationCenter.current()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         registerForPushNotifications()
+        notificationCenter.delegate = self
+        
+
         let appearance = UITabBarItem.appearance()
         let attributes = [NSAttributedString.Key.font:UIFont(name: "Montserrat-Medium", size: DesignUtility.convertToRatio(10, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false))]
         appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
         
+       
         return true
     }
     
@@ -47,7 +52,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound])
+        
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        //        let userInfo = ["identifier":response.notification.request.identifier]
+        guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+            return
+        }
+        guard let alert = aps["alert"] as? [String: AnyObject] else {
+            return
+        }
+        print(alert["title"])
+        let articleID = alert["body"] as! String
+        let application = UIApplication.shared
+        
+        if(application.applicationState == .active){
+            print("user tapped the notification bar when the app is in foreground")
+            AppRouter.presentControllerForNotification(vc: FullArticleBuilder.build(articleID: articleID, headerType: .clearNavBar))
+        }
+        
+        else if(application.applicationState == .inactive)
+        {
+            AppRouter.presentControllerForNotification(vc: FullArticleBuilder.build(articleID: articleID, headerType: .clearNavBar))
+            
+            print("user tapped the notification bar when the app is in background")
+        }
+        else {
+            if ArchiveUtil.getUserToken() != ""{
+//                Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { (_) in
+                AppRouter.presentControllerForNotification(vc: FullArticleBuilder.build(articleID: articleID, headerType: .clearNavBar))
+//                }
+            }
+        }
+        completionHandler()
+        
+    }
     func registerForPushNotifications() {
+        
         UNUserNotificationCenter.current()
             .requestAuthorization(
                 options: [.alert, .sound, .badge]) { [weak self] granted, _ in
@@ -63,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
         print("Device Token: \(token)")
+        ArchiveUtil.saveDeviceToken(deviceToken: token)
     }
     func application(
         _ application: UIApplication,

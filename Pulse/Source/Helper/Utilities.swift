@@ -108,16 +108,16 @@ class Utilities{
             return 70
         }
         else if (Device.IS_IPHONE_12_PRO){
-            return 90
-        }
-        else if (Device.IS_IPHONE_12_MAX){
             return 95
         }
+        else if (Device.IS_IPHONE_12_MAX){
+            return 100
+        }
         else if (Device.IS_IPHONE_X){
-            return 90
+            return 95
         }
         else{
-            return 100
+            return 110
         }
     }
     static func addBlur(view: UIView, blurEffect: UIBlurEffect.Style){

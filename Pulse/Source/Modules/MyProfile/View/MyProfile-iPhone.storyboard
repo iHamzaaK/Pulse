@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Ho-u8U" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-Ho-u8U" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-QS-BMb" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
@@ -32,7 +32,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Regular"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ws8-B6-gXd" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ws8-B6-gXd" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="21" y="155" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ws8-B6-gXd" secondAttribute="height" multiplier="1:1" id="Pcm-H3-cxv" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -271,7 +271,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuO-31-cna" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="70" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fuO-31-cna" secondAttribute="height" multiplier="1:1" id="51Y-Xc-3P8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                             <constraint firstAttribute="width" constant="40" id="z56-TA-act" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -295,7 +295,7 @@
                                     <constraint firstItem="qOK-7X-yba" firstAttribute="height" secondItem="LSD-Nm-rwv" secondAttribute="height" id="VmA-6r-1M9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="LSD-Nm-rwv" firstAttribute="top" secondItem="7zw-xQ-n87" secondAttribute="bottom" constant="29" id="ZH6-zJ-ghf" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="qOK-7X-yba" firstAttribute="leading" secondItem="LSD-Nm-rwv" secondAttribute="leading" id="iKG-t6-zwQ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                    <constraint firstItem="fuO-31-cna" firstAttribute="top" secondItem="etJ-2c-8gf" secondAttribute="top" constant="55" id="jFV-vL-hVB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="fuO-31-cna" firstAttribute="top" secondItem="etJ-2c-8gf" secondAttribute="top" constant="70" id="jFV-vL-hVB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="qOK-7X-yba" firstAttribute="trailing" secondItem="LSD-Nm-rwv" secondAttribute="trailing" id="jH4-Ip-BwG" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="7zw-xQ-n87" firstAttribute="leading" secondItem="etJ-2c-8gf" secondAttribute="leading" constant="20" symbolic="YES" id="kPJ-XE-aYR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target">
                                         <variation key="heightClass=regular-widthClass=regular" constant="120"/>
@@ -359,8 +359,8 @@
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="forgetLogo" width="632" height="568"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="placeholder" width="240" height="240"/>
         <image name="search-close-icon" width="10" height="10"/>
-        <image name="userImage" width="145" height="145"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

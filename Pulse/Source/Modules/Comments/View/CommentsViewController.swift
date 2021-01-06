@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class CommentsViewController: BaseViewController {
     var viewModel : CommentsViewModel!
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
     @IBOutlet weak var lblTitle : BaseUILabel!
     @IBOutlet weak var btnViewPostButton : BaseUIButton!{
         didSet{
@@ -40,6 +41,9 @@ extension CommentsViewController{
             if success{
                 self.lblTitle.text = self.viewModel.getArticleTitle()
                 self.tblView.reloadData()
+                UIView.animate(views: self.tblView.visibleCells,
+                               animations: [self.fromAnimation],
+                               duration: 0.2)
             }
             else{
                 Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
@@ -65,6 +69,7 @@ extension CommentsViewController : UITableViewDelegate, UITableViewDataSource{
 }
 extension CommentsViewController {
     @objc private func didTapOnViewPost(){
-        AppRouter.pop()
+//        AppRouter.pop()
+        self.navigationController?.popViewController(animated: true)
     }
 }

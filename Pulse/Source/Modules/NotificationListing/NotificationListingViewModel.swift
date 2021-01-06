@@ -52,7 +52,7 @@ class NotificationListingViewModel {
             return
         }
         let articleID = String(articleId)
-        let vc = FullArticleBuilder.build(articleID: articleID)
+        let vc = FullArticleBuilder.build(articleID: articleID, headerType: .backButtonWithRightMenuButton)
         completionHandler(vc)
     }
 }

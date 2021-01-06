@@ -22,7 +22,7 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
         case .categories:
             endpoint = "category_id=\(categoryId!)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .interest:
-            endpoint = ""
+            endpoint = "paged=\(paged)&posts_per_page=20&type=\(2)"
         case .bookmarks:
             endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .videos:
@@ -35,7 +35,9 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
         }
         let headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer " + ArchiveUtil.getUserToken()
+            "Authorization": "Bearer " + ArchiveUtil.getUserToken(),
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
         BaseRepository.instance.requestService(url: url + endpoint, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
             print(data)

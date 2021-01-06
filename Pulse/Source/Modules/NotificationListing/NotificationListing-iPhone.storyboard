@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,8 +38,8 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gYV-K4-vKH">
-                                <rect key="frame" x="20" y="102" width="374" height="774"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="122" width="374" height="754"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sGV-wG-Rh7"/>
@@ -48,7 +48,7 @@
                             <constraint firstItem="S2X-or-Ygq" firstAttribute="leading" secondItem="uHr-Ed-N6O" secondAttribute="leading" id="31p-Fz-OHg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="S2X-or-Ygq" firstAttribute="trailing" secondItem="gYV-K4-vKH" secondAttribute="trailing" constant="20" id="EmL-qj-jid" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="S2X-or-Ygq" secondAttribute="trailing" id="JJm-71-JgR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstItem="gYV-K4-vKH" firstAttribute="top" secondItem="S2X-or-Ygq" secondAttribute="bottom" id="apd-lf-tNZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="gYV-K4-vKH" firstAttribute="top" secondItem="S2X-or-Ygq" secondAttribute="bottom" constant="20" id="apd-lf-tNZ" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="S2X-or-Ygq" firstAttribute="top" secondItem="uHr-Ed-N6O" secondAttribute="top" constant="34" identifier="topConstraintHeader" id="g31-Km-vO7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="gYV-K4-vKH" firstAttribute="leading" secondItem="S2X-or-Ygq" secondAttribute="leading" constant="20" id="hMl-UY-AE7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="bottom" secondItem="gYV-K4-vKH" secondAttribute="bottom" constant="20" id="sNI-M8-Etk" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>

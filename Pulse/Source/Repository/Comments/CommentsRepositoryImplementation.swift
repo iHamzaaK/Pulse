@@ -21,7 +21,9 @@ class CommentsRepositoryImplementation: CommentsRepository{
         let endPoint = "\(articleID)?limit=100000"
         let headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
+            "Authorization": "Bearer \(ArchiveUtil.getUserToken())",
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
         BaseRepository.instance.requestService(url: url + endPoint, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
             //print(data)
@@ -47,7 +49,9 @@ class CommentsRepositoryImplementation: CommentsRepository{
         url = "wp/v2/sahifa/post/comment/create/\(id)"
         let headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
+            "Authorization": "Bearer \(ArchiveUtil.getUserToken())",
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
         let params = [
             "id": id,

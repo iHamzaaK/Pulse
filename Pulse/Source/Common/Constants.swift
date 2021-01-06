@@ -33,7 +33,11 @@ let advertiserCellNibName = "AdvertiserTableViewCell"
 let advertiserCellIdentifier = "AdvertiserTableViewCell"
 
 let facebookAppId = "424434681595227"
-let baseURL = "http://pulse.objectsynergy.com/wp-json/"
+let devURL = "http://pulse.objectsynergy.com/wp-json/"
+let liveURL = "https://alfuttaim.biz/wp-json/"
+let baseURL = devURL
+//let baseURL = "http://3.14.133.236/wp-json/"
+
 let googleMapApi = "AIzaSyDBEF_6qFXE0QaPeL5Si-ecKXj2JWjyzC4"
 let deviceName = "ios"
 let deviceUDID = UIDevice.current.identifierForVendor!.uuidString

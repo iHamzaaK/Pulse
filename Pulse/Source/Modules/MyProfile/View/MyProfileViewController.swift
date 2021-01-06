@@ -115,23 +115,22 @@ extension MyProfileViewController{
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     func setupData(){
-        let user = ArchiveUtil.getUser()
-        guard let avatarURL = user?.getAvatarURL() else { return }
-        Utilities.getImageFromURL(imgView: displayImage, url: avatarURL) { (_) in
-            
-        }
+        
         self.lblUserName.text = self.viewModel.getName()
         if self.viewModel.categories.count < 1{
             self.viewModel.getCategories { (sucess, servermsg) in
                 if  sucess{
                     self.collectionView.reloadData()
                     self.collectionView.performBatchUpdates({
-                        UIView.animate(views: self.collectionView.orderedVisibleCells,
-                                       animations: self.animations, options: [.curveEaseInOut], completion: {
-                            })
+                       
                     }, completion: nil)
                 }
             }
+        }
+        let user = ArchiveUtil.getUser()
+        guard let avatarURL = user?.getAvatarURL() else { return }
+        Utilities.getImageFromURL(imgView: displayImage, url: avatarURL) { (_) in
+            
         }
     }
     func setFlowLayout()-> UICollectionViewFlowLayout{
@@ -166,6 +165,12 @@ extension MyProfileViewController{
     @objc private func didTapOnExpand(_ sender : BaseUIButton){
         self.viewModel.hideCategories = !self.viewModel.hideCategories
         self.collectionView.isHidden = self.viewModel.hideCategories
+        if self.collectionView.isHidden == false{
+            self.collectionView.reloadData()
+            UIView.animate(views: self.collectionView.orderedVisibleCells,
+                           animations: self.animations, duration: 0.9, options: [.curveEaseInOut], completion: {
+                })
+        }
     }
     
     
@@ -200,6 +205,12 @@ extension MyProfileViewController : UICollectionViewDelegate, UICollectionViewDe
         let cellFont = cell.lblTitle.font.fontName
         cell.lblTitle.font = UIFont(name: cellFont, size: DesignUtility.convertToRatio(14, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false))
         cell.showSubscription(isSubscribed: isSubscribed)
+        if indexPath.row == 0{
+            cell.imgViewLayer.image = UIImage(named: "colHeaderLayer")
+        }
+        else{
+            cell.imgViewLayer.image = UIImage(named: "colLayer")
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

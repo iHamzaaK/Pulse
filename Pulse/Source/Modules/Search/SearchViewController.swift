@@ -61,6 +61,7 @@ extension SearchViewController{
 
     func setupView(){
         view.alpha = 0
+        
         _headerView.leftButtonImage = "search-close-icon"
         navBarType = self.viewModel.getNavigationBar()
             view.isOpaque = false

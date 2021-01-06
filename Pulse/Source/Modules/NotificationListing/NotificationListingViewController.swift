@@ -23,6 +23,8 @@ class NotificationListingViewController: BaseViewController {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
         self.getData()
+        self.view.backgroundColor = .white
+
         // Do any additional setup after loading the view.
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IXJ-BV-wXx">
-                                <rect key="frame" x="0.0" y="90" width="414" height="806"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="726"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cdr-oF-pEq">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -90,7 +90,7 @@
                             <constraint firstAttribute="bottom" secondItem="Q3z-lm-N9d" secondAttribute="bottom" id="OZY-NY-ScB"/>
                             <constraint firstItem="IXJ-BV-wXx" firstAttribute="top" secondItem="qQu-gC-gjw" secondAttribute="top" constant="90" identifier="topConstraintHeader" id="TIR-Hg-tFT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Q3z-lm-N9d" firstAttribute="leading" secondItem="qQu-gC-gjw" secondAttribute="leading" id="Wu9-50-VUv"/>
-                            <constraint firstAttribute="bottom" secondItem="IXJ-BV-wXx" secondAttribute="bottom" id="aQD-KD-JsH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="IXJ-BV-wXx" secondAttribute="bottom" constant="80" id="aQD-KD-JsH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i3d-D8-7W0"/>
@@ -331,10 +331,7 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="50"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="teo-wk-ynr">
-                                        <rect key="frame" x="68" y="9.5" width="278" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="278" id="j48-hq-qmt"/>
-                                        </constraints>
+                                        <rect key="frame" x="20.5" y="9.5" width="373" height="32"/>
                                         <segments>
                                             <segment title="First"/>
                                             <segment title="Second"/>
@@ -344,13 +341,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="teo-wk-ynr" firstAttribute="centerX" secondItem="g1U-Sx-SeP" secondAttribute="centerX" id="DBJ-jL-l2j" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="teo-wk-ynr" firstAttribute="width" secondItem="g1U-Sx-SeP" secondAttribute="width" multiplier="0.9" id="SHO-Xr-Vud"/>
                                     <constraint firstAttribute="height" constant="50" id="uGI-xE-JKY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="teo-wk-ynr" firstAttribute="centerY" secondItem="g1U-Sx-SeP" secondAttribute="centerY" id="zxE-SL-kpa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jFq-y3-hpB"/>
-                        <color key="backgroundColor" red="0.90995156759999996" green="0.92535442109999999" blue="0.93333518510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Vf-aM-Jb2" firstAttribute="leading" secondItem="dg0-1F-Xwy" secondAttribute="leading" id="4mg-M1-fXl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="g1U-Sx-SeP" secondAttribute="trailing" id="Lum-AR-eIp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -361,7 +359,6 @@
                             <constraint firstItem="6Vf-aM-Jb2" firstAttribute="top" secondItem="g1U-Sx-SeP" secondAttribute="bottom" id="wHQ-fh-EWc" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="L3e-0p-CUG">
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="FeI-jT-xgR">

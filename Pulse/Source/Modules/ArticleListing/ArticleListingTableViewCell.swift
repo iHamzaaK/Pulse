@@ -166,7 +166,7 @@ class ArticleListingTableViewCell: UITableViewCell {
     func setupNewsType(){
         var newsType = cellViewModel.tag
         if newsType == ""{
-            newsType = "Uncategorized"
+            newsType = "Other Article"
         }
         lblNewsType.text = newsType
     }
@@ -202,8 +202,8 @@ class ArticleListingTableViewCell: UITableViewCell {
         }
     }
     func resetVideo(){
-        self.playerView.clear()
-        self.playerView.pause()
+//        self.playerView.clear()
+//        self.playerView.pause()
         playerView.isHidden = true
         sendSubviewToBack(self.playerView)
         bgImageView.isHidden = false
@@ -228,7 +228,7 @@ class ArticleListingTableViewCell: UITableViewCell {
             playerView.playerVars = [
                 "playsinline": "1",
             ] as YouTubePlayerView.YouTubePlayerParameters
-            playerView.loadVideoURL(URL.init(string: "https://youtu.be/AXmXCSi1ZVA")!)
+            playerView.loadVideoURL(url)
         }
         else{
             self.resetVideo()
@@ -236,14 +236,14 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     func setupDescription(){
             let shortDescription = cellViewModel.getShortDescription()
-            if shortDescription.count > 0{
-                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
-                let readmoreFontColor = UIColor.blue
-                lblDescription.text = shortDescription
-                DispatchQueue.main.async {
-                    self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-                }
-            }
+//            if shortDescription.count > 0{
+//                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
+//                let readmoreFontColor = UIColor.blue
+            lblDescription.text = shortDescription
+//                DispatchQueue.main.async {
+//                    self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+//                }
+//            }
     }
     
     func setupThumbnailImage(){

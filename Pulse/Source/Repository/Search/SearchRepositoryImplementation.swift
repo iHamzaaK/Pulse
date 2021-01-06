@@ -19,7 +19,9 @@ class SearchRepositoryImplementation : SearchRepository{
         let endpoint = "s=\(searchText)&limit=\(limit)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer " + ArchiveUtil.getUserToken()
+            "Authorization": "Bearer " + ArchiveUtil.getUserToken(),
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
         BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers, showSpinner: false) { (success, serverMsg, data) in
             //print(data)

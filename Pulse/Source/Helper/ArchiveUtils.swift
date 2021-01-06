@@ -19,7 +19,7 @@ class ArchiveUtil {
     private static let restaurantType = "restaurantType"
     private static let signupStep = "signupStep"
     private static let categoriesKey = "categories"
-
+    private static let deviceTokenKey = "deviceToken"
     static func saveCategories(categories: [CategoriesData]){
         do{
             let cat = try JSONEncoder().encode([categories])
@@ -39,6 +39,15 @@ class ArchiveUtil {
             return nil
         }
     }
+    
+    static func saveDeviceToken(deviceToken: String){
+            UserDefaults.standard.set(deviceToken, forKey: deviceTokenKey)
+    }
+    static func getDeviceToken()-> String{
+        guard let key =  UserDefaults.standard.object(forKey: deviceTokenKey) as? String else { return ""}
+        return key
+    }
+    
     static func getUser()-> User?{
         guard let user = UserDefaults.standard.data(forKey: userDataKey) else { return nil}
         do{

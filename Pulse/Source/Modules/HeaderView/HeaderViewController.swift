@@ -19,7 +19,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
         super.viewDidLoad()
         
         headerViewHeight = getHeaderFooterHeight()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Utilities.hexStringToUIColor(hex: "E7ECEE")
         let bundle = Bundle(for: type(of: self))
         let headerViewNibName = "HeaderView" + "-" + Utilities.getDeviceTypeStr()
         let nib = UINib(nibName: headerViewNibName, bundle: bundle)

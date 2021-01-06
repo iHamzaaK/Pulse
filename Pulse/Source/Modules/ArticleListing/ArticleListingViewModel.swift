@@ -66,7 +66,12 @@ class ArticleListingViewModel
         if paged == 1 || paged < maximumPages{
         self.repository.getListing(type: self.type, paged: paged, categoryId: categoryId) { (success, serverMsg, data, quote , maxPage)  in
             self.maximumPages = maxPage
-            self.artiicleList.append(contentsOf: data ?? [])
+            if paged == 1 && self.artiicleList.count > 0{
+                self.artiicleList = data ?? []
+            }
+            else{
+                self.artiicleList.append(contentsOf: data ?? [])
+            }
             self.quote = quote ?? []
             completionHandler(success, serverMsg)
         }
@@ -90,7 +95,7 @@ class ArticleListingViewModel
         if self.type != .videos{
             let article = artiicleList[row]
             let articleID = String(article.id ?? -1)
-            let vc = FullArticleBuilder.build(articleID: articleID)
+            let vc = FullArticleBuilder.build(articleID: articleID, headerType: .backButtonWithRightMenuButton)
             completionHandler(vc)
         }
     }
@@ -198,6 +203,7 @@ struct ArticleListingCellViewModel{
     
     
     func getVideoURL()-> URL?{
+        
         guard let url = URL(string: videoURL) else { return nil}
         return url
     }

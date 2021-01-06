@@ -18,7 +18,9 @@ class UserProfileRepositoryImplementation : UserProfileRepository{
         }
         let headers = [
             "Accept": "application/json",
-            "Authorization": "Bearer \(ArchiveUtil.getUserToken())("
+            "Authorization": "Bearer \(ArchiveUtil.getUserToken())",
+            "Content-Type": "application/x-www-form-urlencoded"
+
         ]
         if avatar != nil{
             BaseRepository.instance.uploadImage(url: url, method: .post, params: nil,imageData: avatar!, header: headers) { (success,responseMsg,data) in

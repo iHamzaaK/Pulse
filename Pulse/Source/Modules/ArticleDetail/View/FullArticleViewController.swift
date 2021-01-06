@@ -8,9 +8,12 @@
 import UIKit
 import YouTubePlayer
 import AVFoundation
+import ViewAnimator
 class FullArticleViewController: BaseViewController {
     var viewModel : FullArticleViewModel!
-    
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
+    private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
+    let zoomAnimation = AnimationType.zoom(scale: 0.5)
     @IBOutlet weak var playerView : YouTubePlayerView!
     @IBOutlet weak var txtComment : BaseUITextfield!
     @IBOutlet weak var lblNewsTitle: BaseUILabel!
@@ -19,6 +22,7 @@ class FullArticleViewController: BaseViewController {
     @IBOutlet weak var lblTotalLikes: BaseUILabel!
     @IBOutlet weak var viewLikeStack : UIStackView!
     @IBOutlet weak var videoView : BaseUIView!
+    var reloadListing = false
     @IBOutlet weak var btnShowAllLikes: BaseUIButton!{
         didSet{
             btnShowAllLikes.addTarget(self, action: #selector(self.didTapOnShowAllLikes), for: .touchUpInside)
@@ -56,7 +60,8 @@ class FullArticleViewController: BaseViewController {
     @IBOutlet weak var txtViewArticle: UITextView!
     @IBOutlet weak var heightConstraintTableView : BaseLayoutConstraint?
     @IBOutlet weak var heightConstraintLikeCountStackView : BaseLayoutConstraint?
-    
+    @IBOutlet weak var topConstraint : BaseLayoutConstraint?
+
     @IBOutlet weak var viewStackLikeShareComment : UIStackView!
     @IBOutlet weak var viewStackTimeType : UIStackView!
     @IBOutlet weak var viewComment : BaseUIView!
@@ -73,12 +78,14 @@ class FullArticleViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
 //        videoSettings()
+        
         getData()
     }
     deinit {
         playerView = nil
         //print("ViewController deinit")
     }
+   
     
 }
 extension FullArticleViewController{
@@ -89,10 +96,10 @@ extension FullArticleViewController{
         }
         
     }
-    private func setupVideo(videoURL : String){
+    private func setupVideo(videoURL : URL){
        
         self.videoSettings()
-        playerView.loadVideoID("JLVXQn3fqgg")
+        playerView.loadVideoURL(videoURL)
     }
     private func videoSettings(){
         self.btnPlay.isHidden = false
@@ -104,6 +111,9 @@ extension FullArticleViewController{
         
     }
     private func getData(){
+        if navBarType == .clearNavBar{
+            topConstraint?.constant = DesignUtility.convertToRatio(20, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+        }
         self.viewStackLikeShareComment.alpha = 0
         self.tblViewComments.alpha = 0
         self.viewStackTimeType.alpha = 0
@@ -117,8 +127,8 @@ extension FullArticleViewController{
                 self.lblNewsType.text = self.viewModel.getType()
                 self.lblTime.text = self.viewModel.getTimeStamp()
                 
-                if self.viewModel.isVideo(){
-                    self.setupVideo(videoURL: self.viewModel.getVideoURl())
+                if self.viewModel.isVideo() && self.viewModel.getVideoURl() != nil{
+                    self.setupVideo(videoURL: self.viewModel.getVideoURl()!)
                 }
                 else{
                     self.btnPlay.removeFromSuperview()
@@ -147,14 +157,22 @@ extension FullArticleViewController{
                     self.viewLikeStack.isHidden = false
                     self.heightConstraintLikeCountStackView?.constant = DesignUtility.convertToRatio(30, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
                 }
+                
                 self.lblTotalLikes.text = strLike
                 self.btnBookmark.setImage(UIImage(named: strImage), for: .normal)
                 self.tblViewComments.reloadData()
+                UIView.animate(views: self.tblViewComments.visibleCells,
+                               animations: [self.fromAnimation],
+                               duration: 0.2)
                 self.setContentHeight()
                 self.viewStackLikeShareComment.alpha = 1
+                
                 self.tblViewComments.alpha = 1
                 self.viewStackTimeType.alpha = 1
                 self.viewComment.alpha = 1
+                UIView.animate(views: [self.viewStackTimeType, self.viewStackLikeShareComment, self.imgView, self.lblNewsTitle],
+                               animations: [self.zoomAnimation],
+                               duration: 0.1)
                 self.view.layoutIfNeeded()
             }
             else{
@@ -162,8 +180,12 @@ extension FullArticleViewController{
             }
         }
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        
+    }
     
     private func setupViews(){
+        
         viewLikeStack.isHidden = true
         btnPlay.isHidden = true
         heightConstraintLikeCountStackView?.constant = 0
@@ -191,6 +213,7 @@ extension FullArticleViewController{
                 if success{
 //                    if self.viewModel.getCommentCounts() < 3{
                         self.tblViewComments.reloadData()
+                
                         self.txtComment.text = ""
                         self.txtComment.resignFirstResponder()
                     self.setContentHeight()
@@ -207,17 +230,31 @@ extension FullArticleViewController{
     @objc func didTapOnShowAllLikes(){
         self.viewModel.getAllLikes { (success, serverMsg, vc) in
             if success{
-                AppRouter.goToSpecificController(vc: vc!)
+                if self.navBarType == .clearNavBar{
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                }
+                else{
+                    AppRouter.goToSpecificController(vc: vc!)
+                }
             }
         }
     }
     @objc func didTapOnLike(){
-        self.viewModel.getLiked { (success, serverMsg, isLiked) in
-            if success{
-                var strImage = "icon-like"
-                if isLiked!{
-                    strImage += "-filled"
-                }
+        var strImage = "icon-like"
+        if !self.viewModel.isLiked(){
+            strImage += "-filled"
+            self.viewModel.articleData.isLiked = true
+            self.viewModel.articleData.likeCount! += 1
+        }
+        else{
+            self.viewModel.articleData.isLiked = false
+            self.viewModel.articleData.likeCount! -= 1
+        }
+        reloadListing = true
+
+        DispatchQueue.main.async {
+            self.btnLike.setImage(UIImage(named: strImage)!, for: .normal)
+            
                 let strLike  = self.viewModel.getTotalLikeCount()
                 if strLike != ""{
                     self.viewLikeStack.isHidden = false
@@ -228,12 +265,18 @@ extension FullArticleViewController{
                     self.heightConstraintLikeCountStackView?.constant = 0
                 }
                 self.lblTotalLikes.text = strLike
-                self.btnLike.setImage(UIImage(named: strImage)!, for: .normal)
+            
+        }
+        self.viewModel.getLiked { (success, serverMsg, isLiked) in
+            if success{
+                
             }
         }
     }
     
-    
+    func throwNotificationForReload(){
+        NotificationCenter.default.post(name: Notification.Name("reloadListing"), object: nil)
+    }
     @objc func didTapOnShare(){
         let text = self.viewModel.getTitle()
         let myWebsite = NSURL(string:self.viewModel.getWeblink())
@@ -253,24 +296,27 @@ extension FullArticleViewController{
     }
     @objc func didTapOnBookmark(){
         var strImage = "icon-bookmark"
-        if self.viewModel.isBookmarked(){
+        if !self.viewModel.isBookmarked(){
+            self.viewModel.articleData.isBookmarked! = true
             strImage += "-filled"
         }
-        self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
+        else{
+            self.viewModel.articleData.isBookmarked! = false
+        }
+        DispatchQueue.main.async {
+            self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
+        }
+        reloadListing = true
+
         self.viewModel.addRemoveBookmark { (isBookmarked, success, serverMsg) in
-            if success{
-                strImage = "icon-bookmark"
-                if isBookmarked{
-                    strImage += "-filled"
-                }
-                self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
-            }
-            else{
+            if !success{
                 strImage = "icon-bookmark"
                 if self.viewModel.isBookmarked(){
                     strImage += "-filled"
                 }
+                DispatchQueue.main.async {
                 self.btnBookmark.setImage(UIImage(named: strImage)!, for: .normal)
+                }
             }
         }
     }
@@ -323,7 +369,12 @@ extension FullArticleViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 3 {
             self.viewModel.didTapOnSeeAllComments(row: indexPath.row) { (vc) in
-                AppRouter.goToSpecificController(vc: vc)
+                if navBarType == .clearNavBar{
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else{
+                    AppRouter.goToSpecificController(vc: vc)
+                }
             }
             //            AppRouter.goToSpecificController(vc: CommmentsViewBuilder.build(articleID: <#String#>))
         }

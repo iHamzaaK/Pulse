@@ -34,7 +34,7 @@ class BaseRepository{
                 completionHandler(false,"",nil)
                 return
              }
-             if statusCode == StatusCode.authExpired.rawValue{
+             if statusCode == StatusCode.authExpired.rawValue || statusCode == 403{
                 completionHandler(false,"",nil)
                 AppRouter.logout()
              }

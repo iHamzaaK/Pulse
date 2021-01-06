@@ -88,6 +88,16 @@ class AppRouter{
         }
         
     }
+    static func presentControllerForNotification(vc: UIViewController){
+        slideMenu.closeRight()
+        let navigationCont = UINavigationController.init()
+        navigationCont.navigationBar.isHidden = true
+        navigationCont.viewControllers = [vc]
+        self.window?.rootViewController?.present(navigationCont, animated: true, completion: {
+            
+        })
+
+    }
     
     
     //    static func goToUserDashboard(dashboardData : DashboardRepo){

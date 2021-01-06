@@ -18,7 +18,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
         super.viewDidLoad()
         
         headerViewHeight = getHeaderFooterHeight()
-        self.view.backgroundColor = UIColor.white
+//        self.view.backgroundColor = UIColor.white
         let bundle = Bundle(for: type(of: self))
         let headerViewNibName = "HeaderView" + "-" + Utilities.getDeviceTypeStr()
 

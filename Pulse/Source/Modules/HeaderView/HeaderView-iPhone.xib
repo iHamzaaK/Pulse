@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +16,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                     <subviews>
                         <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="veW-yp-CNx" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="86" y="32" width="428" height="30"/>
+                            <rect key="frame" x="105" y="32" width="390" height="30"/>
                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="5p1-9I-hmK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -38,17 +38,17 @@
                             </connections>
                         </textField>
                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YVZ-P3-FH7" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="280" y="28" width="40" height="40"/>
+                            <rect key="frame" x="282.5" y="26" width="35" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="DBU-tD-cqw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                                <constraint firstAttribute="width" constant="40" id="lQY-Ye-Gdl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="height" constant="35" id="DBU-tD-cqw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                <constraint firstAttribute="width" constant="35" id="lQY-Ye-Gdl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-KX-vos">
-                            <rect key="frame" x="0.0" y="0.0" width="78" height="76"/>
+                            <rect key="frame" x="7" y="5" width="90" height="71"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="4ic-Wo-weg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -75,7 +75,7 @@
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3H-Pa-nht">
-                            <rect key="frame" x="522" y="0.0" width="78" height="76"/>
+                            <rect key="frame" x="510" y="5" width="90" height="71"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cCx-o1-roN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -102,7 +102,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" placeholderIntrinsicWidth="420" placeholderIntrinsicHeight="22.5" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="MRk-ZW-28g" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="88" y="38.5" width="424" height="22.5"/>
+                            <rect key="frame" x="107" y="38.5" width="393" height="22.5"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,7 +118,7 @@
                             </constraints>
                         </view>
                         <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="50" contentHorizontalAlignment="right" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-xB-w8X">
-                            <rect key="frame" x="442" y="0.0" width="78" height="76"/>
+                            <rect key="frame" x="416" y="5" width="90" height="71"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="CeI-wQ-NVa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -148,31 +148,30 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="MRk-ZW-28g" firstAttribute="leading" secondItem="W2f-KX-vos" secondAttribute="trailing" constant="10" id="12g-nw-4Zh" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                        <constraint firstItem="a3H-Pa-nht" firstAttribute="height" secondItem="W2f-KX-vos" secondAttribute="height" id="3jq-Gf-JNX"/>
-                        <constraint firstItem="W2f-KX-vos" firstAttribute="width" secondItem="nMe-Nk-okW" secondAttribute="width" multiplier="0.13" id="5DS-p1-ilp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstItem="W2f-KX-vos" firstAttribute="width" secondItem="nMe-Nk-okW" secondAttribute="width" multiplier="0.15" id="5DS-p1-ilp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstAttribute="bottom" secondItem="MRk-ZW-28g" secondAttribute="bottom" constant="15" id="6nV-J5-3tN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="MRk-ZW-28g" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="10" id="976-Yy-EY3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="veW-yp-CNx" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="EfJ-BV-S5U"/>
                         <constraint firstAttribute="bottom" secondItem="veW-yp-CNx" secondAttribute="bottom" constant="14" id="HnN-yN-w0y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                        <constraint firstItem="W2f-KX-vos" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" id="Kes-IG-0xA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstItem="W2f-KX-vos" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" constant="7" id="Kes-IG-0xA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstAttribute="trailing" secondItem="0Zg-ZD-PnV" secondAttribute="trailing" id="Nb7-hq-LNq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                        <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="bzv-xB-w8X" secondAttribute="trailing" constant="2" id="PwO-Rb-3vY"/>
-                        <constraint firstItem="bzv-xB-w8X" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="Qjy-BC-PJQ"/>
+                        <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="bzv-xB-w8X" secondAttribute="trailing" constant="4" id="PwO-Rb-3vY"/>
+                        <constraint firstItem="bzv-xB-w8X" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="5" id="Qjy-BC-PJQ"/>
                         <constraint firstAttribute="bottom" secondItem="a3H-Pa-nht" secondAttribute="bottom" id="TIa-PG-mv9"/>
                         <constraint firstItem="bzv-xB-w8X" firstAttribute="width" secondItem="a3H-Pa-nht" secondAttribute="width" id="U4I-Lz-0eO"/>
-                        <constraint firstItem="a3H-Pa-nht" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="Uup-IK-zKJ"/>
+                        <constraint firstItem="a3H-Pa-nht" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="5" id="Uup-IK-zKJ"/>
                         <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="MRk-ZW-28g" secondAttribute="trailing" constant="10" id="Uvz-dR-MYw"/>
-                        <constraint firstAttribute="bottom" secondItem="YVZ-P3-FH7" secondAttribute="bottom" constant="8" id="VZ9-pF-NiU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstAttribute="bottom" secondItem="YVZ-P3-FH7" secondAttribute="bottom" constant="15" id="VZ9-pF-NiU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="YVZ-P3-FH7" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="dlz-tJ-oOX"/>
                         <constraint firstItem="bzv-xB-w8X" firstAttribute="height" secondItem="a3H-Pa-nht" secondAttribute="height" id="ehI-AY-QKK"/>
                         <constraint firstAttribute="bottom" secondItem="bzv-xB-w8X" secondAttribute="bottom" id="fgt-kl-tdV"/>
-                        <constraint firstItem="W2f-KX-vos" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" id="nH1-K2-j30" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstAttribute="bottom" secondItem="W2f-KX-vos" secondAttribute="bottom" id="hbc-2C-QDc"/>
+                        <constraint firstItem="W2f-KX-vos" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="5" id="nH1-K2-j30" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="veW-yp-CNx" firstAttribute="leading" secondItem="W2f-KX-vos" secondAttribute="trailing" constant="8" id="o2k-Kz-0ie"/>
                         <constraint firstItem="0Zg-ZD-PnV" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" id="qMl-OR-nQe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="a3H-Pa-nht" firstAttribute="width" secondItem="W2f-KX-vos" secondAttribute="width" id="rnM-3r-gMA"/>
                         <constraint firstAttribute="trailing" secondItem="a3H-Pa-nht" secondAttribute="trailing" id="tJs-fB-UXN"/>
                         <constraint firstAttribute="bottom" secondItem="0Zg-ZD-PnV" secondAttribute="bottom" id="vYd-dd-MVF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                        <constraint firstItem="W2f-KX-vos" firstAttribute="height" secondItem="nMe-Nk-okW" secondAttribute="height" id="vtj-Tb-UwH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">

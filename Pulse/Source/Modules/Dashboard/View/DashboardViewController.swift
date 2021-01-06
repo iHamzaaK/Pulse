@@ -8,7 +8,8 @@
 import UIKit
 
 class DashboardViewController: BaseTabBarViewController {
-
+    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
+    var homePage = 2
     var viewModel: DashboardViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,30 +24,56 @@ class DashboardViewController: BaseTabBarViewController {
 //        tabBarView.frame = CGRect(x: 0, y: 0, width: Device.SCREEN_WIDTH, height: 100)
 //        self.tabBar.addSubview(tabBarView)
 //        self.tabBar.sendSubviewToBack(tabBarView)
-        self.tabBar.layer.masksToBounds = true
+        self.tabBar.layer.masksToBounds = false
                 tabBar.layer.borderWidth = 1
-        tabBar.layer.borderColor = UIColor.lightGray.cgColor
+        tabBar.layer.borderColor = UIColor.white.cgColor
 
         self.tabBar.isTranslucent = true
         self.tabBar.barStyle = .black
         self.tabBar.layer.cornerRadius = 20
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+       
+        tabBar.shadowImage = UIImage()
+        tabBar.backgroundImage = UIImage()
+        tabBar.backgroundColor = UIColor.white
+
+        // Add only shadow
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 8
+        tabBar.layer.shadowColor = Utilities.hexStringToUIColor(hex: "009ED4").cgColor
+        tabBar.layer.shadowOpacity = 0.2
+        
+      
         createViewControllers()
 
         navBarType = self.viewModel.getNavigationBar()
         NotificationCenter.default.addObserver(self, selector: #selector(self.openCreatePost), name: Notification.Name("createPost"), object: nil)
         // Do any additional setup after loading the view.
-        
+        self.selectedIndex = homePage
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showMainPage), name: Notification.Name(rawValue: "showHome"), object: nil)
+
     }
-    
+    override func viewDidLayoutSubviews() {
+        let newTabBarHeight = defaultTabBarHeight + DesignUtility.convertToRatio(10.0, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+
+                var newFrame = tabBar.frame
+                newFrame.size.height = newTabBarHeight
+                newFrame.origin.y = view.frame.size.height - newTabBarHeight
+
+                tabBar.frame = newFrame
+    }
     override func viewWillAppear(_ animated: Bool) {
-        self.selectedIndex = 0
+        super.viewWillAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadListing"), object: nil, userInfo: nil)
     }
     
     @objc func openCreatePost(){
         self.present(CreatePostBuilder.build(), animated: true) {
             
         }
+    }
+    @objc func showMainPage(){
+        self.selectedIndex = homePage
     }
     override func headedrViewSearchTextChanged(str: String) {
         //print(str)
@@ -86,6 +113,7 @@ class DashboardViewController: BaseTabBarViewController {
 }
 extension DashboardViewController: UITabBarControllerDelegate{
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
         
     }
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

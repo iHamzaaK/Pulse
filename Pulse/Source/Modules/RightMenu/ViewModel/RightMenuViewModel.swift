@@ -50,6 +50,7 @@ class RightMenuViewModel{
 //            AppRouter.showHideRightMenu()
 //            break
         case .home:
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "showHome"), object: nil)
             AppRouter.goToHomeFromRightMenu()
             break
         case .bookmarks:

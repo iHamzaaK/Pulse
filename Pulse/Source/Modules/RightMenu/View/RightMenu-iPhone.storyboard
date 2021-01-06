@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,23 +20,20 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="85" id="CSS-tU-PNN" customClass="RightMenuTableViewCell" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="105" id="CSS-tU-PNN" customClass="RightMenuTableViewCell" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CSS-tU-PNN" id="ICT-8s-8Ut">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47I-fe-cHE" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="42.5" width="374" height="0.0"/>
+                                                    <rect key="frame" x="20" y="52.5" width="374" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                                            <real key="value" value="14"/>
-                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
@@ -57,7 +54,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-9P-d8G">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="6Cs-8s-hCA" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Cs-8s-hCA" customClass="BaseUIImageView" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="26" y="94" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="geQ-71-B1w" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -67,20 +64,17 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rizwan Saleh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-QG-cyi" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="94" width="111" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-QG-cyi" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="82" y="94" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18.299999237060547"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Medium"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="nibFontForIPad">
-                                                <real key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iou-eM-L3t" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="123" width="80" height="21"/>
+                                        <rect key="frame" x="82" y="101" width="80" height="21"/>
                                         <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="9Ba-ho-WyF" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -108,7 +102,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="0.69682548415492962" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="4q3-Be-oXe" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="Iou-eM-L3t" firstAttribute="top" secondItem="p7h-QG-cyi" secondAttribute="bottom" constant="7" id="6oX-cb-4qO" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -143,7 +137,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GDI-DX-Hsg"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TsM-9P-d8G" firstAttribute="top" secondItem="QJZ-6F-jdW" secondAttribute="top" id="9l9-iZ-8f3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="TsM-9P-d8G" firstAttribute="leading" secondItem="QJZ-6F-jdW" secondAttribute="leading" id="DVu-3C-PlS" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -175,6 +169,6 @@
     </scenes>
     <resources>
         <image name="cross-icon" width="16" height="16"/>
-        <image name="userImage" width="145" height="145"/>
+        <image name="placeholder" width="240" height="240"/>
     </resources>
 </document>

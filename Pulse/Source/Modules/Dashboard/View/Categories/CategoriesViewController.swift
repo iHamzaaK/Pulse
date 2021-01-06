@@ -176,7 +176,7 @@ extension CategoriesViewController : UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoryTableViewCell") as! SubCategoryTableViewCell
-        let cellViewModel = self.viewModel.getCellViewModelForRow(row: indexPath.row)
+        let cellViewModel = self.viewModel.getCellViewModelForSubCategoryRow(row: indexPath.row)
         cell.cellViewModel = cellViewModel
         return cell
     }

@@ -48,7 +48,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-rt-OIm">
                                 <rect key="frame" x="0.0" y="139" width="414" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="QOUTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="QUOTE OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36Q-FO-2mt" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="175.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -99,15 +99,58 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-nL-RNa">
                                 <rect key="frame" x="0.0" y="199" width="414" height="697"/>
-                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eR-gS-moo">
+                                <rect key="frame" x="0.0" y="199" width="414" height="697"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-7k-bio" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="50" width="396" height="38.5"/>
+                                        <string key="text">You don’t have any
+notifications right now.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Regular"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-Jm-kuS" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="78" y="108.5" width="256" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="dTA-p1-bzK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="+ Add topics to create your own personal news feed">
+                                            <color key="titleColor" red="0.0" green="0.61960784313725492" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-Regular"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapOnAddTopics:" destination="qSM-e6-ndP" eventType="touchUpInside" id="vV4-qZ-TbE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3ZZ-7k-bio" secondAttribute="trailing" constant="10" id="BNw-xb-sGY"/>
+                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="top" secondItem="7eR-gS-moo" secondAttribute="top" constant="50" id="HPL-e7-AAg"/>
+                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="leading" secondItem="7eR-gS-moo" secondAttribute="leading" constant="8" id="gJO-LG-BSL"/>
+                                    <constraint firstItem="zq0-Jm-kuS" firstAttribute="centerX" secondItem="3ZZ-7k-bio" secondAttribute="centerX" id="jVy-wP-upj"/>
+                                    <constraint firstItem="zq0-Jm-kuS" firstAttribute="top" secondItem="3ZZ-7k-bio" secondAttribute="bottom" constant="20" id="zEI-tU-EdR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LhT-aQ-zcf"/>
-                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dpb-rt-OIm" firstAttribute="trailing" secondItem="sRB-JS-mNZ" secondAttribute="trailing" id="7Zo-1O-0hk" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="NSt-nL-RNa" firstAttribute="top" secondItem="dpb-rt-OIm" secondAttribute="bottom" id="GKF-8b-BQU" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="7eR-gS-moo" firstAttribute="top" secondItem="NSt-nL-RNa" secondAttribute="top" id="HUK-wt-zQ5"/>
                             <constraint firstAttribute="trailing" secondItem="NSt-nL-RNa" secondAttribute="trailing" id="JeQ-0p-PSq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="7eR-gS-moo" firstAttribute="leading" secondItem="NSt-nL-RNa" secondAttribute="leading" id="QQB-ef-W02"/>
+                            <constraint firstItem="7eR-gS-moo" firstAttribute="trailing" secondItem="NSt-nL-RNa" secondAttribute="trailing" id="SKh-gt-iu1"/>
                             <constraint firstItem="sRB-JS-mNZ" firstAttribute="leading" secondItem="7XV-6z-3hb" secondAttribute="leading" id="Wsh-Ee-G2q" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="bottom" secondItem="NSt-nL-RNa" secondAttribute="bottom" id="csH-04-hPW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="sRB-JS-mNZ" firstAttribute="top" secondItem="7XV-6z-3hb" secondAttribute="top" constant="90" identifier="topConstraintHeader" id="hov-g0-CQc" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -115,14 +158,18 @@
                             <constraint firstItem="dpb-rt-OIm" firstAttribute="leading" secondItem="sRB-JS-mNZ" secondAttribute="leading" id="oNI-mA-B2s" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="dpb-rt-OIm" firstAttribute="top" secondItem="sRB-JS-mNZ" secondAttribute="bottom" constant="1" id="q0C-R4-02m" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="NSt-nL-RNa" firstAttribute="leading" secondItem="7XV-6z-3hb" secondAttribute="leading" id="r2a-Ut-tbA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="7eR-gS-moo" firstAttribute="bottom" secondItem="NSt-nL-RNa" secondAttribute="bottom" id="uPY-cR-fvq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UN5-Iv-Cc9"/>
                     <connections>
+                        <outlet property="btnAddTopic" destination="zq0-Jm-kuS" id="NRZ-KE-XOB"/>
                         <outlet property="btnQuote" destination="ReE-FA-xnm" id="tCv-x5-t78"/>
+                        <outlet property="emptyView" destination="7eR-gS-moo" id="dWv-MQ-TRc"/>
                         <outlet property="heightConstraintTitle" destination="IOP-mQ-CV8" id="rdk-xP-bNs"/>
                         <outlet property="heightConstraintViewQuote" destination="8gu-CE-beM" id="ecJ-Ns-ynQ"/>
                         <outlet property="lblArticleTypeHeading" destination="yxk-Ja-oIt" id="mfp-yv-d1l"/>
+                        <outlet property="lblEmptyViewText" destination="3ZZ-7k-bio" id="p84-eF-VbL"/>
                         <outlet property="lblQoute" destination="brt-ni-2vQ" id="OqE-FC-O52"/>
                         <outlet property="lblQouteDate" destination="Ui5-Ik-LoO" id="gpi-qC-EYb"/>
                         <outlet property="tblView" destination="NSt-nL-RNa" id="8Es-FT-iol"/>
@@ -132,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbO-Vr-WN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930.7692307692307" y="-1700.4739336492889"/>
+            <point key="canvasLocation" x="830.43478260869574" y="-1593.0803571428571"/>
         </scene>
     </scenes>
 </document>

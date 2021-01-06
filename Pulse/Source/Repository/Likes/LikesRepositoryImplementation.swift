@@ -15,7 +15,9 @@ class LikesRepositoryImplementation : LikesRepository{
     private var serverMsg = ""
     let headers = [
         "Accept": "application/json",
-        "Authorization": "Bearer \(ArchiveUtil.getUserToken())"
+        "Authorization": "Bearer \(ArchiveUtil.getUserToken())",
+        "Content-Type": "application/x-www-form-urlencoded"
+
     ]
     func getLiked(articleID: String, completionHandler: @escaping (Bool, String, _ isLiked : Bool?) -> Void) {
         

@@ -40,7 +40,7 @@ class SearchViewModel
     func didTapOnCell(row: Int, completionHandler: ( _ vc : UIViewController)->Void){
         let article = searchData[row]
         let articleID = article.id ?? ""
-        let vc = FullArticleBuilder.build(articleID: articleID)
+        let vc = FullArticleBuilder.build(articleID: articleID, headerType: .backButtonWithRightMenuButton)
         completionHandler(vc)
     }
 }

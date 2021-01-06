@@ -6,9 +6,10 @@
 //
 
 import UIKit
-
+import ViewAnimator
 class LikesViewController: BaseViewController {
     var viewModel : LikesViewModel!
+    let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
     @IBOutlet weak var lblTitle : BaseUILabel!
     @IBOutlet weak var btnDone : BaseUIButton!{
         didSet{
@@ -22,6 +23,7 @@ class LikesViewController: BaseViewController {
             tblView.dataSource = self
             tblView.estimatedRowHeight = 50
             tblView.rowHeight = UITableView.automaticDimension
+            tblView.separatorStyle = .none
             Utilities.registerNib(nibName: "LikesTableViewCell", identifier: "LikesTableViewCell", tblView: tblView)
         }
     }
@@ -29,6 +31,9 @@ class LikesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
+        UIView.animate(views: self.tblView.visibleCells,
+                       animations: [self.fromAnimation],
+                       duration: 0.3)
         // Do any additional setup after loading the view.
     }
 }
@@ -49,7 +54,8 @@ extension LikesViewController : UITableViewDelegate, UITableViewDataSource{
 }
 extension LikesViewController {
     @objc private func didTapOnDone(){
-        AppRouter.pop()
+//        AppRouter.pop()
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

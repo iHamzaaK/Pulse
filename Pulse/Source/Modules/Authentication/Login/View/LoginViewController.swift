@@ -70,8 +70,8 @@ extension LoginViewController{
     private func setupBinding(){
         txtEmail.bind(with: self.viewModel.email)
         txtPassword.bind(with: self.viewModel.password)
-        self.viewModel.email.value = "hamzakhancs15@gmail.com"
-        self.viewModel.password.value = "Lollol123$"
+        self.viewModel.email.value = "dev@pulse.com"
+        self.viewModel.password.value = "Object12#"
     }
     @objc private func didTapOnLogin(sender : BaseUIButton){
         do{
@@ -85,10 +85,10 @@ extension LoginViewController{
 
                     }
                     else{
-                        self.lblEmailError.isHidden = false
+                        self.lblEmailError.isHidden = true
                         self.lblPasswordError.isHidden = false
-                        self.lblEmailError.text = ErrorDescription.invalidEmail.rawValue
-                        self.lblPasswordError.text = ErrorDescription.invalidPasswordd.rawValue
+//                        self.lblEmailError.text = ErrorDescription.invalidEmail.rawValue
+                        self.lblPasswordError.text = ErrorDescription.invalidCredentials.rawValue
 
 //                        Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)
                     }
