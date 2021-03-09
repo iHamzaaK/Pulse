@@ -51,6 +51,7 @@ extension ConfirmPasswordViewController{
 
     }
     @objc private func didTapOnNext(){
+        self.view.endEditing(true)
         self.viewModel.changePassword { (success, serverMsg) in
             if success{
                 self.isNewPasswordSet = !self.isNewPasswordSet

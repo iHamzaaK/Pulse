@@ -236,13 +236,13 @@ class ArticleListingTableViewCell: UITableViewCell {
     }
     func setupDescription(){
             let shortDescription = cellViewModel.getShortDescription()
-//            if shortDescription.count > 0{
+//          if shortDescription.count > 0{
 //                let readmoreFont = UIFont(name: "Montserrat-Regular", size: DesignUtility.convertToRatio(14, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
-//                let readmoreFontColor = UIColor.blue
+//          let readmoreFontColor = UIColor.blue
             lblDescription.text = shortDescription
-//                DispatchQueue.main.async {
-//                    self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
-//                }
+//          DispatchQueue.main.async {
+//            self.lblDescription.addTrailing(with: ".", moreText: "view more", moreTextFont: readmoreFont!, moreTextColor: readmoreFontColor)
+//          }
 //            }
     }
     

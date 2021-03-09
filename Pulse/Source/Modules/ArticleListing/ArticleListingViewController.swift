@@ -56,7 +56,17 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var heightConstraintViewQuote : NSLayoutConstraint!
     @IBOutlet var heightConstraintTitle : NSLayoutConstraint!
     @IBOutlet weak var topConstraint : NSLayoutConstraint!
-    @IBOutlet weak var lblEmptyViewText: UILabel!
+    @IBOutlet weak var lblEmptyViewText: UILabel!{
+        didSet{
+//            You don’t have any
+//            notifications right now.
+            var strType = "selected interests"
+            if self.viewModel.type == .bookmarks{
+                strType = "bookmarks"
+            }
+            self.lblEmptyViewText.text = "You don’t have any \(strType) right now."
+        }
+    }
     @IBOutlet weak var emptyView: UIView!
 
     var expandedCells = Set<Int>()
@@ -161,7 +171,7 @@ extension ArticleListingViewController{
                 DispatchQueue.main.async {
                     if self.viewModel.showQuoteView(){
                         self.viewQuote.isHidden = false
-                        self.lblQoute.text = self.viewModel.getQuote()?.title ?? ""
+                        self.lblQoute.text = "\"\(self.viewModel.getQuote()?.title ?? "")\"" 
                         self.lblQuoteHeight  = DesignUtility.convertToRatio(80, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
                         if self.lblQoute.maxNumberOfLines == 1{
                             self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)

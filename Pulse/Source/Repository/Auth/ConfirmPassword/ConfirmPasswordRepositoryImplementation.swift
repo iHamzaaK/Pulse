@@ -27,7 +27,7 @@ class ConfirmPasswordRepositoryImplementation : ConfirmPasswordRepository{
             
         ]
         BaseRepository.instance.requestService(url: url, method: .post, params: params, header: headers) { (success, serverMsg, data) in
-            //print(data)
+            print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

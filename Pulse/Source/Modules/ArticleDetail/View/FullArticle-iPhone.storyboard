@@ -55,7 +55,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Et9-X6-wh1" secondAttribute="bottom" id="v4m-Ik-QGL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H6-iV-p5Q" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H6-iV-p5Q" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
                                                 <rect key="frame" x="18" y="210" width="345" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>

@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="199" width="414" height="697"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-7k-bio" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="50" width="396" height="38.5"/>
+                                        <rect key="frame" x="40" y="50" width="334" height="38.5"/>
                                         <string key="text">You don’t have any
 notifications right now.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -116,9 +116,9 @@ notifications right now.</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-Jm-kuS" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="78" y="108.5" width="256" height="32"/>
+                                        <rect key="frame" x="79" y="108.5" width="256" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="256" id="dTA-p1-bzK"/>
+                                            <constraint firstAttribute="width" constant="256" id="dTA-p1-bzK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="+ Add topics to create your own personal news feed">
@@ -134,11 +134,11 @@ notifications right now.</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="3ZZ-7k-bio" secondAttribute="trailing" constant="10" id="BNw-xb-sGY"/>
-                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="top" secondItem="7eR-gS-moo" secondAttribute="top" constant="50" id="HPL-e7-AAg"/>
-                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="leading" secondItem="7eR-gS-moo" secondAttribute="leading" constant="8" id="gJO-LG-BSL"/>
+                                    <constraint firstAttribute="trailing" secondItem="3ZZ-7k-bio" secondAttribute="trailing" constant="40" id="BNw-xb-sGY" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="top" secondItem="7eR-gS-moo" secondAttribute="top" constant="50" id="HPL-e7-AAg" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="3ZZ-7k-bio" firstAttribute="leading" secondItem="7eR-gS-moo" secondAttribute="leading" constant="40" id="gJO-LG-BSL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="zq0-Jm-kuS" firstAttribute="centerX" secondItem="3ZZ-7k-bio" secondAttribute="centerX" id="jVy-wP-upj"/>
-                                    <constraint firstItem="zq0-Jm-kuS" firstAttribute="top" secondItem="3ZZ-7k-bio" secondAttribute="bottom" constant="20" id="zEI-tU-EdR"/>
+                                    <constraint firstItem="zq0-Jm-kuS" firstAttribute="top" secondItem="3ZZ-7k-bio" secondAttribute="bottom" constant="20" id="zEI-tU-EdR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
                         </subviews>

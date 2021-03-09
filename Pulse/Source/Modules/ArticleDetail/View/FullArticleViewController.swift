@@ -120,7 +120,7 @@ extension FullArticleViewController{
         self.viewComment.alpha = 0
         
         self.viewModel.getArticleData { (success, serverMsg) in
-            if success{
+            if success{ 
                 //                self.view.alpha = 1
                 self.txtViewArticle.attributedText = self.viewModel.getDescription()
                 self.lblNewsTitle.text = self.viewModel.getTitle()

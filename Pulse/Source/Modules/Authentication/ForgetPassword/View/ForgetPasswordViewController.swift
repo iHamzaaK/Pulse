@@ -46,7 +46,7 @@ extension ForgetPasswordViewController{
     
     private func setupBinding(){
         txtEmail.bind(with: self.viewModel.email)
-        self.viewModel.email.value = "hamzakhancs15@gmail.com"
+        self.viewModel.email.value = ""
     }
     
     @objc private func didTapOnForgetBtn(sender : BaseUIButton){

@@ -16,7 +16,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                     <subviews>
                         <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="veW-yp-CNx" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
-                            <rect key="frame" x="105" y="32" width="390" height="30"/>
+                            <rect key="frame" x="105" y="28" width="390" height="30"/>
                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="5p1-9I-hmK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
@@ -152,7 +152,7 @@
                         <constraint firstAttribute="bottom" secondItem="MRk-ZW-28g" secondAttribute="bottom" constant="15" id="6nV-J5-3tN" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="MRk-ZW-28g" firstAttribute="top" secondItem="nMe-Nk-okW" secondAttribute="top" constant="10" id="976-Yy-EY3" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="veW-yp-CNx" firstAttribute="centerX" secondItem="nMe-Nk-okW" secondAttribute="centerX" id="EfJ-BV-S5U"/>
-                        <constraint firstAttribute="bottom" secondItem="veW-yp-CNx" secondAttribute="bottom" constant="14" id="HnN-yN-w0y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        <constraint firstAttribute="bottom" secondItem="veW-yp-CNx" secondAttribute="bottom" constant="18" id="HnN-yN-w0y" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="W2f-KX-vos" firstAttribute="leading" secondItem="nMe-Nk-okW" secondAttribute="leading" constant="7" id="Kes-IG-0xA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstAttribute="trailing" secondItem="0Zg-ZD-PnV" secondAttribute="trailing" id="Nb7-hq-LNq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                         <constraint firstItem="a3H-Pa-nht" firstAttribute="leading" secondItem="bzv-xB-w8X" secondAttribute="trailing" constant="4" id="PwO-Rb-3vY"/>

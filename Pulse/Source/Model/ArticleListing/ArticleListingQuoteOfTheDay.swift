@@ -13,7 +13,8 @@ struct ArticleListingQuoteOfTheDay : Codable {
 	let thumbnail : String?
 	let title : String?
 	let videoUrl : String?
-
+    let author : String?
+    let timeStamp : String?
 
 	enum CodingKeys: String, CodingKey {
 		case descriptionField = "description"
@@ -23,6 +24,8 @@ struct ArticleListingQuoteOfTheDay : Codable {
 		case thumbnail = "thumbnail"
 		case title = "title"
 		case videoUrl = "video_url"
+        case author = "author"
+        case timeStamp = "timeStamp"
 	}
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -33,6 +36,9 @@ struct ArticleListingQuoteOfTheDay : Codable {
 		thumbnail = try values.decodeIfPresent(String.self, forKey: .thumbnail) ?? String()
 		title = try values.decodeIfPresent(String.self, forKey: .title) ?? String()
 		videoUrl = try values.decodeIfPresent(String.self, forKey: .videoUrl) ?? String()
+        author = try values.decodeIfPresent(String.self, forKey: .author) ?? String()
+        timeStamp = try values.decodeIfPresent(String.self, forKey: .timeStamp) ?? String()
+
 	}
 
 

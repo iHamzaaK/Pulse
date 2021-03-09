@@ -24,7 +24,7 @@ class SearchRepositoryImplementation : SearchRepository{
 
         ]
         BaseRepository.instance.requestService(url: url+endpoint, method: .get, params: nil, header: headers, showSpinner: false) { (success, serverMsg, data) in
-            //print(data)
+            print(data)
             self.isSuccess = success
             self.serverMsg = serverMsg
             if self.isSuccess{

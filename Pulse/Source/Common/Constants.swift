@@ -32,10 +32,9 @@ let restaurantFinderCellIdentifier = "RestaurantFinderTableViewCell"
 let advertiserCellNibName = "AdvertiserTableViewCell"
 let advertiserCellIdentifier = "AdvertiserTableViewCell"
 
-let facebookAppId = "424434681595227"
 let devURL = "http://pulse.objectsynergy.com/wp-json/"
 let liveURL = "https://alfuttaim.biz/wp-json/"
-let baseURL = devURL
+let baseURL = liveURL
 //let baseURL = "http://3.14.133.236/wp-json/"
 
 let googleMapApi = "AIzaSyDBEF_6qFXE0QaPeL5Si-ecKXj2JWjyzC4"

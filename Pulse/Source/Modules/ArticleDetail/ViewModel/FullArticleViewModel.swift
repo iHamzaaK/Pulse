@@ -126,7 +126,7 @@ class FullArticleViewModel
         }
     }
     func getDescription()->NSAttributedString?{
-        let fontSize = DesignUtility.convertToRatio(15.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
+        let fontSize = DesignUtility.convertToRatio(16.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
         let text =  Utilities.getAttributedStringForHTMLWithFont(articleData.descriptionField ?? "", textSize: Int(fontSize), fontName: "Montserrat-Regular")
     
         return text
@@ -140,9 +140,9 @@ class FullArticleViewModel
     }
     func getType()->String{
         if articleData.tag == ""{
-            return "Uncategorized"
+            return "Other Article"
         }
-        return articleData.tag ?? "Uncategorized"
+        return articleData.tag ?? "Other Article"
     }
     func getTimeStamp()->String{
         return articleData.daysAgo ?? ""

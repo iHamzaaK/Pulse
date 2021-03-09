@@ -173,8 +173,9 @@ class Utilities{
             if htmlStr .isEmpty{
                 htmlStr = "<p></p>"
             }
-            let str = "<div style=\"color:#5A5A5A; font-size: \(textSize)px\"><font face=\"\(fontName)\">\(htmlStr)</font></div>"
+            let str = "<div style=\"color:#000000; font-size: \(textSize)px\"><font face=\"\(fontName)\">\(htmlStr)</font></div>"
             let data : Data = str .data(using: String.Encoding.unicode)!
+            
             let attributedOptions : [String: Any] = [
                 convertFromNSAttributedStringDocumentAttributeKey(NSAttributedString.DocumentAttributeKey.documentType) : convertFromNSAttributedStringDocumentType(NSAttributedString.DocumentType.html),
                 convertFromNSAttributedStringDocumentAttributeKey(NSAttributedString.DocumentAttributeKey.characterEncoding): String.Encoding.utf8.rawValue

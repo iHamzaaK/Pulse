@@ -11,6 +11,8 @@ class DashboardViewController: BaseTabBarViewController {
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     var homePage = 2
     var viewModel: DashboardViewModel!
+    var previousController: UIViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -112,11 +114,39 @@ class DashboardViewController: BaseTabBarViewController {
 
 }
 extension DashboardViewController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+            if previousController == viewController {
+                if let navVC = viewController as? UINavigationController{
+                    if let vc = navVC.viewControllers.first as? ArticleListingViewController {
+
+                        if vc.isViewLoaded && (vc.view.window != nil) {
+                            vc.scrollToTop()
+                        }
+                        print("same")
+                    }
+                    if let vc = navVC.viewControllers.first as? CategoriesViewController{
+                        if vc.isViewLoaded && (vc.view.window != nil) {
+                            vc.scrollToTop()
+                        }
+                        print("same")
+                    }
+                }
+            }
+            else{
+                print("No same")
+            }
+
+            previousController = viewController
+            return true;
+        }
+    
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         
     }
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        return true
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        return true
+//    }
 }

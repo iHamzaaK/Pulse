@@ -44,12 +44,12 @@ class SearchViewController: BaseViewController {
         }
     }
     override func headedrViewSearchTextChanged(str: String) {
-        if str.count % 2 == 0{
+        if str.count > 1{
             self.viewModel.getSearchData(searchText: str) { (success, serverMsg) in
                 if success{
                     self.tblView.reloadData()
                     UIView.animate(views: self.tblView.visibleCells,
-                                   animations: [self.fromAnimation], delay: 0.2)
+                                   animations: [self.fromAnimation], delay: 0.1)
 
                 }
             }
@@ -61,7 +61,7 @@ extension SearchViewController{
 
     func setupView(){
         view.alpha = 0
-        
+        _headerView.searchTextField?.becomeFirstResponder()
         _headerView.leftButtonImage = "search-close-icon"
         navBarType = self.viewModel.getNavigationBar()
             view.isOpaque = false

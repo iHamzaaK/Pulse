@@ -11,7 +11,7 @@ struct NotificationData : Codable {
 	let notificationId : Int?
 	let tag : String?
 	let title : String?
-
+    let image : String?
 
 	enum CodingKeys: String, CodingKey {
 		case articleId = "article_id"
@@ -19,6 +19,7 @@ struct NotificationData : Codable {
 		case notificationId = "notification_id"
 		case tag = "tag"
 		case title = "title"
+        case image = "image"
 	}
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -27,6 +28,7 @@ struct NotificationData : Codable {
 		notificationId = try values.decodeIfPresent(Int.self, forKey: .notificationId)
 		tag = try values.decodeIfPresent(String.self, forKey: .tag)
 		title = try values.decodeIfPresent(String.self, forKey: .title)
+        image = try values.decodeIfPresent(String.self, forKey: .image)
 	}
 
 

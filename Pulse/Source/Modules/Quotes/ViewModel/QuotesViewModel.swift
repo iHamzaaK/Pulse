@@ -24,7 +24,7 @@ class QuotesViewModel
     }
     func cellViewModelForRow(row: Int)->QuoteCellViewModel{
         let quote = arrQuote[row]
-        let cellViewModel = QuoteCellViewModel(id: quote.id ?? -1, quoteTitle: quote.title ?? "")
+        let cellViewModel = QuoteCellViewModel(id: quote.id ?? -1, quoteTitle: quote.title ?? "", author: quote.author ?? "", timeStamp: quote.timeStamp ?? "")
         return cellViewModel
     }
     func getQuotes(completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void){
@@ -44,5 +44,14 @@ class QuotesViewModel
 struct QuoteCellViewModel {
     let id : Int
     let quoteTitle : String
+    let author : String
+    let timeStamp : String
+    
+    func getAuthor()->String{
+        if author == ""{
+            return ""
+        }
+        return "- \(author)"
+    }
 }
 

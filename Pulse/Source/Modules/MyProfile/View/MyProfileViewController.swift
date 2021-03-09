@@ -184,6 +184,7 @@ extension MyProfileViewController: ImagePickerDelegate{
             guard let pictureData = image?.jpegData(compressionQuality: 0.50) else { return }
             self.viewModel.updatePicture(avatar: pictureData) { (success, serverMsg) in
                 if success{
+                NotificationCenter.default.post(name: Notification.Name("updateUserImage"), object: nil)
                 self.displayImage.image = image
                 self.coverImage.image = image
                 }

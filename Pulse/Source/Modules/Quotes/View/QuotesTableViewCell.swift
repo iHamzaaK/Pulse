@@ -15,6 +15,8 @@ class QuotesTableViewCell: UITableViewCell {
     var cellViewModel : QuoteCellViewModel!{
         didSet{
             lblQuotes.text = cellViewModel.quoteTitle
+            lblAuthor.text = cellViewModel.getAuthor()
+            lblDate.text = cellViewModel.timeStamp
         }
     }
 //    @IBOutlet weak var containerView : BaseUIView!

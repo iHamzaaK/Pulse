@@ -33,6 +33,7 @@ class OTPViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     private func setupOTP(){
+        self.otpTextFieldView.backgroundColor = .clear
         self.otpTextFieldView.fieldsCount = 5
         self.otpTextFieldView.fieldBorderWidth = 1
         self.otpTextFieldView.defaultBorderColor = UIColor.lightGray

@@ -43,7 +43,7 @@ class NotificationListingViewModel {
     func cellViewModelForRow(row: Int)-> NotificationListingCellViewModel{
         let notification = notificationArr[row]
         
-        let cellViewModel = NotificationListingCellViewModel(title: notification.title ?? "", image: "", tag: notification.tag ?? "", commentCount: notification.noOfComments ?? 0, articleId : notification.articleId ?? -1, notificationId: notification.notificationId ?? -1)
+        let cellViewModel = NotificationListingCellViewModel(title: notification.title ?? "", image: notification.image ?? "", tag: notification.tag ?? "", commentCount: notification.noOfComments ?? 0, articleId : notification.articleId ?? -1, notificationId: notification.notificationId ?? -1)
         return cellViewModel
     }
     func didTapOnCell(row: Int, completionHandler:( _ vc : UIViewController?)->Void){

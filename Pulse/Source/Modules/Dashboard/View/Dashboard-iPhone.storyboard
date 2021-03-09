@@ -90,7 +90,9 @@
                             <constraint firstAttribute="bottom" secondItem="Q3z-lm-N9d" secondAttribute="bottom" id="OZY-NY-ScB"/>
                             <constraint firstItem="IXJ-BV-wXx" firstAttribute="top" secondItem="qQu-gC-gjw" secondAttribute="top" constant="90" identifier="topConstraintHeader" id="TIR-Hg-tFT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Q3z-lm-N9d" firstAttribute="leading" secondItem="qQu-gC-gjw" secondAttribute="leading" id="Wu9-50-VUv"/>
-                            <constraint firstAttribute="bottom" secondItem="IXJ-BV-wXx" secondAttribute="bottom" constant="80" id="aQD-KD-JsH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="IXJ-BV-wXx" secondAttribute="bottom" constant="80" id="aQD-KD-JsH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i3d-D8-7W0"/>
