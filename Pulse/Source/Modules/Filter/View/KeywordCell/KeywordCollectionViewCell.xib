@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KeywordCollectionViewCell" id="gTV-IL-0wX" customClass="KeywordCollectionViewCell" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="141" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imw-rM-XT0">
+                        <rect key="frame" x="4" y="4" width="133" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3a-Ow-zn1" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="8" y="5" width="82" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Se9-YR-Zof" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF7-Vj-eKM">
+                                <rect key="frame" x="95" y="6" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="jKR-eJ-ToM" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="height" constant="30" id="jXy-QP-vGx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="cross-icon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34407742377176997" green="0.8119667449390463" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CF7-Vj-eKM" firstAttribute="leading" secondItem="B3a-Ow-zn1" secondAttribute="trailing" constant="5" id="7Eg-re-afL" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="B3a-Ow-zn1" firstAttribute="top" secondItem="Imw-rM-XT0" secondAttribute="top" constant="5" id="Rmo-kY-Q9D" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="trailing" secondItem="CF7-Vj-eKM" secondAttribute="trailing" constant="8" id="Ux0-tX-kNq" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="B3a-Ow-zn1" secondAttribute="bottom" constant="5" id="hjR-Te-hE2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="CF7-Vj-eKM" firstAttribute="centerY" secondItem="B3a-Ow-zn1" secondAttribute="centerY" id="uIV-q7-hzA" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="B3a-Ow-zn1" firstAttribute="leading" secondItem="Imw-rM-XT0" secondAttribute="leading" constant="8" id="zfB-Rv-dKa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Imw-rM-XT0" secondAttribute="bottom" constant="4" id="08Q-9N-Cs7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstItem="Imw-rM-XT0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="9pE-zK-cC1" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstItem="Imw-rM-XT0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="iey-ao-zBa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                <constraint firstAttribute="trailing" secondItem="Imw-rM-XT0" secondAttribute="trailing" constant="4" id="yED-Ko-rtt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+            </constraints>
+            <size key="customSize" width="141" height="50"/>
+            <connections>
+                <outlet property="btnCancel" destination="CF7-Vj-eKM" id="M9c-eW-Qjf"/>
+                <outlet property="lblKeyword" destination="B3a-Ow-zn1" id="Psj-R8-7M0"/>
+                <outlet property="maxWidthConstraint" destination="Se9-YR-Zof" id="LOX-OK-IkG"/>
+                <outlet property="view" destination="Imw-rM-XT0" id="ckG-OP-3bO"/>
+            </connections>
+            <point key="canvasLocation" x="-105.07246376811595" y="-3.3482142857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cross-icon" width="16" height="16"/>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

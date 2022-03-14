@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -37,8 +38,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-lm-N9d" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="384" width="414" height="407"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-lm-N9d" customClass="BaseUIView" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="409" width="414" height="407"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-f0-61r">
                                         <rect key="frame" x="0.0" y="42" width="414" height="365"/>
@@ -87,7 +88,7 @@
                             <constraint firstAttribute="trailing" secondItem="Q3z-lm-N9d" secondAttribute="trailing" id="4QM-gp-pHY"/>
                             <constraint firstItem="IXJ-BV-wXx" firstAttribute="leading" secondItem="qQu-gC-gjw" secondAttribute="leading" id="A0f-Ye-eA4" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstAttribute="trailing" secondItem="IXJ-BV-wXx" secondAttribute="trailing" id="GdU-w9-4ya" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
-                            <constraint firstAttribute="bottom" secondItem="Q3z-lm-N9d" secondAttribute="bottom" id="OZY-NY-ScB"/>
+                            <constraint firstAttribute="bottom" secondItem="Q3z-lm-N9d" secondAttribute="bottom" constant="80" id="OZY-NY-ScB" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="IXJ-BV-wXx" firstAttribute="top" secondItem="qQu-gC-gjw" secondAttribute="top" constant="90" identifier="topConstraintHeader" id="TIR-Hg-tFT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="Q3z-lm-N9d" firstAttribute="leading" secondItem="qQu-gC-gjw" secondAttribute="leading" id="Wu9-50-VUv"/>
                             <constraint firstAttribute="bottom" secondItem="IXJ-BV-wXx" secondAttribute="bottom" constant="80" id="aQD-KD-JsH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target">
@@ -457,7 +458,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

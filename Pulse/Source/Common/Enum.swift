@@ -28,9 +28,13 @@ enum Storyboards : String{
     case articleListing = "ArticleListing"
     case notificationListing = "NotificationListing"
     case policy = "Policy"
+  case filter = "Filter"
+
 }
 
 enum ViewControllersIdentifier: String{
+  case filter = "FilterViewController"
+
     case policy = "PolicyViewController"
     case notificationListing = "NotificationListingViewController"
     case articleListing = "ArticleListingViewController"
@@ -180,4 +184,22 @@ enum ImagesTextField : String{
     case website = "worldwide"
     case phone = "phone"
     case firmName = "home"
+}
+
+enum DateTimeFilter : Int {
+  case any = 0
+  case day
+  case week
+  case month
+  case year
+
+  static func allFilters() -> [String]{
+    return ["Any","Last 24H","Last Week","Last Month","Last Year"]
+  }
+}
+
+enum FilterSections: Int {
+  case keywords = 0
+  case countries
+  case dateTime
 }

@@ -5,7 +5,8 @@
 //  Created by Hamza Khan on 05/12/2020.
 //
 
-import Foundation
+import UIKit
+
 class ArticleListingViewModel
 {
     let headerTitle: String!
@@ -53,18 +54,18 @@ class ArticleListingViewModel
         return false
     }
     func showQuoteView()->Bool{
-        if type == articleListingType.topStories && self.getQuote()?.title != ""{
-            return true
-        }
+//        if type == articleListingType.topStories && self.getQuote()?.title != ""{
+//            return true
+//        }
         return false
     }
-    func getListing(paged: Int, completionHandler: @escaping (Bool, String)->Void){
+  func getListing(keyword: String = "", date: Int = 0, paged: Int, completionHandler: @escaping (Bool, String)->Void){
         var id : Int? = nil
         if categoryId != -1{
             id = categoryId
         }
         if paged == 1 || paged < maximumPages{
-        self.repository.getListing(type: self.type, paged: paged, categoryId: categoryId) { (success, serverMsg, data, quote , maxPage)  in
+          self.repository.getListing(type: self.type, keyword: keyword, date: date, paged: paged, categoryId: categoryId) { (success, serverMsg, data, quote , maxPage)  in
             self.maximumPages = maxPage
             if paged == 1 && self.artiicleList.count > 0{
                 self.artiicleList = data ?? []
@@ -179,7 +180,6 @@ class ArticleListingViewModel
     }
 }
 
-
 struct ArticleListingCellViewModel{
     let articleID : Int
     let title : String
@@ -199,23 +199,15 @@ struct ArticleListingCellViewModel{
     func getShortDescription()->String{
         return shortDescription
     }
-    
-    
-    
     func getVideoURL()-> URL?{
-        
         guard let url = URL(string: videoURL) else { return nil}
         return url
     }
     func getBgImageURLForCell()-> URL?{
         return URL(string: thumbnail)
-
     }
     func getDescription()-> NSAttributedString?{
         var fontSize = 15
-//        if DesignUtility.isIPad{
-//            fontSize = 22
-//        }
         fontSize = Int(DesignUtility.convertToRatio(CGFloat(fontSize), sizedForIPad: DesignUtility.isIPad, sizedForNavi: false))
         let attirbutedString = Utilities.getAttributedStringForHTMLWithFont(description, textSize: fontSize, fontName: "Montserrat-Regular")
         return attirbutedString

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterHeader" customModule="Pulse" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterHeader" id="U6b-Vx-4bR" customClass="FilterHeader" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqy-B4-D1X">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qq-pg-Ac9" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                            <rect key="frame" x="10" y="5" width="290" height="40"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="4Qq-pg-Ac9" firstAttribute="leading" secondItem="qqy-B4-D1X" secondAttribute="leading" constant="10" id="10W-Lf-HAj"/>
+                        <constraint firstItem="4Qq-pg-Ac9" firstAttribute="top" secondItem="qqy-B4-D1X" secondAttribute="top" constant="5" id="ZJd-T4-Wwe"/>
+                        <constraint firstAttribute="trailing" secondItem="4Qq-pg-Ac9" secondAttribute="trailing" constant="20" id="dwo-SX-sc3"/>
+                        <constraint firstAttribute="bottom" secondItem="4Qq-pg-Ac9" secondAttribute="bottom" constant="5" id="mRN-7E-PBr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="qqy-B4-D1X" secondAttribute="trailing" id="BAw-pb-qA5"/>
+                <constraint firstAttribute="bottom" secondItem="qqy-B4-D1X" secondAttribute="bottom" id="KBg-Ch-FKd"/>
+                <constraint firstItem="qqy-B4-D1X" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="QOb-K3-ik9"/>
+                <constraint firstItem="qqy-B4-D1X" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="tR9-vW-Whl"/>
+            </constraints>
+            <connections>
+                <outlet property="lblTitle" destination="4Qq-pg-Ac9" id="sxD-Vv-u0j"/>
+                <outlet property="view" destination="qqy-B4-D1X" id="2cq-0C-TZm"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="144"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -19,6 +19,7 @@ struct ArticleListingData : Codable {
     var isBookmarked : Bool
     var isLiked : Bool
     var likeCount : Int
+  let isPinned: Bool
 
 	enum CodingKeys: String, CodingKey {
 		case descriptionField = "description"
@@ -34,6 +35,7 @@ struct ArticleListingData : Codable {
         case isBookmarked = "is_bookmarked"
         case isLiked = "is_liked"
         case likeCount = "like_count"
+    case isPinned = "is_pinned"
 
 	}
 	init(from decoder: Decoder) throws {
@@ -51,7 +53,8 @@ struct ArticleListingData : Codable {
         isBookmarked = try values.decodeIfPresent(Bool.self, forKey: .isBookmarked) ?? Bool()
         isLiked = try values.decodeIfPresent(Bool.self, forKey: .isLiked) ?? Bool()
         likeCount = try values.decodeIfPresent(Int.self, forKey: .likeCount) ?? Int()
-        
+    isPinned = try values.decodeIfPresent(Bool.self, forKey: .isPinned) ?? false
+
 	}
 
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateTimeCollectionViewCell" id="gTV-IL-0wX" customClass="DateTimeCollectionViewCell" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="129" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="129" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPf-Dg-Eel">
+                        <rect key="frame" x="0.0" y="0.0" width="129" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ER7-3q-KaG" customClass="BaseUILabel" customModule="Pulse" customModuleProvider="target">
+                                <rect key="frame" x="8" y="5" width="113" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ER7-3q-KaG" firstAttribute="leading" secondItem="tPf-Dg-Eel" secondAttribute="leading" constant="8" id="SFm-lH-7CZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ER7-3q-KaG" secondAttribute="trailing" constant="8" id="eSc-0e-k2V"/>
+                            <constraint firstAttribute="bottom" secondItem="ER7-3q-KaG" secondAttribute="bottom" constant="5" id="jIm-GM-U9e"/>
+                            <constraint firstItem="ER7-3q-KaG" firstAttribute="top" secondItem="tPf-Dg-Eel" secondAttribute="top" constant="5" id="wbF-KA-Atl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tPf-Dg-Eel" secondAttribute="bottom" id="7Ta-6D-dLY"/>
+                <constraint firstItem="tPf-Dg-Eel" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MP4-lH-kCP"/>
+                <constraint firstAttribute="trailing" secondItem="tPf-Dg-Eel" secondAttribute="trailing" id="OVd-9f-lbT"/>
+                <constraint firstItem="tPf-Dg-Eel" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gBj-ux-5iL"/>
+            </constraints>
+            <size key="customSize" width="129" height="50"/>
+            <connections>
+                <outlet property="lblDateTime" destination="ER7-3q-KaG" id="99i-tJ-eA9"/>
+                <outlet property="view" destination="tPf-Dg-Eel" id="RUv-Uv-qZW"/>
+            </connections>
+            <point key="canvasLocation" x="59" y="46"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,13 +36,23 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Montserrat-SemiBold"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-xM-yRo" customClass="BaseUIButton" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="376" y="9.5" width="30" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ZlH-zw-W2v"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icon-filter"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="yxk-Ja-oIt" firstAttribute="leading" secondItem="sRB-JS-mNZ" secondAttribute="leading" constant="20" id="50N-gh-qpb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="IqZ-xM-yRo" firstAttribute="centerY" secondItem="sRB-JS-mNZ" secondAttribute="centerY" id="GUG-lG-be7"/>
                                     <constraint firstAttribute="height" constant="48" id="IOP-mQ-CV8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstAttribute="bottom" secondItem="yxk-Ja-oIt" secondAttribute="bottom" constant="10" id="PRF-ME-xFw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                     <constraint firstItem="yxk-Ja-oIt" firstAttribute="top" secondItem="sRB-JS-mNZ" secondAttribute="top" constant="10" id="Zkz-ib-FHx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="IqZ-xM-yRo" secondAttribute="trailing" constant="8" id="bAe-uy-Yha"/>
                                     <constraint firstItem="yxk-Ja-oIt" firstAttribute="centerY" secondItem="sRB-JS-mNZ" secondAttribute="centerY" id="nAw-dF-gok" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                                 </constraints>
                             </view>
@@ -164,6 +175,7 @@ notifications right now.</string>
                     <navigationItem key="navigationItem" id="UN5-Iv-Cc9"/>
                     <connections>
                         <outlet property="btnAddTopic" destination="zq0-Jm-kuS" id="NRZ-KE-XOB"/>
+                        <outlet property="btnFilter" destination="IqZ-xM-yRo" id="G5I-1N-j3C"/>
                         <outlet property="btnQuote" destination="ReE-FA-xnm" id="tCv-x5-t78"/>
                         <outlet property="emptyView" destination="7eR-gS-moo" id="dWv-MQ-TRc"/>
                         <outlet property="heightConstraintTitle" destination="IOP-mQ-CV8" id="rdk-xP-bNs"/>
@@ -182,4 +194,7 @@ notifications right now.</string>
             <point key="canvasLocation" x="830.43478260869574" y="-1593.0803571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-filter" width="15" height="15"/>
+    </resources>
 </document>

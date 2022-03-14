@@ -91,6 +91,9 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
                     if self._headerView.leftButtonImage == "menuIcon" {
                         //
                     }
+                    else if self._headerView.leftButtonImage == "search-close-icon"{
+                        self.dismiss(animated: true, completion: nil)
+                    }
                     else{
                         self.navigationController!.popViewController(animated: true)
                         

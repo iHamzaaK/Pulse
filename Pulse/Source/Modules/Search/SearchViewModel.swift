@@ -12,7 +12,7 @@ class SearchViewModel
     private let navBarType : navigationBarTypes!
     let repository : SearchRepository!
     var searchData : [SearchData] = []
-    let limitPost = 6
+    let limitPost = 100
     init(navigationType navBar : navigationBarTypes, repo : SearchRepository) {
         self.navBarType = navBar
         self.repository = repo
@@ -28,8 +28,8 @@ class SearchViewModel
         let cellViewModel = SearchCellViewModel(articleID: article.id ?? "-1", articleTitle: article.title ?? "")
         return cellViewModel
     }
-    func getSearchData(searchText : String,completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void){
-        self.repository.search(searchText: searchText, limit: limitPost) { (success, serverMsg, data) in
+  func getSearchData(searchText : String, dateTime: Int = 0, completionHandler: @escaping ( _ success : Bool , _ serverMsg : String)->Void){
+    self.repository.search(searchText: searchText, dateTime: dateTime, limit: limitPost) { (success, serverMsg, data) in
             if success{
                 guard let data = data else { return }
                 self.searchData = data

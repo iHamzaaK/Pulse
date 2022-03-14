@@ -55,6 +55,7 @@ class DashboardViewController: BaseTabBarViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.showMainPage), name: Notification.Name(rawValue: "showHome"), object: nil)
 
     }
+
     override func viewDidLayoutSubviews() {
         let newTabBarHeight = defaultTabBarHeight + DesignUtility.convertToRatio(10.0, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
 
@@ -67,6 +68,16 @@ class DashboardViewController: BaseTabBarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadListing"), object: nil, userInfo: nil)
+//        let articleID = ArchiveUtil.getArticleIDFromAppUrlLink()
+//        if articleID != ""{
+//            let vc = FullArticleBuilder.build(articleID: articleID, headerType: .backButtonWithTitle)
+//            vc.modalPresentationStyle = .fullScreen
+//            
+//            self.present(vc, animated: true) {
+//                
+//            }
+//        }
+      viewModel.getCountries()
     }
     
     @objc func openCreatePost(){
@@ -100,6 +111,8 @@ class DashboardViewController: BaseTabBarViewController {
         self.viewControllers = [navigationController1, navigationController2,navigationController3]
 //
 
+        
+        
 
     }
     /*

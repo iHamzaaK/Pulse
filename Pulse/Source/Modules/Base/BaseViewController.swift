@@ -14,6 +14,7 @@ enum navigationBarTypes{
     case backButtonWithRightMenuButton
     case backButtonWithTitle
     case leftRightButtonsWithLogo
+  case filterNavBar
     
 }
 protocol navigationBarButtonProtocols: class{
@@ -71,6 +72,8 @@ extension BaseViewController {
         case .leftRightButtonsWithLogo:
             self.setupleftRightButtonsWithLogo()
             break
+        case .filterNavBar:
+          self.setupFilterNavBar()
         }
     }
     private func clearNavBar(){
@@ -85,8 +88,8 @@ extension BaseViewController {
     }
     private func setupSearchNavBar(){
         self.createSearchTextField()
-        _headerView.leftButtonImage = "cross-icon"
-        _headerView.rightButtonImage = ""
+        _headerView.leftButtonImage = "search-close-icon"
+        _headerView.rightButtonImage = "icon-filter"
         _headerView.rightSecondaryButtonImage = ""
 
     }
@@ -124,6 +127,10 @@ extension BaseViewController {
         _headerView.leftButtonImage = ""
         _headerView.bgImageContainer?.isHidden = false
     }
+  private func setupFilterNavBar(){
+    _headerView.leftButtonImage = "search-close-icon"
+    _headerView.bgImageContainer?.isHidden = true
+  }
     private func createSearchTextField(){
         _headerView.searchTextField?.isHidden = false
         _headerView.bgImageContainer?.isHidden = true

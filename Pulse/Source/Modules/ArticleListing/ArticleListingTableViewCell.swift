@@ -11,7 +11,7 @@ import AVFoundation
 import YouTubePlayer
 protocol ArticleListingCellProtocol : class {
     func didTapOnBtnLike(row : Int)->Void
-    func didTapOnBtnShare(row: Int, articleTitle : String , articleLink: String)->Void
+    func didTapOnBtnShare(row: Int, articleTitle : String , articleLink: String, articleId: Int)->Void
     func didTapOnBtnComment(row : Int, comment: String)->Void
     func didTapOnBtnBookmark(row: Int)->Void
     func didTapOnPlay(row: Int , isPlaying: Bool)->Void
@@ -277,7 +277,7 @@ class ArticleListingTableViewCell: UITableViewCell {
         delegate.didTapOnBtnLike(row: self.tag)
     }
     @objc private func didTapOnBtnShare(){
-        delegate.didTapOnBtnShare(row: self.tag, articleTitle: cellViewModel.title , articleLink: cellViewModel.permalink)
+        delegate.didTapOnBtnShare(row: self.tag, articleTitle: cellViewModel.title , articleLink: cellViewModel.permalink, articleId: cellViewModel.articleID)
     }
     @objc private func didTapOnBtnComment(){
         delegate.didTapOnBtnComment(row: self.tag, comment: self.txtComment.text ?? "")

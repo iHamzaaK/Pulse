@@ -127,6 +127,7 @@ class FullArticleViewModel
     }
     func getDescription()->NSAttributedString?{
         let fontSize = DesignUtility.convertToRatio(16.0, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
+        
         let text =  Utilities.getAttributedStringForHTMLWithFont(articleData.descriptionField ?? "", textSize: Int(fontSize), fontName: "Montserrat-Regular")
     
         return text
@@ -136,7 +137,9 @@ class FullArticleViewModel
         return articleData.title ?? ""
     }
     func getWeblink()->String{
-        return articleData.permalink ?? ""
+        guard var link = articleData.permalink else { return "" }
+        link = link + "?id=\(articleID ?? "")"
+        return link
     }
     func getType()->String{
         if articleData.tag == ""{

@@ -11,20 +11,20 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
     private let url = "wp/v2/sahifa/category/posts?"
     private var isSuccess = false
     private var serverMsg = ""
-    func getListing(type: articleListingType, paged: Int, categoryId: Int?, completionHandler: @escaping (Bool, String, [ArticleListingData]?, [ArticleListingQuoteOfTheDay]?, _  maxPages: Int) -> Void) {
+    func getListing(type: articleListingType, keyword: String = "", date: Int = 0, paged: Int, categoryId: Int?, completionHandler: @escaping (Bool, String, [ArticleListingData]?, [ArticleListingQuoteOfTheDay]?, _  maxPages: Int) -> Void) {
         
         var endpoint = ""
         switch type {
         case .topStories:
-            endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
+            endpoint = "s=\(keyword)&date=\(date)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .myNews:
-            endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
+            endpoint = "s=\(keyword)&date=\(date)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .categories:
-            endpoint = "category_id=\(categoryId!)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
+            endpoint = "s=\(keyword)&date=\(date)&category_id=\(categoryId!)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .interest:
-            endpoint = "paged=\(paged)&posts_per_page=20&type=\(2)"
+            endpoint = "s=\(keyword)&date=\(date)&paged=\(paged)&posts_per_page=20&type=\(2)"
         case .bookmarks:
-            endpoint = "paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
+            endpoint = "s=\(keyword)&date=\(date)&paged=\(paged)&posts_per_page=20&type=\(type.rawValue)"
         case .videos:
             break
         }
@@ -39,6 +39,7 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
             "Content-Type": "application/x-www-form-urlencoded"
 
         ]
+      endpoint = endpoint.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         BaseRepository.instance.requestService(url: url + endpoint, method: .get, params: nil, header: headers) { (success, serverMsg, data) in
             print(data)
             self.isSuccess = success
@@ -49,13 +50,13 @@ class ArticleListingRepositoryImplementation : ArticleListingRepository{
                 let model = try? decoder.decode(ArticleListingRepoModel.self, from: data.rawData())
                 guard let success = model?.success else { return }
                 let articleListing = model?.data
-                let quote = model?.quoteOfTheDay
+//                let quote = model?.quoteOfTheDay
                 let maxPages = model?.maxNumPages
                 self.isSuccess = success
                 
                 guard let statusMsg = model?.message else { return }
                 self.serverMsg = statusMsg
-                completionHandler(self.isSuccess,serverMsg, articleListing, quote , maxPages!)
+                completionHandler(self.isSuccess,serverMsg, articleListing, nil , maxPages!)
                 
             }
             else{

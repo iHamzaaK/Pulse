@@ -12,7 +12,8 @@ class DashboardBuilder{
           let sb = Utilities.getStoryboard(identifier: Storyboards.dashboard.rawValue)
           let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.dashboard.rawValue) as! DashboardViewController
           let navBarType = navigationBarTypes.leftRightButtonsWithLogo
-          let viewModel = DashboardViewModel(navigationType: navBarType)
+      let repo = CountriesRepositoryImplementation()
+      let viewModel = DashboardViewModel(navigationType: navBarType, repo: repo)
           vc.viewModel = viewModel
           
           return vc

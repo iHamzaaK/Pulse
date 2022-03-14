@@ -7,6 +7,6 @@
 
 import Foundation
 protocol SearchRepository{
-    func search(searchText: String, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
+  func search(searchText: String, dateTime: Int, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
 }
 

@@ -104,6 +104,7 @@ class CategoriesViewController: UIViewController {
     func getCategories(){
         self.subCategoryView.isHidden = true
         self.viewModel.getCategories { (sucess, serverMsg) in
+            self.refreshControl.endRefreshing()
             if sucess{
                 self.collectionView.delegate = self
                 self.collectionView.dataSource = self

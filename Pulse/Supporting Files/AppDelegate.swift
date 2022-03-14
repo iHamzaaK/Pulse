@@ -119,5 +119,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         print("Failed to register: \(error)")
     }
     
+//    func application( _ application : UIApplication, continue userActivity: NSUserActivity , restorationHandler: @escaping( [UIUserActivityRestoring]?)->Void)->Bool{
+//
+//        guard let  url = userActivity.webpageURL else { return false }
+//
+//
+//        return false
+//    }
+    //pulseapp:article?id=1"
+//    func application(_ application: UIApplication,
+//                     open url: URL,
+//                     options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+//
+//        // Determine who sent the URL.
+//        let sendingAppID = options[.sourceApplication]
+//        print("source application = \(sendingAppID ?? "Unknown")")
+//
+//        // Process the URL.
+//        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+//              let article = components.path,
+//              let params = components.queryItems else {
+//                  print("Invalid URL or article path missing")
+//                  return false
+//              }
+//
+//        if let articleId = params.first(where: { $0.name == "id" })?.value {
+//            print("article path = \(article)")
+//            print("article Id = \(articleId)")
+//            ArchiveUtil.saveArticleIDFromAppUrlLink(articleId: articleId)
+//
+//            return true
+//        } else {
+//            print("article Id missing")
+//            return false
+//        }
+//        // login page check session
+//        // check if archive util  have this
+//        // go to article detail with article id
+//    }
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let scheme = url.scheme,
+           scheme.localizedCaseInsensitiveCompare("com.myApp") == .orderedSame,
+           let view = url.host {
+            
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+            }
+            
+//            redirect(to: view, with: parameters)
+        }
+        return true
+    }
 }
 

@@ -168,6 +168,8 @@ class Utilities{
     }
     static func getAttributedStringForHTMLWithFont(_ htmlStr : String , textSize : Int , fontName : String )->NSAttributedString?
     {
+        
+      
         var htmlStr = htmlStr
         do {
             if htmlStr .isEmpty{

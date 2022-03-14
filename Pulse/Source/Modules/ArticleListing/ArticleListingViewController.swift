@@ -24,6 +24,8 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     @IBOutlet weak var lblQoute: BaseUILabel!
     @IBOutlet weak var lblQouteDate: BaseUILabel!
     @IBOutlet weak var lblArticleTypeHeading: BaseUILabel!
+  @IBOutlet weak var btnFilter: BaseUIButton!
+
     @IBOutlet weak var btnAddTopic: BaseUIButton!{
         didSet{
             let str = "+ Add topics to create your own personal news feed"
@@ -103,7 +105,8 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
             self?.startLoading()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadListing), name: Notification.Name("reloadListing"), object: nil)
-
+        btnFilter.setTitle("", for: .normal)
+      btnFilter.addTarget(self, action: #selector(self.didTapOnFilter), for: .touchUpInside)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -243,7 +246,12 @@ extension ArticleListingViewController{
             self.updateCell(at: path)
         }
     }
-
+  @objc private func didTapOnFilter(){
+    let filterVC = FilterBuilder.build(title: "Filter", navBarType: .filterNavBar) as! FilterViewController
+    filterVC.delegate = self
+    self.present(filterVC, animated: true) {
+    }
+  }
     fileprivate func updateCell(at indexPath: IndexPath) {
         if let cell = tblView.cellForRow(at: indexPath) as? ArticleListingTableViewCell, let playURL = URL(string: cell.videoStr) {
             
@@ -281,6 +289,52 @@ extension ArticleListingViewController{
     
     
 }
+extension ArticleListingViewController: FilterViewProtocol {
+  func didTapOnDone(selectedFilter: SelectedFilters) {
+    self.viewModel.getListing(keyword: selectedFilter.0, date: selectedFilter.1, paged: 1) { (success, serverMsg) in
+      if success{
+        DispatchQueue.main.async {
+          if self.viewModel.showQuoteView(){
+            self.viewQuote.isHidden = false
+            self.lblQoute.text = "\"\(self.viewModel.getQuote()?.title ?? "")\""
+            self.lblQuoteHeight  = DesignUtility.convertToRatio(80, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
+            if self.lblQoute.maxNumberOfLines == 1{
+              self.lblQuoteHeight = DesignUtility.convertToRatio(60, sizedForIPad:  DesignUtility.isIPad, sizedForNavi: false)
+            }
+            self.heightConstraintViewQuote.constant = self.lblQuoteHeight
+            UIView.animate(views: [self.viewQuote],
+                           animations: [self.fromAnimation],
+                           duration: 0.4)
+          }
+          else{
+            self.heightConstraintViewQuote.constant = 0
+          }
+          if self.viewModel.getArticleCount() > 0 {
+            self.hideEmptyView()
+          }
+          else{
+            self.showEmptyView()
+          }
+          self.tblView.reloadData()
+          UIView.animate(views: self.tblView.visibleCells, animations: self.animations, completion: {
+          })
+        }
+      }
+      else{
+        if self.viewModel.type == .interest || self.viewModel.type == .bookmarks || self.viewModel.type == .myNews{
+          if self.viewModel.getArticleCount() == 0{
+            self.showEmptyView()
+          }
+        }
+        else{
+          Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: serverMsg, autoHidetimer: 2.0, type: .error)
+          AppRouter.pop()
+        }
+
+      }
+    }
+  }
+}
 extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSource, ArticleListingCellProtocol{
     func didTapOnShowAllLikes(row: Int) {
         self.viewModel.getAllLikes(row: row) { (success, serverMsg, vc) in
@@ -310,10 +364,11 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func didTapOnBtnShare(row: Int, articleTitle: String, articleLink: String) {
+    func didTapOnBtnShare(row: Int, articleTitle: String, articleLink: String, articleId: Int) {
         let cell = tblView.cellForRow(at: IndexPath(row: row, section: 0)) as! ArticleListingTableViewCell
         let text = articleTitle
-        let myWebsite = NSURL(string:articleLink)
+        let link = articleLink + "?id=\(articleId)"
+        let myWebsite = NSURL(string:link)
         let shareAll = [text , myWebsite] as [Any]
         let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
 //        activityViewController.popoverPresentationController?.sourceView = cell.btnShare

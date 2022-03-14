@@ -9,14 +9,23 @@ import UIKit
 
 class DashboardViewModel
 {
-    let headerTitle = ""
-    private let navBarType : navigationBarTypes!
-
-    init(navigationType navBar : navigationBarTypes) {
-        self.navBarType = navBar
+  let headerTitle = ""
+  private let navBarType : navigationBarTypes!
+  private let repository: CountriesRepository!
+  init(navigationType navBar : navigationBarTypes, repo: CountriesRepository) {
+    self.navBarType = navBar
+    self.repository = repo
+  }
+  func getNavigationBar()-> navigationBarTypes{
+    return navBarType
+  }
+  func getCountries() {
+    self.repository.getCountries { success, serverMsg, content in
+      if success {
+        // store repository
+        ArchiveUtil.saveCountries(countries: content)
+      }
     }
-    func getNavigationBar()-> navigationBarTypes{
-        return navBarType
-    }
+  }
 
 }

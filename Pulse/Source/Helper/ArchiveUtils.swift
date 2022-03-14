@@ -20,6 +20,8 @@ class ArchiveUtil {
     private static let signupStep = "signupStep"
     private static let categoriesKey = "categories"
     private static let deviceTokenKey = "deviceToken"
+    private static let urlschemeArticleId = "urlSchemeData"
+    private static let countryKey = "countries"
     static func saveCategories(categories: [CategoriesData]){
         do{
             let cat = try JSONEncoder().encode([categories])
@@ -39,7 +41,26 @@ class ArchiveUtil {
             return nil
         }
     }
-    
+
+  static func saveCountries(countries: [Country]) {
+    do{
+      let countries = try JSONEncoder().encode(countries)
+      UserDefaults.standard.set(countries, forKey: countryKey)
+    }
+    catch{
+
+    }
+  }
+  static func getCountries() -> [Country] {
+    guard let countries = UserDefaults.standard.data(forKey: countryKey) else { return []}
+    do{
+      let arrCountries = try JSONDecoder().decode([Country].self, from: countries)
+      return arrCountries
+    }
+    catch{
+      return []
+    }
+  }
     static func saveDeviceToken(deviceToken: String){
             UserDefaults.standard.set(deviceToken, forKey: deviceTokenKey)
     }
@@ -83,6 +104,18 @@ class ArchiveUtil {
         catch{
             return ""
         }
+    }
+    static func saveArticleIDFromAppUrlLink(articleId : String){
+        UserDefaults.standard.set(articleId, forKey: urlschemeArticleId)
+        
+    }
+    static func getArticleIDFromAppUrlLink()->String{
+        let articleID = UserDefaults.standard.string(forKey: urlschemeArticleId)
+        return articleID ?? ""
+
+    }
+    static func removeArticleIDFromAppUrlLink(){
+        UserDefaults.standard.removeObject(forKey: urlschemeArticleId)
     }
     static func saveUserType(userType : String){
         UserDefaults.standard.set(userType, forKey: userTypeKey)

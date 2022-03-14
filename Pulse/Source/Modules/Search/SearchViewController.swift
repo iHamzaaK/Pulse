@@ -38,24 +38,46 @@ class SearchViewController: BaseViewController {
                 self.view.alpha = 1
             }
     }
-    override func headerViewLeftBtnDidClick(headerView: HeaderView) {
-        self.dismiss(animated: true) {
-            
-        }
-    }
+//    override func headerViewLeftBtnDidClick(headerView: HeaderView) {
+////        self.dismiss(animated: true) {
+////            
+////        }
+//    }
     override func headedrViewSearchTextChanged(str: String) {
         if str.count > 1{
-            self.viewModel.getSearchData(searchText: str) { (success, serverMsg) in
+            self.viewModel.getSearchData(searchText: str) { [weak self] (success, serverMsg) in
+              guard self != nil else { return }
+
                 if success{
-                    self.tblView.reloadData()
-                    UIView.animate(views: self.tblView.visibleCells,
-                                   animations: [self.fromAnimation], delay: 0.1)
+                    self!.tblView.reloadData()
+                    UIView.animate(views: self!.tblView.visibleCells,
+                                   animations: [self!.fromAnimation], delay: 0.1)
 
                 }
             }
         }
     }
+  override func headerViewRightBtnDidClick(headerView: HeaderView) {
+    let filterVC = FilterBuilder.build(title: "Filter", navBarType: .filterNavBar) as! FilterViewController
+    filterVC.delegate = self
+    self.present(filterVC, animated: true) {
+      
+    }
+  }
 
+}
+extension SearchViewController: FilterViewProtocol {
+  func didTapOnDone(selectedFilter: SelectedFilters) {
+    self.viewModel.getSearchData(searchText: selectedFilter.0, dateTime: selectedFilter.1) { [weak self] success, serverMsg in
+      if success{
+        guard self != nil else { return }
+        self!.tblView.reloadData()
+        UIView.animate(views: self!.tblView.visibleCells,
+                       animations: [self!.fromAnimation], delay: 0.1)
+
+      }
+    }
+  }
 }
 extension SearchViewController{
 

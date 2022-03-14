@@ -78,8 +78,8 @@ class FullArticleViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
 //        videoSettings()
-        
         getData()
+        
     }
     deinit {
         playerView = nil
@@ -120,9 +120,14 @@ extension FullArticleViewController{
         self.viewComment.alpha = 0
         
         self.viewModel.getArticleData { (success, serverMsg) in
-            if success{ 
-                //                self.view.alpha = 1
-                self.txtViewArticle.attributedText = self.viewModel.getDescription()
+            if success{
+                let style = NSMutableParagraphStyle()
+                style.lineSpacing = 10
+                let text = self.viewModel.getDescription()!.mutableCopy() as! NSMutableAttributedString
+                let attributes = [NSAttributedString.Key.paragraphStyle : style]
+                let textRangeForFont : NSRange = NSMakeRange(0, text.length)
+                text.addAttributes(attributes, range: textRangeForFont)
+                self.txtViewArticle.attributedText = text
                 self.lblNewsTitle.text = self.viewModel.getTitle()
                 self.lblNewsType.text = self.viewModel.getType()
                 self.lblTime.text = self.viewModel.getTimeStamp()
@@ -190,6 +195,7 @@ extension FullArticleViewController{
         btnPlay.isHidden = true
         heightConstraintLikeCountStackView?.constant = 0
         navBarType = self.viewModel.getNavigationBar()
+        
     }
     
     

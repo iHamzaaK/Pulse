@@ -13,10 +13,10 @@ class SearchRepositoryImplementation : SearchRepository{
     private let url = "wp/v2/sahifa/posts/search?"
     private var isSuccess = false
     private var serverMsg = ""
-    func search(searchText: String, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
+    func search(searchText: String, dateTime: Int, limit: Int, completionHandler: @escaping (Bool, String, _ searchData : [SearchData]?) -> Void)
     {
 //       let test = wp/v2/sahifa/posts/search?s=COVID &limit=6
-        let endpoint = "s=\(searchText)&limit=\(limit)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let endpoint = "s=\(searchText)&date=\(dateTime)&limit=\(limit)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         let headers = [
             "Accept": "application/json",
             "Authorization": "Bearer " + ArchiveUtil.getUserToken(),

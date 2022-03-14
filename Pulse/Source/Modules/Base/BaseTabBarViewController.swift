@@ -63,6 +63,8 @@ extension BaseTabBarViewController {
         case .leftRightButtonsWithLogo:
             setupleftRightButtonsWithLogo()
             break
+        case .filterNavBar:
+          self.setupFilterNavBar()
         }
     }
     private func clearNavBar(){
@@ -77,7 +79,7 @@ extension BaseTabBarViewController {
     }
     private func setupSearchNavBar(){
         self.createSearchTextField()
-        _headerView.leftButtonImage = "cross-icon"
+        _headerView.leftButtonImage = "search-close-icon"
     }
     private func setupProfleWithMenu(){
         self.createRightBarButton()
@@ -86,6 +88,16 @@ extension BaseTabBarViewController {
 
         
     }
+  private func setupFilterNavBar(){
+    //    _headerView.rightSecondaryButtonImage = "seach-1x"
+        createRightBarButton()
+    _headerView.btnRight?.setTitle("Done", for: .normal)
+    _headerView.leftButtonImage = "search-close-icon"
+    _headerView.bgImageContainer?.isHidden = false
+    _headerView.btnRight?.isHidden = false
+//    _headerView.rightButtonImage = "check"
+    
+  }
     private func setupBackButtonWithRightOptionsButton(){
         self.createLeftBarButton()
         self.createRightBarButton()

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Filter View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="FilterViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9z-gl-oI4">
+                                <rect key="frame" x="0.0" y="35" width="414" height="861"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFv-v9-LCv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="395"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Keywords" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-uF-Tzo" customClass="BaseUITextfield" customModule="Pulse" customModuleProvider="target">
+                                                <rect key="frame" x="75.5" y="0.0" width="263" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="es8-vy-mWm" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundRect" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage">
+                                                        <imageReference key="value" image="magnifyingglass" catalog="system" symbolScale="medium"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="kdn-Xe-Bvt"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-k6-oVI">
+                                                <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fVJ-ak-XtH" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                    <constraint firstAttribute="width" constant="30" id="kF0-wk-QxD" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="search-close-icon"/>
+                                                <connections>
+                                                    <action selector="didTapOnDismiss:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="E0E-CA-TzB"/>
+                                                </connections>
+                                            </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Rs-5B-xqJ">
+                                                <rect key="frame" x="5" y="75" width="404" height="150"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="999" constant="150" id="F6i-wW-uhI"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Rq-gH-Pt7">
+                                                    <size key="itemSize" width="117" height="41"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8HI-S2-BfE">
+                                                <rect key="frame" x="0.0" y="245" width="414" height="150"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Uyz-hk-KkW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="caQ-K6-SFI">
+                                                    <size key="itemSize" width="117" height="41"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Q1x-yV-DWA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="41"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5tM-Hf-qRE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="117" height="41"/>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-aN-Tgu">
+                                                <rect key="frame" x="338.5" y="9.5" width="73.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapOnSave:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Fw0-8U-XIQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="eXi-aN-Tgu" firstAttribute="leading" secondItem="rtm-uF-Tzo" secondAttribute="trailing" id="Dez-8g-s2P" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="8HI-S2-BfE" firstAttribute="top" secondItem="4Rs-5B-xqJ" secondAttribute="bottom" constant="20" id="G8a-Ze-R4S" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="4Rs-5B-xqJ" firstAttribute="top" secondItem="rtm-uF-Tzo" secondAttribute="bottom" constant="25" id="Hzx-I1-Vja" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="2iQ-k6-oVI" firstAttribute="leading" secondItem="XFv-v9-LCv" secondAttribute="leading" constant="8" id="MvL-kv-X4p" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="8HI-S2-BfE" firstAttribute="leading" secondItem="XFv-v9-LCv" secondAttribute="leading" id="NEx-z4-Kp0" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="rtm-uF-Tzo" firstAttribute="top" secondItem="XFv-v9-LCv" secondAttribute="top" id="QpQ-ZG-xm9" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="trailing" secondItem="eXi-aN-Tgu" secondAttribute="trailing" constant="2" id="TIy-Xf-eXp" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="bottom" secondItem="8HI-S2-BfE" secondAttribute="bottom" id="aAW-Qc-Stw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="4Rs-5B-xqJ" firstAttribute="leading" secondItem="XFv-v9-LCv" secondAttribute="leading" constant="5" id="bCN-10-4tW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Rs-5B-xqJ" secondAttribute="trailing" constant="5" id="cPy-ss-seb" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="rtm-uF-Tzo" firstAttribute="width" secondItem="XFv-v9-LCv" secondAttribute="width" multiplier="0.635" id="eZB-9z-LdR" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstAttribute="trailing" secondItem="8HI-S2-BfE" secondAttribute="trailing" id="hdN-of-u8I" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="rtm-uF-Tzo" firstAttribute="centerX" secondItem="XFv-v9-LCv" secondAttribute="centerX" id="rp2-rV-Jyt" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="eXi-aN-Tgu" firstAttribute="centerY" secondItem="rtm-uF-Tzo" secondAttribute="centerY" id="ruL-s8-HfK" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                            <constraint firstItem="2iQ-k6-oVI" firstAttribute="centerY" secondItem="rtm-uF-Tzo" secondAttribute="centerY" id="sa5-hc-XCa" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XFv-v9-LCv" secondAttribute="bottom" constant="20" symbolic="YES" id="3DG-6y-aEm" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="XFv-v9-LCv" firstAttribute="leading" secondItem="l9z-gl-oI4" secondAttribute="leading" id="77C-CS-eic" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstAttribute="trailing" secondItem="XFv-v9-LCv" secondAttribute="trailing" id="MMK-dZ-0NW" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="XFv-v9-LCv" firstAttribute="top" secondItem="l9z-gl-oI4" secondAttribute="top" id="MlN-w4-BGl" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                    <constraint firstItem="XFv-v9-LCv" firstAttribute="width" secondItem="l9z-gl-oI4" secondAttribute="width" id="tAI-8I-fy2" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rsm-II-xLH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qul-5Y-BzL"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l9z-gl-oI4" secondAttribute="trailing" id="dEc-me-FoT" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstAttribute="bottom" secondItem="l9z-gl-oI4" secondAttribute="bottom" id="gkC-t8-khx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="l9z-gl-oI4" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="35" id="koa-PM-zI7" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="l9z-gl-oI4" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="nan-9D-Uk8" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="2iQ-k6-oVI" id="RlK-H0-3HF"/>
+                        <outlet property="collectionViewCountryDateTime" destination="8HI-S2-BfE" id="vbK-v9-BTl"/>
+                        <outlet property="collectionViewKeywords" destination="4Rs-5B-xqJ" id="0I0-h2-VkD"/>
+                        <outlet property="heightConstraintCollectionView" destination="F6i-wW-uhI" id="v49-mP-Hdd"/>
+                        <outlet property="heightConstraintCollectionViewDateTime" destination="Uyz-hk-KkW" id="UP0-kR-Ja1"/>
+                        <outlet property="txtKeywords" destination="rtm-uF-Tzo" id="pnK-W3-GTd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="search-close-icon" width="10" height="10"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
