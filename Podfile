@@ -23,6 +23,8 @@ target 'Pulse' do
   pod 'OTPFieldView'
   pod 'YouTubePlayer'
   pod "ViewAnimator"
+  pod "TTGTagCollectionView"
+
 
   # Pods for Pulse
 

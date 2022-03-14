@@ -244,6 +244,28 @@
 		63EEE73B255AE841003B64D2 /* BaseHeaderTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EEE73A255AE841003B64D2 /* BaseHeaderTabViewController.swift */; };
 		63F21D71255AA2B500EA4720 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F21D70255AA2B500EA4720 /* CategoriesViewController.swift */; };
 		63F21D78255AA2CD00EA4720 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F21D77255AA2CC00EA4720 /* CategoriesViewModel.swift */; };
+		9E80629C27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E80629A27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m */; };
+		9E80629F27DC08BA0010D535 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E80629E27DC08BA0010D535 /* CountriesRepository.swift */; };
+		9E8062A227DC0DB80010D535 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8062A127DC0DB80010D535 /* Countries.swift */; };
+		9E8062A427DC0DF60010D535 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8062A327DC0DF60010D535 /* Country.swift */; };
+		9E85B0E027DCCA4900FFDA2B /* Filter-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E85B0DF27DCCA4900FFDA2B /* Filter-iPad.storyboard */; };
+		9EC5677E27D6A4FE001C2673 /* Filter-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC5677D27D6A4FE001C2673 /* Filter-iPhone.storyboard */; };
+		9EC5678027D6A6BB001C2673 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5677F27D6A6BB001C2673 /* FilterViewModel.swift */; };
+		9EC5678227D6A6C9001C2673 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5678127D6A6C9001C2673 /* FilterViewController.swift */; };
+		9EC5678627D6A6DF001C2673 /* FilterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5678527D6A6DF001C2673 /* FilterBuilder.swift */; };
+		9EC5678C27D6BC54001C2673 /* DateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5678A27D6BC54001C2673 /* DateTimeCollectionViewCell.swift */; };
+		9EC5678D27D6BC54001C2673 /* DateTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC5678B27D6BC54001C2673 /* DateTimeCollectionViewCell.xib */; };
+		9EC5679027D6BC5E001C2673 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5678E27D6BC5E001C2673 /* CountryCollectionViewCell.swift */; };
+		9EC5679127D6BC5E001C2673 /* CountryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC5678F27D6BC5E001C2673 /* CountryCollectionViewCell.xib */; };
+		9EC5679427D6BC67001C2673 /* KeywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679227D6BC67001C2673 /* KeywordCollectionViewCell.swift */; };
+		9EC5679527D6BC67001C2673 /* KeywordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC5679327D6BC67001C2673 /* KeywordCollectionViewCell.xib */; };
+		9EC5679927D6C043001C2673 /* FilterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679727D6C043001C2673 /* FilterHeader.swift */; };
+		9EC5679A27D6C043001C2673 /* FilterHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC5679827D6C043001C2673 /* FilterHeader.xib */; };
+		9EC5679C27D77E1E001C2673 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679B27D77E1E001C2673 /* CustomFlowLayout.swift */; };
+		9EC5679E27D7808A001C2673 /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679D27D7808A001C2673 /* AlignedCollectionViewFlowLayout.swift */; };
+		9EC567A027D7A45B001C2673 /* KeywordCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679F27D7A45B001C2673 /* KeywordCellViewModel.swift */; };
+		9EC567A227D7A479001C2673 /* DateTimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC567A127D7A479001C2673 /* DateTimeCellViewModel.swift */; };
+		9EC567A427D7A491001C2673 /* CountriesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC567A327D7A491001C2673 /* CountriesCellViewModel.swift */; };
 		DC98A6015EEAC46EA613C792 /* Pods_Pulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */; };
 /* End PBXBuildFile section */
 
@@ -492,6 +514,29 @@
 		63EEE73A255AE841003B64D2 /* BaseHeaderTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderTabViewController.swift; sourceTree = "<group>"; };
 		63F21D70255AA2B500EA4720 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		63F21D77255AA2CC00EA4720 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		9E80629A27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEKScrollableSectionCollectionViewLayout.m; sourceTree = "<group>"; };
+		9E80629B27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEKScrollableSectionCollectionViewLayout.h; sourceTree = "<group>"; };
+		9E80629E27DC08BA0010D535 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
+		9E8062A127DC0DB80010D535 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		9E8062A327DC0DF60010D535 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		9E85B0DF27DCCA4900FFDA2B /* Filter-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Filter-iPad.storyboard"; sourceTree = "<group>"; };
+		9EC5677D27D6A4FE001C2673 /* Filter-iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Filter-iPhone.storyboard"; sourceTree = "<group>"; };
+		9EC5677F27D6A6BB001C2673 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		9EC5678127D6A6C9001C2673 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		9EC5678527D6A6DF001C2673 /* FilterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBuilder.swift; sourceTree = "<group>"; };
+		9EC5678A27D6BC54001C2673 /* DateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		9EC5678B27D6BC54001C2673 /* DateTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		9EC5678E27D6BC5E001C2673 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9EC5678F27D6BC5E001C2673 /* CountryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCollectionViewCell.xib; sourceTree = "<group>"; };
+		9EC5679227D6BC67001C2673 /* KeywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionViewCell.swift; sourceTree = "<group>"; };
+		9EC5679327D6BC67001C2673 /* KeywordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCollectionViewCell.xib; sourceTree = "<group>"; };
+		9EC5679727D6C043001C2673 /* FilterHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeader.swift; sourceTree = "<group>"; };
+		9EC5679827D6C043001C2673 /* FilterHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHeader.xib; sourceTree = "<group>"; };
+		9EC5679B27D77E1E001C2673 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		9EC5679D27D7808A001C2673 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9EC5679F27D7A45B001C2673 /* KeywordCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCellViewModel.swift; sourceTree = "<group>"; };
+		9EC567A127D7A479001C2673 /* DateTimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCellViewModel.swift; sourceTree = "<group>"; };
+		9EC567A327D7A491001C2673 /* CountriesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCellViewModel.swift; sourceTree = "<group>"; };
 		F117E6E1CFF5E48468622CD6 /* Pods-Pulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.debug.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1476,6 +1521,7 @@
 		63C109B52555F6EF0097EDC3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9EC5677927D6A4AF001C2673 /* Filter */,
 				247318EA258B7E0C00ADC04E /* Policy */,
 				24731890258959B700ADC04E /* NotificationListing */,
 				63DB1587257BBDA1007BA6B9 /* ArticleListing */,
@@ -1505,6 +1551,7 @@
 				6346A1CD255BDB09006B3FDF /* XLPagerStrip */,
 				63C109D52555FF830097EDC3 /* ActivityIndicatorWrapper.swift */,
 				63C109CC2555FF830097EDC3 /* Alert.swift */,
+				9EC5679D27D7808A001C2673 /* AlignedCollectionViewFlowLayout.swift */,
 				63C109D12555FF830097EDC3 /* ArchiveUtils.swift */,
 				63C109D62555FF830097EDC3 /* BaseLayoutConstraint.swift */,
 				63C109D32555FF830097EDC3 /* DatePickerExtension.swift */,
@@ -1519,6 +1566,9 @@
 				6372E6D0255804F600A03E01 /* UITextView+Extension.swift */,
 				637191742571395800277101 /* BlurModalPresentation.swift */,
 				2402F128258249BB0092CD04 /* PlayerView.swift */,
+				9E80629B27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.h */,
+				9E80629A27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m */,
+				9EC5679B27D77E1E001C2673 /* CustomFlowLayout.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1536,6 +1586,7 @@
 		63C109B82555F70C0097EDC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E8062A027DC0D7D0010D535 /* Countries */,
 				24B7C57B25915DC200C78308 /* Comment */,
 				240D9FA8258F7A110025791E /* Notification */,
 				240D9FA2258E5E120025791E /* Policy */,
@@ -1555,6 +1606,7 @@
 		63C109B92555F7100097EDC3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9E80629D27DC08AE0010D535 /* Countries */,
 				24731900258B7F1500ADC04E /* Policy */,
 				247318A02589628700ADC04E /* NotificationListing */,
 				247318892589135100ADC04E /* Video */,
@@ -1670,6 +1722,110 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9E80629D27DC08AE0010D535 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				9E80629E27DC08BA0010D535 /* CountriesRepository.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		9E8062A027DC0D7D0010D535 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				9E8062A127DC0DB80010D535 /* Countries.swift */,
+				9E8062A327DC0DF60010D535 /* Country.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		9EC5677927D6A4AF001C2673 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5678427D6A6D7001C2673 /* Builder */,
+				9EC5677C27D6A4BD001C2673 /* View */,
+				9EC5677B27D6A4B9001C2673 /* Model */,
+				9EC5677A27D6A4B3001C2673 /* ViewModel */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		9EC5677A27D6A4B3001C2673 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5677F27D6A6BB001C2673 /* FilterViewModel.swift */,
+				9EC5679F27D7A45B001C2673 /* KeywordCellViewModel.swift */,
+				9EC567A127D7A479001C2673 /* DateTimeCellViewModel.swift */,
+				9EC567A327D7A491001C2673 /* CountriesCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EC5677B27D6A4B9001C2673 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9EC5677C27D6A4BD001C2673 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5679627D6C019001C2673 /* HeaderCell */,
+				9EC5678927D6BC1E001C2673 /* DateTimeCell */,
+				9EC5678827D6BC12001C2673 /* CountryCell */,
+				9EC5678727D6BC07001C2673 /* KeywordCell */,
+				9EC5677D27D6A4FE001C2673 /* Filter-iPhone.storyboard */,
+				9EC5678127D6A6C9001C2673 /* FilterViewController.swift */,
+				9E85B0DF27DCCA4900FFDA2B /* Filter-iPad.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9EC5678427D6A6D7001C2673 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5678527D6A6DF001C2673 /* FilterBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		9EC5678727D6BC07001C2673 /* KeywordCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5679227D6BC67001C2673 /* KeywordCollectionViewCell.swift */,
+				9EC5679327D6BC67001C2673 /* KeywordCollectionViewCell.xib */,
+			);
+			path = KeywordCell;
+			sourceTree = "<group>";
+		};
+		9EC5678827D6BC12001C2673 /* CountryCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5678E27D6BC5E001C2673 /* CountryCollectionViewCell.swift */,
+				9EC5678F27D6BC5E001C2673 /* CountryCollectionViewCell.xib */,
+			);
+			path = CountryCell;
+			sourceTree = "<group>";
+		};
+		9EC5678927D6BC1E001C2673 /* DateTimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5678A27D6BC54001C2673 /* DateTimeCollectionViewCell.swift */,
+				9EC5678B27D6BC54001C2673 /* DateTimeCollectionViewCell.xib */,
+			);
+			path = DateTimeCell;
+			sourceTree = "<group>";
+		};
+		9EC5679627D6C019001C2673 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				9EC5679727D6C043001C2673 /* FilterHeader.swift */,
+				9EC5679827D6C043001C2673 /* FilterHeader.xib */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1731,7 +1887,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C109832555EF0C0097EDC3 /* LaunchScreen.storyboard in Resources */,
+				9EC5678D27D6BC54001C2673 /* DateTimeCollectionViewCell.xib in Resources */,
 				639F038E2556D54F00772893 /* Authentication-iPhone.storyboard in Resources */,
+				9E85B0E027DCCA4900FFDA2B /* Filter-iPad.storyboard in Resources */,
 				639CF69225617EA20013DAC7 /* QuotesTableViewCell.xib in Resources */,
 				637F7D1B25798BAA00F44400 /* MyProfile-iPad.storyboard in Resources */,
 				63D94FF3255A838A00B2E5AD /* FullArticle-iPhone.storyboard in Resources */,
@@ -1743,6 +1901,7 @@
 				63629B1725561071003836A2 /* HeaderView-iPhone.xib in Resources */,
 				2460AB5725826ABF00D3BF43 /* CoverA.xib in Resources */,
 				6393FFDA257BCA5500D55ECE /* SubCategoryTableViewCell.xib in Resources */,
+				9EC5679527D6BC67001C2673 /* KeywordCollectionViewCell.xib in Resources */,
 				637F7D1525798B7100F44400 /* Videos-iPad.storyboard in Resources */,
 				247318F6258B7E3C00ADC04E /* Policy-iPhone.storyboard in Resources */,
 				63AD8F652579568F00350DC9 /* Authentication-iPad.storyboard in Resources */,
@@ -1752,10 +1911,12 @@
 				63B7B9C32560371900C32A4E /* Comments-iPhone.storyboard in Resources */,
 				637F7D0C25798AF500F44400 /* Dashboard-iPad.storyboard in Resources */,
 				637F7D0925798ACD00F44400 /* RightMenu-iPad.storyboard in Resources */,
+				9EC5679127D6BC5E001C2673 /* CountryCollectionViewCell.xib in Resources */,
 				636EAB0A256028E700476A03 /* CommentsTableViewCell.xib in Resources */,
 				247318A925896AD100ADC04E /* NotificationListing-iPhone.storyboard in Resources */,
 				63629B24255611EE003836A2 /* RightMenu-iPhone.storyboard in Resources */,
 				637F7D1225798B5500F44400 /* Comments-iPad.storyboard in Resources */,
+				9EC5677E27D6A4FE001C2673 /* Filter-iPhone.storyboard in Resources */,
 				637A78372566D3A700C9A08D /* MyProfile-iPhone.storyboard in Resources */,
 				638777FC257C5008004D5A27 /* ArticleListing-iPhone.storyboard in Resources */,
 				63B7B9E125603A0A00C32A4E /* Quotes-iPhone.storyboard in Resources */,
@@ -1774,6 +1935,7 @@
 				63EEE735255AD2C3003B64D2 /* CategoriesCollectionViewCell.xib in Resources */,
 				63DB1580257BBD94007BA6B9 /* ArticleListingTableViewCell.xib in Resources */,
 				637191452571110400277101 /* Search-iPhone.storyboard in Resources */,
+				9EC5679A27D6C043001C2673 /* FilterHeader.xib in Resources */,
 				63B7B9E425603A1500C32A4E /* Videos-iPhone.storyboard in Resources */,
 				637F7D1E25798BC200F44400 /* Settings-iPad.storyboard in Resources */,
 				63629AF325560F43003836A2 /* Splash-iPhone.storyboard in Resources */,
@@ -1839,8 +2001,10 @@
 				63629B1F255611E8003836A2 /* RightMenuViewModel.swift in Sources */,
 				636EAB17256029E100476A03 /* CommentsViewController.swift in Sources */,
 				24731902258B7F2300ADC04E /* PolicyRepository.swift in Sources */,
+				9EC5679427D6BC67001C2673 /* KeywordCollectionViewCell.swift in Sources */,
 				63A8CD7A2577BFB000A60F56 /* LikesRepositoryImplementation.swift in Sources */,
 				63EE49AB257A4642008083D7 /* MyNewsViewModel.swift in Sources */,
+				9EC567A227D7A479001C2673 /* DateTimeCellViewModel.swift in Sources */,
 				6372E6A22557F8BB00A03E01 /* DashboardViewController.swift in Sources */,
 				2473189D25895A0C00ADC04E /* NotificationListingTableViewCell.swift in Sources */,
 				6385A067258037F70034085F /* SearchRepo.swift in Sources */,
@@ -1858,6 +2022,7 @@
 				63B7B9DB256039D300C32A4E /* QuotesViewModel.swift in Sources */,
 				6386893425768CD0003ECCD3 /* ForgetPasswordRepositoryImplementation.swift in Sources */,
 				6346A1E3255BDB33006B3FDF /* SegmentedPagerTabStripViewController.swift in Sources */,
+				9EC567A027D7A45B001C2673 /* KeywordCellViewModel.swift in Sources */,
 				6372E6802557DA1500A03E01 /* ConfirmPasswordViewController.swift in Sources */,
 				6372E6832557DA2000A03E01 /* ConfirmPasswordViewModel.swift in Sources */,
 				6346A1E9255BDB33006B3FDF /* ButtonBarView.swift in Sources */,
@@ -1886,6 +2051,7 @@
 				63C109C82555FF7C0097EDC3 /* Enum.swift in Sources */,
 				6386894425768F07003ECCD3 /* General.swift in Sources */,
 				6386894B25769361003ECCD3 /* OTPBuilder.swift in Sources */,
+				9E80629F27DC08BA0010D535 /* CountriesRepository.swift in Sources */,
 				6386894E25769373003ECCD3 /* OTPViewController.swift in Sources */,
 				63629AF725560F83003836A2 /* SplashBuilder.swift in Sources */,
 				639CF69125617EA20013DAC7 /* QuotesTableViewCell.swift in Sources */,
@@ -1918,6 +2084,7 @@
 				63DB1562257BB044007BA6B9 /* CategoriesRepoModel.swift in Sources */,
 				636EAB09256028E700476A03 /* CommentsTableViewCell.swift in Sources */,
 				6346A1E1255BDB33006B3FDF /* BarPagerTabStripViewController.swift in Sources */,
+				9EC5678027D6A6BB001C2673 /* FilterViewModel.swift in Sources */,
 				6372E6BC2558018B00A03E01 /* TopStoriesCellViewModel.swift in Sources */,
 				63DB1563257BB044007BA6B9 /* CategoriesChild.swift in Sources */,
 				63629AEF25560F30003836A2 /* SplashViewController.swift in Sources */,
@@ -1932,13 +2099,17 @@
 				63DB1582257BBD94007BA6B9 /* ArticleListingViewModel.swift in Sources */,
 				638777F9257C3130004D5A27 /* ArticleListingRepositoryImplementation.swift in Sources */,
 				63DB1564257BB044007BA6B9 /* CategoriesData.swift in Sources */,
+				9EC567A427D7A491001C2673 /* CountriesCellViewModel.swift in Sources */,
 				63629B1325561071003836A2 /* HeaderViewController.swift in Sources */,
+				9EC5679927D6C043001C2673 /* FilterHeader.swift in Sources */,
 				63B7B9D5256039C000C32A4E /* VideosViewController.swift in Sources */,
 				63C109DD2555FF830097EDC3 /* Extensions.swift in Sources */,
+				9E8062A227DC0DB80010D535 /* Countries.swift in Sources */,
 				639F03912556D57C00772893 /* ForgetPasswordViewController.swift in Sources */,
 				6372E6862557DA2900A03E01 /* ConfirmPasswordBuilder.swift in Sources */,
 				24731887258909B300ADC04E /* AllLikesData.swift in Sources */,
 				63629B1425561071003836A2 /* HeaderView.swift in Sources */,
+				9EC5678627D6A6DF001C2673 /* FilterBuilder.swift in Sources */,
 				63A8CD9B2577C9D300A60F56 /* LikesTableViewCell.swift in Sources */,
 				247318A22589629900ADC04E /* NotificationListingRepository.swift in Sources */,
 				63629B0A25561049003836A2 /* BaseUITextfield.swift in Sources */,
@@ -1957,6 +2128,7 @@
 				63A8CD892577C00100A60F56 /* SearchRepository.swift in Sources */,
 				6393FFD9257BCA5500D55ECE /* SubCategoryTableViewCell.swift in Sources */,
 				6386893A25768CEC003ECCD3 /* OTPRepositoryImplementation.swift in Sources */,
+				9EC5679C27D77E1E001C2673 /* CustomFlowLayout.swift in Sources */,
 				63A8CD6E2577BE9100A60F56 /* FavouritesRepositoryImplementation.swift in Sources */,
 				63C109DB2555FF830097EDC3 /* ImagePicker.swift in Sources */,
 				6372E6A52557F94C00A03E01 /* DashboardBuilder.swift in Sources */,
@@ -1983,19 +2155,23 @@
 				6372E6A82557F96700A03E01 /* DashboardViewModel.swift in Sources */,
 				6346A1E7255BDB33006B3FDF /* IndicatorInfo.swift in Sources */,
 				24479F93258440D8009B00EB /* QuotesRepoModel.swift in Sources */,
+				9E80629C27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m in Sources */,
 				6385CA1625687C5F000D21D8 /* SettingsViewController.swift in Sources */,
 				63C109E02555FF830097EDC3 /* DatePickerExtension.swift in Sources */,
 				63C109DE2555FF830097EDC3 /* ArchiveUtils.swift in Sources */,
 				63629B26255611EE003836A2 /* RightMenuViewController.swift in Sources */,
 				6385CA1C25687CF7000D21D8 /* SettingsTableViewCell.swift in Sources */,
+				9EC5679027D6BC5E001C2673 /* CountryCollectionViewCell.swift in Sources */,
 				2402F129258249BB0092CD04 /* PlayerView.swift in Sources */,
 				6385CA1225687C51000D21D8 /* SettingsBuilder.swift in Sources */,
 				24B7C57D25915DCF00C78308 /* CommentRepoModel.swift in Sources */,
 				63DB1583257BBD94007BA6B9 /* ArticleListingBuilder.swift in Sources */,
 				63D94FEC255A82BF00B2E5AD /* FullArticleViewModel.swift in Sources */,
 				637191722571367900277101 /* SearchTableViewCell.swift in Sources */,
+				9EC5678227D6A6C9001C2673 /* FilterViewController.swift in Sources */,
 				63A8CD832577BFE500A60F56 /* CategoriesRepository.swift in Sources */,
 				639F03942556D72400772893 /* ForgetPasswordViewModel.swift in Sources */,
+				9EC5678C27D6BC54001C2673 /* DateTimeCollectionViewCell.swift in Sources */,
 				63629AFC25560FAE003836A2 /* SplashViewModel.swift in Sources */,
 				63EEE734255AD2C3003B64D2 /* CategoriesCollectionViewCell.swift in Sources */,
 				6346A217255BDD92006B3FDF /* InterestViewModel.swift in Sources */,
@@ -2008,10 +2184,12 @@
 				6372E6D1255804F600A03E01 /* UITextView+Extension.swift in Sources */,
 				24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */,
 				240D9FA5258E5E810025791E /* PolicyRepoModel.swift in Sources */,
+				9EC5679E27D7808A001C2673 /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				6386893E25768D09003ECCD3 /* ConfirmPasswordRepository.swift in Sources */,
 				638777F0257C30AB004D5A27 /* ArticleListingRepo.swift in Sources */,
 				63629B0925561049003836A2 /* BaseParallaxHeaderView.swift in Sources */,
 				639F03822556D45600772893 /* LoginViewModel.swift in Sources */,
+				9E8062A427DC0DF60010D535 /* Country.swift in Sources */,
 				240D9FAC258F7A220025791E /* NotificationData.swift in Sources */,
 				6386893025768CB9003ECCD3 /* ForgetPasswordRepository.swift in Sources */,
 				63C109792555EF0B0097EDC3 /* SceneDelegate.swift in Sources */,
@@ -2160,18 +2338,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pulse/Pulse.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594JG72V68;
 				INFOPLIST_FILE = "$(SRCROOT)/Pulse/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.os.pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = devPulse2k20;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Supporting Files/Pulse-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2188,18 +2366,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pulse/Pulse.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 594JG72V68;
 				INFOPLIST_FILE = "$(SRCROOT)/Pulse/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.os.pulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = devPulse2k20;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Pulse/Supporting Files/Pulse-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

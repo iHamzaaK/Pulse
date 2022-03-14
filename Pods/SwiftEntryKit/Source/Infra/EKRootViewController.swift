@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol EntryPresenterDelegate: class {
+protocol EntryPresenterDelegate: AnyObject {
     var isResponsiveToTouches: Bool { set get }
-    func displayPendingEntryIfNeeded()
+    func displayPendingEntryOrRollbackWindow(dismissCompletionHandler: SwiftEntryKit.DismissCompletionHandler?)
 }
 
 class EKRootViewController: UIViewController {
@@ -214,7 +214,7 @@ extension EKRootViewController {
 
 extension EKRootViewController: EntryContentViewDelegate {
     
-    func didFinishDisplaying(entry: EKEntryView, keepWindowActive: Bool) {
+    func didFinishDisplaying(entry: EKEntryView, keepWindowActive: Bool, dismissCompletionHandler: SwiftEntryKit.DismissCompletionHandler?) {
         guard !isDisplaying else {
             return
         }
@@ -223,7 +223,7 @@ extension EKRootViewController: EntryContentViewDelegate {
             return
         }
         
-        delegate.displayPendingEntryIfNeeded()
+        delegate.displayPendingEntryOrRollbackWindow(dismissCompletionHandler: dismissCompletionHandler)
     }
     
     func changeToInactive(withAttributes attributes: EKAttributes, pushOut: Bool) {
