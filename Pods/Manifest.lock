@@ -26,7 +26,6 @@ PODS:
   - SwiftEntryKit (2.0.0)
   - SwiftyJSON (4.0.0)
   - TextFieldEffects (1.6.0)
-  - TTGTagCollectionView (2.1.0)
   - ViewAnimator (3.1.0)
   - YouTubePlayer (0.7.2)
 
@@ -46,7 +45,6 @@ DEPENDENCIES:
   - SlideMenuControllerSwift
   - SwiftEntryKit
   - TextFieldEffects
-  - TTGTagCollectionView
   - ViewAnimator
   - YouTubePlayer
 
@@ -68,7 +66,6 @@ SPEC REPOS:
     - SwiftEntryKit
     - SwiftyJSON
     - TextFieldEffects
-    - TTGTagCollectionView
     - ViewAnimator
     - YouTubePlayer
 
@@ -89,7 +86,6 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
-  TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
