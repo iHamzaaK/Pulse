@@ -43,6 +43,7 @@
 		24731906258B7F3100ADC04E /* PolicyRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */; };
 		24731909258BA16200ADC04E /* ArticleListing-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */; };
 		24B7C57D25915DCF00C78308 /* CommentRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7C57C25915DCF00C78308 /* CommentRepoModel.swift */; };
+		25462065591B5721576A8CFC /* Pods_Pulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12F3CD3583B1114C1B3D75F /* Pods_Pulse.framework */; };
 		63184856257ED92C001CE193 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184852257ED928001CE193 /* Montserrat-Light.otf */; };
 		63184857257ED92C001CE193 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184853257ED928001CE193 /* Montserrat-Medium.otf */; };
 		63184858257ED92C001CE193 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63184854257ED928001CE193 /* Montserrat-SemiBold.otf */; };
@@ -266,7 +267,6 @@
 		9EC567A027D7A45B001C2673 /* KeywordCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5679F27D7A45B001C2673 /* KeywordCellViewModel.swift */; };
 		9EC567A227D7A479001C2673 /* DateTimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC567A127D7A479001C2673 /* DateTimeCellViewModel.swift */; };
 		9EC567A427D7A491001C2673 /* CountriesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC567A327D7A491001C2673 /* CountriesCellViewModel.swift */; };
-		DC98A6015EEAC46EA613C792 /* Pods_Pulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -307,8 +307,6 @@
 		24731905258B7F3100ADC04E /* PolicyRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRepositoryImplementation.swift; sourceTree = "<group>"; };
 		24731908258BA16200ADC04E /* ArticleListing-iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "ArticleListing-iPad.storyboard"; sourceTree = "<group>"; };
 		24B7C57C25915DCF00C78308 /* CommentRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepoModel.swift; sourceTree = "<group>"; };
-		5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
-		5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63184852257ED928001CE193 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
 		63184853257ED928001CE193 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		63184854257ED928001CE193 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
@@ -514,6 +512,7 @@
 		63EEE73A255AE841003B64D2 /* BaseHeaderTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderTabViewController.swift; sourceTree = "<group>"; };
 		63F21D70255AA2B500EA4720 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		63F21D77255AA2CC00EA4720 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		74149498EAF7AD3B443D47BA /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
 		9E80629A27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEKScrollableSectionCollectionViewLayout.m; sourceTree = "<group>"; };
 		9E80629B27DBF9D80010D535 /* JEKScrollableSectionCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEKScrollableSectionCollectionViewLayout.h; sourceTree = "<group>"; };
 		9E80629E27DC08BA0010D535 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
@@ -537,7 +536,8 @@
 		9EC5679F27D7A45B001C2673 /* KeywordCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCellViewModel.swift; sourceTree = "<group>"; };
 		9EC567A127D7A479001C2673 /* DateTimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeCellViewModel.swift; sourceTree = "<group>"; };
 		9EC567A327D7A491001C2673 /* CountriesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCellViewModel.swift; sourceTree = "<group>"; };
-		F117E6E1CFF5E48468622CD6 /* Pods-Pulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.debug.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.debug.xcconfig"; sourceTree = "<group>"; };
+		C12F3CD3583B1114C1B3D75F /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74B49BC8877B4B3F98A1C1E /* Pods-Pulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.debug.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,7 +545,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC98A6015EEAC46EA613C792 /* Pods_Pulse.framework in Frameworks */,
+				25462065591B5721576A8CFC /* Pods_Pulse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,10 +675,10 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		442CA713746B81744D2AC55E /* Frameworks */ = {
+		4D23D03767E4FB3D710F98AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5ED7BDDD5D6A29D890338494 /* Pods_Pulse.framework */,
+				C12F3CD3583B1114C1B3D75F /* Pods_Pulse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1462,7 +1462,7 @@
 				63C109752555EF0B0097EDC3 /* Pulse */,
 				63C109742555EF0B0097EDC3 /* Products */,
 				9728CED94A496155CBC3F241 /* Pods */,
-				442CA713746B81744D2AC55E /* Frameworks */,
+				4D23D03767E4FB3D710F98AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1716,8 +1716,8 @@
 		9728CED94A496155CBC3F241 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F117E6E1CFF5E48468622CD6 /* Pods-Pulse.debug.xcconfig */,
-				5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */,
+				D74B49BC8877B4B3F98A1C1E /* Pods-Pulse.debug.xcconfig */,
+				74149498EAF7AD3B443D47BA /* Pods-Pulse.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1833,11 +1833,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C109872555EF0C0097EDC3 /* Build configuration list for PBXNativeTarget "Pulse" */;
 			buildPhases = (
-				84AEBB7FF0D0652A5E5118FC /* [CP] Check Pods Manifest.lock */,
+				BD5E34191EC611F0A2B9EDF9 /* [CP] Check Pods Manifest.lock */,
 				63C1096F2555EF0B0097EDC3 /* Sources */,
 				63C109702555EF0B0097EDC3 /* Frameworks */,
 				63C109712555EF0B0097EDC3 /* Resources */,
-				13E98C07228A9DFD00CADFAA /* [CP] Embed Pods Frameworks */,
+				97EF030167752040E7ED2ACA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1949,7 +1949,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13E98C07228A9DFD00CADFAA /* [CP] Embed Pods Frameworks */ = {
+		97EF030167752040E7ED2ACA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1966,7 +1966,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pulse/Pods-Pulse-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84AEBB7FF0D0652A5E5118FC /* [CP] Check Pods Manifest.lock */ = {
+		BD5E34191EC611F0A2B9EDF9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2332,7 +2332,7 @@
 		};
 		63C109882555EF0C0097EDC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F117E6E1CFF5E48468622CD6 /* Pods-Pulse.debug.xcconfig */;
+			baseConfigurationReference = D74B49BC8877B4B3F98A1C1E /* Pods-Pulse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2360,7 +2360,7 @@
 		};
 		63C109892555EF0C0097EDC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5680797938EF3C26D37613FD /* Pods-Pulse.release.xcconfig */;
+			baseConfigurationReference = 74149498EAF7AD3B443D47BA /* Pods-Pulse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
