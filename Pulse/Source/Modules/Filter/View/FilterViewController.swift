@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol FilterViewProtocol: AnyObject {
   func didTapOnDone(selectedFilter: SelectedFilters) -> Void
 }
@@ -204,7 +205,6 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDelega
       //      }
 
     default:
-     // assert(false, "Unexpected element kind")
         fatalError()
     }
   }
