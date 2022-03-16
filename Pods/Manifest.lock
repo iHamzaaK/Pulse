@@ -4,6 +4,14 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
+  - AppCenter (4.4.1):
+    - AppCenter/Analytics (= 4.4.1)
+    - AppCenter/Crashes (= 4.4.1)
+  - AppCenter/Analytics (4.4.1):
+    - AppCenter/Core
+  - AppCenter/Core (4.4.1)
+  - AppCenter/Crashes (4.4.1):
+    - AppCenter/Core
   - CDAlertView (0.11.0)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (7.1.1)
@@ -26,6 +34,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.3.0)
   - Alamofire
   - Alamofire-SwiftyJSON
+  - AppCenter
   - CDAlertView
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -46,6 +55,7 @@ SPEC REPOS:
     - ActionSheetPicker-3.0
     - Alamofire
     - Alamofire-SwiftyJSON
+    - AppCenter
     - CDAlertView
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -66,6 +76,7 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 2f5e3fde6b3205a7318f9338e4ec0f373ce7e75c
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  AppCenter: b0b6f1190215b5f983c42934db718f3b46fff3c0
   CDAlertView: cd6624e857c85ad14560e2cd23d7eb25b983b590
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
@@ -82,6 +93,6 @@ SPEC CHECKSUMS:
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 8698a11105983866e8aa120beae3f1d3a96d3bd8
+PODFILE CHECKSUM: e74aab4f69e45921b7fba5ba69150e4743b678a4
 
 COCOAPODS: 1.11.2

@@ -24,6 +24,8 @@ target 'Pulse' do
   pod 'YouTubePlayer'
   pod "ViewAnimator"
   pod "TTGTagCollectionView"
+  pod 'AppCenter'
+
 
 
   # Pods for Pulse
