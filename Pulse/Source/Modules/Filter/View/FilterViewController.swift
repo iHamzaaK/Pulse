@@ -204,7 +204,8 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDelega
       //      }
 
     default:
-      assert(false, "Unexpected element kind")
+     // assert(false, "Unexpected element kind")
+        fatalError()
     }
   }
 
