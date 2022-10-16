@@ -14,11 +14,14 @@ class SplashViewController: BaseViewController
     let zoomAnimation = AnimationType.zoom(scale: 0.5)
 
     @IBOutlet weak var imgViewLogo : UIImageView!
+    @IBOutlet weak var lblTitle : UILabel!
+    @IBOutlet weak var lblDescription : UILabel!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         navBarType = self.viewModel.getNavigationBar()
-        UIView.animate(views: [self.imgViewLogo],
+        UIView.animate(views: [self.imgViewLogo, lblTitle, lblDescription],
                        animations: [fromAnimation,zoomAnimation], delay: 0.5)
         
     }
@@ -26,7 +29,7 @@ class SplashViewController: BaseViewController
         navigate()
     }
     func navigate(){
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 3.5, repeats: false) { (_) in
             self.viewModel.checkUserState { (vc) in
                 AppRouter.createInitialRoute(vc: vc)
 

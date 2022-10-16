@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Splash View Controller-->
         <scene sceneID="pLn-ay-Pd7">
@@ -19,14 +28,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-logo" translatesAutoresizingMaskIntoConstraints="NO" id="cWQ-0M-EEy">
-                                <rect key="frame" x="127.33333333333334" y="136" width="120.33333333333334" height="101.66666666666669"/>
+                                <rect key="frame" x="127.33333333333334" y="90" width="120.33333333333334" height="101.66666666666669"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Pulse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="447-r0-UcA">
+                                <rect key="frame" x="92" y="216.66666666666666" width="191" height="46.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The world at your fingertips" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJS-sd-J2G">
+                                <rect key="frame" x="29.333333333333343" y="706.33333333333337" width="316.33333333333326" height="25.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dT6-3x-6EV"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="447-r0-UcA" firstAttribute="centerX" secondItem="cWQ-0M-EEy" secondAttribute="centerX" id="1l0-rd-KYe"/>
+                            <constraint firstAttribute="bottom" secondItem="wJS-sd-J2G" secondAttribute="bottom" constant="80" id="386-2s-7mx" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
                             <constraint firstItem="cWQ-0M-EEy" firstAttribute="centerX" secondItem="dT6-3x-6EV" secondAttribute="centerX" id="IDg-pe-NQa"/>
-                            <constraint firstItem="cWQ-0M-EEy" firstAttribute="top" secondItem="Qdg-iy-whR" secondAttribute="top" constant="136" id="k2U-CH-fry"/>
+                            <constraint firstAttribute="trailing" secondItem="wJS-sd-J2G" secondAttribute="trailing" constant="29.333333333333371" id="Kao-zf-tt5"/>
+                            <constraint firstItem="wJS-sd-J2G" firstAttribute="leading" secondItem="Qdg-iy-whR" secondAttribute="leading" constant="29.333333333333343" id="W9I-pR-bFX"/>
+                            <constraint firstItem="447-r0-UcA" firstAttribute="top" secondItem="cWQ-0M-EEy" secondAttribute="bottom" constant="25" id="avM-VL-nbw" customClass="BaseLayoutConstraint" customModule="Pulse" customModuleProvider="target"/>
+                            <constraint firstItem="cWQ-0M-EEy" firstAttribute="top" secondItem="Qdg-iy-whR" secondAttribute="top" constant="90" id="k2U-CH-fry"/>
                             <constraint firstItem="xUn-tf-ojA" firstAttribute="top" secondItem="Qdg-iy-whR" secondAttribute="top" id="kCi-Xl-NYO"/>
                             <constraint firstItem="cWQ-0M-EEy" firstAttribute="height" secondItem="Qdg-iy-whR" secondAttribute="height" multiplier="0.125" id="lgP-nH-PJe"/>
                             <constraint firstItem="cWQ-0M-EEy" firstAttribute="width" secondItem="Qdg-iy-whR" secondAttribute="width" multiplier="0.321256" id="oI4-N5-iSU"/>
@@ -38,11 +64,13 @@
                     <size key="freeformSize" width="375" height="812"/>
                     <connections>
                         <outlet property="imgViewLogo" destination="cWQ-0M-EEy" id="5E9-cV-jrt"/>
+                        <outlet property="lblDescription" destination="wJS-sd-J2G" id="YmD-0j-BIM"/>
+                        <outlet property="lblTitle" destination="447-r0-UcA" id="IIH-IB-xBu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEU-F0-CDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="-48"/>
+            <point key="canvasLocation" x="741.60000000000002" y="-48.029556650246306"/>
         </scene>
     </scenes>
     <resources>
