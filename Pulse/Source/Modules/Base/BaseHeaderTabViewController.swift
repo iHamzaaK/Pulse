@@ -35,7 +35,7 @@ class BaseHeaderTabViewController: UITabBarController , HeaderViewDelegate,Foote
         
         _headerView.delegate = self
         //      _footerView.delegate = self
-        _headerView.bgImageContainer?.isRounded = true
+//        _headerView.bgImageContainer?.isRounded = true
 //        _headerView.bgImageContainer?.layer.cornerRadius = 20
         configureHeaderViewConstraints()
         

@@ -35,7 +35,7 @@ public class HeaderViewController: UIViewController, HeaderViewDelegate,FooterVi
         
         _headerView.delegate = self
         //      _footerView.delegate = self
-        _headerView.bgImageContainer?.isRounded = true
+//        _headerView.bgImageContainer?.isRounded = true
 //        _headerView.bgImageContainer?.layer.cornerRadius = 20
         configureHeaderViewConstraints()
         
