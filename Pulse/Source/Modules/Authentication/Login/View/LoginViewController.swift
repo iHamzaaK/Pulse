@@ -83,14 +83,13 @@ extension LoginViewController{
                         
                         NotificationCenter.default.post(name: Notification.Name("updateUserImage"), object: nil)
 
-                    }
-                    else{
+                    } else {
                         self.lblEmailError.isHidden = true
                         self.lblPasswordError.isHidden = false
 //                        self.lblEmailError.text = ErrorDescription.invalidEmail.rawValue
                         self.lblPasswordError.text = ErrorDescription.invalidCredentials.rawValue
 
-//                        Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)
+                        Alert.showAlertWithAutoHide(title: ErrorDescription.errorTitle.rawValue, message: errorMsg, autoHidetimer: 2, type: .error)
                     }
                 }
             }
