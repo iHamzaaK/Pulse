@@ -10,7 +10,7 @@ class ForgetPasswordBuilder{
     static func build()-> UIViewController{
         let sb = Utilities.getStoryboard(identifier: Storyboards.auth.rawValue)
         let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.forgetPassword.rawValue) as! ForgetPasswordViewController
-        let navBarType = navigationBarTypes.backButtonWithRightMenuButton
+        let navBarType = navigationBarTypes.backButtonWithTitle
         let forgetPassRepo = ForgetPasswordRepositoryImplementation()
         let viewModel = ForgetPasswordViewModel(navigationType: navBarType, repo: forgetPassRepo)
         vc.viewModel = viewModel
