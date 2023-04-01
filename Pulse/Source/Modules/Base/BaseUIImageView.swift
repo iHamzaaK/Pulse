@@ -9,18 +9,18 @@
 import UIKit
 
 class BaseUIImageView : UIImageView{
-    @IBInspectable var isRounded : Bool = false {
-        didSet{
-            self.roundedCorners()
-        }
+  @IBInspectable var isRounded : Bool = false {
+    didSet{
+      self.roundedCorners()
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.roundedCorners()
+  }
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.roundedCorners()
+  }
+  private func roundedCorners(){
+    if self.isRounded{
+      self.layer.cornerRadius = self.frame.height/2
     }
-    private func roundedCorners(){
-        if self.isRounded{
-            self.layer.cornerRadius = self.frame.height/2
-        }
-    }
+  }
 }
