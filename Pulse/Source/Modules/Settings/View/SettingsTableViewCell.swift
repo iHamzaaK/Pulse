@@ -6,36 +6,35 @@
 //
 
 import UIKit
-protocol SettingsProtocol : class{
-    func didTurnOnOffSwitch(switchFlag : Bool)->Void
+
+protocol SettingsProtocol : AnyObject{
+  func didTurnOnOffSwitch(switchFlag : Bool)->Void
 }
-class SettingsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var lblTitle : BaseUILabel!
-    @IBOutlet weak var onOFFSwitch : UISwitch!
-    weak var delegate : SettingsProtocol!
-    var switchFlag: Bool = false {
-        didSet{               //This will fire everytime the value for switchFlag is set
-            //print(switchFlag) //do something with the switchFlag variable
-            delegate.didTurnOnOffSwitch(switchFlag: switchFlag)
-        }
+
+final class SettingsTableViewCell: UITableViewCell {
+  @IBOutlet weak var lblTitle : BaseUILabel!
+  @IBOutlet weak var onOFFSwitch : UISwitch!
+  @IBAction func switchChanged(_ sender: Any) {
+    if self.onOFFSwitch.isOn{
+      switchFlag = true
+    }else{
+      switchFlag = false
     }
-    @IBAction func switchChanged(_ sender: Any) {
-        if self.onOFFSwitch.isOn{
-            switchFlag = true
-        }else{
-            switchFlag = false
-        }
+  }
+
+  weak var delegate : SettingsProtocol!
+  var switchFlag: Bool = false {
+    didSet{
+      //This will fire everytime the value for switchFlag is set
+      delegate.didTurnOnOffSwitch(switchFlag: switchFlag)
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
 }
