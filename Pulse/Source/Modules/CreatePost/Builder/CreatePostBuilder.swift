@@ -6,15 +6,14 @@
 //
 
 import UIKit
-class CreatePostBuilder
-{
-    static func build()-> UIViewController{
-        let sb = Utilities.getStoryboard(identifier: Storyboards.createPost.rawValue)
-        let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.createPost.rawValue) as! CreatePostViewController
-        let navBarType = navigationBarTypes.clearNavBar
 
-        let viewModel = CreatePostViewModel(navigationType: navBarType)
-        vc.viewModel = viewModel
-        return vc
-    }
+final class CreatePostBuilder {
+  static func build()-> UIViewController{
+    let sb = Utilities.getStoryboard(identifier: Storyboards.createPost.rawValue)
+    let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.createPost.rawValue) as! CreatePostViewController
+    let navBarType = navigationBarTypes.clearNavBar
+    let viewModel = CreatePostViewModel(navigationType: navBarType)
+    vc.viewModel = viewModel
+    return vc
+  }
 }

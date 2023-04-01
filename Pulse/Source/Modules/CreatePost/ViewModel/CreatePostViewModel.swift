@@ -7,15 +7,15 @@
 
 import UIKit
 
-class CreatePostViewModel
-{
-    let headerTitle = ""
-    private let navBarType : navigationBarTypes!
+final class CreatePostViewModel {
+  private let headerTitle = ""
+  private let navBarType : navigationBarTypes!
 
-    init(navigationType navBar : navigationBarTypes) {
-        self.navBarType = navBar
-    }
-    func getNavigationBar()-> navigationBarTypes{
-        return navBarType
-    }
+  init(navigationType navBar : navigationBarTypes) {
+    self.navBarType = navBar
+  }
+
+  func getNavigationBar()-> navigationBarTypes{
+    return navBarType
+  }
 }
