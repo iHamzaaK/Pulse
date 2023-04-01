@@ -6,12 +6,8 @@
 //
 
 import Foundation
-class InterestViewModel
-{
+
+final class InterestViewModel {
     let headerTitle = "Interests"
-
-    init() {
-    }
-    
-
+    init() {}
 }

@@ -6,12 +6,8 @@
 //
 
 import UIKit
-class MyNewsViewModel
-{
-    let headerTitle = "MyNews"
 
-    init() {
-    }
-    
-
+final class MyNewsViewModel {
+  let headerTitle = "MyNews"
+  init() {}
 }

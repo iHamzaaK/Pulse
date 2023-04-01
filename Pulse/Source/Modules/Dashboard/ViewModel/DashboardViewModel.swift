@@ -7,18 +7,20 @@
 
 import UIKit
 
-class DashboardViewModel
-{
+final class DashboardViewModel {
   let headerTitle = ""
   private let navBarType : navigationBarTypes!
   private let repository: CountriesRepository!
+
   init(navigationType navBar : navigationBarTypes, repo: CountriesRepository) {
     self.navBarType = navBar
     self.repository = repo
   }
+
   func getNavigationBar()-> navigationBarTypes{
     return navBarType
   }
+
   func getCountries() {
     self.repository.getCountries { success, serverMsg, content in
       if success {

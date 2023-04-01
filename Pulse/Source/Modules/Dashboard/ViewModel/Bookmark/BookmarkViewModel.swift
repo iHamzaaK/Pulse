@@ -6,12 +6,7 @@
 //
 
 import UIKit
-class BookmarkViewModel
-{
+final class BookmarkViewModel {
     let headerTitle = "Bookmark"
-
-    init() {
-    }
-    
-
+    init() {}
 }
