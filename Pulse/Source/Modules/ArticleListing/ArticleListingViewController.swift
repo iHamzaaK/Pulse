@@ -10,21 +10,30 @@ import AVFoundation
 import AVKit
 import YouTubePlayer
 import ViewAnimator
-class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
-  func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-    return IndicatorInfo(title: viewModel.headerTitle)
-  }
+
+final class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
   var offsetObservation: NSKeyValueObservation?
   private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
   let fromAnimation = AnimationType.vector(CGVector(dx: 30, dy: 0))
   var lblQuoteHeight : CGFloat = DesignUtility.convertToRatio(60, sizedForIPad: DesignUtility.isIPad, sizedForNavi: false)
   var refreshControl = UIRefreshControl()
   var viewModel : ArticleListingViewModel!
+  var expandedCells = Set<Int>()
+  var pageNo = 1{
+    didSet{
+      getData(paged: pageNo)
+    }
+  }
+
   @IBOutlet weak var viewQuote: UIView!
   @IBOutlet weak var lblQoute: BaseUILabel!
   @IBOutlet weak var lblQouteDate: BaseUILabel!
   @IBOutlet weak var lblArticleTypeHeading: BaseUILabel!
   @IBOutlet weak var btnFilter: BaseUIButton!
+  @IBOutlet weak var heightConstraintViewQuote : NSLayoutConstraint!
+  @IBOutlet var heightConstraintTitle : NSLayoutConstraint!
+  @IBOutlet weak var topConstraint : NSLayoutConstraint!
+  @IBOutlet weak var emptyView: UIView!
   @IBOutlet weak var btnAddTopic: BaseUIButton!{
     didSet{
       let str = "+ Add topics to create your own personal news feed"
@@ -44,16 +53,6 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
 
     }
   }
-
-  @IBOutlet weak var btnQuote: BaseUIButton!{
-    didSet{
-      btnQuote.addTarget(self, action: #selector(self.didTapOnQuote), for: .touchUpInside)
-    }
-  }
-
-  @IBOutlet weak var heightConstraintViewQuote : NSLayoutConstraint!
-  @IBOutlet var heightConstraintTitle : NSLayoutConstraint!
-  @IBOutlet weak var topConstraint : NSLayoutConstraint!
   @IBOutlet weak var lblEmptyViewText: UILabel!{
     didSet{
       var strType = "selected interests"
@@ -63,15 +62,11 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
       self.lblEmptyViewText.text = "You don’t have any \(strType) right now."
     }
   }
-  @IBOutlet weak var emptyView: UIView!
-
-  var expandedCells = Set<Int>()
-  var pageNo = 1{
+  @IBOutlet weak var btnQuote: BaseUIButton!{
     didSet{
-      getData(paged: pageNo)
+      btnQuote.addTarget(self, action: #selector(self.didTapOnQuote), for: .touchUpInside)
     }
   }
-
   @IBOutlet weak var tblView: UITableView!{
     didSet{
       self.tblView.delegate = self
@@ -116,10 +111,14 @@ class ArticleListingViewController: BaseViewController, IndicatorInfoProvider {
     offsetObservation?.invalidate()
     offsetObservation = nil
   }
+
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     self.view.endEditing(true)
   }
 
+  func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+    return IndicatorInfo(title: viewModel.headerTitle)
+  }
 }
 
 extension ArticleListingViewController{
@@ -206,6 +205,7 @@ extension ArticleListingViewController{
       }
     }
   }
+
   func setupView(){
     viewQuote.isHidden = true
     lblArticleTypeHeading.text =  self.viewModel.getHeaderTitle()
@@ -226,6 +226,7 @@ extension ArticleListingViewController{
     refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
     tblView .addSubview(refreshControl) // not required when using UITableViewController
   }
+
   @objc func didTapOnQuote(){
     AppRouter.goToSpecificController(vc: QuotesBuilder.build())
   }
@@ -285,6 +286,7 @@ extension ArticleListingViewController{
 
 
 }
+
 extension ArticleListingViewController: FilterViewProtocol {
   func didTapOnDone(selectedFilter: SelectedFilters) {
     self.viewModel.getListing(keyword: selectedFilter.0, date: selectedFilter.1, paged: 1) { (success, serverMsg) in
@@ -414,12 +416,15 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
       }
     }
   }
+
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.viewModel.getArticleCount()
   }
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListingTableViewCell", for: indexPath) as! ArticleListingTableViewCell
     cell.tag = indexPath.row
@@ -427,6 +432,7 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
     cell.delegate = self
     return cell
   }
+
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     let count = self.viewModel.getArticleCount()
     if count>1{
@@ -443,16 +449,18 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
       AppRouter.goToSpecificController(vc: vc)
     }
   }
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
   }
+
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
     stopVideos()
   }
+
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if self.viewModel.showQuoteView(){
-
-      if scrollView.contentOffset.y > 50 {// the value when you want the headerview to hide
+      if scrollView.contentOffset.y > 50 {
         view.layoutIfNeeded()
         heightConstraintViewQuote.constant = 0
         UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
@@ -460,7 +468,6 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         }, completion: nil)
 
       }else {
-        // expand the header
         view.layoutIfNeeded()
         heightConstraintViewQuote.constant = lblQuoteHeight // Your initial height of header view
         UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction], animations: {
@@ -468,7 +475,5 @@ extension ArticleListingViewController: UITableViewDelegate, UITableViewDataSour
         }, completion: nil)
       }
     }
-
   }
-
 }
