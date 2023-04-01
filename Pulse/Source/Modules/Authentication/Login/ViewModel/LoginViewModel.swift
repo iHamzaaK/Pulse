@@ -26,7 +26,6 @@ final class LoginViewModel{
   }
 
   func validateEmailPassword() throws -> Bool{
-    if !Utilities.isValidEmail(email: email.value) { throw EmailErrors.invalidEmail}
     if !Utilities.isValidPassword(password: password.value ?? "") { throw PasswordErrors.invalidPassword}
     return true
   }
