@@ -72,7 +72,7 @@ public class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
     }
     return nil
   }
-
+  
   func evaluatedMinimumInteritemSpacing(at sectionIndex:Int) -> CGFloat {
     if let delegate = self.collectionView?.delegate as? UICollectionViewDelegateFlowLayout {
       let inteitemSpacing = delegate.collectionView?(self.collectionView!, layout: self, minimumInteritemSpacingForSectionAt: sectionIndex)
@@ -93,5 +93,5 @@ public class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
     }
     return self.sectionInset
   }
- 
+
 }

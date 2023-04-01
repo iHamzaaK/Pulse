@@ -1,13 +1,9 @@
 
 import UIKit
-class UserProfileTagsFlowLayout: UICollectionViewFlowLayout {
 
+final class UserProfileTagsFlowLayout: UICollectionViewFlowLayout {
   override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-
     let collectionViewWidth = self.collectionView!.frame.width - (self.sectionInset.right + self.sectionInset.left)
-
-
-
     let attributesForElementsInRect = super.layoutAttributesForElements(in: rect)
     var newAttributesForElementsInRect = [UICollectionViewLayoutAttributes]()
 
@@ -23,7 +19,7 @@ class UserProfileTagsFlowLayout: UICollectionViewFlowLayout {
         newLeftAlignedFrame.origin.x = self.sectionInset.left
         attributes.frame = newLeftAlignedFrame
       }
-        else {
+      else {
         var newLeftAlignedFrame = attributes.frame
         newLeftAlignedFrame.origin.x = leftMargin
         attributes.frame = newLeftAlignedFrame
@@ -31,7 +27,6 @@ class UserProfileTagsFlowLayout: UICollectionViewFlowLayout {
       leftMargin += attributes.frame.size.width + 8 // Makes the space between cells
       newAttributesForElementsInRect.append(attributes)
     }
-
     return newAttributesForElementsInRect
   }
 }
