@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias SelectedFilters = (String, Int)
+
 protocol FilterViewModel {
   func getDateTimeFilterArray() -> [String]
   func sectionsForCollectionView(tag: Int) -> Int
@@ -19,7 +21,6 @@ protocol FilterViewModel {
   func cellViewModel(for row: Int) -> DateTimeCellViewModel
   func cellViewModel(for row: Int) -> CountriesCellViewModel
   func didDeleteKeyword(for row: Int)
-//  func didSelectItem(for row: Int, section: Int)
   var selectedDateTime: Int { get set }
   var selectedCountry: String { get set }
   func getCountries() -> [Country]
@@ -28,8 +29,8 @@ protocol FilterViewModel {
   func getNavigationBar()-> navigationBarTypes
   func getAllFilters() -> SelectedFilters
 }
-final class FilterViewModelImplementation: FilterViewModel {
 
+final class FilterViewModelImplementation: FilterViewModel {
   private let navBar : navigationBarTypes!
   var arrKeywords: [String]
   var arrCountries: [Country]
@@ -44,15 +45,19 @@ final class FilterViewModelImplementation: FilterViewModel {
     self.arrDateTime = DateTimeFilter.allFilters()
 
   }
+
   func getNavigationBar()-> navigationBarTypes{
     return navBar
   }
+
   func getCountries() -> [Country] {
     arrCountries
   }
+
   func getDateTimeFilterArray() -> [String]{
     DateTimeFilter.allFilters()
   }
+
   func sectionsForCollectionView(tag: Int) -> Int {
     if tag == 0 {
       return 2
@@ -63,13 +68,15 @@ final class FilterViewModelImplementation: FilterViewModel {
   func collectionViewHeight() -> Int {
     return arrKeywords.count * 35
   }
+
   func addKeywords(keyword: String) {
     self.arrKeywords.append(keyword)
   }
+
   func rowsForSection(section : Int, tag: Int) -> Int {
     if tag == 0 {
       if section == 0{
-      return arrKeywords.count
+        return arrKeywords.count
       }
       return arrCountries.count
     }
@@ -77,17 +84,8 @@ final class FilterViewModelImplementation: FilterViewModel {
 
       return arrDateTime.count
     }
-//    switch section {
-//    case FilterSections.keywords.rawValue:
-//      return arrKeywords.count
-//    case FilterSections.countries.rawValue:
-//      return arrCountries.count
-//    case FilterSections.dateTime.rawValue:
-//      return arrDateTime.count
-//    default:
-//      return 0
-//    }
   }
+
   func dataForRow(section: Int, row: Int) -> String {
     let filter = FilterSections.init(rawValue: section)
     switch filter {
@@ -105,26 +103,27 @@ final class FilterViewModelImplementation: FilterViewModel {
   func cellViewModel(for row: Int) -> KeywordCellViewModel{
     let keyword = arrKeywords[row]
     let viewModel = KeywordCellViewModelImplementation(keyword: keyword)
-
     return viewModel
   }
 
   func cellViewModel(for row: Int) -> DateTimeCellViewModel{
     let dateTime = arrDateTime[row]
     let isSelected = selectedDateTime == row
-
     let viewModel = DateTimeCellViewModelImplementation(dateTime: dateTime, isSelected: isSelected)
     return viewModel
   }
+
   func cellViewModel(for row: Int) -> CountriesCellViewModel{
     let country = arrCountries[row].title ?? ""
     let isSelected = selectedCountry == country
     let viewModel = CountriesCellViewModelImplementation(country: country, isSelected: isSelected)
     return viewModel
   }
+
   func didDeleteKeyword(for row: Int) {
     arrKeywords.remove(at: row)
   }
+
   func heightForSectionHeader(section: Int, tag: Int) -> Int {
     if tag == 0 {
       if section == 0 {
@@ -135,16 +134,6 @@ final class FilterViewModelImplementation: FilterViewModel {
     return 50
   }
   func title(forSection section: Int) -> String {
-//    switch section {
-//    case FilterSections.keywords.rawValue:
-//      return ""
-//    case FilterSections.countries.rawValue:
-//      return "Countries"
-//    case FilterSections.dateTime.rawValue:
-//      return "Date & Time"
-//    default:
-//      return ""
-//    }
     if section == 0 {
       return "Countries"
     }
@@ -152,22 +141,13 @@ final class FilterViewModelImplementation: FilterViewModel {
       return "Date & Time"
     }
   }
-////  func didSelectItem(for row: Int, section: Int){
-////    if section == 0 {
-////      // setup country selection
-////    }
-////    else {
-////      selectedDateTime = row
-////    }
-//  }
 
   func sizeForItem(row: Int, section: Int, tag: Int) -> CGSize{
     let fontSize = DesignUtility.getFontSize(fSize: 24)
-
     if tag == 0 {
-    if section == 0 {
-      return CGSize(width: 10, height: 10)
-    }
+      if section == 0 {
+        return CGSize(width: 10, height: 10)
+      }
       else {
         let country = arrCountries[row].title ?? ""
         let size = country.size(withAttributes: [
@@ -188,6 +168,7 @@ final class FilterViewModelImplementation: FilterViewModel {
       return CGSize(width: width, height: height)
     }
   }
+
   func getAllFilters() -> SelectedFilters{
     let selectedDate = selectedDateTime
     let selectedCountry = selectedCountry
@@ -202,5 +183,3 @@ final class FilterViewModelImplementation: FilterViewModel {
     return (keywords, selectedDate)
   }
 }
-
-typealias SelectedFilters = (String, Int)

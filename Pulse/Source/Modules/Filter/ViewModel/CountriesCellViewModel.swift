@@ -6,11 +6,13 @@
 //
 
 import Foundation
+
 protocol CountriesCellViewModel {
   func didSelect()
   var country: String { get }
   var isSelected: Bool { get set }
 }
+
 class CountriesCellViewModelImplementation: CountriesCellViewModel {
   var country: String
   let image: UIImage? = nil

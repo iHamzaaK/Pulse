@@ -6,19 +6,21 @@
 //
 
 import Foundation
+
 protocol DateTimeCellViewModel {
   func didSelect() -> Void
   var dateTime: String { get }
   var isSelected: Bool { get set } 
 }
 
-class DateTimeCellViewModelImplementation: DateTimeCellViewModel{
+final class DateTimeCellViewModelImplementation: DateTimeCellViewModel{
   var dateTime: String
   var isSelected: Bool
   init(dateTime: String, isSelected: Bool){
     self.dateTime = dateTime
     self.isSelected = isSelected
   }
+  
   func didSelect() {
     isSelected = !isSelected
   }

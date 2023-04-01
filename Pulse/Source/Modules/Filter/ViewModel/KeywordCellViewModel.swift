@@ -9,9 +9,9 @@ import Foundation
 
 protocol KeywordCellViewModel {
   var keyword: String { get }
-
 }
-class KeywordCellViewModelImplementation: KeywordCellViewModel{
+
+final class KeywordCellViewModelImplementation: KeywordCellViewModel{
   var keyword: String
   init(keyword : String){
     self.keyword = keyword

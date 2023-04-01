@@ -6,9 +6,10 @@
 //
 
 import UIKit
-class FilterBuilder
+
+final class FilterBuilder
 {
-  static func build(title : String, navBarType: navigationBarTypes)-> UIViewController{
+  static func build(title : String, navBarType: navigationBarTypes)-> UIViewController {
     let sb = Utilities.getStoryboard(identifier: Storyboards.filter.rawValue)
     let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.filter.rawValue) as! FilterViewController
     let navBarType = navBarType

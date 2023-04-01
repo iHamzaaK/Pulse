@@ -10,7 +10,8 @@ import UIKit
 protocol DateTimeCollectionProtocol: AnyObject {
   func didSelectTime(row: Int) -> Void
 }
-class DateTimeCollectionViewCell: UICollectionViewCell {
+
+final class DateTimeCollectionViewCell: UICollectionViewCell {
   @IBOutlet var view : UIView!
   weak var delegate: DateTimeCollectionProtocol!
   @IBOutlet var lblDateTime : UILabel!

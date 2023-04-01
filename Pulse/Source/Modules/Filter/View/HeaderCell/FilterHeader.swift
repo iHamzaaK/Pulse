@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterHeader: UICollectionReusableView {
+final class FilterHeader: UICollectionReusableView {
 
   @IBOutlet var lblTitle : UILabel!
   @IBOutlet var view : UIView!

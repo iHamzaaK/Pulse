@@ -10,23 +10,15 @@ import UIKit
 protocol KeywordCollectionDelegate: AnyObject {
   func didTapOnCancel(row: Int) -> Void
 }
-class KeywordCollectionViewCell: UICollectionViewCell {
+
+final class KeywordCollectionViewCell: UICollectionViewCell {
   weak var delegate: KeywordCollectionDelegate!
-  @IBOutlet var btnCancel : UIButton!
-  @IBOutlet var lblKeyword : UILabel!
-  @IBOutlet var view : UIView!
   private var row: Int = -1
   var cellViewModel: KeywordCellViewModel! {
     didSet {
       lblKeyword.text = cellViewModel.keyword
     }
   }
-  @IBOutlet private var maxWidthConstraint: NSLayoutConstraint! {
-    didSet {
-      maxWidthConstraint.isActive = false
-    }
-  }
-
   var maxWidth: CGFloat? = nil {
     didSet {
       guard let maxWidth = maxWidth else {
@@ -34,6 +26,15 @@ class KeywordCollectionViewCell: UICollectionViewCell {
       }
       maxWidthConstraint.isActive = true
       maxWidthConstraint.constant = maxWidth
+    }
+  }
+
+  @IBOutlet var btnCancel : UIButton!
+  @IBOutlet var lblKeyword : UILabel!
+  @IBOutlet var view : UIView!
+  @IBOutlet private var maxWidthConstraint: NSLayoutConstraint! {
+    didSet {
+      maxWidthConstraint.isActive = false
     }
   }
 
@@ -53,11 +54,12 @@ class KeywordCollectionViewCell: UICollectionViewCell {
   func configCell(viewModel: KeywordCellViewModel, row: Int, cellWidth: CGFloat){
     cellViewModel = viewModel
     self.row = row
-//    maxWidth = cellWidth
   }
+
   func configView(){
     view.layer.cornerRadius = 10
   }
+  
   @objc func didTapOnBtnCancel() {
     delegate.didTapOnCancel(row: row)
   }

@@ -6,10 +6,12 @@
 //
 
 import UIKit
+
 protocol CountryCollectionProtocol: AnyObject {
   func didSelectCountry(row: Int) -> Void
 }
-class CountryCollectionViewCell: UICollectionViewCell {
+
+final class CountryCollectionViewCell: UICollectionViewCell {
   weak var delegate: CountryCollectionProtocol!
   private var row: Int = -1
 
@@ -21,6 +23,7 @@ class CountryCollectionViewCell: UICollectionViewCell {
       maxWidthConstraint.isActive = false
     }
   }
+  
   var cellViewModel: CountriesCellViewModel! {
     didSet {
       lblCountry.text = cellViewModel.country
@@ -32,6 +35,7 @@ class CountryCollectionViewCell: UICollectionViewCell {
       }
     }
   }
+
   var maxWidth: CGFloat? = nil {
     didSet {
       guard let maxWidth = maxWidth else {
@@ -41,9 +45,11 @@ class CountryCollectionViewCell: UICollectionViewCell {
       maxWidthConstraint.constant = maxWidth
     }
   }
+
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     delegate.didSelectCountry(row: row)
   }
+
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
@@ -56,15 +62,15 @@ class CountryCollectionViewCell: UICollectionViewCell {
     ])
     configView()
   }
+
   func configCell(viewModel: CountriesCellViewModel, row: Int, width: CGFloat){
     cellViewModel = viewModel
     self.row = row
     let size = viewModel.country.size(withAttributes: [
       NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)
     ])
-//    maxWidth = size.width
-
   }
+
   func configView(){
     view.layer.cornerRadius = 10
     view.layer.backgroundColor = UIColor.lightGray.cgColor
