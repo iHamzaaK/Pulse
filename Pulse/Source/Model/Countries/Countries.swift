@@ -6,28 +6,12 @@
 //
 
 import Foundation
-//{
-//  "data": [
-//    {
-//      "id": 19606,
-//      "title": "Saudia Arabia"
-//    },
-//    {
-//      "id": 19605,
-//      "title": "United Arab Emirates"
-//    }
-//  ],
-//  "success": true,
-//  "statusCode": 200
-//}
 struct Countries : Codable {
-
   let data : [Country]?
   let success : Bool?
   let message : String?
   let statusCode : Int?
-
-
+  
   enum CodingKeys: String, CodingKey {
     case data = "data"
     case statusCode = "statusCode"
@@ -41,6 +25,4 @@ struct Countries : Codable {
     success = try values.decodeIfPresent(Bool.self, forKey: .success) ?? false
     message = try values.decodeIfPresent(String.self, forKey: .message) ?? String()
   }
-
-
 }
