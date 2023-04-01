@@ -9,25 +9,21 @@
 
 import UIKit
 
-class RightMenuTableViewCell: UITableViewCell {
+final class RightMenuTableViewCell: UITableViewCell {
+  var cellViewModel : RightMenuCellModel!{
+    didSet{
+      lblTitle.text = cellViewModel.value
+      lblTitle.changeLanguage()
+    }
+  }
+  @IBOutlet weak var lblTitle : BaseUILabel!
+  @IBOutlet weak var imgTitle : UIImageView!
 
-    var cellViewModel : RightMenuCellModel!{
-        didSet{
-            lblTitle.text = cellViewModel.value
-            lblTitle.changeLanguage()
-        }
-    }
-    @IBOutlet weak var lblTitle : BaseUILabel!
-    @IBOutlet weak var imgTitle : UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    func configCell(viewModel : RightMenuCellModel){
-        self.cellViewModel = viewModel
-        
-    }
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
 
+  func configCell(viewModel : RightMenuCellModel){
+    self.cellViewModel = viewModel
+  }
 }

@@ -8,14 +8,13 @@
 
 import UIKit
 
-class RightMenuBuilder{
-     static func build()-> UIViewController{
-           let sb = Utilities.getStoryboard(identifier: Storyboards.rightMenu.rawValue)
-           let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.rightMenu.rawValue) as! RightMenuViewController
-           let navBarType = navigationBarTypes.clearNavBar
-           let rightMenuViewModel = RightMenuViewModel(navigationType: navBarType)
-           vc.viewModel = rightMenuViewModel
-           
-           return vc
-       }
+final class RightMenuBuilder{
+  static func build()-> UIViewController{
+    let sb = Utilities.getStoryboard(identifier: Storyboards.rightMenu.rawValue)
+    let vc = sb.instantiateViewController(identifier: ViewControllersIdentifier.rightMenu.rawValue) as! RightMenuViewController
+    let navBarType = navigationBarTypes.clearNavBar
+    let rightMenuViewModel = RightMenuViewModel(navigationType: navBarType)
+    vc.viewModel = rightMenuViewModel
+    return vc
+  }
 }
